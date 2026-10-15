@@ -7,9 +7,12 @@ import { PlanExplainer, ShadeScanPanel } from './features/ai-scan';
 import { FabricationPanel } from './features/fabrication';
 import { useNetworkView } from './hooks/useNetworkView';
 import { useOptimizer } from './hooks/useOptimizer';
+import { useScenarioStore } from './store/scenario';
 
 export function App() {
-  const { shade, journey, comparison } = useNetworkView();
+  const { before, after, journey } = useNetworkView();
+  const mapMode = useScenarioStore((s) => s.scenario.mapMode);
+  const comparison = mapMode === 'before' ? before.comparison : after.comparison;
   const { plans, selectedPlan } = useOptimizer();
   return (
     <div className="shell">
@@ -23,7 +26,7 @@ export function App() {
       </aside>
 
       <main className="shell__map" aria-label="Map">
-        <MapView shade={shade} comparison={comparison} />
+        <MapView before={before} after={after} />
       </main>
 
       <aside className="shell__results" aria-label="Results">

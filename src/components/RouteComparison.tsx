@@ -1,6 +1,6 @@
-import type { NetworkView } from '../hooks/useNetworkView';
+import type { RouteComparison as RouteComparisonData } from '../lib/compare';
 import { dataset } from '../data/dataset';
-import type { DataSource, RouteResult } from '../types';
+import type { DataSource, Journey, RouteResult } from '../types';
 import { SourceBadge } from './SourceBadge';
 
 const ROWS: readonly { label: string; value: (r: RouteResult) => string }[] = [
@@ -16,7 +16,12 @@ function routeSources(route: RouteResult): DataSource[] {
   return [...new Set(route.segmentIds.map((id) => byId.get(id) ?? 'missing'))];
 }
 
-export function RouteComparison({ journey, comparison }: Pick<NetworkView, 'journey' | 'comparison'>) {
+interface RouteComparisonProps {
+  journey: Journey | null;
+  comparison: RouteComparisonData | null;
+}
+
+export function RouteComparison({ journey, comparison }: RouteComparisonProps) {
   if (!journey) {
     return <p className="panel__hint">Pick a journey to compare routes.</p>;
   }

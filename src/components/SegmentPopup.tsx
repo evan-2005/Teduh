@@ -7,11 +7,13 @@ interface SegmentPopupProps {
   lengthM: number;
   /** Shade now in use (after overrides and interventions). */
   effectiveShade: number;
+  /** Which layer this popup belongs to, e.g. "before plan" or "with plan". */
+  caption?: string;
 }
 
 const percent = (fraction: number): string => `${Math.round(fraction * 100)}%`;
 
-export function SegmentPopup({ segment, lengthM, effectiveShade }: SegmentPopupProps) {
+export function SegmentPopup({ segment, lengthM, effectiveShade, caption }: SegmentPopupProps) {
   return (
     <div className="segment-popup">
       <strong>{segment.id}</strong>
@@ -19,7 +21,8 @@ export function SegmentPopup({ segment, lengthM, effectiveShade }: SegmentPopupP
         {Math.round(lengthM)} m long, {segment.widthM} m wide
       </p>
       <p>
-        Shade now: <span className="num">{percent(effectiveShade)}</span>
+        Shade now{caption ? ` (${caption})` : ''}:{' '}
+        <span className="num">{percent(effectiveShade)}</span>
       </p>
       <table>
         <tbody>

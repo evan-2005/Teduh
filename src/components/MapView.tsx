@@ -1,45 +1,35 @@
 import 'leaflet/dist/leaflet.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   CircleMarker,
   MapContainer,
-  Polyline,
-  Popup,
+  Pane,
   TileLayer,
   Tooltip,
+  ZoomControl,
   useMap,
 } from 'react-leaflet';
-import { EXPOSED_THRESHOLD, MAP_CENTER, MAP_ZOOM } from '../config';
-import { dataset, graph } from '../data/dataset';
+import { MAP_CENTER, MAP_ZOOM } from '../config';
+import { dataset } from '../data/dataset';
 import type { NetworkView } from '../hooks/useNetworkView';
 import { useScenarioStore } from '../store/scenario';
 import { InterventionMarkers } from './InterventionMarkers';
 import { MapLegend } from './MapLegend';
-import {
-  nodeCoords,
-  networkBounds,
-  segmentPath,
-  segmentsById,
-  type LatLngTuple,
-} from './mapGeometry';
-import {
-  DESTINATION_COLOR,
-  EXPOSED_COLOR,
-  EXPOSED_DASH,
-  LEAST_SUN_COLOR,
-  MAP_PADDING_PX,
-  ROUTE_OVERLAY_WEIGHT,
-  ROUTE_UNDERLAY_WEIGHT,
-  SEGMENT_WEIGHT,
-  SHADED_COLOR,
-  SHORTEST_COLOR,
-} from './mapStyle';
-import { SegmentPopup } from './SegmentPopup';
+import { MapToolbar } from './MapToolbar';
+import { networkBounds, nodeCoords, type LatLngTuple } from './mapGeometry';
+import { DESTINATION_COLOR, MAP_PADDING_PX, SHORTEST_COLOR } from './mapStyle';
+import { NetworkLayers } from './NetworkLayers';
+import { AFTER_PANE, BEFORE_PANE, DESTINATION_PANE, SwipeClip } from './SwipeClip';
+import { SwipeDivider } from './SwipeDivider';
 
 const OSM_TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const OSM_ATTRIBUTION = '&copy; OpenStreetMap contributors';
+const INITIAL_DIVIDER = 0.5;
 
-const { segments, destinations } = dataset.neighbourhood;
+// Above Leaflet's overlay pane (400) and below its marker pane (600).
+const PANE_Z = { before: 410, after: 420, destinations: 430 } as const;
+
+const { destinations } = dataset.neighbourhood;
 
 /** Fit the network on mount and whenever the map container is resized. */
 function FitToNetwork() {
@@ -57,30 +47,14 @@ function FitToNetwork() {
   return null;
 }
 
-interface RouteLayerProps {
-  segmentIds: readonly string[];
-  color: string;
-  weight: number;
-  opacity: number;
-}
-
-function RouteLayer({ segmentIds, color, weight, opacity }: RouteLayerProps) {
-  return (
-    <>
-      {segmentIds.map((id) => (
-        <Polyline
-          key={id}
-          positions={segmentPath(segmentsById.get(id)!)}
-          pathOptions={{ color, weight, opacity, lineCap: 'round' }}
-          interactive={false}
-        />
-      ))}
-    </>
-  );
-}
-
-export function MapView({ shade, comparison }: Pick<NetworkView, 'shade' | 'comparison'>) {
+export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>) {
   const basemap = useScenarioStore((s) => s.basemap);
+  const mapMode = useScenarioStore((s) => s.scenario.mapMode);
+  const [divider, setDivider] = useState(INITIAL_DIVIDER);
+
+  const showBefore = mapMode !== 'after';
+  const showAfter = mapMode !== 'before';
+  const swiping = mapMode === 'swipe';
 
   return (
     <div className="map-wrap">
@@ -89,70 +63,52 @@ export function MapView({ shade, comparison }: Pick<NetworkView, 'shade' | 'comp
         zoom={MAP_ZOOM}
         className="map"
         zoomSnap={0.25}
+        zoomControl={false}
       >
+        <ZoomControl position="bottomright" />
         <FitToNetwork />
         {basemap.visible && (
           <TileLayer url={OSM_TILES} attribution={OSM_ATTRIBUTION} opacity={basemap.opacity} />
         )}
 
-        {comparison && (
-          <RouteLayer
-            segmentIds={comparison.shortest.segmentIds}
-            color={SHORTEST_COLOR}
-            weight={ROUTE_UNDERLAY_WEIGHT}
-            opacity={0.3}
-          />
-        )}
+        <Pane name={BEFORE_PANE} style={{ zIndex: PANE_Z.before }}>
+          {showBefore && <NetworkLayers {...before} caption="before plan" />}
+        </Pane>
 
-        {segments.map((segment) => {
-          const effective = shade.get(segment.id) ?? 0;
-          const exposed = effective < EXPOSED_THRESHOLD;
-          return (
-            <Polyline
-              key={segment.id}
-              positions={segmentPath(segment)}
+        {/* Intervention markers live in the after pane, so they only appear on the after side. */}
+        <Pane name={AFTER_PANE} style={{ zIndex: PANE_Z.after }}>
+          {showAfter && (
+            <>
+              <NetworkLayers {...after} caption="with plan" />
+              <InterventionMarkers />
+            </>
+          )}
+        </Pane>
+        <SwipeClip active={swiping} fraction={divider} />
+
+        <Pane name={DESTINATION_PANE} style={{ zIndex: PANE_Z.destinations }}>
+          {destinations.map((d) => (
+            <CircleMarker
+              key={d.id}
+              center={nodeCoords.get(d.nodeId)!}
+              radius={8}
               pathOptions={{
-                color: exposed ? EXPOSED_COLOR : SHADED_COLOR,
-                weight: SEGMENT_WEIGHT,
-                dashArray: exposed ? EXPOSED_DASH : undefined,
-                opacity: segment.accessible ? 1 : 0.35,
+                color: SHORTEST_COLOR,
+                weight: 2,
+                fillColor: DESTINATION_COLOR,
+                fillOpacity: 1,
               }}
             >
-              <Popup>
-                <SegmentPopup
-                  segment={segment}
-                  lengthM={graph.lengthBySegment.get(segment.id) ?? 0}
-                  effectiveShade={effective}
-                />
-              </Popup>
-            </Polyline>
-          );
-        })}
-
-        {comparison && (
-          <RouteLayer
-            segmentIds={comparison.leastSun.segmentIds}
-            color={LEAST_SUN_COLOR}
-            weight={ROUTE_OVERLAY_WEIGHT}
-            opacity={0.95}
-          />
-        )}
-
-        {destinations.map((d) => (
-          <CircleMarker
-            key={d.id}
-            center={nodeCoords.get(d.nodeId)!}
-            radius={8}
-            pathOptions={{ color: SHORTEST_COLOR, weight: 2, fillColor: DESTINATION_COLOR, fillOpacity: 1 }}
-          >
-            <Tooltip permanent direction="top" offset={[0, -8]}>
-              {d.name}
-            </Tooltip>
-          </CircleMarker>
-        ))}
-
-        <InterventionMarkers />
+              <Tooltip permanent direction="top" offset={[0, -8]}>
+                {d.name}
+              </Tooltip>
+            </CircleMarker>
+          ))}
+        </Pane>
       </MapContainer>
+
+      {swiping && <SwipeDivider fraction={divider} onChange={setDivider} />}
+      <MapToolbar />
       <MapLegend />
     </div>
   );
