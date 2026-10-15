@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import unitCostsRaw from '../../data/unit-costs.json';
 import { MAX_CANDIDATES } from '../config';
+import { loadCustomArea } from './customAreas';
 import type {
   Destination,
   Intervention,
@@ -184,24 +185,44 @@ export function parseDataset(raw: {
   return dataset;
 }
 
-export type DatasetName = 'seed' | 'osm';
+/** 'seed', an area slug such as 'ss4-petaling-jaya', or 'custom:<slug>' for a place looked up in the browser. */
+export type AreaId = string;
 
-// Every data/<name>/ folder is bundled; VITE_DATASET picks one at startup.
-const files = import.meta.glob<unknown>(
-  ['../../data/*/neighbourhood.json', '../../data/*/journeys.json', '../../data/*/interventions.json'],
-  { eager: true, import: 'default' },
+export const CUSTOM_PREFIX = 'custom:';
+
+// Every bundled area is its own lazy chunk, so only the active one is downloaded.
+const bundled = import.meta.glob<unknown>(
+  [
+    '../../data/areas/*/neighbourhood.json',
+    '../../data/areas/*/journeys.json',
+    '../../data/areas/*/interventions.json',
+    '../../data/seed/*.json',
+  ],
+  { import: 'default' },
 );
 
-const fileFor = (name: DatasetName, file: string): unknown => {
-  const key = `../../data/${name}/${file}.json`;
-  if (!(key in files)) throw new Error(`Missing data file data/${name}/${file}.json`);
-  return files[key];
-};
+async function bundledFile(id: AreaId, file: string): Promise<unknown> {
+  const folder = id === 'seed' ? 'seed' : `areas/${id}`;
+  const load = bundled[`../../data/${folder}/${file}.json`];
+  if (!load) throw new Error(`Missing data file data/${folder}/${file}.json`);
+  return load();
+}
 
-export const loadDataset = (name: DatasetName): Dataset =>
-  parseDataset({
-    neighbourhood: fileFor(name, 'neighbourhood'),
-    journeys: fileFor(name, 'journeys'),
-    interventions: fileFor(name, 'interventions'),
-    unitCosts: unitCostsRaw,
-  });
+export async function loadDataset(id: AreaId): Promise<Dataset> {
+  if (id.startsWith(CUSTOM_PREFIX)) {
+    const saved = loadCustomArea(id.slice(CUSTOM_PREFIX.length));
+    if (!saved) throw new Error(`Saved area ${id} was not found in this browser`);
+    return parseDataset({
+      neighbourhood: saved.neighbourhood,
+      journeys: saved.journeys,
+      interventions: saved.interventions,
+      unitCosts: unitCostsRaw,
+    });
+  }
+  const [neighbourhood, journeys, interventions] = await Promise.all([
+    bundledFile(id, 'neighbourhood'),
+    bundledFile(id, 'journeys'),
+    bundledFile(id, 'interventions'),
+  ]);
+  return parseDataset({ neighbourhood, journeys, interventions, unitCosts: unitCostsRaw });
+}

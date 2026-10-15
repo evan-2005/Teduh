@@ -71,8 +71,10 @@ describe('leastSunRoute', () => {
   });
 });
 
+const seed = await loadDataset('seed');
+
 describe('seed neighbourhood', () => {
-  const { neighbourhood, journeys, interventions } = loadDataset('seed');
+  const { neighbourhood, journeys, interventions } = seed;
   const seedGraph = buildGraph(neighbourhood.nodes, neighbourhood.segments);
   const nodeOf = (destinationId: string) =>
     neighbourhood.destinations.find((d) => d.id === destinationId)!.nodeId;

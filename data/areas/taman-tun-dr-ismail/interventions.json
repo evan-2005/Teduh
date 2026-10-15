@@ -1,0 +1,126 @@
+[
+  {
+    "id": "shelter-1",
+    "type": "shelter",
+    "name": "Shelter on SS 20/21 Road, SW (72 m)",
+    "segmentIds": [
+      "seg-350"
+    ],
+    "installCost": 89000,
+    "annualMaintenance": 2230,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on SS 20/21 Road, SW (86 m)",
+    "segmentIds": [
+      "seg-349",
+      "seg-348",
+      "seg-311"
+    ],
+    "installCost": 105000,
+    "annualMaintenance": 2630,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-3",
+    "type": "shelter",
+    "name": "Shelter on a path, SW (77 m)",
+    "segmentIds": [
+      "seg-345",
+      "seg-344",
+      "seg-343"
+    ],
+    "installCost": 87000,
+    "annualMaintenance": 2180,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-1",
+    "type": "tree",
+    "name": "Trees on Tun Mohd Fuad Road, W (8)",
+    "segmentIds": [
+      "seg-203"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on a steps, SW (7)",
+    "segmentIds": [
+      "seg-347"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on Tun Mohd Fuad Road, W (6)",
+    "segmentIds": [
+      "seg-727"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on Tun Mohd Fuad 1 Road, N (10)",
+    "segmentIds": [
+      "seg-582"
+    ],
+    "installCost": 8700,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on Wan Kadir 2 Road, SW (6)",
+    "segmentIds": [
+      "seg-197"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  }
+]

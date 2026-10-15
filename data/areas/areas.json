@@ -1,0 +1,18 @@
+[
+  { "slug": "ss4-petaling-jaya", "name": "SS 4, Petaling Jaya", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.1075, "lng": 101.607, "radiusM": 550 },
+  { "slug": "ss2-petaling-jaya", "name": "SS 2, Petaling Jaya", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.1177, "lng": 101.6197, "radiusM": 550 },
+  { "slug": "ss15-subang-jaya", "name": "SS 15, Subang Jaya", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.0775, "lng": 101.587, "radiusM": 550 },
+  { "slug": "usj-subang-jaya", "name": "USJ, Subang Jaya", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.0477, "lng": 101.5812, "radiusM": 550 },
+  { "slug": "section-2-shah-alam", "name": "Section 2, Shah Alam", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.0777, "lng": 101.527, "radiusM": 550 },
+  { "slug": "section-7-shah-alam", "name": "Section 7, Shah Alam", "group": "Petaling Jaya, Subang and Shah Alam", "lat": 3.0733, "lng": 101.493, "radiusM": 550 },
+  { "slug": "bangsar", "name": "Bangsar, Kuala Lumpur", "group": "Kuala Lumpur", "lat": 3.1295, "lng": 101.6705, "radiusM": 550 },
+  { "slug": "taman-tun-dr-ismail", "name": "Taman Tun Dr Ismail, Kuala Lumpur", "group": "Kuala Lumpur", "lat": 3.1396, "lng": 101.6297, "radiusM": 550 },
+  { "slug": "taman-desa", "name": "Taman Desa, Kuala Lumpur", "group": "Kuala Lumpur", "lat": 3.102, "lng": 101.684, "radiusM": 550 },
+  { "slug": "kepong-baru", "name": "Kepong Baru, Kuala Lumpur", "group": "Kuala Lumpur", "lat": 3.2105, "lng": 101.635, "radiusM": 550 },
+  { "slug": "taman-connaught-cheras", "name": "Taman Connaught, Cheras, Kuala Lumpur", "group": "Kuala Lumpur", "lat": 3.095, "lng": 101.728, "radiusM": 550 },
+  { "slug": "bandar-puteri-puchong", "name": "Bandar Puteri, Puchong", "group": "Outer Klang Valley", "lat": 3.0345, "lng": 101.612, "radiusM": 550 },
+  { "slug": "klang-town", "name": "Klang town", "group": "Outer Klang Valley", "lat": 3.0449, "lng": 101.4455, "radiusM": 550 },
+  { "slug": "bandar-baru-bangi", "name": "Bandar Baru Bangi", "group": "Outer Klang Valley", "lat": 2.979, "lng": 101.77, "radiusM": 550 },
+  { "slug": "kajang-town", "name": "Kajang town", "group": "Outer Klang Valley", "lat": 2.993, "lng": 101.79, "radiusM": 550 },
+  { "slug": "cyberjaya", "name": "Cyberjaya", "group": "Outer Klang Valley", "lat": 2.9213, "lng": 101.6559, "radiusM": 550 }
+]

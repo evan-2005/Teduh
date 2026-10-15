@@ -1,0 +1,44 @@
+[
+  {
+    "id": "j-home-1-school",
+    "originId": "dest-home-1",
+    "destinationId": "dest-school",
+    "dailyTrips": 32,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-2-school",
+    "originId": "dest-home-2",
+    "destinationId": "dest-school",
+    "dailyTrips": 50,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-bus-stop",
+    "originId": "dest-home-1",
+    "destinationId": "dest-bus-stop",
+    "dailyTrips": 64,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-2-bus-stop",
+    "originId": "dest-home-2",
+    "destinationId": "dest-bus-stop",
+    "dailyTrips": 100,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-shops",
+    "originId": "dest-home-1",
+    "destinationId": "dest-shops",
+    "dailyTrips": 80,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-2-shops",
+    "originId": "dest-home-2",
+    "destinationId": "dest-shops",
+    "dailyTrips": 125,
+    "tripsSource": "estimated"
+  }
+]

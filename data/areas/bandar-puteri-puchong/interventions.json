@@ -1,0 +1,124 @@
+[
+  {
+    "id": "shelter-1",
+    "type": "shelter",
+    "name": "Shelter on LE 1 Road, NW (99 m)",
+    "segmentIds": [
+      "seg-192",
+      "seg-158",
+      "seg-195"
+    ],
+    "installCost": 119000,
+    "annualMaintenance": 2980,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on LE 2 Road, NE (72 m)",
+    "segmentIds": [
+      "seg-143"
+    ],
+    "installCost": 87000,
+    "annualMaintenance": 2180,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-3",
+    "type": "shelter",
+    "name": "Shelter on LE 3A Road, N (67 m)",
+    "segmentIds": [
+      "seg-150"
+    ],
+    "installCost": 83000,
+    "annualMaintenance": 2080,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-1",
+    "type": "tree",
+    "name": "Trees on LE 3A Road, N (9)",
+    "segmentIds": [
+      "seg-149"
+    ],
+    "installCost": 7900,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on TMP 1 Road, E (8)",
+    "segmentIds": [
+      "seg-198"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on TMP 1 Road, NE (8)",
+    "segmentIds": [
+      "seg-197"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on LE 3A Road, N (8)",
+    "segmentIds": [
+      "seg-147"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on a footpath, NE (7)",
+    "segmentIds": [
+      "seg-139"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  }
+]

@@ -14,6 +14,8 @@ export interface ContextLayers {
   buildings: boolean;
   greens: boolean;
   landmarks: boolean;
+  /** Restaurants and cafes: many in busy areas, so off by default. */
+  food: boolean;
   trees: boolean;
 }
 
@@ -56,7 +58,7 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   selectedInterventionId: null,
   selectedJourneyId: meta.demoJourneyId,
   basemap: { style: 'streets', opacity: 0.6 },
-  contextLayers: { buildings: true, greens: true, landmarks: true, trees: true },
+  contextLayers: { buildings: true, greens: true, landmarks: true, food: false, trees: true },
   setScenario: (patch) => set((s) => ({ scenario: { ...s.scenario, ...patch } })),
   applyShadeOverride: (override) =>
     set((s) => ({ shadeOverrides: withOverride(s.shadeOverrides, override) })),

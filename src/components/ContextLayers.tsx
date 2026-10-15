@@ -2,7 +2,7 @@ import L from 'leaflet';
 import { useEffect } from 'react';
 import { Marker, Tooltip, useMap } from 'react-leaflet';
 import type { ContextLayers as LayerToggles } from '../store/scenario';
-import type { AreaContext, LandmarkKind, LatLngPair } from '../types';
+import type { AreaContext, Landmark, LandmarkKind, LatLngPair } from '../types';
 import { BUILDING_STYLE, GREEN_STYLE, TREE_STYLE } from './mapStyle';
 
 export const CONTEXT_PANE = 'contextPane';
@@ -87,30 +87,33 @@ export function ContextLayers({ context, toggles }: ContextLayersProps) {
       {toggles.greens && <Polygons rings={greenRings(context)} style={GREEN_STYLE} />}
       {toggles.buildings && <Polygons rings={context.buildings} style={BUILDING_STYLE} />}
       {toggles.trees && context.trees.length > 0 && <TreeDots trees={context.trees} />}
-      {toggles.landmarks &&
-        context.landmarks.map((landmark) => (
-          <Marker
-            key={landmark.id}
-            position={[landmark.lat, landmark.lng]}
-            icon={landmarkIcon(landmark.kind)}
-            title={landmark.name}
-            keyboard={false}
-          >
-            <Tooltip direction="top" offset={[0, -10]}>
-              <strong>{landmark.name}</strong>
-              <br />
-              {KIND_LABELS[landmark.kind]}
-              {landmark.localName && (
-                <>
-                  <br />
-                  <small>Local name: {landmark.localName}</small>
-                </>
-              )}
-            </Tooltip>
-          </Marker>
-        ))}
+      {visibleLandmarks(context, toggles).map((landmark) => (
+        <Marker
+          key={landmark.id}
+          position={[landmark.lat, landmark.lng]}
+          icon={landmarkIcon(landmark.kind)}
+          title={landmark.name}
+          keyboard={false}
+        >
+          <Tooltip direction="top" offset={[0, -10]}>
+            <strong>{landmark.name}</strong>
+            <br />
+            {KIND_LABELS[landmark.kind]}
+            {landmark.localName && (
+              <>
+                <br />
+                <small>Local name: {landmark.localName}</small>
+              </>
+            )}
+          </Tooltip>
+        </Marker>
+      ))}
     </>
   );
+}
+
+function visibleLandmarks(context: AreaContext, toggles: LayerToggles): Landmark[] {
+  return context.landmarks.filter((l) => (l.kind === 'food' ? toggles.food : toggles.landmarks));
 }
 
 const greenCache = new WeakMap<AreaContext, LatLngPair[][]>();

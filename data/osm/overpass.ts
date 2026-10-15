@@ -5,7 +5,11 @@ export interface Area {
   lat: number;
   lng: number;
   radiusM: number;
+  /** Clock offset from UTC for the sun model; Malaysia (UTC+8) when absent. */
+  utcOffsetH?: number;
 }
+
+export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>;
 
 const ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
@@ -43,15 +47,25 @@ out geom tags;`;
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** The public servers are often busy, so retry with backoff and rotate endpoints. */
-export async function fetchOverpass(area: Area, log: (msg: string) => void): Promise<unknown> {
+export async function fetchOverpass(
+  area: Area,
+  log: (msg: string) => void,
+  fetchImpl: FetchLike = fetch,
+  options: { maxAttempts?: number; baseWaitMs?: number } = {},
+): Promise<unknown> {
+  const maxAttempts = options.maxAttempts ?? MAX_ATTEMPTS;
+  const baseWaitMs = options.baseWaitMs ?? BASE_WAIT_MS;
   const body = new URLSearchParams({ data: buildQuery(area) });
-  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+  // Browsers set their own User-Agent; Node needs one or the servers answer 406.
+  const headers: Record<string, string> = { Accept: 'application/json' };
+  if (typeof window === 'undefined') headers['User-Agent'] = USER_AGENT;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const endpoint = ENDPOINTS[attempt % ENDPOINTS.length]!;
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetchImpl(endpoint, {
         method: 'POST',
         body,
-        headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
+        headers,
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
       const text = await response.text();
@@ -60,7 +74,7 @@ export async function fetchOverpass(area: Area, log: (msg: string) => void): Pro
     } catch (error) {
       log(`attempt ${attempt + 1}: ${endpoint} failed (${(error as Error).name})`);
     }
-    await sleep(BASE_WAIT_MS * (attempt + 1));
+    await sleep(baseWaitMs * (attempt + 1));
   }
   throw new Error('Could not reach any Overpass server. Try again in a few minutes.');
 }

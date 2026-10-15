@@ -742,3 +742,125 @@
   color: var(--color-ink-soft);
   font-size: 0.76rem;
 }
+
+/* ---- Area picker and place lookup ---- */
+.shell__header-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.area-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+}
+
+.area-picker__label {
+  opacity: 0.85;
+}
+
+.area-picker select {
+  max-width: 16rem;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-paper);
+  background: var(--color-canopy);
+  color: var(--color-paper);
+  font: inherit;
+}
+
+.area-picker option,
+.area-picker optgroup {
+  background: var(--color-card);
+  color: var(--color-ink);
+}
+
+.place-search {
+  position: relative;
+}
+
+.place-search__toggle {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-sun);
+  background: transparent;
+  color: var(--color-sun);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.place-search__toggle[aria-expanded='true'] {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+.place-search__panel {
+  position: absolute;
+  z-index: 1200;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  width: 24rem;
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule);
+  background: var(--color-card);
+  color: var(--color-ink);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.place-search__row {
+  display: flex;
+  gap: var(--space-2);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.place-search__row input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-2);
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.place-search__row .button {
+  width: auto;
+  margin: 0;
+}
+
+.place-search__progress {
+  margin: var(--space-2) 0;
+  color: var(--color-canopy);
+  font-weight: 700;
+}
+
+.place-search__results {
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.place-search__results button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--space-1);
+  padding: var(--space-2);
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.place-search__results button:hover:not(:disabled) {
+  border-color: var(--color-canopy);
+}
+
+.place-search__results span {
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+}

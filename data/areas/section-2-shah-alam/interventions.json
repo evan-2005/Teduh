@@ -1,0 +1,124 @@
+[
+  {
+    "id": "shelter-1",
+    "type": "shelter",
+    "name": "Shelter on Kacip 11/8A Road, E (72 m)",
+    "segmentIds": [
+      "seg-90"
+    ],
+    "installCost": 89000,
+    "annualMaintenance": 2230,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on Kacip 11/8A Road, E (87 m)",
+    "segmentIds": [
+      "seg-95",
+      "seg-96"
+    ],
+    "installCost": 105000,
+    "annualMaintenance": 2630,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-3",
+    "type": "shelter",
+    "name": "Shelter on Tepak 11/8 Road, NE (100 m)",
+    "segmentIds": [
+      "seg-89",
+      "seg-88"
+    ],
+    "installCost": 121000,
+    "annualMaintenance": 3030,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-1",
+    "type": "tree",
+    "name": "Trees on Bandaraya Avenue, NW (9)",
+    "segmentIds": [
+      "seg-71"
+    ],
+    "installCost": 7900,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on Teluk Belanga 10/1 Road, NW (8)",
+    "segmentIds": [
+      "seg-10"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on Tepak 11/8 Road, SW (8)",
+    "segmentIds": [
+      "seg-87"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on Batik 10/6 Road, NW (7)",
+    "segmentIds": [
+      "seg-6"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on a service lane, W (7)",
+    "segmentIds": [
+      "seg-85"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  }
+]

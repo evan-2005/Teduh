@@ -1,0 +1,126 @@
+[
+  {
+    "id": "shelter-1",
+    "type": "shelter",
+    "name": "Shelter on SS 2/66 Road, N (83 m)",
+    "segmentIds": [
+      "seg-481",
+      "seg-606",
+      "seg-607"
+    ],
+    "installCost": 101000,
+    "annualMaintenance": 2530,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on SS 2/66 Road, NE (86 m)",
+    "segmentIds": [
+      "seg-119",
+      "seg-118"
+    ],
+    "installCost": 105000,
+    "annualMaintenance": 2630,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-3",
+    "type": "shelter",
+    "name": "Shelter on SS 2/12 Road, SW (85 m)",
+    "segmentIds": [
+      "seg-349",
+      "seg-254"
+    ],
+    "installCost": 104000,
+    "annualMaintenance": 2600,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-1",
+    "type": "tree",
+    "name": "Trees on SS 2/66 Road, N (7)",
+    "segmentIds": [
+      "seg-117"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on SS 2/66 Road, NE (7)",
+    "segmentIds": [
+      "seg-116"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on a service lane, SW (6) – A",
+    "segmentIds": [
+      "seg-345"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on a service lane, SW (6) – B",
+    "segmentIds": [
+      "seg-344"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on SS 2/75 Road, NE (6)",
+    "segmentIds": [
+      "seg-444"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  }
+]

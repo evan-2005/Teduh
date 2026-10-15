@@ -7,6 +7,7 @@ const TOGGLES: readonly { key: keyof ContextLayers; label: string }[] = [
   { key: 'buildings', label: 'Buildings' },
   { key: 'greens', label: 'Parks and fields' },
   { key: 'landmarks', label: 'Landmarks' },
+  { key: 'food', label: 'Food and drink' },
   { key: 'trees', label: 'Mapped trees' },
 ];
 

@@ -13,8 +13,8 @@ const raw = {
 };
 
 describe('seed dataset', () => {
-  test('loads and satisfies the Phase 0 spec', () => {
-    const data = loadDataset('seed');
+  test('loads and satisfies the Phase 0 spec', async () => {
+    const data = await loadDataset('seed');
     expect(data.neighbourhood.segments.length).toBeGreaterThanOrEqual(20);
     expect(data.neighbourhood.segments.length).toBeLessThanOrEqual(40);
     expect(data.neighbourhood.destinations).toHaveLength(5);

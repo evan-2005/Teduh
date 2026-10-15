@@ -16,6 +16,7 @@ const CHANNEL = process.env.BROWSER_CHANNEL ?? 'msedge';
 const OUT = 'docs/screenshots';
 const VIEWPORT = { width: 1440, height: 900 };
 const AI_TIMEOUT_MS = 15000;
+const LOOKUP_TIMEOUT_MS = 20000;
 
 mkdirSync(OUT, { recursive: true });
 
@@ -178,6 +179,31 @@ if (await scan.count()) {
   await shot('05-plan-explainer');
 } else {
   check('AI panels visible (set VITE_ENABLE_AI=true)', false);
+}
+
+// 8. Place lookup (live search; the slow download-and-analyse step is covered by unit tests)
+await page.getByRole('button', { name: 'Look up a place' }).click();
+await page.getByLabel('Town, neighbourhood or landmark').fill('Subang Jaya');
+await page.getByRole('button', { name: 'Search', exact: true }).click();
+const results = page.locator('.place-search__results button');
+const found = await results.first().waitFor({ timeout: LOOKUP_TIMEOUT_MS }).then(() => true, () => false);
+check('place search returns results', found);
+if (found) await shot('07-place-search');
+await page.getByRole('button', { name: 'Look up a place' }).click();
+
+// 9. Area picker: switch to a different shipped area and check the app reloads onto it
+const picker = page.getByLabel('Choose an area');
+const options = await picker.locator('option').evaluateAll((els) => els.map((e) => ({ value: e.value, label: e.textContent })));
+check('area picker lists several shipped areas', options.filter((o) => !o.value.startsWith('custom:') && o.value !== 'seed').length >= 6, `${options.length} options`);
+const currentName = await page.locator('.area__name').innerText();
+const other = options.find((o) => o.label !== currentName && o.value !== 'seed' && !o.value.startsWith('custom:'));
+if (other) {
+  await Promise.all([page.waitForNavigation(), picker.selectOption(other.value)]);
+  await page.locator('.area__name').waitFor();
+  check('switching area loads that area', (await page.locator('.area__name').innerText()) === other.label, other.label);
+  await demoButton().click();
+  await settle();
+  check('demo preset works in the new area', Number(await page.locator('.headline__value').innerText()) >= 0);
 }
 
 check('no uncaught page errors', errors.length === 0, errors.join(' | '));

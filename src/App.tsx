@@ -1,5 +1,7 @@
+import { AreaPicker } from './components/AreaPicker';
 import { ControlsPanel } from './components/ControlsPanel';
 import { MapView } from './components/MapView';
+import { PlaceSearch } from './components/PlaceSearch';
 import { ResultsPanel } from './components/ResultsPanel';
 import { RouteComparison } from './components/RouteComparison';
 import { ENABLE_AI, FOOTER_DISCLAIMER } from './config';
@@ -20,6 +22,10 @@ export function App() {
       <header className="shell__header">
         <h1 className="brand">Teduh</h1>
         <p className="tagline">Small changes. Cooler journeys.</p>
+        <div className="shell__header-tools">
+          <AreaPicker />
+          <PlaceSearch />
+        </div>
       </header>
 
       <aside className="shell__controls" aria-label="Controls">

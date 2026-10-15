@@ -1,0 +1,4427 @@
+{
+  "nodes": [
+    {
+      "id": "n-1",
+      "lat": 3.103067,
+      "lng": 101.681854
+    },
+    {
+      "id": "n-2",
+      "lat": 3.102979,
+      "lng": 101.681941
+    },
+    {
+      "id": "n-3",
+      "lat": 3.102728,
+      "lng": 101.682191
+    },
+    {
+      "id": "n-4",
+      "lat": 3.102433,
+      "lng": 101.682759
+    },
+    {
+      "id": "n-5",
+      "lat": 3.102139,
+      "lng": 101.683326
+    },
+    {
+      "id": "n-6",
+      "lat": 3.102126,
+      "lng": 101.68335
+    },
+    {
+      "id": "n-7",
+      "lat": 3.101926,
+      "lng": 101.68377
+    },
+    {
+      "id": "n-8",
+      "lat": 3.101726,
+      "lng": 101.68419
+    },
+    {
+      "id": "n-9",
+      "lat": 3.101623,
+      "lng": 101.684088
+    },
+    {
+      "id": "n-10",
+      "lat": 3.101146,
+      "lng": 101.683806
+    },
+    {
+      "id": "n-11",
+      "lat": 3.100668,
+      "lng": 101.683525
+    },
+    {
+      "id": "n-12",
+      "lat": 3.100595,
+      "lng": 101.683491
+    },
+    {
+      "id": "n-13",
+      "lat": 3.100529,
+      "lng": 101.683646
+    },
+    {
+      "id": "n-14",
+      "lat": 3.100398,
+      "lng": 101.68399
+    },
+    {
+      "id": "n-15",
+      "lat": 3.100266,
+      "lng": 101.684333
+    },
+    {
+      "id": "n-16",
+      "lat": 3.099822,
+      "lng": 101.6841
+    },
+    {
+      "id": "n-17",
+      "lat": 3.099507,
+      "lng": 101.684638
+    },
+    {
+      "id": "n-18",
+      "lat": 3.100272,
+      "lng": 101.68505
+    },
+    {
+      "id": "n-19",
+      "lat": 3.099889,
+      "lng": 101.684844
+    },
+    {
+      "id": "n-20",
+      "lat": 3.099061,
+      "lng": 101.684389
+    },
+    {
+      "id": "n-21",
+      "lat": 3.098615,
+      "lng": 101.684139
+    },
+    {
+      "id": "n-22",
+      "lat": 3.09852,
+      "lng": 101.68409
+    },
+    {
+      "id": "n-23",
+      "lat": 3.098396,
+      "lng": 101.684027
+    },
+    {
+      "id": "n-24",
+      "lat": 3.098263,
+      "lng": 101.684388
+    },
+    {
+      "id": "n-25",
+      "lat": 3.09813,
+      "lng": 101.684749
+    },
+    {
+      "id": "n-26",
+      "lat": 3.09864,
+      "lng": 101.683374
+    },
+    {
+      "id": "n-27",
+      "lat": 3.098724,
+      "lng": 101.683425
+    },
+    {
+      "id": "n-28",
+      "lat": 3.098956,
+      "lng": 101.682813
+    },
+    {
+      "id": "n-29",
+      "lat": 3.099474,
+      "lng": 101.683117
+    },
+    {
+      "id": "n-30",
+      "lat": 3.099903,
+      "lng": 101.682206
+    },
+    {
+      "id": "n-31",
+      "lat": 3.099689,
+      "lng": 101.682662
+    },
+    {
+      "id": "n-32",
+      "lat": 3.099508,
+      "lng": 101.68214
+    },
+    {
+      "id": "n-33",
+      "lat": 3.099112,
+      "lng": 101.682073
+    },
+    {
+      "id": "n-34",
+      "lat": 3.099127,
+      "lng": 101.681416
+    },
+    {
+      "id": "n-35",
+      "lat": 3.099623,
+      "lng": 101.6814
+    },
+    {
+      "id": "n-36",
+      "lat": 3.099721,
+      "lng": 101.681342
+    },
+    {
+      "id": "n-37",
+      "lat": 3.099788,
+      "lng": 101.680971
+    },
+    {
+      "id": "n-38",
+      "lat": 3.099854,
+      "lng": 101.6806
+    },
+    {
+      "id": "n-39",
+      "lat": 3.099034,
+      "lng": 101.682443
+    },
+    {
+      "id": "n-40",
+      "lat": 3.09851,
+      "lng": 101.681957
+    },
+    {
+      "id": "n-41",
+      "lat": 3.100064,
+      "lng": 101.68225
+    },
+    {
+      "id": "n-42",
+      "lat": 3.100192,
+      "lng": 101.681843
+    },
+    {
+      "id": "n-43",
+      "lat": 3.100284,
+      "lng": 101.681467
+    },
+    {
+      "id": "n-44",
+      "lat": 3.100376,
+      "lng": 101.681091
+    },
+    {
+      "id": "n-45",
+      "lat": 3.100564,
+      "lng": 101.680876
+    },
+    {
+      "id": "n-46",
+      "lat": 3.100945,
+      "lng": 101.680824
+    },
+    {
+      "id": "n-47",
+      "lat": 3.101261,
+      "lng": 101.680937
+    },
+    {
+      "id": "n-48",
+      "lat": 3.101626,
+      "lng": 101.681188
+    },
+    {
+      "id": "n-49",
+      "lat": 3.10199,
+      "lng": 101.681439
+    },
+    {
+      "id": "n-50",
+      "lat": 3.102228,
+      "lng": 101.681703
+    },
+    {
+      "id": "n-51",
+      "lat": 3.102555,
+      "lng": 101.682021
+    },
+    {
+      "id": "n-52",
+      "lat": 3.101799,
+      "lng": 101.682262
+    },
+    {
+      "id": "n-53",
+      "lat": 3.100937,
+      "lng": 101.680992
+    },
+    {
+      "id": "n-54",
+      "lat": 3.100754,
+      "lng": 101.681119
+    },
+    {
+      "id": "n-55",
+      "lat": 3.100607,
+      "lng": 101.681352
+    },
+    {
+      "id": "n-56",
+      "lat": 3.100583,
+      "lng": 101.681493
+    },
+    {
+      "id": "n-57",
+      "lat": 3.10036,
+      "lng": 101.680628
+    },
+    {
+      "id": "n-58",
+      "lat": 3.100722,
+      "lng": 101.682094
+    },
+    {
+      "id": "n-59",
+      "lat": 3.101158,
+      "lng": 101.682126
+    },
+    {
+      "id": "n-60",
+      "lat": 3.100431,
+      "lng": 101.682395
+    },
+    {
+      "id": "n-61",
+      "lat": 3.100225,
+      "lng": 101.682902
+    },
+    {
+      "id": "n-62",
+      "lat": 3.100019,
+      "lng": 101.683409
+    },
+    {
+      "id": "n-63",
+      "lat": 3.100937,
+      "lng": 101.682699
+    },
+    {
+      "id": "n-64",
+      "lat": 3.10078,
+      "lng": 101.683059
+    },
+    {
+      "id": "n-65",
+      "lat": 3.100847,
+      "lng": 101.683096
+    },
+    {
+      "id": "n-66",
+      "lat": 3.101071,
+      "lng": 101.683229
+    },
+    {
+      "id": "n-67",
+      "lat": 3.101194,
+      "lng": 101.683216
+    },
+    {
+      "id": "n-68",
+      "lat": 3.101323,
+      "lng": 101.683385
+    },
+    {
+      "id": "n-69",
+      "lat": 3.101425,
+      "lng": 101.683399
+    },
+    {
+      "id": "n-70",
+      "lat": 3.101567,
+      "lng": 101.68312
+    },
+    {
+      "id": "n-71",
+      "lat": 3.101531,
+      "lng": 101.683024
+    },
+    {
+      "id": "n-72",
+      "lat": 3.099273,
+      "lng": 101.683763
+    },
+    {
+      "id": "n-73",
+      "lat": 3.100799,
+      "lng": 101.684636
+    },
+    {
+      "id": "n-74",
+      "lat": 3.101332,
+      "lng": 101.684938
+    },
+    {
+      "id": "n-75",
+      "lat": 3.101505,
+      "lng": 101.684622
+    },
+    {
+      "id": "n-76",
+      "lat": 3.101678,
+      "lng": 101.684306
+    },
+    {
+      "id": "n-77",
+      "lat": 3.102147,
+      "lng": 101.684529
+    },
+    {
+      "id": "n-78",
+      "lat": 3.102367,
+      "lng": 101.684634
+    },
+    {
+      "id": "n-79",
+      "lat": 3.102453,
+      "lng": 101.684447
+    },
+    {
+      "id": "n-80",
+      "lat": 3.102598,
+      "lng": 101.684129
+    },
+    {
+      "id": "n-81",
+      "lat": 3.102476,
+      "lng": 101.683999
+    },
+    {
+      "id": "n-82",
+      "lat": 3.102641,
+      "lng": 101.683718
+    },
+    {
+      "id": "n-83",
+      "lat": 3.102676,
+      "lng": 101.683645
+    },
+    {
+      "id": "n-84",
+      "lat": 3.102546,
+      "lng": 101.683579
+    },
+    {
+      "id": "n-85",
+      "lat": 3.102286,
+      "lng": 101.683457
+    },
+    {
+      "id": "n-86",
+      "lat": 3.102824,
+      "lng": 101.683713
+    },
+    {
+      "id": "n-87",
+      "lat": 3.103114,
+      "lng": 101.683841
+    },
+    {
+      "id": "n-88",
+      "lat": 3.103197,
+      "lng": 101.683876
+    },
+    {
+      "id": "n-89",
+      "lat": 3.103223,
+      "lng": 101.683887
+    },
+    {
+      "id": "n-90",
+      "lat": 3.103279,
+      "lng": 101.683911
+    },
+    {
+      "id": "n-91",
+      "lat": 3.103029,
+      "lng": 101.684537
+    },
+    {
+      "id": "n-92",
+      "lat": 3.102944,
+      "lng": 101.684798
+    },
+    {
+      "id": "n-93",
+      "lat": 3.102746,
+      "lng": 101.684726
+    },
+    {
+      "id": "n-94",
+      "lat": 3.102719,
+      "lng": 101.684801
+    },
+    {
+      "id": "n-95",
+      "lat": 3.102911,
+      "lng": 101.684893
+    },
+    {
+      "id": "n-96",
+      "lat": 3.102856,
+      "lng": 101.685086
+    },
+    {
+      "id": "n-97",
+      "lat": 3.102874,
+      "lng": 101.68554
+    },
+    {
+      "id": "n-98",
+      "lat": 3.102952,
+      "lng": 101.685992
+    },
+    {
+      "id": "n-99",
+      "lat": 3.10308,
+      "lng": 101.686403
+    },
+    {
+      "id": "n-100",
+      "lat": 3.103207,
+      "lng": 101.686813
+    },
+    {
+      "id": "n-101",
+      "lat": 3.103464,
+      "lng": 101.687392
+    },
+    {
+      "id": "n-102",
+      "lat": 3.102844,
+      "lng": 101.686945
+    },
+    {
+      "id": "n-103",
+      "lat": 3.102745,
+      "lng": 101.687136
+    },
+    {
+      "id": "n-104",
+      "lat": 3.102421,
+      "lng": 101.687081
+    },
+    {
+      "id": "n-105",
+      "lat": 3.102219,
+      "lng": 101.68701
+    },
+    {
+      "id": "n-106",
+      "lat": 3.10238,
+      "lng": 101.687164
+    },
+    {
+      "id": "n-107",
+      "lat": 3.102306,
+      "lng": 101.687393
+    },
+    {
+      "id": "n-108",
+      "lat": 3.102194,
+      "lng": 101.687385
+    },
+    {
+      "id": "n-109",
+      "lat": 3.10226,
+      "lng": 101.687158
+    },
+    {
+      "id": "n-110",
+      "lat": 3.102433,
+      "lng": 101.68547
+    },
+    {
+      "id": "n-111",
+      "lat": 3.101883,
+      "lng": 101.685204
+    },
+    {
+      "id": "n-112",
+      "lat": 3.103578,
+      "lng": 101.68474
+    },
+    {
+      "id": "n-113",
+      "lat": 3.103791,
+      "lng": 101.684378
+    },
+    {
+      "id": "n-114",
+      "lat": 3.104003,
+      "lng": 101.684016
+    },
+    {
+      "id": "n-115",
+      "lat": 3.104275,
+      "lng": 101.683779
+    },
+    {
+      "id": "n-116",
+      "lat": 3.104574,
+      "lng": 101.683802
+    },
+    {
+      "id": "n-117",
+      "lat": 3.105071,
+      "lng": 101.684012
+    },
+    {
+      "id": "n-118",
+      "lat": 3.10496,
+      "lng": 101.684605
+    },
+    {
+      "id": "n-119",
+      "lat": 3.105393,
+      "lng": 101.684774
+    },
+    {
+      "id": "n-120",
+      "lat": 3.105826,
+      "lng": 101.684943
+    },
+    {
+      "id": "n-121",
+      "lat": 3.104376,
+      "lng": 101.684666
+    },
+    {
+      "id": "n-122",
+      "lat": 3.103946,
+      "lng": 101.684923
+    },
+    {
+      "id": "n-123",
+      "lat": 3.103703,
+      "lng": 101.685525
+    },
+    {
+      "id": "n-124",
+      "lat": 3.103699,
+      "lng": 101.68594
+    },
+    {
+      "id": "n-125",
+      "lat": 3.103804,
+      "lng": 101.686289
+    },
+    {
+      "id": "n-126",
+      "lat": 3.103908,
+      "lng": 101.686638
+    },
+    {
+      "id": "n-127",
+      "lat": 3.104174,
+      "lng": 101.687215
+    },
+    {
+      "id": "n-128",
+      "lat": 3.105261,
+      "lng": 101.683492
+    },
+    {
+      "id": "n-129",
+      "lat": 3.105316,
+      "lng": 101.683375
+    },
+    {
+      "id": "n-130",
+      "lat": 3.105547,
+      "lng": 101.683453
+    },
+    {
+      "id": "n-131",
+      "lat": 3.104838,
+      "lng": 101.683168
+    },
+    {
+      "id": "n-132",
+      "lat": 3.10436,
+      "lng": 101.68296
+    },
+    {
+      "id": "n-133",
+      "lat": 3.103921,
+      "lng": 101.682699
+    },
+    {
+      "id": "n-134",
+      "lat": 3.103696,
+      "lng": 101.68309
+    },
+    {
+      "id": "n-135",
+      "lat": 3.103932,
+      "lng": 101.683244
+    },
+    {
+      "id": "n-136",
+      "lat": 3.104141,
+      "lng": 101.683154
+    },
+    {
+      "id": "n-137",
+      "lat": 3.104525,
+      "lng": 101.683179
+    },
+    {
+      "id": "n-138",
+      "lat": 3.104893,
+      "lng": 101.683336
+    },
+    {
+      "id": "n-139",
+      "lat": 3.10349,
+      "lng": 101.683685
+    },
+    {
+      "id": "n-140",
+      "lat": 3.103367,
+      "lng": 101.683694
+    },
+    {
+      "id": "n-141",
+      "lat": 3.103494,
+      "lng": 101.682277
+    },
+    {
+      "id": "n-142",
+      "lat": 3.102399,
+      "lng": 101.684195
+    },
+    {
+      "id": "n-143",
+      "lat": 3.102406,
+      "lng": 101.684242
+    },
+    {
+      "id": "n-144",
+      "lat": 3.102356,
+      "lng": 101.684334
+    },
+    {
+      "id": "n-145",
+      "lat": 3.102312,
+      "lng": 101.684316
+    },
+    {
+      "id": "n-146",
+      "lat": 3.102293,
+      "lng": 101.684362
+    },
+    {
+      "id": "n-147",
+      "lat": 3.102254,
+      "lng": 101.684335
+    },
+    {
+      "id": "n-148",
+      "lat": 3.101127,
+      "lng": 101.685444
+    },
+    {
+      "id": "n-149",
+      "lat": 3.100922,
+      "lng": 101.68595
+    },
+    {
+      "id": "n-150",
+      "lat": 3.100879,
+      "lng": 101.686327
+    },
+    {
+      "id": "n-151",
+      "lat": 3.100625,
+      "lng": 101.686321
+    },
+    {
+      "id": "n-152",
+      "lat": 3.100218,
+      "lng": 101.686311
+    },
+    {
+      "id": "n-153",
+      "lat": 3.099812,
+      "lng": 101.6863
+    },
+    {
+      "id": "n-154",
+      "lat": 3.099342,
+      "lng": 101.686291
+    },
+    {
+      "id": "n-155",
+      "lat": 3.098873,
+      "lng": 101.686281
+    },
+    {
+      "id": "n-156",
+      "lat": 3.098847,
+      "lng": 101.686414
+    },
+    {
+      "id": "n-157",
+      "lat": 3.099329,
+      "lng": 101.686425
+    },
+    {
+      "id": "n-158",
+      "lat": 3.09981,
+      "lng": 101.686436
+    },
+    {
+      "id": "n-159",
+      "lat": 3.100272,
+      "lng": 101.686447
+    },
+    {
+      "id": "n-160",
+      "lat": 3.100734,
+      "lng": 101.686458
+    },
+    {
+      "id": "n-161",
+      "lat": 3.100728,
+      "lng": 101.686721
+    },
+    {
+      "id": "n-162",
+      "lat": 3.100266,
+      "lng": 101.686711
+    },
+    {
+      "id": "n-163",
+      "lat": 3.099804,
+      "lng": 101.6867
+    },
+    {
+      "id": "n-164",
+      "lat": 3.099798,
+      "lng": 101.686977
+    },
+    {
+      "id": "n-165",
+      "lat": 3.099791,
+      "lng": 101.687275
+    },
+    {
+      "id": "n-166",
+      "lat": 3.100704,
+      "lng": 101.687299
+    },
+    {
+      "id": "n-167",
+      "lat": 3.100248,
+      "lng": 101.687287
+    },
+    {
+      "id": "n-168",
+      "lat": 3.100699,
+      "lng": 101.687536
+    },
+    {
+      "id": "n-169",
+      "lat": 3.10071,
+      "lng": 101.687014
+    },
+    {
+      "id": "n-170",
+      "lat": 3.100872,
+      "lng": 101.687031
+    },
+    {
+      "id": "n-171",
+      "lat": 3.100881,
+      "lng": 101.687438
+    },
+    {
+      "id": "n-172",
+      "lat": 3.10089,
+      "lng": 101.687844
+    },
+    {
+      "id": "n-173",
+      "lat": 3.100254,
+      "lng": 101.686995
+    },
+    {
+      "id": "n-174",
+      "lat": 3.100627,
+      "lng": 101.686227
+    },
+    {
+      "id": "n-175",
+      "lat": 3.100808,
+      "lng": 101.686232
+    },
+    {
+      "id": "n-176",
+      "lat": 3.10081,
+      "lng": 101.686139
+    },
+    {
+      "id": "n-177",
+      "lat": 3.10063,
+      "lng": 101.686134
+    },
+    {
+      "id": "n-178",
+      "lat": 3.100633,
+      "lng": 101.686039
+    },
+    {
+      "id": "n-179",
+      "lat": 3.100813,
+      "lng": 101.686044
+    },
+    {
+      "id": "n-180",
+      "lat": 3.100816,
+      "lng": 101.685948
+    },
+    {
+      "id": "n-181",
+      "lat": 3.100635,
+      "lng": 101.685943
+    },
+    {
+      "id": "n-182",
+      "lat": 3.102306,
+      "lng": 101.683418
+    },
+    {
+      "id": "n-183",
+      "lat": 3.102599,
+      "lng": 101.681537
+    },
+    {
+      "id": "n-184",
+      "lat": 3.102218,
+      "lng": 101.681133
+    },
+    {
+      "id": "n-185",
+      "lat": 3.101663,
+      "lng": 101.680701
+    },
+    {
+      "id": "n-186",
+      "lat": 3.10121,
+      "lng": 101.680448
+    },
+    {
+      "id": "n-187",
+      "lat": 3.100757,
+      "lng": 101.680194
+    },
+    {
+      "id": "n-188",
+      "lat": 3.102769,
+      "lng": 101.681507
+    },
+    {
+      "id": "n-189",
+      "lat": 3.10247,
+      "lng": 101.68116
+    },
+    {
+      "id": "n-190",
+      "lat": 3.102083,
+      "lng": 101.68086
+    },
+    {
+      "id": "n-191",
+      "lat": 3.101695,
+      "lng": 101.680561
+    },
+    {
+      "id": "n-192",
+      "lat": 3.101261,
+      "lng": 101.680286
+    },
+    {
+      "id": "n-193",
+      "lat": 3.101756,
+      "lng": 101.68051
+    },
+    {
+      "id": "n-194",
+      "lat": 3.10141,
+      "lng": 101.680304
+    },
+    {
+      "id": "n-195",
+      "lat": 3.101063,
+      "lng": 101.680098
+    },
+    {
+      "id": "n-196",
+      "lat": 3.101849,
+      "lng": 101.680577
+    },
+    {
+      "id": "n-197",
+      "lat": 3.102386,
+      "lng": 101.681003
+    },
+    {
+      "id": "n-198",
+      "lat": 3.102783,
+      "lng": 101.681404
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-1",
+      "from": "n-1",
+      "to": "n-2",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-2",
+      "from": "n-2",
+      "to": "n-3",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-3",
+      "from": "n-3",
+      "to": "n-4",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-4",
+      "from": "n-4",
+      "to": "n-5",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-5",
+      "from": "n-5",
+      "to": "n-6",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-6",
+      "from": "n-6",
+      "to": "n-7",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-7",
+      "from": "n-7",
+      "to": "n-8",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-8",
+      "from": "n-8",
+      "to": "n-9",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-9",
+      "from": "n-9",
+      "to": "n-10",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-10",
+      "from": "n-10",
+      "to": "n-11",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-11",
+      "from": "n-12",
+      "to": "n-11",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-12",
+      "from": "n-12",
+      "to": "n-13",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Setia Road"
+    },
+    {
+      "id": "seg-13",
+      "from": "n-13",
+      "to": "n-14",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Setia Road"
+    },
+    {
+      "id": "seg-14",
+      "from": "n-14",
+      "to": "n-15",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Setia Road"
+    },
+    {
+      "id": "seg-15",
+      "from": "n-16",
+      "to": "n-15",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-16",
+      "from": "n-16",
+      "to": "n-17",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.45,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-17",
+      "from": "n-18",
+      "to": "n-19",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Cantik Road"
+    },
+    {
+      "id": "seg-18",
+      "from": "n-19",
+      "to": "n-17",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Cantik Road"
+    },
+    {
+      "id": "seg-19",
+      "from": "n-17",
+      "to": "n-20",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Cantik Road"
+    },
+    {
+      "id": "seg-20",
+      "from": "n-20",
+      "to": "n-21",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Cantik Road"
+    },
+    {
+      "id": "seg-21",
+      "from": "n-21",
+      "to": "n-22",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-22",
+      "from": "n-22",
+      "to": "n-23",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-23",
+      "from": "n-23",
+      "to": "n-24",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: 109F Road"
+    },
+    {
+      "id": "seg-24",
+      "from": "n-24",
+      "to": "n-25",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.2
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: 109F Road"
+    },
+    {
+      "id": "seg-25",
+      "from": "n-23",
+      "to": "n-26",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: 109F Road"
+    },
+    {
+      "id": "seg-26",
+      "from": "n-26",
+      "to": "n-27",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-27",
+      "from": "n-27",
+      "to": "n-28",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Permai Road"
+    },
+    {
+      "id": "seg-28",
+      "from": "n-29",
+      "to": "n-28",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Damai Road"
+    },
+    {
+      "id": "seg-29",
+      "from": "n-30",
+      "to": "n-31",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria 1 Road"
+    },
+    {
+      "id": "seg-30",
+      "from": "n-31",
+      "to": "n-29",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria 1 Road"
+    },
+    {
+      "id": "seg-31",
+      "from": "n-30",
+      "to": "n-32",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.25,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.15
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-32",
+      "from": "n-32",
+      "to": "n-33",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.2,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-33",
+      "from": "n-34",
+      "to": "n-33",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Permai Road"
+    },
+    {
+      "id": "seg-34",
+      "from": "n-34",
+      "to": "n-35",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Puncak Desa Road"
+    },
+    {
+      "id": "seg-35",
+      "from": "n-35",
+      "to": "n-36",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.2
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Puncak Desa Road"
+    },
+    {
+      "id": "seg-36",
+      "from": "n-36",
+      "to": "n-37",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Puncak Desa Road"
+    },
+    {
+      "id": "seg-37",
+      "from": "n-37",
+      "to": "n-38",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Puncak Desa Road"
+    },
+    {
+      "id": "seg-38",
+      "from": "n-33",
+      "to": "n-39",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Permai Road"
+    },
+    {
+      "id": "seg-39",
+      "from": "n-39",
+      "to": "n-28",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Permai Road"
+    },
+    {
+      "id": "seg-40",
+      "from": "n-33",
+      "to": "n-40",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Lingkungan Desa"
+    },
+    {
+      "id": "seg-41",
+      "from": "n-30",
+      "to": "n-41",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-42",
+      "from": "n-42",
+      "to": "n-41",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-43",
+      "from": "n-42",
+      "to": "n-43",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-44",
+      "from": "n-43",
+      "to": "n-44",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-45",
+      "from": "n-44",
+      "to": "n-45",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-46",
+      "from": "n-45",
+      "to": "n-46",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-47",
+      "from": "n-46",
+      "to": "n-47",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-48",
+      "from": "n-47",
+      "to": "n-48",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-49",
+      "from": "n-48",
+      "to": "n-49",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-50",
+      "from": "n-49",
+      "to": "n-50",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-51",
+      "from": "n-51",
+      "to": "n-50",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni Road"
+    },
+    {
+      "id": "seg-52",
+      "from": "n-52",
+      "to": "n-50",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni 1 Lane"
+    },
+    {
+      "id": "seg-53",
+      "from": "n-47",
+      "to": "n-53",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-54",
+      "from": "n-53",
+      "to": "n-54",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-55",
+      "from": "n-54",
+      "to": "n-55",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-56",
+      "from": "n-55",
+      "to": "n-56",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-57",
+      "from": "n-57",
+      "to": "n-45",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-58",
+      "from": "n-42",
+      "to": "n-58",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni 2 Road"
+    },
+    {
+      "id": "seg-59",
+      "from": "n-58",
+      "to": "n-59",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Murni 2 Road"
+    },
+    {
+      "id": "seg-60",
+      "from": "n-41",
+      "to": "n-60",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-61",
+      "from": "n-60",
+      "to": "n-61",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria 2 Road"
+    },
+    {
+      "id": "seg-62",
+      "from": "n-61",
+      "to": "n-62",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria 2 Road"
+    },
+    {
+      "id": "seg-63",
+      "from": "n-60",
+      "to": "n-63",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-64",
+      "from": "n-63",
+      "to": "n-64",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Setia Road"
+    },
+    {
+      "id": "seg-65",
+      "from": "n-64",
+      "to": "n-65",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-66",
+      "from": "n-65",
+      "to": "n-66",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-67",
+      "from": "n-66",
+      "to": "n-67",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-68",
+      "from": "n-67",
+      "to": "n-68",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-69",
+      "from": "n-68",
+      "to": "n-69",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-70",
+      "from": "n-69",
+      "to": "n-70",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-71",
+      "from": "n-63",
+      "to": "n-71",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-72",
+      "from": "n-71",
+      "to": "n-6",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Ria Road"
+    },
+    {
+      "id": "seg-73",
+      "from": "n-62",
+      "to": "n-29",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Damai Road"
+    },
+    {
+      "id": "seg-74",
+      "from": "n-27",
+      "to": "n-72",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-75",
+      "from": "n-72",
+      "to": "n-16",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-76",
+      "from": "n-15",
+      "to": "n-73",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-77",
+      "from": "n-73",
+      "to": "n-74",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-78",
+      "from": "n-74",
+      "to": "n-75",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-79",
+      "from": "n-75",
+      "to": "n-76",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-80",
+      "from": "n-76",
+      "to": "n-77",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-81",
+      "from": "n-78",
+      "to": "n-77",
+      "widthM": 3,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-82",
+      "from": "n-79",
+      "to": "n-78",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-83",
+      "from": "n-79",
+      "to": "n-80",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-84",
+      "from": "n-80",
+      "to": "n-81",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-85",
+      "from": "n-82",
+      "to": "n-81",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-86",
+      "from": "n-82",
+      "to": "n-83",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-87",
+      "from": "n-84",
+      "to": "n-83",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-88",
+      "from": "n-85",
+      "to": "n-84",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-89",
+      "from": "n-83",
+      "to": "n-86",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-90",
+      "from": "n-86",
+      "to": "n-87",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.65,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-91",
+      "from": "n-88",
+      "to": "n-87",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-92",
+      "from": "n-88",
+      "to": "n-89",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-93",
+      "from": "n-89",
+      "to": "n-90",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-94",
+      "from": "n-90",
+      "to": "n-91",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-95",
+      "from": "n-92",
+      "to": "n-91",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-96",
+      "from": "n-92",
+      "to": "n-93",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-97",
+      "from": "n-93",
+      "to": "n-94",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.35
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-98",
+      "from": "n-95",
+      "to": "n-94",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-99",
+      "from": "n-95",
+      "to": "n-96",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-100",
+      "from": "n-96",
+      "to": "n-97",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-101",
+      "from": "n-97",
+      "to": "n-98",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-102",
+      "from": "n-98",
+      "to": "n-99",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-103",
+      "from": "n-99",
+      "to": "n-100",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-104",
+      "from": "n-100",
+      "to": "n-101",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-105",
+      "from": "n-100",
+      "to": "n-102",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-106",
+      "from": "n-102",
+      "to": "n-103",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-107",
+      "from": "n-103",
+      "to": "n-104",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-108",
+      "from": "n-104",
+      "to": "n-105",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-109",
+      "from": "n-106",
+      "to": "n-104",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-110",
+      "from": "n-106",
+      "to": "n-107",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-111",
+      "from": "n-107",
+      "to": "n-108",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-112",
+      "from": "n-108",
+      "to": "n-109",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-113",
+      "from": "n-109",
+      "to": "n-106",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-114",
+      "from": "n-97",
+      "to": "n-110",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-115",
+      "from": "n-110",
+      "to": "n-111",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-116",
+      "from": "n-111",
+      "to": "n-74",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bahagia Road"
+    },
+    {
+      "id": "seg-117",
+      "from": "n-94",
+      "to": "n-78",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-118",
+      "from": "n-95",
+      "to": "n-92",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-119",
+      "from": "n-91",
+      "to": "n-112",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Bakti 1 Road"
+    },
+    {
+      "id": "seg-120",
+      "from": "n-112",
+      "to": "n-113",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Makmur Road"
+    },
+    {
+      "id": "seg-121",
+      "from": "n-113",
+      "to": "n-114",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Makmur Road"
+    },
+    {
+      "id": "seg-122",
+      "from": "n-114",
+      "to": "n-115",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Makmur Road"
+    },
+    {
+      "id": "seg-123",
+      "from": "n-115",
+      "to": "n-116",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Makmur Road"
+    },
+    {
+      "id": "seg-124",
+      "from": "n-116",
+      "to": "n-117",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Makmur Road"
+    },
+    {
+      "id": "seg-125",
+      "from": "n-117",
+      "to": "n-118",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Utama 1 Road"
+    },
+    {
+      "id": "seg-126",
+      "from": "n-118",
+      "to": "n-119",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.05,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-127",
+      "from": "n-119",
+      "to": "n-120",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-128",
+      "from": "n-118",
+      "to": "n-121",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-129",
+      "from": "n-121",
+      "to": "n-122",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.8
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-130",
+      "from": "n-122",
+      "to": "n-123",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-131",
+      "from": "n-123",
+      "to": "n-124",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-132",
+      "from": "n-124",
+      "to": "n-125",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-133",
+      "from": "n-125",
+      "to": "n-126",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-134",
+      "from": "n-126",
+      "to": "n-127",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Mesra Road"
+    },
+    {
+      "id": "seg-135",
+      "from": "n-117",
+      "to": "n-128",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Utama 1 Road"
+    },
+    {
+      "id": "seg-136",
+      "from": "n-128",
+      "to": "n-129",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Utama 1 Road"
+    },
+    {
+      "id": "seg-137",
+      "from": "n-130",
+      "to": "n-129",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-138",
+      "from": "n-129",
+      "to": "n-131",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-139",
+      "from": "n-131",
+      "to": "n-132",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-140",
+      "from": "n-132",
+      "to": "n-133",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-141",
+      "from": "n-134",
+      "to": "n-133",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-142",
+      "from": "n-134",
+      "to": "n-135",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-143",
+      "from": "n-135",
+      "to": "n-136",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-144",
+      "from": "n-136",
+      "to": "n-137",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-145",
+      "from": "n-137",
+      "to": "n-138",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-146",
+      "from": "n-138",
+      "to": "n-128",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-147",
+      "from": "n-135",
+      "to": "n-139",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-148",
+      "from": "n-139",
+      "to": "n-140",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-149",
+      "from": "n-140",
+      "to": "n-134",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-150",
+      "from": "n-140",
+      "to": "n-90",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Bakti Road"
+    },
+    {
+      "id": "seg-151",
+      "from": "n-133",
+      "to": "n-141",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-152",
+      "from": "n-141",
+      "to": "n-1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-153",
+      "from": "n-112",
+      "to": "n-122",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Bakti 1 Road"
+    },
+    {
+      "id": "seg-154",
+      "from": "n-81",
+      "to": "n-142",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-155",
+      "from": "n-142",
+      "to": "n-143",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-156",
+      "from": "n-143",
+      "to": "n-144",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.25,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-157",
+      "from": "n-144",
+      "to": "n-145",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Steps"
+    },
+    {
+      "id": "seg-158",
+      "from": "n-145",
+      "to": "n-146",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.35
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-159",
+      "from": "n-146",
+      "to": "n-147",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-160",
+      "from": "n-147",
+      "to": "n-77",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.45,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-161",
+      "from": "n-79",
+      "to": "n-146",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.45,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-162",
+      "from": "n-74",
+      "to": "n-148",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-163",
+      "from": "n-148",
+      "to": "n-149",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0.3,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-164",
+      "from": "n-149",
+      "to": "n-150",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0.65,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-165",
+      "from": "n-150",
+      "to": "n-151",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 1/109F Road"
+    },
+    {
+      "id": "seg-166",
+      "from": "n-151",
+      "to": "n-152",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 1/109F Road"
+    },
+    {
+      "id": "seg-167",
+      "from": "n-152",
+      "to": "n-153",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 1/109F Road"
+    },
+    {
+      "id": "seg-168",
+      "from": "n-153",
+      "to": "n-154",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 1/109F Road"
+    },
+    {
+      "id": "seg-169",
+      "from": "n-154",
+      "to": "n-155",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 1/109F Road"
+    },
+    {
+      "id": "seg-170",
+      "from": "n-155",
+      "to": "n-156",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 3/109F Road"
+    },
+    {
+      "id": "seg-171",
+      "from": "n-156",
+      "to": "n-157",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-172",
+      "from": "n-157",
+      "to": "n-158",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-173",
+      "from": "n-158",
+      "to": "n-159",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-174",
+      "from": "n-159",
+      "to": "n-160",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-175",
+      "from": "n-160",
+      "to": "n-161",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-176",
+      "from": "n-161",
+      "to": "n-162",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.95
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-177",
+      "from": "n-162",
+      "to": "n-163",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.8
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-178",
+      "from": "n-164",
+      "to": "n-163",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 4/109F Road"
+    },
+    {
+      "id": "seg-179",
+      "from": "n-165",
+      "to": "n-164",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 4/109F Road"
+    },
+    {
+      "id": "seg-180",
+      "from": "n-166",
+      "to": "n-167",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.95,
+        "12:00": 0.9,
+        "14:00": 0,
+        "17:00": 0.95
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-181",
+      "from": "n-167",
+      "to": "n-165",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0.75,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-182",
+      "from": "n-166",
+      "to": "n-168",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 5/109F Road"
+    },
+    {
+      "id": "seg-183",
+      "from": "n-169",
+      "to": "n-166",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 5/109F Road"
+    },
+    {
+      "id": "seg-184",
+      "from": "n-170",
+      "to": "n-169",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 3/109F Road"
+    },
+    {
+      "id": "seg-185",
+      "from": "n-170",
+      "to": "n-171",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-186",
+      "from": "n-171",
+      "to": "n-172",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-187",
+      "from": "n-169",
+      "to": "n-173",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.95,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.95
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 3/109F Road"
+    },
+    {
+      "id": "seg-188",
+      "from": "n-173",
+      "to": "n-164",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.75,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 3/109F Road"
+    },
+    {
+      "id": "seg-189",
+      "from": "n-161",
+      "to": "n-169",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 2/109F Road"
+    },
+    {
+      "id": "seg-190",
+      "from": "n-163",
+      "to": "n-158",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: 4/109F Road"
+    },
+    {
+      "id": "seg-191",
+      "from": "n-153",
+      "to": "n-158",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: 4/109F Road"
+    },
+    {
+      "id": "seg-192",
+      "from": "n-151",
+      "to": "n-174",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-193",
+      "from": "n-174",
+      "to": "n-175",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-194",
+      "from": "n-175",
+      "to": "n-176",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0.5,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-195",
+      "from": "n-176",
+      "to": "n-177",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0.15,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-196",
+      "from": "n-177",
+      "to": "n-178",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-197",
+      "from": "n-179",
+      "to": "n-178",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0.15,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-198",
+      "from": "n-180",
+      "to": "n-179",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-199",
+      "from": "n-180",
+      "to": "n-181",
+      "widthM": 3,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-200",
+      "from": "n-181",
+      "to": "n-178",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.25,
+        "12:00": 0.25,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-201",
+      "from": "n-179",
+      "to": "n-176",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 1,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-202",
+      "from": "n-174",
+      "to": "n-177",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0.5,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-203",
+      "from": "n-150",
+      "to": "n-170",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.35
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: 3/109F Road"
+    },
+    {
+      "id": "seg-204",
+      "from": "n-180",
+      "to": "n-149",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 1,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-205",
+      "from": "n-13",
+      "to": "n-62",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Damai Road"
+    },
+    {
+      "id": "seg-206",
+      "from": "n-64",
+      "to": "n-12",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Setia Road"
+    },
+    {
+      "id": "seg-207",
+      "from": "n-8",
+      "to": "n-76",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Desa Jaya Road"
+    },
+    {
+      "id": "seg-208",
+      "from": "n-182",
+      "to": "n-5",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-209",
+      "from": "n-2",
+      "to": "n-183",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: Desa Utama Road"
+    },
+    {
+      "id": "seg-210",
+      "from": "n-183",
+      "to": "n-184",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: Desa Utama Road"
+    },
+    {
+      "id": "seg-211",
+      "from": "n-184",
+      "to": "n-185",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: Desa Utama Road"
+    },
+    {
+      "id": "seg-212",
+      "from": "n-185",
+      "to": "n-186",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: Desa Utama Road"
+    },
+    {
+      "id": "seg-213",
+      "from": "n-186",
+      "to": "n-187",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.45,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane: Desa Utama Road"
+    },
+    {
+      "id": "seg-214",
+      "from": "n-1",
+      "to": "n-188",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-215",
+      "from": "n-188",
+      "to": "n-189",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-216",
+      "from": "n-189",
+      "to": "n-190",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-217",
+      "from": "n-190",
+      "to": "n-191",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-218",
+      "from": "n-191",
+      "to": "n-192",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: Desa Utama Road"
+    },
+    {
+      "id": "seg-219",
+      "from": "n-191",
+      "to": "n-193",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: Morib Road"
+    },
+    {
+      "id": "seg-220",
+      "from": "n-193",
+      "to": "n-194",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-221",
+      "from": "n-194",
+      "to": "n-195",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-222",
+      "from": "n-193",
+      "to": "n-196",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-223",
+      "from": "n-196",
+      "to": "n-197",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Path"
+    },
+    {
+      "id": "seg-224",
+      "from": "n-197",
+      "to": "n-198",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Path"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "dest-home-1",
+      "nodeId": "n-61",
+      "name": "Homes (south-west)",
+      "kind": "home"
+    },
+    {
+      "id": "dest-home-2",
+      "nodeId": "n-118",
+      "name": "Homes (north)",
+      "kind": "home"
+    },
+    {
+      "id": "dest-school",
+      "nodeId": "n-102",
+      "name": "School",
+      "kind": "school",
+      "localName": "Sekolah Menengah Kebangsaan Taman Desa"
+    },
+    {
+      "id": "dest-bus-stop",
+      "nodeId": "n-101",
+      "name": "Bus stop",
+      "kind": "bus-stop",
+      "localName": "SMK Taman Desa"
+    },
+    {
+      "id": "dest-shops",
+      "nodeId": "n-169",
+      "name": "Shop",
+      "kind": "shops",
+      "localName": "Hotlink"
+    },
+    {
+      "id": "dest-clinic",
+      "nodeId": "n-157",
+      "name": "Clinic",
+      "kind": "clinic",
+      "localName": "Poliklinik Kumpulan City"
+    },
+    {
+      "id": "dest-park",
+      "nodeId": "n-135",
+      "name": "Park",
+      "kind": "park"
+    }
+  ],
+  "meta": {
+    "name": "Taman Desa, Kuala Lumpur",
+    "center": [
+      3.102,
+      101.684
+    ],
+    "radiusM": 450,
+    "source": "openstreetmap",
+    "attribution": "Map data © OpenStreetMap contributors (ODbL)",
+    "generatedAt": "2026-10-15",
+    "assumptions": [
+      "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
+      "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
+      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
+    ],
+    "budget": {
+      "max": 250000,
+      "step": 5000,
+      "demo": 100000
+    },
+    "demoJourneyId": "j-home-1-shops"
+  }
+}

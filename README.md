@@ -18,12 +18,12 @@ npm run build && npm run preview   # production build; works offline except map 
 
 - Copy `.env.example` to `.env`. Set `VITE_ENABLE_AI=true` to show the AI panels. With no `ANTHROPIC_API_KEY` the server returns clearly labelled **mock** results, so the demo never depends on the network.
 - Click **Demo: 2 pm walk to the shops** to load the demo scenario.
-- The app uses real OpenStreetMap data for SS 4, Petaling Jaya (`data/osm/`). Set `VITE_DATASET=seed` for the invented offline dataset. Refreshing or changing the area is described in `data/README.md`.
+- The app shows **real OpenStreetMap areas across the Klang Valley**. Pick one in the header, or click **Look up a place** to search any town or neighbourhood: the browser downloads its map data and analyses it on the spot (needs the internet). `?area=seed` loads the invented offline neighbourhood. Details in `data/README.md`.
 - Pitch material is in `pitch/`.
 
 ## Screenshots
 
-Real streets, buildings and places from OpenStreetMap for SS 4, Petaling Jaya. Shade, trips and costs are **modelled estimates** (see "How this was built" in the app). Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
+Real streets, buildings and places from OpenStreetMap (shown: SS 4, Petaling Jaya). Shade, trips and costs are **modelled estimates** (see "How this was built" in the app). Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
 
 **Before / After swipe.** Drag the divider to compare the surveyed network with the recommended plan. The amber dashed lines are paths in direct sun.
 
@@ -32,6 +32,10 @@ Real streets, buildings and places from OpenStreetMap for SS 4, Petaling Jaya. S
 **See the area.** "Map layers" switches the background (Streets, Light, Satellite, None) and shows buildings, parks, mapped trees and landmarks. The area layers work offline.
 
 ![Satellite background with the Map layers panel open](docs/screenshots/06-area-layers-satellite.png)
+
+**Any area in the Klang Valley.** The header's area picker switches between 15 shipped townships (Petaling Jaya, Subang Jaya, Shah Alam, Kuala Lumpur and the outer valley). **Look up a place** searches any town or neighbourhood, then downloads and analyses it in the browser.
+
+![Look up a place panel with search results](docs/screenshots/07-place-search.png)
 
 **Now / Future canopy.** Young trees give little shade today and a lot at maturity, so the best plan changes with the growth year.
 

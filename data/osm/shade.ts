@@ -16,7 +16,8 @@ const COVERED_SHADE = 0.95;
 const SHADE_STEP = 0.05;
 const TREE_CROWN_RADIUS_M = 3;
 const TREE_HEIGHT_M = 6;
-const MALAYSIA_UTC_OFFSET_H = 8;
+/** Malaysia is UTC+8, whatever its longitude suggests. */
+export const MALAYSIA_UTC_OFFSET_H = 8;
 
 export const SLOT_HOURS: Readonly<Record<TimeSlot, number>> = {
   '09:00': 9,
@@ -32,8 +33,14 @@ export interface Sun {
   direction: XY;
 }
 
-/** NOAA-style approximation, accurate to about a degree. `localHour` is clock time in UTC+8. */
-export function sunPosition(latDeg: number, lngDeg: number, dayOfYear: number, localHour: number): Sun {
+/** NOAA-style approximation, accurate to about a degree. `localHour` is clock time in `utcOffsetH`. */
+export function sunPosition(
+  latDeg: number,
+  lngDeg: number,
+  dayOfYear: number,
+  localHour: number,
+  utcOffsetH: number = MALAYSIA_UTC_OFFSET_H,
+): Sun {
   const gamma = ((2 * Math.PI) / 365) * (dayOfYear - 1 + (localHour - 12) / 24);
   const equationOfTime =
     229.18 *
@@ -50,7 +57,7 @@ export function sunPosition(latDeg: number, lngDeg: number, dayOfYear: number, l
     0.000907 * Math.sin(2 * gamma) -
     0.002697 * Math.cos(3 * gamma) +
     0.00148 * Math.sin(3 * gamma);
-  const solarMinutes = localHour * 60 + equationOfTime + 4 * lngDeg - 60 * MALAYSIA_UTC_OFFSET_H;
+  const solarMinutes = localHour * 60 + equationOfTime + 4 * lngDeg - 60 * utcOffsetH;
   const hourAngle = (solarMinutes / 4 - 180) * RAD;
   const lat = latDeg * RAD;
 

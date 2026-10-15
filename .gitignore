@@ -7,3 +7,5 @@ coverage/
 !.env.example
 .DS_Store
 *.log
+# Raw OpenStreetMap downloads (re-fetch with npm run data:areas)
+data/areas/*/raw.json
