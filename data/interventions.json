@@ -1,0 +1,124 @@
+[
+  {
+    "id": "shelter-connector",
+    "type": "shelter",
+    "name": "Connector shelter (240 m)",
+    "segmentIds": [
+      "seg-connector-1",
+      "seg-connector-2",
+      "seg-connector-3"
+    ],
+    "installCost": 18000,
+    "annualMaintenance": 450,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-bus",
+    "type": "shelter",
+    "name": "Bus stop approach shelter",
+    "segmentIds": [
+      "seg-b1-bus"
+    ],
+    "installCost": 7500,
+    "annualMaintenance": 200,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "approved",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-school",
+    "type": "shelter",
+    "name": "School gate shelter",
+    "segmentIds": [
+      "seg-sc1-school"
+    ],
+    "installCost": 6000,
+    "annualMaintenance": 160,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "tree-home-a",
+    "type": "tree",
+    "name": "Street tree, Home A lane",
+    "segmentIds": [
+      "seg-home-a-w1"
+    ],
+    "installCost": 1800,
+    "annualMaintenance": 120,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.8,
+    "yearsToMature": 6,
+    "feasibility": "approved",
+    "costSource": "estimated"
+  },
+  {
+    "id": "tree-home-b",
+    "type": "tree",
+    "name": "Street tree, Home B lane",
+    "segmentIds": [
+      "seg-home-b-w3"
+    ],
+    "installCost": 1800,
+    "annualMaintenance": 120,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.8,
+    "yearsToMature": 6,
+    "feasibility": "approved",
+    "costSource": "estimated"
+  },
+  {
+    "id": "tree-shops",
+    "type": "tree",
+    "name": "Shade tree, shop row",
+    "segmentIds": [
+      "seg-c4-shops"
+    ],
+    "installCost": 2200,
+    "annualMaintenance": 130,
+    "shadeNow": 0.15,
+    "shadeFuture": 0.75,
+    "yearsToMature": 7,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "tree-connector-mid",
+    "type": "tree",
+    "name": "Mid-connector tree",
+    "segmentIds": [
+      "seg-connector-2"
+    ],
+    "installCost": 2500,
+    "annualMaintenance": 140,
+    "shadeNow": 0.25,
+    "shadeFuture": 0.85,
+    "yearsToMature": 8,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "tree-school",
+    "type": "tree",
+    "name": "Shade tree, school approach",
+    "segmentIds": [
+      "seg-c4-sc1"
+    ],
+    "installCost": 2000,
+    "annualMaintenance": 120,
+    "shadeNow": 0.15,
+    "shadeFuture": 0.7,
+    "yearsToMature": 5,
+    "feasibility": "approved",
+    "costSource": "estimated"
+  }
+]

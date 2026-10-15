@@ -1,0 +1,683 @@
+{
+  "nodes": [
+    {
+      "id": "n-home-a",
+      "lat": 3.108398,
+      "lng": 101.607,
+      "label": "Home cluster A"
+    },
+    {
+      "id": "n-home-b",
+      "lat": 3.106602,
+      "lng": 101.607,
+      "label": "Home cluster B"
+    },
+    {
+      "id": "n-w1",
+      "lat": 3.108398,
+      "lng": 101.60754
+    },
+    {
+      "id": "n-w2",
+      "lat": 3.1075,
+      "lng": 101.60754
+    },
+    {
+      "id": "n-w3",
+      "lat": 3.106602,
+      "lng": 101.60754
+    },
+    {
+      "id": "n-m1",
+      "lat": 3.1075,
+      "lng": 101.608619
+    },
+    {
+      "id": "n-c1",
+      "lat": 3.1075,
+      "lng": 101.609699
+    },
+    {
+      "id": "n-c2",
+      "lat": 3.1075,
+      "lng": 101.610419
+    },
+    {
+      "id": "n-c3",
+      "lat": 3.1075,
+      "lng": 101.611138
+    },
+    {
+      "id": "n-c4",
+      "lat": 3.1075,
+      "lng": 101.611858
+    },
+    {
+      "id": "n-shops",
+      "lat": 3.1075,
+      "lng": 101.612398,
+      "label": "Shop row"
+    },
+    {
+      "id": "n-b1",
+      "lat": 3.108174,
+      "lng": 101.611858
+    },
+    {
+      "id": "n-bus",
+      "lat": 3.108847,
+      "lng": 101.611858,
+      "label": "Bus stop"
+    },
+    {
+      "id": "n-sc1",
+      "lat": 3.106781,
+      "lng": 101.611858
+    },
+    {
+      "id": "n-school",
+      "lat": 3.106781,
+      "lng": 101.612398,
+      "label": "Sekolah"
+    },
+    {
+      "id": "n-hm",
+      "lat": 3.1075,
+      "lng": 101.607
+    },
+    {
+      "id": "n-nl1",
+      "lat": 3.110195,
+      "lng": 101.60754
+    },
+    {
+      "id": "n-nl2",
+      "lat": 3.110195,
+      "lng": 101.609699
+    },
+    {
+      "id": "n-nl3",
+      "lat": 3.110195,
+      "lng": 101.611858
+    },
+    {
+      "id": "n-sl1",
+      "lat": 3.104536,
+      "lng": 101.6079
+    },
+    {
+      "id": "n-sl2",
+      "lat": 3.104536,
+      "lng": 101.611858
+    },
+    {
+      "id": "seg-north-n1",
+      "lat": 3.109297,
+      "lng": 101.60754
+    },
+    {
+      "id": "seg-north-b-n1",
+      "lat": 3.110195,
+      "lng": 101.608619
+    },
+    {
+      "id": "seg-north-c-n1",
+      "lat": 3.110195,
+      "lng": 101.610778
+    },
+    {
+      "id": "seg-north-d-n1",
+      "lat": 3.109521,
+      "lng": 101.611858
+    },
+    {
+      "id": "seg-south-n1",
+      "lat": 3.105569,
+      "lng": 101.60772
+    },
+    {
+      "id": "seg-south-b-n1",
+      "lat": 3.104536,
+      "lng": 101.608889
+    },
+    {
+      "id": "seg-south-b-n2",
+      "lat": 3.104536,
+      "lng": 101.609879
+    },
+    {
+      "id": "seg-south-b-n3",
+      "lat": 3.104536,
+      "lng": 101.610868
+    },
+    {
+      "id": "seg-south-c-n1",
+      "lat": 3.105658,
+      "lng": 101.611858
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-home-a-w1",
+      "from": "n-home-a",
+      "to": "n-w1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Home A access lane"
+    },
+    {
+      "id": "seg-home-b-w3",
+      "from": "n-home-b",
+      "to": "n-w3",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Home B access lane"
+    },
+    {
+      "id": "seg-w1-w2",
+      "from": "n-w1",
+      "to": "n-w2",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true
+    },
+    {
+      "id": "seg-w2-w3",
+      "from": "n-w2",
+      "to": "n-w3",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true
+    },
+    {
+      "id": "seg-ha-hm-1",
+      "from": "n-home-a",
+      "to": "n-hm",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Cut-through between clusters"
+    },
+    {
+      "id": "seg-hb-hm-1",
+      "from": "n-home-b",
+      "to": "n-hm",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Cut-through between clusters"
+    },
+    {
+      "id": "seg-hm-w2",
+      "from": "n-hm",
+      "to": "n-w2",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true
+    },
+    {
+      "id": "seg-w2-m1",
+      "from": "n-w2",
+      "to": "n-m1",
+      "widthM": 2.2,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Tree-lined collector road"
+    },
+    {
+      "id": "seg-m1-c1",
+      "from": "n-m1",
+      "to": "n-c1",
+      "widthM": 2.2,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Tree-lined collector road"
+    },
+    {
+      "id": "seg-connector-1",
+      "from": "n-c1",
+      "to": "n-c2",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.3,
+        "12:00": 0.1,
+        "14:00": 0.05,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Exposed shared connector"
+    },
+    {
+      "id": "seg-connector-2",
+      "from": "n-c2",
+      "to": "n-c3",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.3,
+        "12:00": 0.1,
+        "14:00": 0.05,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Exposed shared connector"
+    },
+    {
+      "id": "seg-connector-3",
+      "from": "n-c3",
+      "to": "n-c4",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.3,
+        "12:00": 0.1,
+        "14:00": 0.05,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Exposed shared connector"
+    },
+    {
+      "id": "seg-c4-shops",
+      "from": "n-c4",
+      "to": "n-shops",
+      "widthM": 2.4,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Shop row frontage"
+    },
+    {
+      "id": "seg-c4-b1",
+      "from": "n-c4",
+      "to": "n-b1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.9,
+        "12:00": 0.8,
+        "14:00": 0.7,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true
+    },
+    {
+      "id": "seg-b1-bus",
+      "from": "n-b1",
+      "to": "n-bus",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Open approach to bus stop"
+    },
+    {
+      "id": "seg-c4-sc1",
+      "from": "n-c4",
+      "to": "n-sc1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true
+    },
+    {
+      "id": "seg-sc1-school",
+      "from": "n-sc1",
+      "to": "n-school",
+      "widthM": 2.4,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "School gate approach"
+    },
+    {
+      "id": "seg-north-1",
+      "from": "n-w1",
+      "to": "seg-north-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-2",
+      "from": "seg-north-n1",
+      "to": "n-nl1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-b-1",
+      "from": "n-nl1",
+      "to": "seg-north-b-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-b-2",
+      "from": "seg-north-b-n1",
+      "to": "n-nl2",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-c-1",
+      "from": "n-nl2",
+      "to": "seg-north-c-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-c-2",
+      "from": "seg-north-c-n1",
+      "to": "n-nl3",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-d-1",
+      "from": "n-nl3",
+      "to": "seg-north-d-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-north-d-2",
+      "from": "seg-north-d-n1",
+      "to": "n-bus",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Northern ring road"
+    },
+    {
+      "id": "seg-south-1",
+      "from": "n-w3",
+      "to": "seg-south-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-2",
+      "from": "seg-south-n1",
+      "to": "n-sl1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-b-1",
+      "from": "n-sl1",
+      "to": "seg-south-b-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-b-2",
+      "from": "seg-south-b-n1",
+      "to": "seg-south-b-n2",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-b-3",
+      "from": "seg-south-b-n2",
+      "to": "seg-south-b-n3",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-b-4",
+      "from": "seg-south-b-n3",
+      "to": "n-sl2",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0.4,
+        "14:00": 0.3,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-c-1",
+      "from": "n-sl2",
+      "to": "seg-south-c-n1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    },
+    {
+      "id": "seg-south-c-2",
+      "from": "seg-south-c-n1",
+      "to": "n-sc1",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0.15,
+        "14:00": 0.1,
+        "17:00": 0.3
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Southern ring road"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "dest-home-a",
+      "nodeId": "n-home-a",
+      "name": "Home cluster A",
+      "kind": "home"
+    },
+    {
+      "id": "dest-home-b",
+      "nodeId": "n-home-b",
+      "name": "Home cluster B",
+      "kind": "home"
+    },
+    {
+      "id": "dest-school",
+      "nodeId": "n-school",
+      "name": "Sekolah",
+      "kind": "school"
+    },
+    {
+      "id": "dest-bus",
+      "nodeId": "n-bus",
+      "name": "Bus stop",
+      "kind": "bus-stop"
+    },
+    {
+      "id": "dest-shops",
+      "nodeId": "n-shops",
+      "name": "Shop row",
+      "kind": "shops"
+    }
+  ]
+}

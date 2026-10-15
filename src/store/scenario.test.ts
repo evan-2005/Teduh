@@ -1,0 +1,39 @@
+import { beforeEach, describe, expect, test } from 'vitest';
+import { DEFAULT_SCENARIO } from '../config';
+import { useScenarioStore } from './scenario';
+
+describe('scenario store', () => {
+  beforeEach(() => {
+    useScenarioStore.setState({
+      scenario: DEFAULT_SCENARIO,
+      shadeOverrides: [],
+      selectedInterventionId: null,
+    });
+  });
+
+  test('setScenario merges a patch without mutating the previous scenario', () => {
+    const before = useScenarioStore.getState().scenario;
+    useScenarioStore.getState().setScenario({ budget: 10_000 });
+    const after = useScenarioStore.getState().scenario;
+    expect(after.budget).toBe(10_000);
+    expect(after.time).toBe(before.time);
+    expect(before.budget).toBe(DEFAULT_SCENARIO.budget);
+  });
+
+  test('applyShadeOverride replaces an override for the same segment and time', () => {
+    const { applyShadeOverride } = useScenarioStore.getState();
+    applyShadeOverride({ segmentId: 's1', time: '14:00', shade: 0.2, source: 'ai-confirmed' });
+    applyShadeOverride({ segmentId: 's1', time: '14:00', shade: 0.6, source: 'ai-confirmed' });
+    applyShadeOverride({ segmentId: 's1', time: '12:00', shade: 0.4, source: 'ai-confirmed' });
+    const overrides = useScenarioStore.getState().shadeOverrides;
+    expect(overrides).toHaveLength(2);
+    expect(overrides.find((o) => o.time === '14:00')?.shade).toBe(0.6);
+  });
+
+  test('selectIntervention stores and clears the selection', () => {
+    useScenarioStore.getState().selectIntervention('shelter-connector');
+    expect(useScenarioStore.getState().selectedInterventionId).toBe('shelter-connector');
+    useScenarioStore.getState().selectIntervention(null);
+    expect(useScenarioStore.getState().selectedInterventionId).toBeNull();
+  });
+});
