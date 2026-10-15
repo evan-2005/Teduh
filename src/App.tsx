@@ -1,13 +1,13 @@
+import { ControlsPanel } from './components/ControlsPanel';
+import { MapView } from './components/MapView';
+import { RouteComparison } from './components/RouteComparison';
 import { ENABLE_AI, FOOTER_DISCLAIMER } from './config';
-import { loadDataset } from './data/load';
-import { FabricationPanel } from './features/fabrication';
 import { PlanExplainer, ShadeScanPanel } from './features/ai-scan';
-
-// Loaded once at startup; throws a readable error if data/*.json is invalid.
-const dataset = loadDataset();
+import { FabricationPanel } from './features/fabrication';
+import { useNetworkView } from './hooks/useNetworkView';
 
 export function App() {
-  const { segments, destinations } = dataset.neighbourhood;
+  const { shade, journey, comparison } = useNetworkView();
   return (
     <div className="shell">
       <header className="shell__header">
@@ -16,23 +16,16 @@ export function App() {
       </header>
 
       <aside className="shell__controls" aria-label="Controls">
-        <h2 className="panel__title">Controls</h2>
-        <p className="panel__hint">Budget, time, detour and priorities arrive in Phase 3.</p>
+        <ControlsPanel />
       </aside>
 
       <main className="shell__map" aria-label="Map">
-        <div className="map-placeholder">
-          <h2 className="panel__title">Map</h2>
-          <p className="panel__hint">
-            Seed data loaded: {segments.length} path segments, {destinations.length} destinations,{' '}
-            {dataset.interventions.length} candidate interventions.
-          </p>
-        </div>
+        <MapView shade={shade} comparison={comparison} />
       </main>
 
       <aside className="shell__results" aria-label="Results">
         <h2 className="panel__title">Results</h2>
-        <p className="panel__hint">Plan metrics arrive in Phase 3.</p>
+        <RouteComparison journey={journey} comparison={comparison} />
         <FabricationPanel />
         {ENABLE_AI && <ShadeScanPanel />}
         {ENABLE_AI && <PlanExplainer />}

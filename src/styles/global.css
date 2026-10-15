@@ -78,13 +78,9 @@ body {
 
 .shell__map {
   grid-area: map;
-  display: grid;
-  place-items: center;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0 23px,
-    color-mix(in srgb, var(--color-rule) 60%, transparent) 23px 24px
-  );
+  position: relative;
+  min-height: 0;
+  background: var(--color-paper);
 }
 
 .shell__footer {
@@ -104,14 +100,6 @@ body {
 .panel__hint {
   margin: 0 0 var(--space-3);
   color: var(--color-ink-soft);
-}
-
-.map-placeholder {
-  max-width: 28rem;
-  padding: var(--space-4);
-  border: 1px dashed var(--color-canopy);
-  background: var(--color-card);
-  text-align: center;
 }
 
 .card {
