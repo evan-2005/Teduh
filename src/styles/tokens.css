@@ -8,9 +8,9 @@
   --color-rule: #d9d3c1;
   --color-card: #fffdf6;
 
-  --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --font-serif: 'Zilla Slab', Rockwell, 'Roboto Slab', Georgia, serif;
+  --font-sans: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

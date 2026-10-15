@@ -68,7 +68,9 @@ export function ResultsPanel({ plans, selectedPlan }: ResultsPanelProps) {
 
       {hasSelection && contributions.length > 1 && (
         <section aria-label="Contribution of each intervention">
-          <h3 className="card__title">What each one adds</h3>
+          <h3 className="card__title">
+            What each one adds <SourceBadge source="estimated" />
+          </h3>
           <ul className="contributions">
             {contributions.map(([id, minutes]) => (
               <li key={id}>

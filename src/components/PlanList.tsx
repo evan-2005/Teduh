@@ -3,6 +3,7 @@ import { formatMyr, formatPedestrianSun } from '../lib/format';
 import { pedestrianSunMinutesAvoided } from '../lib/optimizer';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
+import { SourceBadge } from './SourceBadge';
 
 const nameOf = (id: string): string =>
   dataset.interventions.find((i) => i.id === id)?.name ?? id;
@@ -33,7 +34,7 @@ export function PlanList({ plans }: { plans: readonly PlanResult[] }) {
                 <span className="plan__rank">{index === 0 ? 'Best' : `Option ${index + 1}`}</span>
                 <span className="plan__items">{plan.interventionIds.map(nameOf).join(' + ')}</span>
                 <span className="plan__meta num">
-                  {formatMyr(plan.installCost)} · {sun.value} {sun.unit}/day
+                  {formatMyr(plan.installCost)} · {sun.value} {sun.unit}/day <SourceBadge source="estimated" />
                 </span>
               </button>
             </li>

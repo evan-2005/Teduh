@@ -277,6 +277,7 @@
 
 .headline__value {
   margin: 0;
+  font-weight: 600;
   font-family: var(--font-serif);
   font-size: 3rem;
   line-height: 1;
@@ -604,4 +605,27 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   white-space: pre-wrap;
+}
+
+.map.leaflet-container {
+  background: var(--color-paper);
+}
+
+.bom {
+  table-layout: fixed;
+  font-size: 0.78rem;
+}
+
+.bom th:nth-child(1) {
+  width: 44%;
+}
+
+.bom th:nth-child(2),
+.bom td:nth-child(2) {
+  width: 27%;
+}
+
+.bom th,
+.bom td {
+  padding-left: 4px;
 }

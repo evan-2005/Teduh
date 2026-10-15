@@ -20,6 +20,30 @@ npm run build && npm run preview   # production build; works offline except map 
 - Click **Demo: 2 pm walk to the shops** to load the demo scenario.
 - Pitch material is in `pitch/`; replacing the synthetic data is described in `data/README.md`.
 
+## Screenshots
+
+Illustrative prototype data on a synthetic neighbourhood. Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
+
+**Before / After swipe.** The amber dashed connector (direct sun) turns green once the recommended shelter is applied. Drag the divider to compare.
+
+![Before and after swipe, with the recommended plan and results panel](docs/screenshots/01-before-after-swipe.png)
+
+**Now / Future canopy.** Young trees give little shade today and a lot at maturity, so the best plan changes with the growth year.
+
+![Future canopy at year 10 with a tree-heavy recommended plan](docs/screenshots/02-future-canopy.png)
+
+**Fabrication pack.** Click a shelter or tree marker for its dimensions, bill of materials, elevation drawing and CSV/JSON export. Output is indicative only.
+
+![Fabrication pack for the connector shelter](docs/screenshots/03-fabrication-pack.png)
+
+**AI shade scan.** A survey photo gets a shade estimate that only reaches the map after a person confirms it (the sample photo here is a placeholder, and without an API key the estimate is a labelled MOCK).
+
+![AI shade scan with a confirmed estimate](docs/screenshots/04-ai-shade-scan.png)
+
+**Plan explainer.** A written summary built only from numbers the calculator produced.
+
+![Plan explainer summary](docs/screenshots/05-plan-explainer.png)
+
 ---
 
 ## 0. Instructions for Claude (read first)
