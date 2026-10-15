@@ -17,6 +17,8 @@ const MODULES_PER_LABOUR_DAY = 2;
 const TREE_PIT = { lengthM: 1.2, widthM: 1.2, depthM: 1.0 } as const;
 const TREE_STAKES = 3;
 const MAINTENANCE_MONTHS = 24;
+const TREE_SPACING_M = 8;
+const TREES_PER_CARE_VISIT = 10;
 const CENTS = 100;
 
 const round2 = (value: number): number => Math.round(value * CENTS) / CENTS;
@@ -104,19 +106,28 @@ export function buildShelterSpec(
   };
 }
 
-/** Tree spec: planting pit, materials and a two-year care plan, with species to verify. */
-export function generateTreeSpec(intervention: Intervention, unitCosts: UnitCosts): FabricationSpec {
+/**
+ * Tree spec: a planting pit per tree, materials and a two-year care plan, with species to verify.
+ * `rowLengthM` > 0 plans a row of trees every ${TREE_SPACING_M} m; otherwise it is a single tree.
+ */
+export function generateTreeSpec(
+  intervention: Intervention,
+  unitCosts: UnitCosts,
+  rowLengthM = 0,
+): FabricationSpec {
+  const trees = Math.max(1, Math.ceil(rowLengthM / TREE_SPACING_M));
   const pitVolumeM3 = TREE_PIT.lengthM * TREE_PIT.widthM * TREE_PIT.depthM;
   const barrierM = 2 * (TREE_PIT.lengthM + TREE_PIT.widthM);
+  const careVisits = MAINTENANCE_MONTHS * Math.ceil(trees / TREES_PER_CARE_VISIT);
 
   const { bom, totalCost } = withContingency(
     [
-      bomLine(unitCosts, 'sapling', 1),
-      bomLine(unitCosts, 'soilMix', pitVolumeM3),
-      bomLine(unitCosts, 'rootBarrier', barrierM),
-      bomLine(unitCosts, 'treeGuard', 1),
-      bomLine(unitCosts, 'stake', TREE_STAKES),
-      bomLine(unitCosts, 'maintenanceVisit', MAINTENANCE_MONTHS),
+      bomLine(unitCosts, 'sapling', trees),
+      bomLine(unitCosts, 'soilMix', trees * pitVolumeM3),
+      bomLine(unitCosts, 'rootBarrier', trees * barrierM),
+      bomLine(unitCosts, 'treeGuard', trees),
+      bomLine(unitCosts, 'stake', trees * TREE_STAKES),
+      bomLine(unitCosts, 'maintenanceVisit', careVisits),
     ],
     unitCosts.contingencyRate,
   );
@@ -129,19 +140,22 @@ export function generateTreeSpec(intervention: Intervention, unitCosts: UnitCost
     interventionId: intervention.id,
     type: 'tree',
     dimensions: {
+      trees,
+      rowLengthM: round2(rowLengthM),
       pitLengthM: TREE_PIT.lengthM,
       pitWidthM: TREE_PIT.widthM,
       pitDepthM: TREE_PIT.depthM,
-      soilVolumeM3: round2(pitVolumeM3),
-      rootBarrierM: round2(barrierM),
-      stakes: TREE_STAKES,
-      maintenanceVisits: MAINTENANCE_MONTHS,
+      soilVolumeM3: round2(trees * pitVolumeM3),
+      rootBarrierM: round2(trees * barrierM),
+      stakes: trees * TREE_STAKES,
+      maintenanceVisits: careVisits,
     },
     bom,
     totalCost,
     assumptions: [
-      `Pit ${TREE_PIT.lengthM} x ${TREE_PIT.widthM} x ${TREE_PIT.depthM} m, backfilled with soil mix.`,
-      `Two-year care plan: one visit a month (${MAINTENANCE_MONTHS} visits).`,
+      `${trees} tree(s), spaced about ${TREE_SPACING_M} m apart along the row.`,
+      `Each pit ${TREE_PIT.lengthM} x ${TREE_PIT.widthM} x ${TREE_PIT.depthM} m, backfilled with soil mix.`,
+      `Two-year care plan: monthly visits, one crew visit per ${TREES_PER_CARE_VISIT} trees (${careVisits} visits).`,
       `Suggested species, to verify with the landscape team: ${species || 'none listed'}.`,
       `Unit costs are ${unitCosts.costSource} (${unitCosts.currency}), not contractor quotes.`,
     ],

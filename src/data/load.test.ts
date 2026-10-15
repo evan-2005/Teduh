@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
-import neighbourhoodRaw from '../../data/neighbourhood.json';
-import interventionsRaw from '../../data/interventions.json';
-import journeysRaw from '../../data/journeys.json';
+import neighbourhoodRaw from '../../data/seed/neighbourhood.json';
+import interventionsRaw from '../../data/seed/interventions.json';
+import journeysRaw from '../../data/seed/journeys.json';
 import unitCostsRaw from '../../data/unit-costs.json';
 import { loadDataset, parseDataset } from './load';
 
@@ -14,7 +14,7 @@ const raw = {
 
 describe('seed dataset', () => {
   test('loads and satisfies the Phase 0 spec', () => {
-    const data = loadDataset();
+    const data = loadDataset('seed');
     expect(data.neighbourhood.segments.length).toBeGreaterThanOrEqual(20);
     expect(data.neighbourhood.segments.length).toBeLessThanOrEqual(40);
     expect(data.neighbourhood.destinations).toHaveLength(5);

@@ -78,7 +78,7 @@
       "id": "n-school",
       "lat": 3.106781,
       "lng": 101.612398,
-      "label": "Sekolah"
+      "label": "School"
     },
     {
       "id": "n-hm",
@@ -664,7 +664,7 @@
     {
       "id": "dest-school",
       "nodeId": "n-school",
-      "name": "Sekolah",
+      "name": "School",
       "kind": "school"
     },
     {
@@ -679,5 +679,22 @@
       "name": "Shop row",
       "kind": "shops"
     }
-  ]
+  ],
+  "meta": {
+    "name": "Synthetic demo neighbourhood",
+    "center": [
+      3.1075,
+      101.607
+    ],
+    "source": "synthetic",
+    "assumptions": [
+      "Invented layout for testing and offline demos. Not a real place."
+    ],
+    "budget": {
+      "max": 40000,
+      "step": 500,
+      "demo": 25000
+    },
+    "demoJourneyId": "j-home-a-shops"
+  }
 }

@@ -1,11 +1,24 @@
 import { create } from 'zustand';
-import { DEFAULT_SCENARIO, DEMO_JOURNEY_ID } from '../config';
+import { DEFAULT_SCENARIO } from '../config';
+import { meta } from '../data/dataset';
 import type { Scenario, ShadeOverride } from '../types';
 
+export type BasemapStyle = 'streets' | 'light' | 'satellite' | 'none';
+
 export interface BasemapSettings {
-  visible: boolean;
+  style: BasemapStyle;
   opacity: number; // 0..1
 }
+
+export interface ContextLayers {
+  buildings: boolean;
+  greens: boolean;
+  landmarks: boolean;
+  trees: boolean;
+}
+
+/** The scenario a fresh page (and the demo preset) starts from, for the active dataset. */
+export const INITIAL_SCENARIO = { ...DEFAULT_SCENARIO, budget: meta.budget.demo };
 
 interface ScenarioState {
   scenario: Scenario;
@@ -13,11 +26,13 @@ interface ScenarioState {
   selectedInterventionId: string | null;
   selectedJourneyId: string | null;
   basemap: BasemapSettings;
+  contextLayers: ContextLayers;
   setScenario: (patch: Partial<Scenario>) => void;
   applyShadeOverride: (override: ShadeOverride) => void;
   selectIntervention: (id: string | null) => void;
   selectJourney: (id: string | null) => void;
   setBasemap: (patch: Partial<BasemapSettings>) => void;
+  setContextLayers: (patch: Partial<ContextLayers>) => void;
   toggleIntervention: (id: string) => void;
   applyPlan: (interventionIds: readonly string[]) => void;
   setPriorityWeight: (destinationId: string, weight: number) => void;
@@ -36,17 +51,19 @@ const withOverride = (
 ];
 
 export const useScenarioStore = create<ScenarioState>((set) => ({
-  scenario: DEFAULT_SCENARIO,
+  scenario: INITIAL_SCENARIO,
   shadeOverrides: [],
   selectedInterventionId: null,
-  selectedJourneyId: DEMO_JOURNEY_ID,
-  basemap: { visible: true, opacity: 0.5 },
+  selectedJourneyId: meta.demoJourneyId,
+  basemap: { style: 'streets', opacity: 0.6 },
+  contextLayers: { buildings: true, greens: true, landmarks: true, trees: true },
   setScenario: (patch) => set((s) => ({ scenario: { ...s.scenario, ...patch } })),
   applyShadeOverride: (override) =>
     set((s) => ({ shadeOverrides: withOverride(s.shadeOverrides, override) })),
   selectIntervention: (id) => set({ selectedInterventionId: id }),
   selectJourney: (id) => set({ selectedJourneyId: id }),
   setBasemap: (patch) => set((s) => ({ basemap: { ...s.basemap, ...patch } })),
+  setContextLayers: (patch) => set((s) => ({ contextLayers: { ...s.contextLayers, ...patch } })),
   toggleIntervention: (id) =>
     set((s) => ({
       scenario: {
@@ -68,9 +85,9 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   clearShadeOverrides: () => set({ shadeOverrides: [] }),
   loadDemo: (interventionIds) =>
     set({
-      scenario: { ...DEFAULT_SCENARIO, selectedInterventionIds: [...interventionIds] },
+      scenario: { ...INITIAL_SCENARIO, selectedInterventionIds: [...interventionIds] },
       shadeOverrides: [],
-      selectedJourneyId: DEMO_JOURNEY_ID,
+      selectedJourneyId: meta.demoJourneyId,
       selectedInterventionId: null,
     }),
 }));

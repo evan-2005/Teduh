@@ -21,7 +21,13 @@ export interface PathSegment {
 }
 
 export type DestinationKind = 'home' | 'school' | 'bus-stop' | 'shops' | 'clinic' | 'park';
-export interface Destination { id: string; nodeId: string; name: string; kind: DestinationKind }
+export interface Destination {
+  id: string;
+  nodeId: string;
+  name: string;                       // plain English label shown in the UI
+  kind: DestinationKind;
+  localName?: string;                 // official name from the source data, shown as secondary detail
+}
 
 export interface Journey {
   id: string;
@@ -121,9 +127,36 @@ export interface ShadeScanResult {
 }
 export interface ShadeOverride { segmentId: string; time: TimeSlot; shade: number; source: 'ai-confirmed' }
 
-// ---- Datasets (shape of data/*.json) ----
+// ---- Datasets (shape of data/<name>/*.json) ----
+export type DatasetSource = 'synthetic' | 'openstreetmap' | 'surveyed';
+
+export interface DatasetMeta {
+  name: string;
+  center: [number, number];           // [lat, lng]
+  radiusM?: number;
+  source: DatasetSource;
+  attribution?: string;
+  generatedAt?: string;
+  assumptions?: string[];             // shown to the user so estimates are never silent
+  budget: { max: number; step: number; demo: number }; // MYR, for the budget slider and demo preset
+  demoJourneyId: string;
+}
+
 export interface Neighbourhood {
   nodes: PathNode[];
   segments: PathSegment[];
   destinations: Destination[];
+  meta?: DatasetMeta;
+}
+
+// ---- Area context: read-only map layers that explain the surroundings (data/<name>/context.json) ----
+export type LatLngPair = [number, number];
+export type LandmarkKind = 'school' | 'bus-stop' | 'shops' | 'food' | 'worship' | 'health' | 'park' | 'other';
+export interface Landmark { id: string; kind: LandmarkKind; name: string; localName?: string; lat: number; lng: number }
+export interface GreenArea { kind: 'park' | 'playground' | 'pitch' | 'garden'; ring: LatLngPair[] }
+export interface AreaContext {
+  buildings: LatLngPair[][];          // footprints
+  greens: GreenArea[];
+  landmarks: Landmark[];
+  trees: LatLngPair[];
 }

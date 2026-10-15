@@ -3,25 +3,102 @@
   "costSource": "estimated",
   "contingencyRate": 0.1,
   "items": {
-    "steelPost": { "label": "Galvanised steel post, 100x100 SHS, 3.2 m", "unit": "each", "unitCost": 380 },
-    "rafterPurlin": { "label": "Steel rafters and purlins", "unit": "m", "unitCost": 65 },
-    "roofSheet": { "label": "Polycarbonate roof sheet", "unit": "m2", "unitCost": 85 },
-    "gutter": { "label": "Gutter and downpipe", "unit": "m", "unitCost": 40 },
-    "concrete": { "label": "Concrete for footings", "unit": "m3", "unitCost": 450 },
-    "fixings": { "label": "Base plates, bolts and fixings", "unit": "set", "unitCost": 60 },
-    "labourDay": { "label": "Installation labour (crew of 3)", "unit": "day", "unitCost": 900 },
-    "soilMix": { "label": "Planting soil mix", "unit": "m3", "unitCost": 120 },
-    "rootBarrier": { "label": "Root barrier", "unit": "m", "unitCost": 25 },
-    "treeGuard": { "label": "Tree guard", "unit": "each", "unitCost": 150 },
-    "stake": { "label": "Timber stake", "unit": "each", "unitCost": 15 },
-    "sapling": { "label": "Sapling, 2 m container-grown", "unit": "each", "unitCost": 220 },
-    "maintenanceVisit": { "label": "Watering and care visit", "unit": "visit", "unitCost": 35 }
+    "steelPost": {
+      "label": "Galvanised steel post, 100x100 SHS, 3.2 m",
+      "unit": "each",
+      "unitCost": 380
+    },
+    "rafterPurlin": {
+      "label": "Steel rafters and purlins",
+      "unit": "m",
+      "unitCost": 65
+    },
+    "roofSheet": {
+      "label": "Polycarbonate roof sheet",
+      "unit": "m2",
+      "unitCost": 85
+    },
+    "gutter": {
+      "label": "Gutter and downpipe",
+      "unit": "m",
+      "unitCost": 40
+    },
+    "concrete": {
+      "label": "Concrete for footings",
+      "unit": "m3",
+      "unitCost": 450
+    },
+    "fixings": {
+      "label": "Base plates, bolts and fixings",
+      "unit": "set",
+      "unitCost": 60
+    },
+    "labourDay": {
+      "label": "Installation labour (crew of 3)",
+      "unit": "day",
+      "unitCost": 900
+    },
+    "soilMix": {
+      "label": "Planting soil mix",
+      "unit": "m3",
+      "unitCost": 120
+    },
+    "rootBarrier": {
+      "label": "Root barrier",
+      "unit": "m",
+      "unitCost": 25
+    },
+    "treeGuard": {
+      "label": "Tree guard",
+      "unit": "each",
+      "unitCost": 150
+    },
+    "stake": {
+      "label": "Timber stake",
+      "unit": "each",
+      "unitCost": 15
+    },
+    "sapling": {
+      "label": "Sapling, 2 m container-grown",
+      "unit": "each",
+      "unitCost": 220
+    },
+    "maintenanceVisit": {
+      "label": "Watering and care visit",
+      "unit": "visit",
+      "unitCost": 35
+    }
   },
   "speciesSuggestions": [
-    { "name": "Tabebuia rosea (pink trumpet tree)", "matureCanopyM": 8, "yearsToMature": 6, "verify": true },
-    { "name": "Lagerstroemia speciosa (bungor)", "matureCanopyM": 8, "yearsToMature": 7, "verify": true },
-    { "name": "Peltophorum pterocarpum (yellow flame)", "matureCanopyM": 10, "yearsToMature": 7, "verify": true },
-    { "name": "Cassia fistula (golden shower)", "matureCanopyM": 7, "yearsToMature": 6, "verify": true },
-    { "name": "Terminalia catappa (ketapang)", "matureCanopyM": 10, "yearsToMature": 6, "verify": true }
+    {
+      "name": "Tabebuia rosea (pink trumpet tree)",
+      "matureCanopyM": 8,
+      "yearsToMature": 6,
+      "verify": true
+    },
+    {
+      "name": "Lagerstroemia speciosa (queen's crape myrtle)",
+      "matureCanopyM": 8,
+      "yearsToMature": 7,
+      "verify": true
+    },
+    {
+      "name": "Peltophorum pterocarpum (yellow flame tree)",
+      "matureCanopyM": 10,
+      "yearsToMature": 7,
+      "verify": true
+    },
+    {
+      "name": "Cassia fistula (golden shower tree)",
+      "matureCanopyM": 7,
+      "yearsToMature": 6,
+      "verify": true
+    },
+    {
+      "name": "Terminalia catappa (tropical almond)",
+      "matureCanopyM": 10,
+      "yearsToMature": 6,
+      "verify": true
+    }
   ]
 }

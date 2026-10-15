@@ -24,13 +24,28 @@ const DIMENSION_LABELS: Readonly<Record<string, string>> = {
   rootBarrierM: 'Root barrier (m)',
   stakes: 'Stakes',
   maintenanceVisits: 'Care visits (2 yrs)',
+  trees: 'Trees',
+  rowLengthM: 'Row length (m)',
 };
+
+const coveredLengthM = (intervention: Intervention): number =>
+  intervention.segmentIds.reduce((sum, id) => sum + (graph.lengthBySegment.get(id) ?? 0), 0);
 
 function specFor(intervention: Intervention): FabricationSpec {
   const { neighbourhood, unitCosts } = dataset;
   return intervention.type === 'shelter'
     ? generateShelterSpec(intervention, neighbourhood.segments, unitCosts, graph.lengthBySegment)
-    : generateTreeSpec(intervention, unitCosts);
+    : generateTreeSpec(intervention, unitCosts, coveredLengthM(intervention));
+}
+
+const MATCH_TOLERANCE = 0.02;
+
+/** Say whether the simulator's cost agrees with the bill of materials. */
+function costNote(planningCost: number, bottomUpCost: number): string {
+  const agrees = Math.abs(planningCost - bottomUpCost) <= bottomUpCost * MATCH_TOLERANCE;
+  return agrees
+    ? `This matches the ${formatMyr(planningCost)} the simulator uses for this item (rounded). Replace it with a contractor quote before any decision.`
+    : `The simulator uses a planning figure of ${formatMyr(planningCost)} for this item. The bottom-up total above is built from unit costs and can differ; replace both with a contractor quote before any decision.`;
 }
 
 const fileStem = (spec: FabricationSpec): string => `teduh-fabrication-${spec.interventionId}`;
@@ -108,12 +123,7 @@ export function FabricationPanel() {
       <p className="card__hint">
         Cost data: <SourceBadge source={dataset.unitCosts.costSource} />
       </p>
-      <p className="card__hint">
-        The simulator uses a planning figure of{' '}
-        <span className="num">{formatMyr(intervention.installCost)}</span> for this item. The
-        bottom-up total above is built from unit costs and can differ; replace both with a
-        contractor quote before any decision.
-      </p>
+      <p className="card__hint">{costNote(intervention.installCost, spec.totalCost)}</p>
 
       <ul className="fabrication__assumptions">
         {spec.assumptions.map((a) => (

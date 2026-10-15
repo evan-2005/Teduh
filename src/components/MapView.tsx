@@ -4,16 +4,21 @@ import {
   CircleMarker,
   MapContainer,
   Pane,
+  Popup,
   TileLayer,
   Tooltip,
   ZoomControl,
   useMap,
 } from 'react-leaflet';
-import { MAP_CENTER, MAP_ZOOM } from '../config';
-import { dataset } from '../data/dataset';
+import { MAP_ZOOM } from '../config';
+import { dataset, meta } from '../data/dataset';
 import type { NetworkView } from '../hooks/useNetworkView';
+import { useAreaContext } from '../hooks/useAreaContext';
 import { useScenarioStore } from '../store/scenario';
+import { TILE_SOURCES } from './basemaps';
+import { CONTEXT_PANE, ContextLayers } from './ContextLayers';
 import { InterventionMarkers } from './InterventionMarkers';
+import { LayersControl } from './LayersControl';
 import { MapLegend } from './MapLegend';
 import { MapToolbar } from './MapToolbar';
 import { networkBounds, nodeCoords, type LatLngTuple } from './mapGeometry';
@@ -22,12 +27,10 @@ import { NetworkLayers } from './NetworkLayers';
 import { AFTER_PANE, BEFORE_PANE, DESTINATION_PANE, SwipeClip } from './SwipeClip';
 import { SwipeDivider } from './SwipeDivider';
 
-const OSM_TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-const OSM_ATTRIBUTION = '&copy; OpenStreetMap contributors';
 const INITIAL_DIVIDER = 0.5;
 
 // Above Leaflet's overlay pane (400) and below its marker pane (600).
-const PANE_Z = { before: 410, after: 420, destinations: 430 } as const;
+const PANE_Z = { context: 405, before: 410, after: 420, destinations: 430 } as const;
 
 const { destinations } = dataset.neighbourhood;
 
@@ -50,66 +53,90 @@ function FitToNetwork() {
 export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>) {
   const basemap = useScenarioStore((s) => s.basemap);
   const mapMode = useScenarioStore((s) => s.scenario.mapMode);
+  const layers = useScenarioStore((s) => s.contextLayers);
+  const context = useAreaContext();
   const [divider, setDivider] = useState(INITIAL_DIVIDER);
 
   const showBefore = mapMode !== 'after';
   const showAfter = mapMode !== 'before';
   const swiping = mapMode === 'swipe';
+  const tiles = basemap.style === 'none' ? null : TILE_SOURCES[basemap.style];
 
   return (
     <div className="map-wrap">
-      <MapContainer
-        center={MAP_CENTER as LatLngTuple}
-        zoom={MAP_ZOOM}
-        className="map"
-        zoomSnap={0.25}
-        zoomControl={false}
-      >
-        <ZoomControl position="bottomright" />
-        <FitToNetwork />
-        {basemap.visible && (
-          <TileLayer url={OSM_TILES} attribution={OSM_ATTRIBUTION} opacity={basemap.opacity} />
-        )}
-
-        <Pane name={BEFORE_PANE} style={{ zIndex: PANE_Z.before }}>
-          {showBefore && <NetworkLayers {...before} caption="before plan" />}
-        </Pane>
-
-        {/* Intervention markers live in the after pane, so they only appear on the after side. */}
-        <Pane name={AFTER_PANE} style={{ zIndex: PANE_Z.after }}>
-          {showAfter && (
-            <>
-              <NetworkLayers {...after} caption="with plan" />
-              <InterventionMarkers />
-            </>
-          )}
-        </Pane>
-        <SwipeClip active={swiping} fraction={divider} />
-
-        <Pane name={DESTINATION_PANE} style={{ zIndex: PANE_Z.destinations }}>
-          {destinations.map((d) => (
-            <CircleMarker
-              key={d.id}
-              center={nodeCoords.get(d.nodeId)!}
-              radius={8}
-              pathOptions={{
-                color: SHORTEST_COLOR,
-                weight: 2,
-                fillColor: DESTINATION_COLOR,
-                fillOpacity: 1,
-              }}
-            >
-              <Tooltip permanent direction="top" offset={[0, -8]}>
-                {d.name}
-              </Tooltip>
-            </CircleMarker>
-          ))}
-        </Pane>
-      </MapContainer>
-
-      {swiping && <SwipeDivider fraction={divider} onChange={setDivider} />}
       <MapToolbar />
-      <MapLegend />
+      <div className="map-stage">
+        <MapContainer
+          center={meta.center as LatLngTuple}
+          zoom={MAP_ZOOM}
+          className="map"
+          zoomSnap={0.25}
+          zoomControl={false}
+        >
+          <ZoomControl position="bottomright" />
+          <FitToNetwork />
+          {tiles && (
+            <TileLayer
+              key={basemap.style}
+              url={tiles.url}
+              attribution={tiles.attribution}
+              opacity={basemap.opacity}
+              subdomains={tiles.subdomains ?? 'abc'}
+              maxNativeZoom={tiles.maxNativeZoom}
+            />
+          )}
+
+          <Pane name={CONTEXT_PANE} style={{ zIndex: PANE_Z.context }}>
+            {context && <ContextLayers context={context} toggles={layers} />}
+          </Pane>
+
+          <Pane name={BEFORE_PANE} style={{ zIndex: PANE_Z.before }}>
+            {showBefore && <NetworkLayers {...before} caption="before plan" />}
+          </Pane>
+
+          {/* Intervention markers live in the after pane, so they only appear on the after side. */}
+          <Pane name={AFTER_PANE} style={{ zIndex: PANE_Z.after }}>
+            {showAfter && (
+              <>
+                <NetworkLayers {...after} caption="with plan" />
+                <InterventionMarkers />
+              </>
+            )}
+          </Pane>
+          <SwipeClip active={swiping} fraction={divider} />
+
+          <Pane name={DESTINATION_PANE} style={{ zIndex: PANE_Z.destinations }}>
+            {destinations.map((d) => (
+              <CircleMarker
+                key={d.id}
+                center={nodeCoords.get(d.nodeId)!}
+                radius={8}
+                pathOptions={{
+                  color: SHORTEST_COLOR,
+                  weight: 2,
+                  fillColor: DESTINATION_COLOR,
+                  fillOpacity: 1,
+                }}
+              >
+                <Tooltip permanent direction="top" offset={[0, -8]}>
+                  {d.name}
+                </Tooltip>
+                {d.localName && (
+                  <Popup>
+                    <strong>{d.name}</strong>
+                    <br />
+                    Local name: {d.localName}
+                  </Popup>
+                )}
+              </CircleMarker>
+            ))}
+          </Pane>
+        </MapContainer>
+
+        {swiping && <SwipeDivider fraction={divider} onChange={setDivider} />}
+        <LayersControl context={context} />
+        <MapLegend />
+      </div>
     </div>
   );
 }

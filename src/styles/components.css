@@ -4,7 +4,19 @@
 }
 
 /* ---- Map ---- */
-.map-wrap,
+.map-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
 .map {
   position: absolute;
   inset: 0;
@@ -386,21 +398,13 @@
 
 /* ---- Map Restoration (Phase 4) ---- */
 .map-toolbar {
-  position: absolute;
-  z-index: 900;
-  top: var(--space-3);
-  left: var(--space-3);
-  right: var(--space-3);
-  width: fit-content;
-  margin-inline: auto;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-2) var(--space-3);
   padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-rule);
-  background: color-mix(in srgb, var(--color-card) 94%, transparent);
+  border-bottom: 1px solid var(--color-rule);
+  background: var(--color-card);
   font-size: 0.85rem;
 }
 
@@ -628,4 +632,113 @@
 .bom th,
 .bom td {
   padding-left: 4px;
+}
+
+/* ---- Area context ---- */
+.area {
+  margin-bottom: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-left: 4px solid var(--color-canopy);
+  background: var(--color-card);
+}
+
+.area__name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+
+.area__source {
+  margin: var(--space-1) 0;
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+}
+
+.area__details summary {
+  cursor: pointer;
+  color: var(--color-canopy);
+  font-size: 0.85rem;
+}
+
+.area__details ul {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-3);
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.layers {
+  position: absolute;
+  z-index: 950;
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+.layers__toggle {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-canopy);
+  background: var(--color-card);
+  color: var(--color-canopy);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.layers__toggle[aria-expanded='true'] {
+  background: var(--color-canopy);
+  color: var(--color-paper);
+}
+
+.layers__panel {
+  width: 15rem;
+  margin-top: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule);
+  background: color-mix(in srgb, var(--color-card) 96%, transparent);
+  font-size: 0.88rem;
+}
+
+.segmented--stack {
+  margin-bottom: var(--space-2);
+}
+
+.landmark {
+  background: none;
+  border: 0;
+}
+
+.landmark__chip {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--color-ink-soft);
+  border-radius: 50%;
+  background: var(--color-card);
+  color: var(--color-ink);
+}
+
+.landmark__chip svg {
+  fill: currentColor;
+}
+
+.landmark--bus-stop .landmark__chip {
+  border-color: #2f5d9e;
+  color: #2f5d9e;
+}
+
+.landmark--school .landmark__chip,
+.landmark--health .landmark__chip {
+  border-color: #a33a2a;
+  color: #a33a2a;
+}
+
+.landmark--park .landmark__chip {
+  border-color: var(--color-canopy);
+  color: var(--color-canopy);
+}
+
+.plan__names {
+  color: var(--color-ink-soft);
+  font-size: 0.76rem;
 }

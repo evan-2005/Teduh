@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { DEFAULT_SCENARIO } from '../config';
-import { useScenarioStore } from './scenario';
+import { INITIAL_SCENARIO, useScenarioStore } from './scenario';
 
 describe('scenario store', () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('scenario store', () => {
     const after = useScenarioStore.getState().scenario;
     expect(after.budget).toBe(10_000);
     expect(after.time).toBe(before.time);
-    expect(before.budget).toBe(DEFAULT_SCENARIO.budget);
+    expect(before.budget).toBe(INITIAL_SCENARIO.budget);
   });
 
   test('applyShadeOverride replaces an override for the same segment and time', () => {
@@ -79,7 +79,7 @@ describe('demo and AI edits', () => {
     state.selectJourney('j-home-b-bus');
     state.loadDemo(['shelter-connector']);
     const next = useScenarioStore.getState();
-    expect(next.scenario).toEqual({ ...DEFAULT_SCENARIO, selectedInterventionIds: ['shelter-connector'] });
+    expect(next.scenario).toEqual({ ...INITIAL_SCENARIO, selectedInterventionIds: ['shelter-connector'] });
     expect(next.shadeOverrides).toEqual([]);
     expect(next.selectedJourneyId).toBe('j-home-a-shops');
   });

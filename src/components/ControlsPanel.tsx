@@ -1,16 +1,15 @@
 import { TIME_SLOTS } from '../config';
-import { dataset } from '../data/dataset';
+import { dataset, meta } from '../data/dataset';
 import { formatMyr } from '../lib/format';
 import { useDemoPreset } from '../hooks/useDemoPreset';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
 import { CandidateList } from './CandidateList';
+import { AreaCard } from './AreaCard';
 import { PriorityControls } from './PriorityControls';
 
 const MAX_DETOUR = 0.5;
 const DETOUR_STEP = 0.05;
-const MAX_BUDGET = 40_000;
-const BUDGET_STEP = 500;
 
 const destinationName = (id: string): string =>
   dataset.neighbourhood.destinations.find((d) => d.id === id)?.name ?? id;
@@ -25,13 +24,12 @@ export function ControlsPanel({ plans }: ControlsPanelProps) {
   const applyPlan = useScenarioStore((s) => s.applyPlan);
   const journeyId = useScenarioStore((s) => s.selectedJourneyId);
   const selectJourney = useScenarioStore((s) => s.selectJourney);
-  const basemap = useScenarioStore((s) => s.basemap);
-  const setBasemap = useScenarioStore((s) => s.setBasemap);
   const best = plans[0];
   const loadDemoPreset = useDemoPreset();
 
   return (
     <div className="controls">
+      <AreaCard />
       <h2 className="panel__title">Controls</h2>
 
       <button type="button" className="button" onClick={loadDemoPreset}>
@@ -45,8 +43,8 @@ export function ControlsPanel({ plans }: ControlsPanelProps) {
         <input
           type="range"
           min={0}
-          max={MAX_BUDGET}
-          step={BUDGET_STEP}
+          max={meta.budget.max}
+          step={meta.budget.step}
           value={scenario.budget}
           onChange={(e) => setScenario({ budget: Number(e.target.value) })}
         />
@@ -108,27 +106,6 @@ export function ControlsPanel({ plans }: ControlsPanelProps) {
         </select>
       </label>
 
-      <fieldset className="field">
-        <legend className="field__label">Basemap</legend>
-        <label className="field__inline">
-          <input
-            type="checkbox"
-            checked={basemap.visible}
-            onChange={(e) => setBasemap({ visible: e.target.checked })}
-          />
-          Show basemap
-        </label>
-        <input
-          type="range"
-          min={0.1}
-          max={1}
-          step={0.1}
-          value={basemap.opacity}
-          disabled={!basemap.visible}
-          aria-label="Basemap opacity"
-          onChange={(e) => setBasemap({ opacity: Number(e.target.value) })}
-        />
-      </fieldset>
     </div>
   );
 }

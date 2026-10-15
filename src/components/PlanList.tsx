@@ -8,6 +8,22 @@ import { SourceBadge } from './SourceBadge';
 const nameOf = (id: string): string =>
   dataset.interventions.find((i) => i.id === id)?.name ?? id;
 
+const typeOf = (id: string): string => dataset.interventions.find((i) => i.id === id)?.type ?? 'tree';
+
+const plural = (n: number, one: string, many: string): string => `${n} ${n === 1 ? one : many}`;
+
+/** "1 shelter + 3 tree rows": the shape of a plan at a glance. */
+function summarise(ids: readonly string[]): string {
+  const shelters = ids.filter((id) => typeOf(id) === 'shelter').length;
+  const trees = ids.length - shelters;
+  return [
+    shelters > 0 ? plural(shelters, 'shelter', 'shelters') : null,
+    trees > 0 ? plural(trees, 'tree row', 'tree rows') : null,
+  ]
+    .filter(Boolean)
+    .join(' + ');
+}
+
 const sameSet = (a: readonly string[], b: readonly string[]): boolean =>
   a.length === b.length && a.every((id) => b.includes(id));
 
@@ -32,7 +48,8 @@ export function PlanList({ plans }: { plans: readonly PlanResult[] }) {
                 onClick={() => applyPlan(plan.interventionIds)}
               >
                 <span className="plan__rank">{index === 0 ? 'Best' : `Option ${index + 1}`}</span>
-                <span className="plan__items">{plan.interventionIds.map(nameOf).join(' + ')}</span>
+                <span className="plan__items">{summarise(plan.interventionIds)}</span>
+                <span className="plan__names">{plan.interventionIds.map(nameOf).join('; ')}</span>
                 <span className="plan__meta num">
                   {formatMyr(plan.installCost)} · {sun.value} {sun.unit}/day <SourceBadge source="estimated" />
                 </span>

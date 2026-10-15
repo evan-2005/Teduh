@@ -1,0 +1,4465 @@
+{
+  "nodes": [
+    {
+      "id": "n-1",
+      "lat": 3.107479,
+      "lng": 101.606609
+    },
+    {
+      "id": "n-2",
+      "lat": 3.10788,
+      "lng": 101.606543
+    },
+    {
+      "id": "n-3",
+      "lat": 3.108351,
+      "lng": 101.606425
+    },
+    {
+      "id": "n-4",
+      "lat": 3.108679,
+      "lng": 101.606223
+    },
+    {
+      "id": "n-5",
+      "lat": 3.108981,
+      "lng": 101.605886
+    },
+    {
+      "id": "n-6",
+      "lat": 3.109157,
+      "lng": 101.605548
+    },
+    {
+      "id": "n-7",
+      "lat": 3.109332,
+      "lng": 101.605209
+    },
+    {
+      "id": "n-8",
+      "lat": 3.109411,
+      "lng": 101.604722
+    },
+    {
+      "id": "n-9",
+      "lat": 3.10949,
+      "lng": 101.604235
+    },
+    {
+      "id": "n-10",
+      "lat": 3.109503,
+      "lng": 101.603616
+    },
+    {
+      "id": "n-11",
+      "lat": 3.109362,
+      "lng": 101.603617
+    },
+    {
+      "id": "n-12",
+      "lat": 3.109362,
+      "lng": 101.604083
+    },
+    {
+      "id": "n-13",
+      "lat": 3.108823,
+      "lng": 101.60657
+    },
+    {
+      "id": "n-14",
+      "lat": 3.108967,
+      "lng": 101.606918
+    },
+    {
+      "id": "n-15",
+      "lat": 3.108421,
+      "lng": 101.607164
+    },
+    {
+      "id": "n-16",
+      "lat": 3.107881,
+      "lng": 101.607317
+    },
+    {
+      "id": "n-17",
+      "lat": 3.10788,
+      "lng": 101.607704
+    },
+    {
+      "id": "n-18",
+      "lat": 3.107878,
+      "lng": 101.608092
+    },
+    {
+      "id": "n-19",
+      "lat": 3.107877,
+      "lng": 101.608705
+    },
+    {
+      "id": "n-20",
+      "lat": 3.108433,
+      "lng": 101.608699
+    },
+    {
+      "id": "n-21",
+      "lat": 3.108427,
+      "lng": 101.608096
+    },
+    {
+      "id": "n-22",
+      "lat": 3.108424,
+      "lng": 101.60763
+    },
+    {
+      "id": "n-23",
+      "lat": 3.108981,
+      "lng": 101.608093
+    },
+    {
+      "id": "n-24",
+      "lat": 3.108974,
+      "lng": 101.608692
+    },
+    {
+      "id": "n-25",
+      "lat": 3.108974,
+      "lng": 101.609249
+    },
+    {
+      "id": "n-26",
+      "lat": 3.108431,
+      "lng": 101.609244
+    },
+    {
+      "id": "n-27",
+      "lat": 3.10843,
+      "lng": 101.60974
+    },
+    {
+      "id": "n-28",
+      "lat": 3.108429,
+      "lng": 101.610235
+    },
+    {
+      "id": "n-29",
+      "lat": 3.108428,
+      "lng": 101.610731
+    },
+    {
+      "id": "n-30",
+      "lat": 3.10787,
+      "lng": 101.610633
+    },
+    {
+      "id": "n-31",
+      "lat": 3.107791,
+      "lng": 101.610943
+    },
+    {
+      "id": "n-32",
+      "lat": 3.107489,
+      "lng": 101.610881
+    },
+    {
+      "id": "n-33",
+      "lat": 3.107162,
+      "lng": 101.610673
+    },
+    {
+      "id": "n-34",
+      "lat": 3.106835,
+      "lng": 101.610465
+    },
+    {
+      "id": "n-35",
+      "lat": 3.106716,
+      "lng": 101.609875
+    },
+    {
+      "id": "n-36",
+      "lat": 3.107009,
+      "lng": 101.609406
+    },
+    {
+      "id": "n-37",
+      "lat": 3.107302,
+      "lng": 101.608937
+    },
+    {
+      "id": "n-38",
+      "lat": 3.107178,
+      "lng": 101.608887
+    },
+    {
+      "id": "n-39",
+      "lat": 3.107369,
+      "lng": 101.608497
+    },
+    {
+      "id": "n-40",
+      "lat": 3.107454,
+      "lng": 101.608177
+    },
+    {
+      "id": "n-41",
+      "lat": 3.107463,
+      "lng": 101.607655
+    },
+    {
+      "id": "n-42",
+      "lat": 3.107471,
+      "lng": 101.607132
+    },
+    {
+      "id": "n-43",
+      "lat": 3.106893,
+      "lng": 101.609354
+    },
+    {
+      "id": "n-44",
+      "lat": 3.106608,
+      "lng": 101.609822
+    },
+    {
+      "id": "n-45",
+      "lat": 3.106323,
+      "lng": 101.610289
+    },
+    {
+      "id": "n-46",
+      "lat": 3.106235,
+      "lng": 101.610232
+    },
+    {
+      "id": "n-47",
+      "lat": 3.106523,
+      "lng": 101.60977
+    },
+    {
+      "id": "n-48",
+      "lat": 3.10681,
+      "lng": 101.609309
+    },
+    {
+      "id": "n-49",
+      "lat": 3.107098,
+      "lng": 101.608847
+    },
+    {
+      "id": "n-50",
+      "lat": 3.107276,
+      "lng": 101.608456
+    },
+    {
+      "id": "n-51",
+      "lat": 3.107388,
+      "lng": 101.607831
+    },
+    {
+      "id": "n-52",
+      "lat": 3.10738,
+      "lng": 101.607225
+    },
+    {
+      "id": "n-53",
+      "lat": 3.107373,
+      "lng": 101.606619
+    },
+    {
+      "id": "n-54",
+      "lat": 3.107342,
+      "lng": 101.606015
+    },
+    {
+      "id": "n-55",
+      "lat": 3.107311,
+      "lng": 101.60541
+    },
+    {
+      "id": "n-56",
+      "lat": 3.10728,
+      "lng": 101.604806
+    },
+    {
+      "id": "n-57",
+      "lat": 3.10725,
+      "lng": 101.604202
+    },
+    {
+      "id": "n-58",
+      "lat": 3.107219,
+      "lng": 101.603597
+    },
+    {
+      "id": "n-59",
+      "lat": 3.107196,
+      "lng": 101.603202
+    },
+    {
+      "id": "n-60",
+      "lat": 3.10708,
+      "lng": 101.603606
+    },
+    {
+      "id": "n-61",
+      "lat": 3.106536,
+      "lng": 101.603642
+    },
+    {
+      "id": "n-62",
+      "lat": 3.106582,
+      "lng": 101.604616
+    },
+    {
+      "id": "n-63",
+      "lat": 3.106559,
+      "lng": 101.604129
+    },
+    {
+      "id": "n-64",
+      "lat": 3.105936,
+      "lng": 101.603681
+    },
+    {
+      "id": "n-65",
+      "lat": 3.105997,
+      "lng": 101.60466
+    },
+    {
+      "id": "n-66",
+      "lat": 3.105967,
+      "lng": 101.60417
+    },
+    {
+      "id": "n-67",
+      "lat": 3.106006,
+      "lng": 101.605112
+    },
+    {
+      "id": "n-68",
+      "lat": 3.106016,
+      "lng": 101.605564
+    },
+    {
+      "id": "n-69",
+      "lat": 3.105577,
+      "lng": 101.605576
+    },
+    {
+      "id": "n-70",
+      "lat": 3.105495,
+      "lng": 101.605594
+    },
+    {
+      "id": "n-71",
+      "lat": 3.105438,
+      "lng": 101.606074
+    },
+    {
+      "id": "n-72",
+      "lat": 3.106084,
+      "lng": 101.60603
+    },
+    {
+      "id": "n-73",
+      "lat": 3.106074,
+      "lng": 101.605685
+    },
+    {
+      "id": "n-74",
+      "lat": 3.106101,
+      "lng": 101.606443
+    },
+    {
+      "id": "n-75",
+      "lat": 3.105453,
+      "lng": 101.606479
+    },
+    {
+      "id": "n-76",
+      "lat": 3.105396,
+      "lng": 101.606578
+    },
+    {
+      "id": "n-77",
+      "lat": 3.105283,
+      "lng": 101.606555
+    },
+    {
+      "id": "n-78",
+      "lat": 3.105027,
+      "lng": 101.607186
+    },
+    {
+      "id": "n-79",
+      "lat": 3.106149,
+      "lng": 101.607164
+    },
+    {
+      "id": "n-80",
+      "lat": 3.105588,
+      "lng": 101.607175
+    },
+    {
+      "id": "n-81",
+      "lat": 3.106114,
+      "lng": 101.606617
+    },
+    {
+      "id": "n-82",
+      "lat": 3.106683,
+      "lng": 101.606621
+    },
+    {
+      "id": "n-83",
+      "lat": 3.107245,
+      "lng": 101.606612
+    },
+    {
+      "id": "n-84",
+      "lat": 3.107276,
+      "lng": 101.607154
+    },
+    {
+      "id": "n-85",
+      "lat": 3.106667,
+      "lng": 101.607168
+    },
+    {
+      "id": "n-86",
+      "lat": 3.106645,
+      "lng": 101.607608
+    },
+    {
+      "id": "n-87",
+      "lat": 3.106624,
+      "lng": 101.608048
+    },
+    {
+      "id": "n-88",
+      "lat": 3.106453,
+      "lng": 101.608368
+    },
+    {
+      "id": "n-89",
+      "lat": 3.106283,
+      "lng": 101.608689
+    },
+    {
+      "id": "n-90",
+      "lat": 3.105978,
+      "lng": 101.609189
+    },
+    {
+      "id": "n-91",
+      "lat": 3.106515,
+      "lng": 101.609501
+    },
+    {
+      "id": "n-92",
+      "lat": 3.10683,
+      "lng": 101.608988
+    },
+    {
+      "id": "n-93",
+      "lat": 3.107146,
+      "lng": 101.608475
+    },
+    {
+      "id": "n-94",
+      "lat": 3.107268,
+      "lng": 101.607872
+    },
+    {
+      "id": "n-95",
+      "lat": 3.106397,
+      "lng": 101.609672
+    },
+    {
+      "id": "n-96",
+      "lat": 3.105861,
+      "lng": 101.609819
+    },
+    {
+      "id": "n-97",
+      "lat": 3.105764,
+      "lng": 101.609798
+    },
+    {
+      "id": "n-98",
+      "lat": 3.104093,
+      "lng": 101.608759
+    },
+    {
+      "id": "n-99",
+      "lat": 3.10465,
+      "lng": 101.609105
+    },
+    {
+      "id": "n-100",
+      "lat": 3.105207,
+      "lng": 101.609452
+    },
+    {
+      "id": "n-101",
+      "lat": 3.104407,
+      "lng": 101.608221
+    },
+    {
+      "id": "n-102",
+      "lat": 3.10466,
+      "lng": 101.607791
+    },
+    {
+      "id": "n-103",
+      "lat": 3.104754,
+      "lng": 101.607733
+    },
+    {
+      "id": "n-104",
+      "lat": 3.10498,
+      "lng": 101.60787
+    },
+    {
+      "id": "n-105",
+      "lat": 3.105251,
+      "lng": 101.607718
+    },
+    {
+      "id": "n-106",
+      "lat": 3.103946,
+      "lng": 101.608677
+    },
+    {
+      "id": "n-107",
+      "lat": 3.104276,
+      "lng": 101.608141
+    },
+    {
+      "id": "n-108",
+      "lat": 3.104141,
+      "lng": 101.608059
+    },
+    {
+      "id": "n-109",
+      "lat": 3.103896,
+      "lng": 101.608478
+    },
+    {
+      "id": "n-110",
+      "lat": 3.104601,
+      "lng": 101.60759
+    },
+    {
+      "id": "n-111",
+      "lat": 3.104372,
+      "lng": 101.607449
+    },
+    {
+      "id": "n-112",
+      "lat": 3.104483,
+      "lng": 101.607249
+    },
+    {
+      "id": "n-113",
+      "lat": 3.10473,
+      "lng": 101.607362
+    },
+    {
+      "id": "n-114",
+      "lat": 3.104856,
+      "lng": 101.607144
+    },
+    {
+      "id": "n-115",
+      "lat": 3.105122,
+      "lng": 101.606584
+    },
+    {
+      "id": "n-116",
+      "lat": 3.105239,
+      "lng": 101.60619
+    },
+    {
+      "id": "n-117",
+      "lat": 3.105356,
+      "lng": 101.605797
+    },
+    {
+      "id": "n-118",
+      "lat": 3.105331,
+      "lng": 101.60532
+    },
+    {
+      "id": "n-119",
+      "lat": 3.105307,
+      "lng": 101.604843
+    },
+    {
+      "id": "n-120",
+      "lat": 3.10545,
+      "lng": 101.604844
+    },
+    {
+      "id": "n-121",
+      "lat": 3.105465,
+      "lng": 101.605124
+    },
+    {
+      "id": "n-122",
+      "lat": 3.10547,
+      "lng": 101.605214
+    },
+    {
+      "id": "n-123",
+      "lat": 3.105836,
+      "lng": 101.6052
+    },
+    {
+      "id": "n-124",
+      "lat": 3.105525,
+      "lng": 101.605106
+    },
+    {
+      "id": "n-125",
+      "lat": 3.10551,
+      "lng": 101.604853
+    },
+    {
+      "id": "n-126",
+      "lat": 3.105271,
+      "lng": 101.604285
+    },
+    {
+      "id": "n-127",
+      "lat": 3.105235,
+      "lng": 101.603727
+    },
+    {
+      "id": "n-128",
+      "lat": 3.105386,
+      "lng": 101.603717
+    },
+    {
+      "id": "n-129",
+      "lat": 3.105417,
+      "lng": 101.604263
+    },
+    {
+      "id": "n-130",
+      "lat": 3.105448,
+      "lng": 101.604809
+    },
+    {
+      "id": "n-131",
+      "lat": 3.104752,
+      "lng": 101.605721
+    },
+    {
+      "id": "n-132",
+      "lat": 3.104714,
+      "lng": 101.605116
+    },
+    {
+      "id": "n-133",
+      "lat": 3.104675,
+      "lng": 101.60451
+    },
+    {
+      "id": "n-134",
+      "lat": 3.105033,
+      "lng": 101.604475
+    },
+    {
+      "id": "n-135",
+      "lat": 3.10513,
+      "lng": 101.6044
+    },
+    {
+      "id": "n-136",
+      "lat": 3.105107,
+      "lng": 101.603878
+    },
+    {
+      "id": "n-137",
+      "lat": 3.104569,
+      "lng": 101.606385
+    },
+    {
+      "id": "n-138",
+      "lat": 3.104377,
+      "lng": 101.606771
+    },
+    {
+      "id": "n-139",
+      "lat": 3.104115,
+      "lng": 101.607293
+    },
+    {
+      "id": "n-140",
+      "lat": 3.103929,
+      "lng": 101.606473
+    },
+    {
+      "id": "n-141",
+      "lat": 3.104065,
+      "lng": 101.606064
+    },
+    {
+      "id": "n-142",
+      "lat": 3.104201,
+      "lng": 101.605655
+    },
+    {
+      "id": "n-143",
+      "lat": 3.104173,
+      "lng": 101.605257
+    },
+    {
+      "id": "n-144",
+      "lat": 3.104145,
+      "lng": 101.604859
+    },
+    {
+      "id": "n-145",
+      "lat": 3.103756,
+      "lng": 101.606366
+    },
+    {
+      "id": "n-146",
+      "lat": 3.103879,
+      "lng": 101.608791
+    },
+    {
+      "id": "n-147",
+      "lat": 3.104468,
+      "lng": 101.609152
+    },
+    {
+      "id": "n-148",
+      "lat": 3.105057,
+      "lng": 101.609512
+    },
+    {
+      "id": "n-149",
+      "lat": 3.105646,
+      "lng": 101.609872
+    },
+    {
+      "id": "n-150",
+      "lat": 3.105454,
+      "lng": 101.608866
+    },
+    {
+      "id": "n-151",
+      "lat": 3.10493,
+      "lng": 101.608543
+    },
+    {
+      "id": "n-152",
+      "lat": 3.105849,
+      "lng": 101.608416
+    },
+    {
+      "id": "n-153",
+      "lat": 3.105414,
+      "lng": 101.608143
+    },
+    {
+      "id": "n-154",
+      "lat": 3.106631,
+      "lng": 101.605722
+    },
+    {
+      "id": "n-155",
+      "lat": 3.106657,
+      "lng": 101.606172
+    },
+    {
+      "id": "n-156",
+      "lat": 3.105545,
+      "lng": 101.605251
+    },
+    {
+      "id": "n-157",
+      "lat": 3.107212,
+      "lng": 101.606011
+    },
+    {
+      "id": "n-158",
+      "lat": 3.107179,
+      "lng": 101.60541
+    },
+    {
+      "id": "n-159",
+      "lat": 3.107146,
+      "lng": 101.604809
+    },
+    {
+      "id": "n-160",
+      "lat": 3.107113,
+      "lng": 101.604208
+    },
+    {
+      "id": "n-161",
+      "lat": 3.106041,
+      "lng": 101.610553
+    },
+    {
+      "id": "n-162",
+      "lat": 3.10612,
+      "lng": 101.610601
+    },
+    {
+      "id": "n-163",
+      "lat": 3.107875,
+      "lng": 101.608939
+    },
+    {
+      "id": "n-164",
+      "lat": 3.107874,
+      "lng": 101.609241
+    },
+    {
+      "id": "n-165",
+      "lat": 3.107862,
+      "lng": 101.60958
+    },
+    {
+      "id": "n-166",
+      "lat": 3.107866,
+      "lng": 101.609969
+    },
+    {
+      "id": "n-167",
+      "lat": 3.107869,
+      "lng": 101.610358
+    },
+    {
+      "id": "n-168",
+      "lat": 3.107371,
+      "lng": 101.610026
+    },
+    {
+      "id": "n-169",
+      "lat": 3.107664,
+      "lng": 101.609629
+    },
+    {
+      "id": "n-170",
+      "lat": 3.10897,
+      "lng": 101.609759
+    },
+    {
+      "id": "n-171",
+      "lat": 3.108967,
+      "lng": 101.610268
+    },
+    {
+      "id": "n-172",
+      "lat": 3.108964,
+      "lng": 101.610777
+    },
+    {
+      "id": "n-173",
+      "lat": 3.108974,
+      "lng": 101.607505
+    },
+    {
+      "id": "n-174",
+      "lat": 3.107881,
+      "lng": 101.60693
+    },
+    {
+      "id": "n-175",
+      "lat": 3.107445,
+      "lng": 101.605943
+    },
+    {
+      "id": "n-176",
+      "lat": 3.107959,
+      "lng": 101.605852
+    },
+    {
+      "id": "n-177",
+      "lat": 3.108309,
+      "lng": 101.605663
+    },
+    {
+      "id": "n-178",
+      "lat": 3.108569,
+      "lng": 101.60531
+    },
+    {
+      "id": "n-179",
+      "lat": 3.107925,
+      "lng": 101.605479
+    },
+    {
+      "id": "n-180",
+      "lat": 3.107397,
+      "lng": 101.604911
+    },
+    {
+      "id": "n-181",
+      "lat": 3.107421,
+      "lng": 101.605427
+    },
+    {
+      "id": "n-182",
+      "lat": 3.107564,
+      "lng": 101.604908
+    },
+    {
+      "id": "n-183",
+      "lat": 3.107968,
+      "lng": 101.6049
+    },
+    {
+      "id": "n-184",
+      "lat": 3.108078,
+      "lng": 101.604787
+    },
+    {
+      "id": "n-185",
+      "lat": 3.10806,
+      "lng": 101.6043
+    },
+    {
+      "id": "n-186",
+      "lat": 3.108043,
+      "lng": 101.603814
+    },
+    {
+      "id": "n-187",
+      "lat": 3.107479,
+      "lng": 101.603844
+    },
+    {
+      "id": "n-188",
+      "lat": 3.107454,
+      "lng": 101.603259
+    },
+    {
+      "id": "n-189",
+      "lat": 3.108171,
+      "lng": 101.603224
+    },
+    {
+      "id": "n-190",
+      "lat": 3.108195,
+      "lng": 101.603756
+    },
+    {
+      "id": "n-191",
+      "lat": 3.108209,
+      "lng": 101.604157
+    },
+    {
+      "id": "n-192",
+      "lat": 3.108724,
+      "lng": 101.603196
+    },
+    {
+      "id": "n-193",
+      "lat": 3.108774,
+      "lng": 101.604058
+    },
+    {
+      "id": "n-194",
+      "lat": 3.108749,
+      "lng": 101.603627
+    },
+    {
+      "id": "n-195",
+      "lat": 3.107522,
+      "lng": 101.604376
+    },
+    {
+      "id": "n-196",
+      "lat": 3.107312,
+      "lng": 101.603197
+    },
+    {
+      "id": "n-197",
+      "lat": 3.10734,
+      "lng": 101.603768
+    },
+    {
+      "id": "n-198",
+      "lat": 3.107369,
+      "lng": 101.604339
+    }
+  ],
+  "segments": [
+    {
+      "id": "seg-1",
+      "from": "n-1",
+      "to": "n-2",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-2",
+      "from": "n-2",
+      "to": "n-3",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-3",
+      "from": "n-3",
+      "to": "n-4",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-4",
+      "from": "n-4",
+      "to": "n-5",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-5",
+      "from": "n-5",
+      "to": "n-6",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-6",
+      "from": "n-6",
+      "to": "n-7",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-7",
+      "from": "n-7",
+      "to": "n-8",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-8",
+      "from": "n-8",
+      "to": "n-9",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-9",
+      "from": "n-9",
+      "to": "n-10",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    },
+    {
+      "id": "seg-10",
+      "from": "n-11",
+      "to": "n-10",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-11",
+      "from": "n-12",
+      "to": "n-11",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/12 Road"
+    },
+    {
+      "id": "seg-12",
+      "from": "n-4",
+      "to": "n-13",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-13",
+      "from": "n-13",
+      "to": "n-14",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-14",
+      "from": "n-14",
+      "to": "n-15",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/5 Road"
+    },
+    {
+      "id": "seg-15",
+      "from": "n-15",
+      "to": "n-16",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/5 Road"
+    },
+    {
+      "id": "seg-16",
+      "from": "n-16",
+      "to": "n-17",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-17",
+      "from": "n-17",
+      "to": "n-18",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-18",
+      "from": "n-18",
+      "to": "n-19",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-19",
+      "from": "n-19",
+      "to": "n-20",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.2,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-20",
+      "from": "n-20",
+      "to": "n-21",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/5A Road"
+    },
+    {
+      "id": "seg-21",
+      "from": "n-21",
+      "to": "n-22",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/5A Road"
+    },
+    {
+      "id": "seg-22",
+      "from": "n-22",
+      "to": "n-15",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/5A Road"
+    },
+    {
+      "id": "seg-23",
+      "from": "n-23",
+      "to": "n-21",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.55,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-24",
+      "from": "n-24",
+      "to": "n-23",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-25",
+      "from": "n-25",
+      "to": "n-24",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-26",
+      "from": "n-26",
+      "to": "n-25",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.75,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-27",
+      "from": "n-26",
+      "to": "n-27",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3A Road"
+    },
+    {
+      "id": "seg-28",
+      "from": "n-27",
+      "to": "n-28",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3A Road"
+    },
+    {
+      "id": "seg-29",
+      "from": "n-28",
+      "to": "n-29",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3A Road"
+    },
+    {
+      "id": "seg-30",
+      "from": "n-30",
+      "to": "n-29",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-31",
+      "from": "n-30",
+      "to": "n-31",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-32",
+      "from": "n-31",
+      "to": "n-32",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-33",
+      "from": "n-32",
+      "to": "n-33",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-34",
+      "from": "n-33",
+      "to": "n-34",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-35",
+      "from": "n-34",
+      "to": "n-35",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-36",
+      "from": "n-35",
+      "to": "n-36",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-37",
+      "from": "n-36",
+      "to": "n-37",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-38",
+      "from": "n-38",
+      "to": "n-37",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-39",
+      "from": "n-38",
+      "to": "n-39",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-40",
+      "from": "n-39",
+      "to": "n-40",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-41",
+      "from": "n-40",
+      "to": "n-41",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-42",
+      "from": "n-41",
+      "to": "n-42",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-43",
+      "from": "n-42",
+      "to": "n-1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-44",
+      "from": "n-38",
+      "to": "n-43",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-45",
+      "from": "n-43",
+      "to": "n-44",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-46",
+      "from": "n-44",
+      "to": "n-45",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-47",
+      "from": "n-46",
+      "to": "n-45",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road"
+    },
+    {
+      "id": "seg-48",
+      "from": "n-46",
+      "to": "n-47",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-49",
+      "from": "n-47",
+      "to": "n-48",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-50",
+      "from": "n-48",
+      "to": "n-49",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-51",
+      "from": "n-49",
+      "to": "n-50",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-52",
+      "from": "n-50",
+      "to": "n-51",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-53",
+      "from": "n-51",
+      "to": "n-52",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-54",
+      "from": "n-52",
+      "to": "n-53",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-55",
+      "from": "n-53",
+      "to": "n-54",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-56",
+      "from": "n-54",
+      "to": "n-55",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-57",
+      "from": "n-55",
+      "to": "n-56",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-58",
+      "from": "n-56",
+      "to": "n-57",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-59",
+      "from": "n-57",
+      "to": "n-58",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-60",
+      "from": "n-58",
+      "to": "n-59",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-61",
+      "from": "n-58",
+      "to": "n-60",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11 Road"
+    },
+    {
+      "id": "seg-62",
+      "from": "n-60",
+      "to": "n-61",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11 Road"
+    },
+    {
+      "id": "seg-63",
+      "from": "n-62",
+      "to": "n-63",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11A Road"
+    },
+    {
+      "id": "seg-64",
+      "from": "n-63",
+      "to": "n-61",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11A Road"
+    },
+    {
+      "id": "seg-65",
+      "from": "n-61",
+      "to": "n-64",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11 Road"
+    },
+    {
+      "id": "seg-66",
+      "from": "n-65",
+      "to": "n-66",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11B Road"
+    },
+    {
+      "id": "seg-67",
+      "from": "n-66",
+      "to": "n-64",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11B Road"
+    },
+    {
+      "id": "seg-68",
+      "from": "n-65",
+      "to": "n-67",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-69",
+      "from": "n-67",
+      "to": "n-68",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0.05,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-70",
+      "from": "n-69",
+      "to": "n-68",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.8,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.9
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-71",
+      "from": "n-69",
+      "to": "n-70",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-72",
+      "from": "n-70",
+      "to": "n-71",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-73",
+      "from": "n-71",
+      "to": "n-72",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.65,
+        "12:00": 0.65,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-74",
+      "from": "n-73",
+      "to": "n-72",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9B Road"
+    },
+    {
+      "id": "seg-75",
+      "from": "n-72",
+      "to": "n-74",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9B Road"
+    },
+    {
+      "id": "seg-76",
+      "from": "n-74",
+      "to": "n-75",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-77",
+      "from": "n-75",
+      "to": "n-76",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-78",
+      "from": "n-76",
+      "to": "n-77",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-79",
+      "from": "n-77",
+      "to": "n-78",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-80",
+      "from": "n-79",
+      "to": "n-80",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.05,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/7 Road"
+    },
+    {
+      "id": "seg-81",
+      "from": "n-80",
+      "to": "n-78",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.5,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.25
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/7 Road"
+    },
+    {
+      "id": "seg-82",
+      "from": "n-81",
+      "to": "n-79",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9B Road"
+    },
+    {
+      "id": "seg-83",
+      "from": "n-82",
+      "to": "n-81",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9 Road"
+    },
+    {
+      "id": "seg-84",
+      "from": "n-83",
+      "to": "n-82",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9 Road"
+    },
+    {
+      "id": "seg-85",
+      "from": "n-84",
+      "to": "n-83",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.2,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-86",
+      "from": "n-84",
+      "to": "n-85",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.95
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/7 Road"
+    },
+    {
+      "id": "seg-87",
+      "from": "n-85",
+      "to": "n-86",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/4 Road"
+    },
+    {
+      "id": "seg-88",
+      "from": "n-86",
+      "to": "n-87",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/4 Road"
+    },
+    {
+      "id": "seg-89",
+      "from": "n-87",
+      "to": "n-88",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/4 Road"
+    },
+    {
+      "id": "seg-90",
+      "from": "n-88",
+      "to": "n-89",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/4 Road"
+    },
+    {
+      "id": "seg-91",
+      "from": "n-89",
+      "to": "n-90",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/4 Road"
+    },
+    {
+      "id": "seg-92",
+      "from": "n-91",
+      "to": "n-90",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/3 Road"
+    },
+    {
+      "id": "seg-93",
+      "from": "n-91",
+      "to": "n-92",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-94",
+      "from": "n-92",
+      "to": "n-93",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-95",
+      "from": "n-93",
+      "to": "n-94",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-96",
+      "from": "n-94",
+      "to": "n-84",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-97",
+      "from": "n-91",
+      "to": "n-95",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-98",
+      "from": "n-95",
+      "to": "n-96",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.2
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-99",
+      "from": "n-96",
+      "to": "n-97",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-100",
+      "from": "n-98",
+      "to": "n-99",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/1 Road"
+    },
+    {
+      "id": "seg-101",
+      "from": "n-99",
+      "to": "n-100",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/1 Road"
+    },
+    {
+      "id": "seg-102",
+      "from": "n-100",
+      "to": "n-97",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/1 Road"
+    },
+    {
+      "id": "seg-103",
+      "from": "n-101",
+      "to": "n-98",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-104",
+      "from": "n-101",
+      "to": "n-102",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-105",
+      "from": "n-102",
+      "to": "n-103",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-106",
+      "from": "n-103",
+      "to": "n-104",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.2
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-107",
+      "from": "n-104",
+      "to": "n-105",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.15,
+        "12:00": 0,
+        "14:00": 0.15,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-108",
+      "from": "n-106",
+      "to": "n-98",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/1 Road"
+    },
+    {
+      "id": "seg-109",
+      "from": "n-106",
+      "to": "n-107",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-110",
+      "from": "n-108",
+      "to": "n-107",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5B/5 Road"
+    },
+    {
+      "id": "seg-111",
+      "from": "n-108",
+      "to": "n-109",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5B/1 Road"
+    },
+    {
+      "id": "seg-112",
+      "from": "n-107",
+      "to": "n-110",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-113",
+      "from": "n-111",
+      "to": "n-110",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/1 Road"
+    },
+    {
+      "id": "seg-114",
+      "from": "n-111",
+      "to": "n-112",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.9
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-115",
+      "from": "n-112",
+      "to": "n-113",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.9
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-116",
+      "from": "n-113",
+      "to": "n-114",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-117",
+      "from": "n-114",
+      "to": "n-115",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-118",
+      "from": "n-115",
+      "to": "n-116",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-119",
+      "from": "n-116",
+      "to": "n-117",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-120",
+      "from": "n-117",
+      "to": "n-118",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-121",
+      "from": "n-118",
+      "to": "n-119",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-122",
+      "from": "n-120",
+      "to": "n-119",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-123",
+      "from": "n-121",
+      "to": "n-120",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-124",
+      "from": "n-122",
+      "to": "n-121",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-125",
+      "from": "n-122",
+      "to": "n-123",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.7,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-126",
+      "from": "n-121",
+      "to": "n-124",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-127",
+      "from": "n-124",
+      "to": "n-125",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-128",
+      "from": "n-125",
+      "to": "n-120",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-129",
+      "from": "n-119",
+      "to": "n-126",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-130",
+      "from": "n-126",
+      "to": "n-127",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-131",
+      "from": "n-128",
+      "to": "n-127",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11 Road"
+    },
+    {
+      "id": "seg-132",
+      "from": "n-128",
+      "to": "n-129",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-133",
+      "from": "n-129",
+      "to": "n-130",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-134",
+      "from": "n-128",
+      "to": "n-64",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.9
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/11 Road"
+    },
+    {
+      "id": "seg-135",
+      "from": "n-117",
+      "to": "n-131",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.7,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.7
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-136",
+      "from": "n-131",
+      "to": "n-132",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.35,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/12 Road"
+    },
+    {
+      "id": "seg-137",
+      "from": "n-132",
+      "to": "n-133",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.95,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/12 Road"
+    },
+    {
+      "id": "seg-138",
+      "from": "n-133",
+      "to": "n-134",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.7,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/5 Road"
+    },
+    {
+      "id": "seg-139",
+      "from": "n-134",
+      "to": "n-135",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.6,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.8
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/5 Road"
+    },
+    {
+      "id": "seg-140",
+      "from": "n-135",
+      "to": "n-136",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/10 Road"
+    },
+    {
+      "id": "seg-141",
+      "from": "n-131",
+      "to": "n-137",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/12 Road"
+    },
+    {
+      "id": "seg-142",
+      "from": "n-137",
+      "to": "n-138",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0.05,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/12 Road"
+    },
+    {
+      "id": "seg-143",
+      "from": "n-138",
+      "to": "n-139",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/12 Road"
+    },
+    {
+      "id": "seg-144",
+      "from": "n-140",
+      "to": "n-138",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/1 Road"
+    },
+    {
+      "id": "seg-145",
+      "from": "n-140",
+      "to": "n-141",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.45
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/14 Road"
+    },
+    {
+      "id": "seg-146",
+      "from": "n-141",
+      "to": "n-142",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/14 Road"
+    },
+    {
+      "id": "seg-147",
+      "from": "n-142",
+      "to": "n-143",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/14 Road"
+    },
+    {
+      "id": "seg-148",
+      "from": "n-143",
+      "to": "n-144",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/14 Road"
+    },
+    {
+      "id": "seg-149",
+      "from": "n-145",
+      "to": "n-140",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 1
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5C/1 Road"
+    },
+    {
+      "id": "seg-150",
+      "from": "n-137",
+      "to": "n-115",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.75,
+        "12:00": 0.05,
+        "14:00": 0,
+        "17:00": 0.8
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-151",
+      "from": "n-131",
+      "to": "n-142",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.75,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.75
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-152",
+      "from": "n-114",
+      "to": "n-78",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/7 Road"
+    },
+    {
+      "id": "seg-153",
+      "from": "n-139",
+      "to": "n-111",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/1 Road"
+    },
+    {
+      "id": "seg-154",
+      "from": "n-110",
+      "to": "n-113",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-155",
+      "from": "n-146",
+      "to": "n-106",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 5/2 Road"
+    },
+    {
+      "id": "seg-156",
+      "from": "n-146",
+      "to": "n-147",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Majlis Road"
+    },
+    {
+      "id": "seg-157",
+      "from": "n-147",
+      "to": "n-148",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Majlis Road"
+    },
+    {
+      "id": "seg-158",
+      "from": "n-148",
+      "to": "n-149",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Majlis Road"
+    },
+    {
+      "id": "seg-159",
+      "from": "n-149",
+      "to": "n-46",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Majlis Road"
+    },
+    {
+      "id": "seg-160",
+      "from": "n-90",
+      "to": "n-150",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/3 Road"
+    },
+    {
+      "id": "seg-161",
+      "from": "n-150",
+      "to": "n-151",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/3 Road"
+    },
+    {
+      "id": "seg-162",
+      "from": "n-151",
+      "to": "n-101",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.05
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/3 Road"
+    },
+    {
+      "id": "seg-163",
+      "from": "n-89",
+      "to": "n-152",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.55,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-164",
+      "from": "n-152",
+      "to": "n-153",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.3,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.35
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-165",
+      "from": "n-153",
+      "to": "n-104",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.6
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/5 Road"
+    },
+    {
+      "id": "seg-166",
+      "from": "n-154",
+      "to": "n-155",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9A Road"
+    },
+    {
+      "id": "seg-167",
+      "from": "n-155",
+      "to": "n-82",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.1,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9A Road"
+    },
+    {
+      "id": "seg-168",
+      "from": "n-85",
+      "to": "n-79",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.9
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/7 Road"
+    },
+    {
+      "id": "seg-169",
+      "from": "n-77",
+      "to": "n-71",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-170",
+      "from": "n-74",
+      "to": "n-81",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/9B Road"
+    },
+    {
+      "id": "seg-171",
+      "from": "n-70",
+      "to": "n-122",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Local road: SS 5D/6 Road"
+    },
+    {
+      "id": "seg-172",
+      "from": "n-69",
+      "to": "n-156",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-173",
+      "from": "n-68",
+      "to": "n-73",
+      "widthM": 1.8,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Footpath"
+    },
+    {
+      "id": "seg-174",
+      "from": "n-83",
+      "to": "n-157",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-175",
+      "from": "n-157",
+      "to": "n-158",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.85,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.5
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-176",
+      "from": "n-158",
+      "to": "n-159",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-177",
+      "from": "n-159",
+      "to": "n-160",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-178",
+      "from": "n-160",
+      "to": "n-60",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 5D/2 Road"
+    },
+    {
+      "id": "seg-179",
+      "from": "n-161",
+      "to": "n-46",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 3/39 Road"
+    },
+    {
+      "id": "seg-180",
+      "from": "n-45",
+      "to": "n-162",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 3/39 Road"
+    },
+    {
+      "id": "seg-181",
+      "from": "n-37",
+      "to": "n-163",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.05,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/2 Road"
+    },
+    {
+      "id": "seg-182",
+      "from": "n-163",
+      "to": "n-164",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-183",
+      "from": "n-164",
+      "to": "n-165",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-184",
+      "from": "n-165",
+      "to": "n-166",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-185",
+      "from": "n-166",
+      "to": "n-167",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-186",
+      "from": "n-167",
+      "to": "n-168",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4A Road"
+    },
+    {
+      "id": "seg-187",
+      "from": "n-168",
+      "to": "n-169",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4A Road"
+    },
+    {
+      "id": "seg-188",
+      "from": "n-169",
+      "to": "n-165",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4A Road"
+    },
+    {
+      "id": "seg-189",
+      "from": "n-167",
+      "to": "n-30",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-190",
+      "from": "n-164",
+      "to": "n-26",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.7,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.4
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-191",
+      "from": "n-25",
+      "to": "n-170",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-192",
+      "from": "n-170",
+      "to": "n-171",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-193",
+      "from": "n-171",
+      "to": "n-172",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-194",
+      "from": "n-23",
+      "to": "n-173",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-195",
+      "from": "n-173",
+      "to": "n-14",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/3 Road"
+    },
+    {
+      "id": "seg-196",
+      "from": "n-20",
+      "to": "n-24",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.1,
+        "12:00": 0,
+        "14:00": 0.2,
+        "17:00": 0.6
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-197",
+      "from": "n-19",
+      "to": "n-163",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-198",
+      "from": "n-21",
+      "to": "n-18",
+      "widthM": 3,
+      "shade": {
+        "09:00": 0.65,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Service lane"
+    },
+    {
+      "id": "seg-199",
+      "from": "n-16",
+      "to": "n-174",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-200",
+      "from": "n-174",
+      "to": "n-2",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4A/4 Road"
+    },
+    {
+      "id": "seg-201",
+      "from": "n-175",
+      "to": "n-1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-202",
+      "from": "n-176",
+      "to": "n-175",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.2
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/1 Road"
+    },
+    {
+      "id": "seg-203",
+      "from": "n-176",
+      "to": "n-177",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.15
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/1 Road"
+    },
+    {
+      "id": "seg-204",
+      "from": "n-177",
+      "to": "n-178",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/1 Road"
+    },
+    {
+      "id": "seg-205",
+      "from": "n-179",
+      "to": "n-176",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street"
+    },
+    {
+      "id": "seg-206",
+      "from": "n-180",
+      "to": "n-181",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-207",
+      "from": "n-181",
+      "to": "n-175",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-208",
+      "from": "n-180",
+      "to": "n-182",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/3 Road"
+    },
+    {
+      "id": "seg-209",
+      "from": "n-182",
+      "to": "n-183",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.55
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/3 Road"
+    },
+    {
+      "id": "seg-210",
+      "from": "n-183",
+      "to": "n-184",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.15
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/3 Road"
+    },
+    {
+      "id": "seg-211",
+      "from": "n-184",
+      "to": "n-185",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS B/4 Road"
+    },
+    {
+      "id": "seg-212",
+      "from": "n-185",
+      "to": "n-186",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS B/4 Road"
+    },
+    {
+      "id": "seg-213",
+      "from": "n-186",
+      "to": "n-187",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.4,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.8
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/5 Road"
+    },
+    {
+      "id": "seg-214",
+      "from": "n-187",
+      "to": "n-188",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/2 Road"
+    },
+    {
+      "id": "seg-215",
+      "from": "n-189",
+      "to": "n-188",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0.65,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.85
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/7 Road"
+    },
+    {
+      "id": "seg-216",
+      "from": "n-190",
+      "to": "n-189",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/6 Road"
+    },
+    {
+      "id": "seg-217",
+      "from": "n-191",
+      "to": "n-190",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/6 Road"
+    },
+    {
+      "id": "seg-218",
+      "from": "n-189",
+      "to": "n-192",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.65
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/7 Road"
+    },
+    {
+      "id": "seg-219",
+      "from": "n-193",
+      "to": "n-194",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/8 Road"
+    },
+    {
+      "id": "seg-220",
+      "from": "n-194",
+      "to": "n-192",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/8 Road"
+    },
+    {
+      "id": "seg-221",
+      "from": "n-190",
+      "to": "n-186",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0.15
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/5 Road"
+    },
+    {
+      "id": "seg-222",
+      "from": "n-182",
+      "to": "n-195",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/2 Road"
+    },
+    {
+      "id": "seg-223",
+      "from": "n-195",
+      "to": "n-187",
+      "widthM": 2.5,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Residential street: SS 4B/2 Road"
+    },
+    {
+      "id": "seg-224",
+      "from": "n-196",
+      "to": "n-197",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-225",
+      "from": "n-197",
+      "to": "n-198",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-226",
+      "from": "n-198",
+      "to": "n-180",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Main road: Bahagia Road"
+    },
+    {
+      "id": "seg-227",
+      "from": "n-53",
+      "to": "n-1",
+      "widthM": 2,
+      "shade": {
+        "09:00": 0,
+        "12:00": 0,
+        "14:00": 0,
+        "17:00": 0
+      },
+      "shadeSource": "estimated",
+      "accessible": true,
+      "notes": "Collector road: SS 4B/10 Road"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "dest-home-1",
+      "nodeId": "n-7",
+      "name": "Homes (north-west)",
+      "kind": "home"
+    },
+    {
+      "id": "dest-home-2",
+      "nodeId": "n-164",
+      "name": "Homes (east)",
+      "kind": "home"
+    },
+    {
+      "id": "dest-school",
+      "nodeId": "n-76",
+      "name": "School",
+      "kind": "school",
+      "localName": "Nobel International School"
+    },
+    {
+      "id": "dest-bus-stop",
+      "nodeId": "n-147",
+      "name": "Bus stop",
+      "kind": "bus-stop",
+      "localName": "Perumahan SS 3"
+    },
+    {
+      "id": "dest-shops",
+      "nodeId": "n-10",
+      "name": "Supermarket",
+      "kind": "shops",
+      "localName": "99 Speedmart"
+    },
+    {
+      "id": "dest-park",
+      "nodeId": "n-8",
+      "name": "Park",
+      "kind": "park"
+    }
+  ],
+  "meta": {
+    "name": "SS 4, Petaling Jaya",
+    "center": [
+      3.1075,
+      101.607
+    ],
+    "radiusM": 450,
+    "source": "openstreetmap",
+    "attribution": "Map data © OpenStreetMap contributors (ODbL)",
+    "generatedAt": "2026-10-15",
+    "assumptions": [
+      "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
+      "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
+      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
+    ],
+    "budget": {
+      "max": 300000,
+      "step": 5000,
+      "demo": 110000
+    },
+    "demoJourneyId": "j-home-2-bus-stop"
+  }
+}

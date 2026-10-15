@@ -15,5 +15,5 @@
     "noEmit": true,
     "types": ["vite/client", "node"]
   },
-  "include": ["src", "server", "data/*.json", "vite.config.ts"]
+  "include": ["src", "server", "data/**/*.ts", "data/*/*.json", "data/*.json", "vite.config.ts", "scripts"]
 }

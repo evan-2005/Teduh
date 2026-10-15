@@ -3,6 +3,7 @@ import { MapView } from './components/MapView';
 import { ResultsPanel } from './components/ResultsPanel';
 import { RouteComparison } from './components/RouteComparison';
 import { ENABLE_AI, FOOTER_DISCLAIMER } from './config';
+import { meta } from './data/dataset';
 import { PlanExplainer, ShadeScanPanel } from './features/ai-scan';
 import { FabricationPanel } from './features/fabrication';
 import { useNetworkView } from './hooks/useNetworkView';
@@ -37,7 +38,10 @@ export function App() {
         {ENABLE_AI && <PlanExplainer plan={selectedPlan} />}
       </aside>
 
-      <footer className="shell__footer">{FOOTER_DISCLAIMER}</footer>
+      <footer className="shell__footer">
+        {FOOTER_DISCLAIMER}
+        {meta.attribution && <span> {meta.attribution}.</span>}
+      </footer>
     </div>
   );
 }

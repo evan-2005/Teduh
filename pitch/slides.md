@@ -8,7 +8,7 @@ One idea per slide. Paste into your slide tool; screenshots come from the runnin
 ## 2. The problem
 A township can already have trees and footpaths and still have exposed gaps between them.
 Managers have a small budget and no way to see which gap matters most.
-*Visual:* the map's Before side with the amber dashed connector.
+*Visual:* the real SS 4 map with the Before side in amber (paths in direct sun).
 
 ## 3. The decision we support
 "With our budget, which shade improvements would help the most everyday journeys?"
@@ -42,10 +42,13 @@ Shade-aware routing already exists (for example Singapore's Undercover). TEDUH a
 3. Count pedestrians and collect resident feedback before and after.
 4. Replace planning costs with contractor quotes.
 
-## 9. Resident voice
+## 9. Data and honesty about it
+Streets, buildings and places come from OpenStreetMap; shade is modelled from the real sun position and mapped buildings. OpenStreetMap has no trees here, so midday shade is understated. The pilot fixes that with a field survey, and the AI shade scan (human-confirmed) speeds it up.
+
+## 10. Resident voice
 Use 3–5 **real** quotes from `resident-interviews.md`. Do not paraphrase into claims the resident did not make.
 
-## 10. Ask / next steps
+## 11. Ask / next steps
 What you need from the judges or township partner: access to one neighbourhood, a landscape contact, and a maintenance budget line.
 
 ## Sources

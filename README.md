@@ -18,25 +18,30 @@ npm run build && npm run preview   # production build; works offline except map 
 
 - Copy `.env.example` to `.env`. Set `VITE_ENABLE_AI=true` to show the AI panels. With no `ANTHROPIC_API_KEY` the server returns clearly labelled **mock** results, so the demo never depends on the network.
 - Click **Demo: 2 pm walk to the shops** to load the demo scenario.
-- Pitch material is in `pitch/`; replacing the synthetic data is described in `data/README.md`.
+- The app uses real OpenStreetMap data for SS 4, Petaling Jaya (`data/osm/`). Set `VITE_DATASET=seed` for the invented offline dataset. Refreshing or changing the area is described in `data/README.md`.
+- Pitch material is in `pitch/`.
 
 ## Screenshots
 
-Illustrative prototype data on a synthetic neighbourhood. Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
+Real streets, buildings and places from OpenStreetMap for SS 4, Petaling Jaya. Shade, trips and costs are **modelled estimates** (see "How this was built" in the app). Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
 
-**Before / After swipe.** The amber dashed connector (direct sun) turns green once the recommended shelter is applied. Drag the divider to compare.
+**Before / After swipe.** Drag the divider to compare the surveyed network with the recommended plan. The amber dashed lines are paths in direct sun.
 
-![Before and after swipe, with the recommended plan and results panel](docs/screenshots/01-before-after-swipe.png)
+![Before and after swipe on the real map, with the recommended plan and results panel](docs/screenshots/01-before-after-swipe.png)
+
+**See the area.** "Map layers" switches the background (Streets, Light, Satellite, None) and shows buildings, parks, mapped trees and landmarks. The area layers work offline.
+
+![Satellite background with the Map layers panel open](docs/screenshots/06-area-layers-satellite.png)
 
 **Now / Future canopy.** Young trees give little shade today and a lot at maturity, so the best plan changes with the growth year.
 
-![Future canopy at year 10 with a tree-heavy recommended plan](docs/screenshots/02-future-canopy.png)
+![Future canopy at year 10 with a tree-row plan](docs/screenshots/02-future-canopy.png)
 
 **Fabrication pack.** Click a shelter or tree marker for its dimensions, bill of materials, elevation drawing and CSV/JSON export. Output is indicative only.
 
-![Fabrication pack for the connector shelter](docs/screenshots/03-fabrication-pack.png)
+![Fabrication pack for a covered walkway](docs/screenshots/03-fabrication-pack.png)
 
-**AI shade scan.** A survey photo gets a shade estimate that only reaches the map after a person confirms it (the sample photo here is a placeholder, and without an API key the estimate is a labelled MOCK).
+**AI shade scan.** A survey photo gets a shade estimate that only reaches the map after a person confirms it. The sample photo here is a placeholder, and without an API key the estimate is a labelled MOCK.
 
 ![AI shade scan with a confirmed estimate](docs/screenshots/04-ai-shade-scan.png)
 
@@ -326,9 +331,11 @@ Shelters: `shadeNow == shadeFuture`, so the canopy toggle doesn't change them, w
 
 ## 6. Seed data (Phase 0, replaced later by Teammate C)
 
+> **Update:** the invented dataset now lives in `data/seed/` (used by the tests and `VITE_DATASET=seed`). The app defaults to real OpenStreetMap data in `data/osm/`; see `data/README.md`.
+
 Generate a **synthetic but believable** neighbourhood around `MAP_CENTER` in `src/config.ts` (placeholder Malaysian township coordinate; Teammate C will set the real one):
 
-- ~30 segments on a loose grid (40–120 m each), 5 destinations: **Home cluster A, Home cluster B, Sekolah (school), Bus stop, Shop row**.
+- ~30 segments on a loose grid (40–120 m each), 5 destinations: **Home cluster A, Home cluster B, School, Bus stop, Shop row**.
 - Journeys: both home clusters → each of school, bus stop, shops (6 journeys, 40–300 trips/day).
 - Shade snapshots vary by time. 14:00 is the harshest.
 - **Design the "memorable moment":** one ~240 m exposed **shared connector** that sits on the least-sun route of the school, bus-stop *and* shop journeys. A single shelter there (≈ RM 18k) should be the top recommendation at a modest budget.

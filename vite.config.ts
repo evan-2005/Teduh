@@ -10,6 +10,8 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
+    // Unit tests assert on the synthetic dataset; the app defaults to the real-area one.
+    env: { VITE_DATASET: 'seed' },
     include: ['src/**/*.test.ts', 'server/**/*.test.ts'],
     coverage: {
       provider: 'v8',

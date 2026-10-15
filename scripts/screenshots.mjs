@@ -43,7 +43,24 @@ const demoButton = () => page.getByRole('button', { name: /Demo: 2 pm/ });
 
 await page.goto(BASE_URL);
 await demoButton().waitFor();
-await page.getByLabel('Show basemap').uncheck();
+await page.waitForLoadState('networkidle').catch(() => undefined);
+
+// 0. Area context: real layout, landmarks and a switchable background map
+check('area card names the place', (await page.locator('.area__name').innerText()).length > 0);
+check('landmarks are drawn from the area context', (await page.locator('.landmark').count()) >= 5);
+await page.getByRole('button', { name: 'Map layers' }).click();
+await page.getByRole('radio', { name: 'Satellite' }).click();
+await page.waitForTimeout(1500);
+check(
+  'satellite background loads',
+  (await page.locator('img.leaflet-tile[src*="arcgisonline"]').count()) > 0,
+);
+await shot('06-area-layers-satellite');
+await page.getByRole('radio', { name: 'Streets' }).click();
+await page.getByLabel('Buildings').uncheck();
+await page.getByLabel('Buildings').check();
+await page.getByRole('button', { name: 'Map layers' }).click();
+await page.waitForTimeout(800);
 
 // 1. Demo preset + swipe
 await demoButton().click();
@@ -52,7 +69,7 @@ await divider.focus();
 for (let i = 0; i < 4; i++) await divider.press('ArrowRight');
 await settle();
 const headline = await page.locator('.headline__value').innerText();
-check('demo preset loads and recommends a plan', Number(headline) > 40, `headline ${headline}`);
+check('demo preset loads and recommends a plan', Number(headline) > 1, `headline ${headline}`);
 check('swipe divider is shown', await divider.isVisible());
 await shot('01-before-after-swipe');
 
@@ -75,11 +92,11 @@ await page.getByRole('radio', { name: '14:00' }).click();
 
 // 4. Candidates and priorities recalculate
 const baseline = await page.locator('.headline__value').innerText();
-await page.getByLabel(/School gate shelter/).uncheck();
+await page.locator('.candidate input:checked').first().uncheck();
 await settle();
 const afterUntick = await page.locator('.headline__value').innerText();
 check('unticking a candidate recalculates results', afterUntick !== baseline, `${baseline} -> ${afterUntick}`);
-await page.getByRole('slider', { name: /^Shop row/ }).fill('3');
+await page.getByRole('slider', { name: /^Supermarket/ }).fill('3');
 await settle();
 check('priority sliders keep recommendations available', (await page.locator('.plan').count()) > 0);
 await demoButton().click();
@@ -89,12 +106,14 @@ await page.getByRole('radio', { name: 'Future' }).click();
 await page.getByRole('button', { name: 'Recommend a plan' }).click();
 await settle();
 check('future canopy recommends tree plans', /tree/i.test(await page.locator('.plans').innerText()));
+await page.getByRole('radio', { name: 'After' }).click();
+await settle();
 await shot('02-future-canopy');
 await demoButton().click();
 
 // 6. Fabrication pack (markers live on the After side, so leave swipe first)
 await page.getByRole("radio", { name: "After" }).click();
-await page.locator('[title="Connector shelter (240 m)"]').click();
+await page.locator('[title^="Shelter on"]').first().click();
 const pack = page.locator('.fabrication');
 await pack.waitFor();
 await scrollToTop(pack);

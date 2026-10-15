@@ -6,8 +6,26 @@ export const SHORTEST_COLOR = '#1b2a26';
 export const LEAST_SUN_COLOR = '#2f5d9e';
 export const DESTINATION_COLOR = '#f6f3ea';
 
-export const SEGMENT_WEIGHT = 6;
-export const EXPOSED_DASH = '7 6';
-export const ROUTE_UNDERLAY_WEIGHT = 11;
+export const SEGMENT_WEIGHT = 4;
+export const EXPOSED_DASH = '5 5';
+export const ROUTE_UNDERLAY_WEIGHT = 9;
 export const ROUTE_OVERLAY_WEIGHT = 2;
 export const MAP_PADDING_PX = 40;
+
+// Area context (read-only surroundings).
+export const BUILDING_STYLE = {
+  stroke: false,
+  fillColor: '#c9c2ae',
+  fillOpacity: 0.55,
+} as const;
+export const GREEN_STYLE = {
+  stroke: false,
+  fillColor: '#8fbf98',
+  fillOpacity: 0.45,
+} as const;
+export const TREE_STYLE = {
+  radius: 2.5,
+  stroke: false,
+  fillColor: '#4f8f62',
+  fillOpacity: 0.8,
+} as const;

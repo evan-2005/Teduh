@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
-import { DEFAULT_SCENARIO, DEMO_BUDGET } from '../config';
-import { dataset, graph } from '../data/dataset';
+import { dataset, graph, meta } from '../data/dataset';
 import { createEvaluator } from '../lib/optimizer';
-import { useScenarioStore } from '../store/scenario';
+import { INITIAL_SCENARIO, useScenarioStore } from '../store/scenario';
 
-/** One click: 2 pm, Home A → shops, RM 25k, then recommend and apply the best plan. */
+/** One click: 2 pm, the demo journey and budget, then recommend and apply the best plan. */
 export function useDemoPreset(): () => void {
   const loadDemo = useScenarioStore((s) => s.loadDemo);
   return useCallback(() => {
@@ -14,14 +13,14 @@ export function useDemoPreset(): () => void {
       destinations: dataset.neighbourhood.destinations,
       journeys: dataset.journeys,
       candidates: dataset.interventions,
-      time: DEFAULT_SCENARIO.time,
-      canopy: DEFAULT_SCENARIO.canopy,
-      canopyYear: DEFAULT_SCENARIO.canopyYear,
-      detourLimit: DEFAULT_SCENARIO.detourLimit,
-      priorityWeights: DEFAULT_SCENARIO.priorityWeights,
+      time: INITIAL_SCENARIO.time,
+      canopy: INITIAL_SCENARIO.canopy,
+      canopyYear: INITIAL_SCENARIO.canopyYear,
+      detourLimit: INITIAL_SCENARIO.detourLimit,
+      priorityWeights: INITIAL_SCENARIO.priorityWeights,
       overrides: [],
     });
-    const [best] = evaluator.recommend(DEMO_BUDGET);
+    const [best] = evaluator.recommend(meta.budget.demo);
     loadDemo(best?.interventionIds ?? []);
   }, [loadDemo]);
 }

@@ -14,7 +14,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
-    "screenshots": "node scripts/screenshots.mjs"
+    "screenshots": "node scripts/screenshots.mjs",
+    "data:fetch": "tsx data/osm/fetch.ts",
+    "data:build": "tsx data/osm/build.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.134.0",

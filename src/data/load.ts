@@ -1,7 +1,4 @@
 import { z } from 'zod';
-import neighbourhoodRaw from '../../data/neighbourhood.json';
-import interventionsRaw from '../../data/interventions.json';
-import journeysRaw from '../../data/journeys.json';
 import unitCostsRaw from '../../data/unit-costs.json';
 import { MAX_CANDIDATES } from '../config';
 import type {
@@ -46,12 +43,30 @@ export const destinationSchema = z.object({
   nodeId: z.string().min(1),
   name: z.string().min(1),
   kind: z.enum(['home', 'school', 'bus-stop', 'shops', 'clinic', 'park']),
+  localName: z.string().optional(),
+});
+
+export const datasetMetaSchema = z.object({
+  name: z.string().min(1),
+  center: z.tuple([z.number().min(-90).max(90), z.number().min(-180).max(180)]),
+  radiusM: z.number().positive().optional(),
+  source: z.enum(['synthetic', 'openstreetmap', 'surveyed']),
+  attribution: z.string().optional(),
+  generatedAt: z.string().optional(),
+  assumptions: z.array(z.string()).optional(),
+  budget: z.object({
+    max: z.number().positive(),
+    step: z.number().positive(),
+    demo: z.number().nonnegative(),
+  }),
+  demoJourneyId: z.string().min(1),
 });
 
 export const neighbourhoodSchema = z.object({
   nodes: z.array(pathNodeSchema).min(2),
   segments: z.array(pathSegmentSchema).min(1),
   destinations: z.array(destinationSchema).min(2),
+  meta: datasetMetaSchema.optional(),
 });
 
 export const journeySchema = z.object({
@@ -169,10 +184,24 @@ export function parseDataset(raw: {
   return dataset;
 }
 
-export const loadDataset = (): Dataset =>
+export type DatasetName = 'seed' | 'osm';
+
+// Every data/<name>/ folder is bundled; VITE_DATASET picks one at startup.
+const files = import.meta.glob<unknown>(
+  ['../../data/*/neighbourhood.json', '../../data/*/journeys.json', '../../data/*/interventions.json'],
+  { eager: true, import: 'default' },
+);
+
+const fileFor = (name: DatasetName, file: string): unknown => {
+  const key = `../../data/${name}/${file}.json`;
+  if (!(key in files)) throw new Error(`Missing data file data/${name}/${file}.json`);
+  return files[key];
+};
+
+export const loadDataset = (name: DatasetName): Dataset =>
   parseDataset({
-    neighbourhood: neighbourhoodRaw,
-    journeys: journeysRaw,
-    interventions: interventionsRaw,
+    neighbourhood: fileFor(name, 'neighbourhood'),
+    journeys: fileFor(name, 'journeys'),
+    interventions: fileFor(name, 'interventions'),
     unitCosts: unitCostsRaw,
   });
