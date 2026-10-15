@@ -17,13 +17,14 @@ npm run build && npm run preview   # production build; works offline except map 
 ```
 
 - Copy `.env.example` to `.env`. Set `VITE_ENABLE_AI=true` to show the AI panels. With no `ANTHROPIC_API_KEY` the server returns clearly labelled **mock** results, so the demo never depends on the network.
-- Click **Demo: 2 pm walk to the shops** to load the demo scenario.
+- The app opens on **SS 15, Subang Jaya** with the best plan applied. Click **Demo: 2 pm walk from the LRT station to the shopping mall** to reset to the demo scenario (in other areas the button names that area's demo walk).
+- Walks are modelled from public transport (rail stations, bus stops) to the places people walk to from it (malls, markets, schools, clinics, places of worship, parks). See `data/README.md`.
 - The app shows **real OpenStreetMap areas across the Klang Valley**. Pick one in the header, or click **Look up a place** to search any town or neighbourhood: the browser downloads its map data and analyses it on the spot (needs the internet). `?area=seed` loads the invented offline neighbourhood. Details in `data/README.md`.
 - Pitch material is in `pitch/`.
 
 ## Screenshots
 
-Real streets, buildings and places from OpenStreetMap (shown: SS 4, Petaling Jaya). Shade, trips and costs are **modelled estimates** (see "How this was built" in the app). Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
+Real streets, buildings and places from OpenStreetMap (shown: SS 15, Subang Jaya, the default area). Shade, trips and costs are **modelled estimates** (see "How this was built" in the app). Regenerate with `npm run screenshots` (needs both dev servers running; it also checks the main features work).
 
 **Before / After swipe.** Drag the divider to compare the surveyed network with the recommended plan. The amber dashed lines are paths in direct sun.
 
@@ -41,7 +42,7 @@ Real streets, buildings and places from OpenStreetMap (shown: SS 4, Petaling Jay
 
 ![Future canopy at year 10 with a tree-row plan](docs/screenshots/02-future-canopy.png)
 
-**Fabrication pack.** Click a shelter or tree marker for its dimensions, bill of materials, elevation drawing and CSV/JSON export. Output is indicative only.
+**Fabrication pack.** Click a shelter or tree marker (or **Details** in the candidate list) for its dimensions, bill of materials, elevation drawing and CSV/JSON export. Output is indicative only.
 
 ![Fabrication pack for a covered walkway](docs/screenshots/03-fabrication-pack.png)
 

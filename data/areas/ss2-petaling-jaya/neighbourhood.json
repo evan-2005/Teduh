@@ -11365,33 +11365,42 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-320",
-      "name": "Homes (south-west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-187",
-      "name": "Homes (east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-1",
       "nodeId": "n-375",
-      "name": "Bus stop",
+      "name": "Bus stop on SS 2/75 Road",
       "kind": "bus-stop",
       "localName": "Komersial SS2 (Public Bank)"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-117",
-      "name": "Shop",
-      "kind": "shops",
-      "localName": "Wedding Couture"
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-56",
+      "name": "Bus stop (east)",
+      "kind": "bus-stop",
+      "localName": "Komersial SS2 (Poh Kong)"
     },
     {
-      "id": "dest-park",
+      "id": "dest-bus-stop-5",
+      "nodeId": "n-210",
+      "name": "Bus stop on SS 2/24 Road",
+      "kind": "bus-stop",
+      "localName": "Petron Seapark (Opp)"
+    },
+    {
+      "id": "dest-shops-1",
+      "nodeId": "n-102",
+      "name": "Supermarket (north-east)",
+      "kind": "shops",
+      "localName": "Natural"
+    },
+    {
+      "id": "dest-shops-2",
+      "nodeId": "n-67",
+      "name": "Supermarket (south-east)",
+      "kind": "shops",
+      "localName": "99 Speedmart"
+    },
+    {
+      "id": "dest-park-1",
       "nodeId": "n-360",
       "name": "Park",
       "kind": "park"
@@ -11410,14 +11419,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. 1 mapped trees are included.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 250000,
       "step": 5000,
-      "demo": 120000
+      "demo": 100000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-bus-stop-2-to-shops-2"
   }
 }

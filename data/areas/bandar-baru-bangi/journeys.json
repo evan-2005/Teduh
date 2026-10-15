@@ -1,44 +1,58 @@
 [
   {
-    "id": "j-home-1-school",
-    "originId": "dest-home-1",
-    "destinationId": "dest-school",
-    "dailyTrips": 20,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-home-2-school",
+    "id": "j-home-2-to-school-1",
     "originId": "dest-home-2",
-    "destinationId": "dest-school",
-    "dailyTrips": 20,
+    "destinationId": "dest-school-1",
+    "dailyTrips": 44,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-shops",
-    "originId": "dest-home-1",
-    "destinationId": "dest-shops",
-    "dailyTrips": 20,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-home-2-shops",
+    "id": "j-home-2-to-shops-1",
     "originId": "dest-home-2",
-    "destinationId": "dest-shops",
-    "dailyTrips": 20,
+    "destinationId": "dest-shops-1",
+    "dailyTrips": 26,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-clinic",
-    "originId": "dest-home-1",
-    "destinationId": "dest-clinic",
-    "dailyTrips": 20,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-home-2-clinic",
+    "id": "j-home-2-to-clinic-1",
     "originId": "dest-home-2",
-    "destinationId": "dest-clinic",
-    "dailyTrips": 20,
+    "destinationId": "dest-clinic-1",
+    "dailyTrips": 13,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-to-worship-1",
+    "originId": "dest-home-1",
+    "destinationId": "dest-worship-1",
+    "dailyTrips": 10,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-to-clinic-1",
+    "originId": "dest-home-1",
+    "destinationId": "dest-clinic-1",
+    "dailyTrips": 10,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-to-shops-1",
+    "originId": "dest-home-1",
+    "destinationId": "dest-shops-1",
+    "dailyTrips": 10,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-1-to-school-1",
+    "originId": "dest-home-1",
+    "destinationId": "dest-school-1",
+    "dailyTrips": 10,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-home-2-to-worship-1",
+    "originId": "dest-home-2",
+    "destinationId": "dest-worship-1",
+    "dailyTrips": 10,
     "tripsSource": "estimated"
   }
 ]

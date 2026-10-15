@@ -2,12 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Terasek Kanan Lane, W (80 m) – A",
+    "name": "Shelter on Maarof Road, NE (73 m)",
     "segmentIds": [
-      "seg-501"
+      "seg-137",
+      "seg-563"
     ],
-    "installCost": 97000,
-    "annualMaintenance": 2430,
+    "installCost": 94000,
+    "annualMaintenance": 2350,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -17,12 +18,17 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Terasek Kanan Lane, W (80 m) – B",
+    "name": "Shelter on Telawi Road, SW (94 m)",
     "segmentIds": [
-      "seg-500"
+      "seg-5",
+      "seg-6",
+      "seg-627",
+      "seg-87",
+      "seg-89",
+      "seg-626"
     ],
-    "installCost": 97000,
-    "annualMaintenance": 2430,
+    "installCost": 120000,
+    "annualMaintenance": 3000,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -32,12 +38,15 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Terasek Kanan Lane, W (80 m) – C",
+    "name": "Shelter on Telawi 3 Road, N (91 m)",
     "segmentIds": [
-      "seg-499"
+      "seg-570",
+      "seg-515",
+      "seg-542",
+      "seg-540"
     ],
-    "installCost": 97000,
-    "annualMaintenance": 2430,
+    "installCost": 111000,
+    "annualMaintenance": 2780,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -47,11 +56,11 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Telawi Road, NW (9)",
+    "name": "Trees on Telawi Road, NW (7)",
     "segmentIds": [
-      "seg-2"
+      "seg-4"
     ],
-    "installCost": 7900,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -62,9 +71,9 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Telawi Road, SW (10)",
+    "name": "Trees on a service lane, N (10)",
     "segmentIds": [
-      "seg-1"
+      "seg-531"
     ],
     "installCost": 8700,
     "annualMaintenance": 420,
@@ -77,26 +86,26 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a service lane, E (8)",
+    "name": "Trees on Ara Road, SW (4)",
     "segmentIds": [
-      "seg-161"
+      "seg-78"
     ],
-    "installCost": 7200,
+    "installCost": 4000,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Telawi 1 Road, E (8)",
+    "name": "Trees on a service lane, NE (6)",
     "segmentIds": [
-      "seg-123"
+      "seg-564"
     ],
-    "installCost": 7200,
+    "installCost": 5600,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -107,11 +116,11 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a footpath, E (8)",
+    "name": "Trees on a local road, NE (10)",
     "segmentIds": [
-      "seg-404"
+      "seg-460"
     ],
-    "installCost": 7200,
+    "installCost": 8700,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

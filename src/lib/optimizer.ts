@@ -33,7 +33,10 @@ export interface OptimizerInput {
 export interface Evaluator {
   /** Full result for an arbitrary set of interventions (e.g. the user's selection). */
   plan(interventionIds: readonly string[]): PlanResult;
-  /** Top plans within budget, best first. Plans never contain dead weight. */
+  /**
+   * Top plans within budget, best first. Plans never contain dead weight, and each alternative
+   * is cheaper than the plans ranked above it (no dominated or duplicate options).
+   */
   recommend(budget: number, topN?: number): PlanResult[];
 }
 
@@ -154,13 +157,30 @@ export function createEvaluator(input: OptimizerInput): Evaluator {
         viable.push(ids);
       }
     }
-    return viable
-      .sort((a, b) => compareEvaluations(evaluate(a), evaluate(b)))
-      .slice(0, topN)
-      .map(plan);
+    const ranked = viable.sort((a, b) => compareEvaluations(evaluate(a), evaluate(b)));
+    return distinctTradeOffs(ranked, (ids) => evaluate(ids).installCost, topN).map(plan);
   };
 
   return { plan, recommend };
+}
+
+/**
+ * Walk the ranked plans (best first) and keep one only if it is cheaper than every plan kept so
+ * far. A plan that costs the same or more but helps less is never worth offering, and this also
+ * drops interchangeable twins (same cost, same score).
+ */
+function distinctTradeOffs(
+  ranked: readonly string[][],
+  costOf: (ids: readonly string[]) => number,
+  topN: number,
+): string[][] {
+  const kept: string[][] = [];
+  for (const ids of ranked) {
+    if (kept.length >= topN) break;
+    const cost = costOf(ids);
+    if (kept.every((other) => cost < costOf(other))) kept.push(ids);
+  }
+  return kept;
 }
 
 /** Higher score first; then cheaper; then shorter worst exposed stretch. */

@@ -1,72 +1,72 @@
 [
   {
-    "id": "j-home-1-school",
-    "originId": "dest-home-1",
-    "destinationId": "dest-school",
-    "dailyTrips": 20,
+    "id": "j-rail-station-1-to-mall-1",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-mall-1",
+    "dailyTrips": 329,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-school",
-    "originId": "dest-home-2",
-    "destinationId": "dest-school",
-    "dailyTrips": 20,
+    "id": "j-rail-station-1-to-clinic-1",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-clinic-1",
+    "dailyTrips": 217,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-bus-stop",
-    "originId": "dest-home-1",
-    "destinationId": "dest-bus-stop",
-    "dailyTrips": 29,
+    "id": "j-rail-station-1-to-school-3",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-school-3",
+    "dailyTrips": 165,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-bus-stop",
-    "originId": "dest-home-2",
-    "destinationId": "dest-bus-stop",
-    "dailyTrips": 20,
+    "id": "j-rail-station-1-to-worship-1",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-worship-1",
+    "dailyTrips": 148,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-shops",
-    "originId": "dest-home-1",
-    "destinationId": "dest-shops",
-    "dailyTrips": 36,
+    "id": "j-bus-stop-7-to-mall-1",
+    "originId": "dest-bus-stop-7",
+    "destinationId": "dest-mall-1",
+    "dailyTrips": 108,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-shops",
-    "originId": "dest-home-2",
-    "destinationId": "dest-shops",
-    "dailyTrips": 25,
+    "id": "j-bus-stop-2-to-shops-2",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-shops-2",
+    "dailyTrips": 61,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-clinic",
-    "originId": "dest-home-1",
-    "destinationId": "dest-clinic",
-    "dailyTrips": 20,
+    "id": "j-bus-stop-7-to-shops-2",
+    "originId": "dest-bus-stop-7",
+    "destinationId": "dest-shops-2",
+    "dailyTrips": 47,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-clinic",
-    "originId": "dest-home-2",
-    "destinationId": "dest-clinic",
-    "dailyTrips": 20,
+    "id": "j-bus-stop-7-to-clinic-1",
+    "originId": "dest-bus-stop-7",
+    "destinationId": "dest-clinic-1",
+    "dailyTrips": 38,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-park",
-    "originId": "dest-home-1",
-    "destinationId": "dest-park",
-    "dailyTrips": 20,
+    "id": "j-bus-stop-2-to-school-3",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-school-3",
+    "dailyTrips": 16,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-park",
-    "originId": "dest-home-2",
-    "destinationId": "dest-park",
-    "dailyTrips": 20,
+    "id": "j-bus-stop-7-to-park-1",
+    "originId": "dest-bus-stop-7",
+    "destinationId": "dest-park-1",
+    "dailyTrips": 15,
     "tripsSource": "estimated"
   }
 ]

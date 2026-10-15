@@ -2,27 +2,28 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Majlis Road, SE (77 m) – A",
+    "name": "Shelter on SS 5D/7 Road, S (82 m)",
     "segmentIds": [
-      "seg-157"
+      "seg-81",
+      "seg-152"
     ],
-    "installCost": 89000,
-    "annualMaintenance": 2230,
+    "installCost": 100000,
+    "annualMaintenance": 2500,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Majlis Road, SE (77 m) – B",
+    "name": "Shelter on SS 5/2 Road, S (71 m)",
     "segmentIds": [
-      "seg-158"
+      "seg-112"
     ],
-    "installCost": 89000,
-    "annualMaintenance": 2230,
+    "installCost": 82000,
+    "annualMaintenance": 2050,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -32,13 +33,13 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Majlis Road, SE (88 m)",
+    "name": "Shelter on SS 4B/10 Road, NW (97 m)",
     "segmentIds": [
-      "seg-159",
-      "seg-47"
+      "seg-7",
+      "seg-6"
     ],
-    "installCost": 102000,
-    "annualMaintenance": 2550,
+    "installCost": 112000,
+    "annualMaintenance": 2800,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -48,9 +49,24 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on SS 4B/10 Road, NW (9)",
+    "name": "Trees on SS 5D/7 Road, S (8)",
     "segmentIds": [
-      "seg-9"
+      "seg-80"
+    ],
+    "installCost": 7200,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on SS 5/2 Road, S (9)",
+    "segmentIds": [
+      "seg-117"
     ],
     "installCost": 7900,
     "annualMaintenance": 420,
@@ -61,11 +77,11 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-2",
+    "id": "trees-3",
     "type": "tree",
     "name": "Trees on SS 4B/10 Road, NW (7)",
     "segmentIds": [
-      "seg-7"
+      "seg-4"
     ],
     "installCost": 6400,
     "annualMaintenance": 420,
@@ -76,7 +92,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-3",
+    "id": "trees-4",
     "type": "tree",
     "name": "Trees on SS 4A/4 Road, E (9)",
     "segmentIds": [
@@ -91,33 +107,18 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-4",
-    "type": "tree",
-    "name": "Trees on SS 4A/4 Road, E (5)",
-    "segmentIds": [
-      "seg-182"
-    ],
-    "installCost": 4800,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on SS 4A/2 Road, E (8)",
+    "name": "Trees on SS 4B/10 Road, NW (6)",
     "segmentIds": [
-      "seg-181"
+      "seg-3"
     ],
-    "installCost": 7200,
+    "installCost": 5600,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   }
 ]

@@ -98,11 +98,21 @@ export function generateCandidates(ctx: Context): Intervention[] {
 
   const result: Intervention[] = [];
 
+  // A shelter may not touch an earlier one: otherwise the next "candidate" is just the
+  // neighbouring stretch of the same corridor, serving the same trips (an interchangeable twin).
+  const shelterNodes = new Set<string>();
+  const freeForShelter = (): PathSegment[] =>
+    free().filter((s) => !shelterNodes.has(s.from) && !shelterNodes.has(s.to));
+
   for (let k = 1; k <= SHELTER_COUNT; k++) {
-    const seed = free().sort((a, b) => score(b) - score(a))[0];
+    const seed = freeForShelter().sort((a, b) => score(b) - score(a))[0];
     if (!seed) break;
-    const window = growWindow(seed, free(), usage, lengthOf);
-    window.forEach((s) => used.add(s.id));
+    const window = growWindow(seed, freeForShelter(), usage, lengthOf);
+    window.forEach((s) => {
+      used.add(s.id);
+      shelterNodes.add(s.from);
+      shelterNodes.add(s.to);
+    });
     result.push(shelterFor(k, window, ctx));
   }
 

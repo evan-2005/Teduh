@@ -7460,37 +7460,67 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-75",
-      "name": "Homes (south-west)",
-      "kind": "home"
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-85",
+      "name": "Bus stop on Jaya 5 Road",
+      "kind": "bus-stop",
+      "localName": "Taman Jaya (Utara)"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-302",
-      "name": "Homes (east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-294",
-      "name": "School",
-      "kind": "school",
-      "localName": "Sekolah Kebangsaan Taman Midah 2"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-2",
       "nodeId": "n-287",
-      "name": "Bus stop",
+      "name": "Bus stop on Midah Barat Road",
       "kind": "bus-stop",
       "localName": "Taman Midah (Barat)"
     },
     {
-      "id": "dest-shops",
+      "id": "dest-bus-stop-4",
+      "nodeId": "n-28",
+      "name": "Bus stop on Midah 12 Road",
+      "kind": "bus-stop",
+      "localName": "Pusat Komersial Taman Midah"
+    },
+    {
+      "id": "dest-bus-stop-5",
+      "nodeId": "n-154",
+      "name": "Bus stop on Midah Besar Road",
+      "kind": "bus-stop",
+      "localName": "Taman Midah (Timur)"
+    },
+    {
+      "id": "dest-shops-1",
       "nodeId": "n-107",
       "name": "Supermarket",
       "kind": "shops",
       "localName": "99 Speedmart"
+    },
+    {
+      "id": "dest-school-1",
+      "nodeId": "n-294",
+      "name": "School (north)",
+      "kind": "school",
+      "localName": "Sekolah Kebangsaan Taman Midah 2"
+    },
+    {
+      "id": "dest-worship-2",
+      "nodeId": "n-222",
+      "name": "Place of worship",
+      "kind": "worship",
+      "localName": "Taman Midah Lutheran Church"
+    },
+    {
+      "id": "dest-school-2",
+      "nodeId": "n-302",
+      "name": "School (east)",
+      "kind": "school",
+      "localName": "Sekolah Kebangsaan Taman Midah"
+    },
+    {
+      "id": "dest-school-3",
+      "nodeId": "n-102",
+      "name": "School on Jaya 5 Road",
+      "kind": "school",
+      "localName": "Sekolah Rendah Agama Al-Mustaqimah"
     }
   ],
   "meta": {
@@ -7506,14 +7536,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 250000,
+      "max": 200000,
       "step": 5000,
-      "demo": 100000
+      "demo": 80000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-bus-stop-4-to-school-1"
   }
 }

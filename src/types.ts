@@ -20,7 +20,8 @@ export interface PathSegment {
   notes?: string;
 }
 
-export type DestinationKind = 'home' | 'school' | 'bus-stop' | 'shops' | 'clinic' | 'park';
+export type DestinationKind =
+  | 'home' | 'rail-station' | 'bus-stop' | 'mall' | 'shops' | 'school' | 'clinic' | 'worship' | 'park';
 export interface Destination {
   id: string;
   nodeId: string;
@@ -31,7 +32,7 @@ export interface Destination {
 
 export interface Journey {
   id: string;
-  originId: string;                   // Destination.id (kind 'home')
+  originId: string;                   // Destination.id: usually public transport; homes only as a fallback
   destinationId: string;              // Destination.id
   dailyTrips: number;
   tripsSource: DataSource;
@@ -151,7 +152,8 @@ export interface Neighbourhood {
 
 // ---- Area context: read-only map layers that explain the surroundings (data/<name>/context.json) ----
 export type LatLngPair = [number, number];
-export type LandmarkKind = 'school' | 'bus-stop' | 'shops' | 'food' | 'worship' | 'health' | 'park' | 'other';
+export type LandmarkKind =
+  | 'school' | 'rail-station' | 'bus-stop' | 'shops' | 'food' | 'worship' | 'health' | 'park' | 'other';
 export interface Landmark { id: string; kind: LandmarkKind; name: string; localName?: string; lat: number; lng: number }
 export interface GreenArea { kind: 'park' | 'playground' | 'pitch' | 'garden'; ring: LatLngPair[] }
 export interface AreaContext {

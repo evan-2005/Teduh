@@ -8,7 +8,7 @@ One idea per slide. Paste into your slide tool; screenshots come from the runnin
 ## 2. The problem
 A township can already have trees and footpaths and still have exposed gaps between them.
 Managers have a small budget and no way to see which gap matters most.
-*Visual:* the real SS 4 map with the Before side in amber (paths in direct sun).
+*Visual:* the real SS 15 map around the LRT station, with the Before side in amber (paths in direct sun).
 
 ## 3. The decision we support
 "With our budget, which shade improvements would help the most everyday journeys?"

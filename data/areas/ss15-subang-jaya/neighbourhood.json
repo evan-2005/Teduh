@@ -10445,47 +10445,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-235",
-      "name": "Homes (west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-167",
-      "name": "Homes (north-east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-153",
-      "name": "School",
-      "kind": "school",
-      "localName": "Sekolah Agama Darul Ehsan"
-    },
-    {
-      "id": "dest-bus-stop",
-      "nodeId": "n-213",
-      "name": "Bus stop",
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-214",
+      "name": "Bus stop on SS 15/2A Road",
       "kind": "bus-stop",
-      "localName": "Subang Parade"
+      "localName": "Subang Parade (Opp)"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-427",
-      "name": "Market",
+      "id": "dest-bus-stop-5",
+      "nodeId": "n-218",
+      "name": "Bus stop on Jengka Avenue",
+      "kind": "bus-stop",
+      "localName": "First Subang"
+    },
+    {
+      "id": "dest-rail-station-1",
+      "nodeId": "n-111",
+      "name": "LRT station",
+      "kind": "rail-station",
+      "localName": "KJ29 SS15"
+    },
+    {
+      "id": "dest-mall-1",
+      "nodeId": "n-115",
+      "name": "Shopping mall",
+      "kind": "mall",
+      "localName": "SS15 Courtyard"
+    },
+    {
+      "id": "dest-shops-2",
+      "nodeId": "n-10",
+      "name": "Supermarket",
       "kind": "shops",
-      "localName": "Herbs 'N' Food"
+      "localName": "99 Speedmart"
     },
     {
-      "id": "dest-clinic",
-      "nodeId": "n-150",
+      "id": "dest-clinic-1",
+      "nodeId": "n-314",
       "name": "Clinic",
       "kind": "clinic",
-      "localName": "Klinik Jaya"
+      "localName": "Poliklinik Subang"
     },
     {
-      "id": "dest-park",
+      "id": "dest-school-2",
+      "nodeId": "n-12",
+      "name": "College",
+      "kind": "school",
+      "localName": "INTI Centre of Art and Design (iCad)"
+    },
+    {
+      "id": "dest-worship-3",
+      "nodeId": "n-180",
+      "name": "Mosque",
+      "kind": "worship",
+      "localName": "Masjid Darul Ehsan"
+    },
+    {
+      "id": "dest-park-2",
       "nodeId": "n-166",
       "name": "Park",
       "kind": "park"
@@ -10504,14 +10520,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 350000,
+      "max": 250000,
       "step": 5000,
-      "demo": 130000
+      "demo": 90000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-rail-station-1-to-mall-1"
   }
 }

@@ -6,13 +6,14 @@ import { SourceBadge } from './SourceBadge';
 export function CandidateList() {
   const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
   const toggle = useScenarioStore((s) => s.toggleIntervention);
+  const selectIntervention = useScenarioStore((s) => s.selectIntervention);
 
   return (
     <fieldset className="field">
       <legend className="field__label">Candidates</legend>
       <ul className="candidates">
         {dataset.interventions.map((i) => (
-          <li key={i.id}>
+          <li key={i.id} className="candidate-row">
             <label className="candidate">
               <input
                 type="checkbox"
@@ -27,6 +28,14 @@ export function CandidateList() {
                 </span>
               </span>
             </label>
+            <button
+              type="button"
+              className="link-button candidate__details"
+              aria-label={`Fabrication details for ${i.name}`}
+              onClick={() => selectIntervention(i.id)}
+            >
+              Details
+            </button>
           </li>
         ))}
       </ul>

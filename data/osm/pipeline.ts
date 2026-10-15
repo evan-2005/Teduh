@@ -209,7 +209,8 @@ function assumptionsFor(radiusM: number, treeCount: number): string[] {
   return [
     `Paths are walkable ways from OpenStreetMap within ${radiusM} m of the centre, simplified into segments of at most ${DEFAULT_NETWORK_OPTIONS.maxSegmentM} m.`,
     `Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways.${treeNote}`,
-    'Trips per day are rough estimates from the number of buildings near each home cluster.',
+    'Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.',
+    'Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.',
     'Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes.',
   ];
 }
@@ -229,27 +230,32 @@ export function buildArea(input: BuildInput): BuiltArea {
     );
   }
 
+  // Homes are only a fallback origin (see planDestinations), so a handful of them is not enough.
   const homeBuildings = residentialBuildings(parsed.buildings);
-  if (homeBuildings.length < MIN_HOME_BUILDINGS) {
-    throw new AreaTooSparseError(
-      `Only ${homeBuildings.length} homes are mapped here. Try a residential area.`,
-    );
-  }
+  const homes = homeBuildings.length >= MIN_HOME_BUILDINGS ? clusterHomes(homeBuildings) : [];
 
   const { nodes, segments, info } = toPathData(network, proj, parsed, area);
   const graph = buildGraph(nodes, segments);
   const nodesXY = network.nodes.map((n, i) => ({ node: nodes[i]!, xy: n.xy }));
+  const streetAtNode = new Map<string, string>();
+  segments.forEach((s) => {
+    const name = info.get(s.id)?.name;
+    if (!name) return;
+    if (!streetAtNode.has(s.from)) streetAtNode.set(s.from, name);
+    if (!streetAtNode.has(s.to)) streetAtNode.set(s.to, name);
+  });
   const { destinations, journeys } = planDestinations({
     graph,
     nodes: nodesXY,
-    homes: clusterHomes(homeBuildings),
+    homes,
     pois: parsed.pois,
     greens: parsed.greens,
     areaCentre: [0, 0],
+    streetOf: (nodeId) => streetAtNode.get(nodeId),
   });
   if (journeys.length < MIN_JOURNEYS) {
     throw new AreaTooSparseError(
-      'Not enough schools, bus stops, shops or parks are mapped within walking distance of the homes.',
+      'Too few bus stops, stations or homes are mapped here, within walking distance of schools, shops, clinics or parks. Try a denser built-up area.',
     );
   }
 

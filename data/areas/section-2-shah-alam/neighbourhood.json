@@ -6315,47 +6315,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-19",
-      "name": "Homes (north-west)",
-      "kind": "home"
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-231",
+      "name": "Bus stop on Damai Avenue",
+      "kind": "bus-stop",
+      "localName": "Dataran Kemerdekaan (Seksyen 14)"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-82",
-      "name": "Homes (east)",
-      "kind": "home"
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-163",
+      "name": "Bus stop on Bandaraya Avenue",
+      "kind": "bus-stop",
+      "localName": "SMA Tengku Ampuan Jemaah"
     },
     {
-      "id": "dest-school",
-      "nodeId": "n-74",
-      "name": "School",
-      "kind": "school",
-      "localName": "SAMT Tengku Ampuan Jemaah"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-4",
       "nodeId": "n-86",
-      "name": "Bus stop",
+      "name": "Bus stop on Kayangan Avenue",
       "kind": "bus-stop",
       "localName": "Dewan Jenjarom"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-13",
-      "name": "Convenience store",
-      "kind": "shops",
-      "localName": "Suri Frozen Mart"
+      "id": "dest-bus-stop-9",
+      "nodeId": "n-32",
+      "name": "Bus stop on Teluk Belanga 10/1 Road",
+      "kind": "bus-stop",
+      "localName": "Komersial Seksyen 9"
     },
     {
-      "id": "dest-clinic",
+      "id": "dest-shops-1",
+      "nodeId": "n-32",
+      "name": "Supermarket",
+      "kind": "shops",
+      "localName": "99 Speedmart"
+    },
+    {
+      "id": "dest-clinic-1",
       "nodeId": "n-32",
       "name": "Clinic",
       "kind": "clinic",
       "localName": "Poliklinik Alia"
     },
     {
-      "id": "dest-park",
+      "id": "dest-school-1",
+      "nodeId": "n-74",
+      "name": "School",
+      "kind": "school",
+      "localName": "SAMT Tengku Ampuan Jemaah"
+    },
+    {
+      "id": "dest-worship-1",
+      "nodeId": "n-34",
+      "name": "Mosque",
+      "kind": "worship",
+      "localName": "Surau Al-Ittihadiyyah"
+    },
+    {
+      "id": "dest-park-2",
       "nodeId": "n-55",
       "name": "Park",
       "kind": "park"
@@ -6374,14 +6390,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. 2 mapped trees are included.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 250000,
       "step": 5000,
-      "demo": 110000
+      "demo": 100000
     },
-    "demoJourneyId": "j-home-2-shops"
+    "demoJourneyId": "j-bus-stop-2-to-shops-1"
   }
 }

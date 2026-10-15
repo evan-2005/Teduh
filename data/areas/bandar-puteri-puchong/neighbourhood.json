@@ -5000,43 +5000,46 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-14",
-      "name": "Homes (south)",
-      "kind": "home"
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-87",
+      "name": "Bus stop (east)",
+      "kind": "bus-stop",
+      "localName": "LRT Pusat Bandar Puchong"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-160",
-      "name": "Homes (north)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-2",
       "nodeId": "n-41",
-      "name": "Bus stop",
+      "name": "Bus stop on TMP 1 Road",
       "kind": "bus-stop",
       "localName": "Taman Mutiara Puchong (Timur)"
     },
     {
-      "id": "dest-shops",
+      "id": "dest-rail-station-1",
+      "nodeId": "n-97",
+      "name": "LRT station",
+      "kind": "rail-station",
+      "localName": "SP25 Pusat Bandar Puchong"
+    },
+    {
+      "id": "dest-shops-1",
       "nodeId": "n-117",
-      "name": "Supermarket",
+      "name": "Supermarket (south-east)",
       "kind": "shops",
       "localName": "99 Speedmart"
     },
     {
-      "id": "dest-clinic",
+      "id": "dest-clinic-1",
       "nodeId": "n-123",
       "name": "Clinic",
       "kind": "clinic",
       "localName": "Klinik Lim & Eng"
     },
     {
-      "id": "dest-park",
-      "nodeId": "n-161",
-      "name": "Park",
-      "kind": "park"
+      "id": "dest-shops-2",
+      "nodeId": "n-80",
+      "name": "Supermarket (east)",
+      "kind": "shops",
+      "localName": "Lotus's"
     }
   ],
   "meta": {
@@ -5052,14 +5055,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 250000,
+      "max": 300000,
       "step": 5000,
-      "demo": 100000
+      "demo": 120000
     },
-    "demoJourneyId": "j-home-2-shops"
+    "demoJourneyId": "j-rail-station-1-to-shops-2"
   }
 }

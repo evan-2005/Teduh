@@ -30,7 +30,7 @@ function house(cx: number, cy: number): RawElement {
   return { type: 'way', id: id(), tags: { building: 'house' }, geometry: ring.map(([x, y]) => geo(x, y)) };
 }
 
-export function miniAreaElements(options: { withHouses?: boolean } = {}): RawElement[] {
+export function miniAreaElements(options: { withHouses?: boolean; withStation?: boolean } = {}): RawElement[] {
   nextId = 1;
   const elements: RawElement[] = [];
   for (let i = -HALF; i <= HALF; i++) {
@@ -55,5 +55,11 @@ export function miniAreaElements(options: { withHouses?: boolean } = {}): RawEle
     poi(280, -280, { shop: 'supermarket', name: 'Pasaraya Ujian' }),
     poi(-280, 280, { amenity: 'clinic', name: 'Klinik Ujian' }),
   );
+  if (options.withStation) {
+    elements.push(
+      poi(0, 0, { railway: 'station', station: 'light_rail', name: 'Stesen Ujian' }),
+      poi(0, 210, { shop: 'mall', name: 'Plaza Ujian' }),
+    );
+  }
   return elements;
 }

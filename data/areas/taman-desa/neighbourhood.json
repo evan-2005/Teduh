@@ -4355,47 +4355,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-61",
-      "name": "Homes (south-west)",
-      "kind": "home"
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-157",
+      "name": "Bus stop on 2/109F Road",
+      "kind": "bus-stop",
+      "localName": "Kondominium Danau Idaman"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-118",
-      "name": "Homes (north)",
-      "kind": "home"
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-141",
+      "name": "Bus stop on Desa Utama Road A",
+      "kind": "bus-stop",
+      "localName": "Wisma TM Taman Desa"
     },
     {
-      "id": "dest-school",
+      "id": "dest-bus-stop-4",
+      "nodeId": "n-74",
+      "name": "Bus stop on Desa Bahagia Road",
+      "kind": "bus-stop",
+      "localName": "Faber Towers (Opp)"
+    },
+    {
+      "id": "dest-bus-stop-7",
+      "nodeId": "n-186",
+      "name": "Bus stop on Desa Utama Road B",
+      "kind": "bus-stop",
+      "localName": "Faber Heights (Opp)"
+    },
+    {
+      "id": "dest-shops-2",
+      "nodeId": "n-78",
+      "name": "Supermarket",
+      "kind": "shops",
+      "localName": "De Market"
+    },
+    {
+      "id": "dest-clinic-1",
+      "nodeId": "n-140",
+      "name": "Clinic",
+      "kind": "clinic",
+      "localName": "Klinik Taman Desa"
+    },
+    {
+      "id": "dest-school-1",
       "nodeId": "n-102",
       "name": "School",
       "kind": "school",
       "localName": "Sekolah Menengah Kebangsaan Taman Desa"
     },
     {
-      "id": "dest-bus-stop",
-      "nodeId": "n-101",
-      "name": "Bus stop",
-      "kind": "bus-stop",
-      "localName": "SMK Taman Desa"
+      "id": "dest-mall-1",
+      "nodeId": "n-77",
+      "name": "Shopping mall",
+      "kind": "mall",
+      "localName": "Faber Towers"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-169",
-      "name": "Shop",
-      "kind": "shops",
-      "localName": "Hotlink"
-    },
-    {
-      "id": "dest-clinic",
-      "nodeId": "n-157",
-      "name": "Clinic",
-      "kind": "clinic",
-      "localName": "Poliklinik Kumpulan City"
-    },
-    {
-      "id": "dest-park",
+      "id": "dest-park-2",
       "nodeId": "n-135",
       "name": "Park",
       "kind": "park"
@@ -4414,7 +4430,8 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
@@ -4422,6 +4439,6 @@
       "step": 5000,
       "demo": 100000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-bus-stop-2-to-mall-1"
   }
 }

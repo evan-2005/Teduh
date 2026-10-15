@@ -30,7 +30,8 @@ import { SwipeDivider } from './SwipeDivider';
 const INITIAL_DIVIDER = 0.5;
 
 // Above Leaflet's overlay pane (400) and below its marker pane (600).
-const PANE_Z = { context: 405, before: 410, after: 420, destinations: 430 } as const;
+const PANE_Z = { context: 405, before: 410, after: 420, destinations: 430, interventions: 440 } as const;
+const INTERVENTION_PANE = 'interventionPane';
 
 const { destinations } = dataset.neighbourhood;
 
@@ -54,6 +55,7 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
   const basemap = useScenarioStore((s) => s.basemap);
   const mapMode = useScenarioStore((s) => s.scenario.mapMode);
   const layers = useScenarioStore((s) => s.contextLayers);
+  const hasPlan = useScenarioStore((s) => s.scenario.selectedInterventionIds.length > 0);
   const context = useAreaContext();
   const [divider, setDivider] = useState(INITIAL_DIVIDER);
 
@@ -94,14 +96,8 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
             {showBefore && <NetworkLayers {...before} caption="before plan" />}
           </Pane>
 
-          {/* Intervention markers live in the after pane, so they only appear on the after side. */}
           <Pane name={AFTER_PANE} style={{ zIndex: PANE_Z.after }}>
-            {showAfter && (
-              <>
-                <NetworkLayers {...after} caption="with plan" />
-                <InterventionMarkers />
-              </>
-            )}
+            {showAfter && <NetworkLayers {...after} caption="with plan" />}
           </Pane>
           <SwipeClip active={swiping} fraction={divider} />
 
@@ -131,9 +127,19 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
               </CircleMarker>
             ))}
           </Pane>
+
+          {/* Never clipped by the swipe, so every candidate can always open its fabrication pack. */}
+          <Pane name={INTERVENTION_PANE} style={{ zIndex: PANE_Z.interventions }}>
+            <InterventionMarkers showChosen={showAfter} />
+          </Pane>
         </MapContainer>
 
         {swiping && <SwipeDivider fraction={divider} onChange={setDivider} />}
+        {!hasPlan && showAfter && (
+          <p className="map-hint" role="status">
+            No plan chosen yet, so Before and After look the same. Choose a plan to compare.
+          </p>
+        )}
         <LayersControl context={context} />
         <MapLegend />
       </div>

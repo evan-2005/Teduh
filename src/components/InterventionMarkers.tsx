@@ -1,7 +1,9 @@
 import L from 'leaflet';
-import { Marker, Tooltip } from 'react-leaflet';
+import { useMemo, useState } from 'react';
+import { Marker, Tooltip, useMap, useMapEvents } from 'react-leaflet';
 import { dataset } from '../data/dataset';
 import { formatMyr } from '../lib/format';
+import { spreadOverlapping, type Offset } from '../lib/spread';
 import { useScenarioStore } from '../store/scenario';
 import type { InterventionType } from '../types';
 import { interventionPosition } from './mapGeometry';
@@ -14,49 +16,57 @@ const GLYPHS: Record<InterventionType, string> = {
     '<polygon points="3,13 15,5 27,13" class="glyph__fill"/><rect x="6" y="13" width="2.5" height="12" class="glyph__trunk"/><rect x="21.5" y="13" width="2.5" height="12" class="glyph__trunk"/>',
 };
 
-const iconFor = (type: InterventionType, selected: boolean, offsetX: number): L.DivIcon =>
+const iconFor = (type: InterventionType, selected: boolean, offset: Offset): L.DivIcon =>
   L.divIcon({
     className: `marker ${selected ? 'marker--selected' : 'marker--candidate'}`,
     html: `<svg viewBox="0 0 30 30" width="${ICON_SIZE}" height="${ICON_SIZE}" aria-hidden="true">${GLYPHS[type]}</svg>`,
     iconSize: [ICON_SIZE, ICON_SIZE],
-    iconAnchor: [ICON_SIZE / 2 - offsetX, ICON_SIZE / 2],
+    iconAnchor: [ICON_SIZE / 2 - offset.dx, ICON_SIZE / 2 - offset.dy],
   });
 
 const positions = new Map(
   dataset.interventions.map((i) => [i.id, interventionPosition(i)] as const),
 );
 
-const SAME_SPOT_DECIMALS = 5;
-const SPREAD_PX = ICON_SIZE + 2;
+const NO_OFFSET: Offset = { dx: 0, dy: 0 };
 
-/** Markers that share a spot are spread sideways so each one stays clickable. */
-const offsets = (() => {
-  const groups = new Map<string, string[]>();
-  for (const [id, [lat, lng]] of positions) {
-    const key = `${lat.toFixed(SAME_SPOT_DECIMALS)},${lng.toFixed(SAME_SPOT_DECIMALS)}`;
-    groups.set(key, [...(groups.get(key) ?? []), id]);
-  }
-  const result = new Map<string, number>();
-  for (const ids of groups.values()) {
-    ids.forEach((id, index) => result.set(id, (index - (ids.length - 1) / 2) * SPREAD_PX));
-  }
-  return result;
-})();
+/**
+ * Markers that would overlap at the current zoom are laid out side by side, so each one stays
+ * visible and clickable. Recomputed when the zoom changes, since overlap depends on it.
+ */
+function useSpreadOffsets(): Map<string, Offset> {
+  const map = useMap();
+  const [zoom, setZoom] = useState(() => map.getZoom());
+  useMapEvents({ zoomend: () => setZoom(map.getZoom()) });
+  return useMemo(() => {
+    const points = [...positions].map(([id, latLng]) => {
+      const { x, y } = map.project(latLng, zoom);
+      return { id, x, y };
+    });
+    return spreadOverlapping(points, ICON_SIZE);
+  }, [map, zoom]);
+}
+
+interface InterventionMarkersProps {
+  /** False in Before mode: the map shows no plan, so every marker is drawn as a candidate. */
+  showChosen: boolean;
+}
 
 /** Candidate markers: hollow when not chosen, filled when part of the current selection. */
-export function InterventionMarkers() {
+export function InterventionMarkers({ showChosen }: InterventionMarkersProps) {
   const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
   const selectIntervention = useScenarioStore((s) => s.selectIntervention);
+  const offsets = useSpreadOffsets();
 
   return (
     <>
       {dataset.interventions.map((intervention) => {
-        const selected = selectedIds.includes(intervention.id);
+        const selected = showChosen && selectedIds.includes(intervention.id);
         return (
           <Marker
             key={`${intervention.id}-${selected}`}
             position={positions.get(intervention.id)!}
-            icon={iconFor(intervention.type, selected, offsets.get(intervention.id) ?? 0)}
+            icon={iconFor(intervention.type, selected, offsets.get(intervention.id) ?? NO_OFFSET)}
             title={intervention.name}
             eventHandlers={{ click: () => selectIntervention(intervention.id) }}
           >

@@ -43,7 +43,7 @@ export const destinationSchema = z.object({
   id: z.string().min(1),
   nodeId: z.string().min(1),
   name: z.string().min(1),
-  kind: z.enum(['home', 'school', 'bus-stop', 'shops', 'clinic', 'park']),
+  kind: z.enum(['home', 'rail-station', 'bus-stop', 'mall', 'shops', 'school', 'clinic', 'worship', 'park']),
   localName: z.string().optional(),
 });
 
@@ -147,8 +147,9 @@ export function referenceErrors(data: Dataset): string[] {
     if (!nodeIds.has(d.nodeId)) errors.push(`destination ${d.id}: unknown node ${d.nodeId}`);
   });
   data.journeys.forEach((j) => {
-    if (destById.get(j.originId)?.kind !== 'home') {
-      errors.push(`journey ${j.id}: origin ${j.originId} is not a home destination`);
+    if (!destById.has(j.originId)) errors.push(`journey ${j.id}: unknown origin ${j.originId}`);
+    if (j.originId === j.destinationId) {
+      errors.push(`journey ${j.id}: starts and ends at the same place`);
     }
     if (!destById.has(j.destinationId)) {
       errors.push(`journey ${j.id}: unknown destination ${j.destinationId}`);

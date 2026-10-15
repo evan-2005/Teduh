@@ -43,9 +43,18 @@ describe('dataset validation', () => {
     expect(() => parseDataset(bad)).toThrow(/unknown segment seg-nope/);
   });
 
-  test('rejects a journey whose origin is not a home', () => {
-    const bad = structuredClone(raw);
-    bad.journeys[0]!.originId = 'dest-school';
-    expect(() => parseDataset(bad)).toThrow(/not a home destination/);
+  test('accepts a journey that starts at public transport rather than a home', () => {
+    const ok = structuredClone(raw);
+    ok.journeys[0]!.originId = 'dest-bus';
+    expect(() => parseDataset(ok)).not.toThrow();
+  });
+
+  test('rejects a journey from an unknown place, or from a place to itself', () => {
+    const unknown = structuredClone(raw);
+    unknown.journeys[0]!.originId = 'dest-nope';
+    expect(() => parseDataset(unknown)).toThrow(/unknown origin dest-nope/);
+    const loop = structuredClone(raw);
+    loop.journeys[0]!.originId = loop.journeys[0]!.destinationId;
+    expect(() => parseDataset(loop)).toThrow(/starts and ends at the same place/);
   });
 });

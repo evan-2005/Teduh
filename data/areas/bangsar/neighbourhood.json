@@ -11865,44 +11865,66 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-49",
-      "name": "Homes (south-west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-149",
-      "name": "Homes (north-east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-205",
-      "name": "School",
-      "kind": "school",
-      "localName": "Sekolah Kebangsaan Bukit Pantai"
-    },
-    {
-      "id": "dest-bus-stop",
-      "nodeId": "n-390",
-      "name": "Bus stop",
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-77",
+      "name": "Bus stop on Ara Road",
       "kind": "bus-stop",
-      "localName": "Bangsar Telawi (Tengah)"
+      "localName": "Bangsar Village (South)"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-416",
-      "name": "Shop",
-      "kind": "shops",
-      "localName": "Mimpikita"
+      "id": "dest-bus-stop-8",
+      "nodeId": "n-127",
+      "name": "Bus stop on Maarof Road",
+      "kind": "bus-stop",
+      "localName": "Komersial Telawi (Selatan)"
     },
     {
-      "id": "dest-clinic",
-      "nodeId": "n-389",
+      "id": "dest-mall-1",
+      "nodeId": "n-454",
+      "name": "Shopping mall",
+      "kind": "mall",
+      "localName": "Telawi Square"
+    },
+    {
+      "id": "dest-school-1",
+      "nodeId": "n-422",
+      "name": "School on Telawi Road A",
+      "kind": "school"
+    },
+    {
+      "id": "dest-school-2",
+      "nodeId": "n-446",
+      "name": "School on Telawi Road B",
+      "kind": "school",
+      "localName": "Taska Montessori Saya"
+    },
+    {
+      "id": "dest-clinic-9",
+      "nodeId": "n-189",
       "name": "Clinic",
       "kind": "clinic",
-      "localName": "Feathair Hair Growth Center"
+      "localName": "Klinik Familycare"
+    },
+    {
+      "id": "dest-worship-1",
+      "nodeId": "n-107",
+      "name": "Mosque",
+      "kind": "worship",
+      "localName": "Masjid Saidina Abu Bakar As-Siddiq"
+    },
+    {
+      "id": "dest-shops-6",
+      "nodeId": "n-381",
+      "name": "Market",
+      "kind": "shops",
+      "localName": "Pasar Malam Jalan Telawi, Bangsar"
+    },
+    {
+      "id": "dest-school-4",
+      "nodeId": "n-158",
+      "name": "School (east)",
+      "kind": "school",
+      "localName": "Sri Camelia International School"
     }
   ],
   "meta": {
@@ -11918,14 +11940,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. 29 mapped trees are included.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
       "max": 300000,
       "step": 5000,
-      "demo": 120000
+      "demo": 110000
     },
-    "demoJourneyId": "j-home-2-shops"
+    "demoJourneyId": "j-bus-stop-8-to-mall-1"
   }
 }

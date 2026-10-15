@@ -13745,37 +13745,60 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-206",
-      "name": "Homes (west)",
-      "kind": "home"
+      "id": "dest-bus-stop-3",
+      "nodeId": "n-318",
+      "name": "Bus stop (south-west)",
+      "kind": "bus-stop",
+      "localName": "JPJ Bahagian Teknologi Digital"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-348",
-      "name": "Homes (east)",
-      "kind": "home"
+      "id": "dest-bus-stop-5",
+      "nodeId": "n-49",
+      "name": "Bus stop (north)",
+      "kind": "bus-stop",
+      "localName": "Quill 4 Cyberjaya"
     },
     {
-      "id": "dest-school",
-      "nodeId": "n-184",
-      "name": "University",
-      "kind": "school",
-      "localName": "City University Cyberjaya Campus"
+      "id": "dest-bus-stop-10",
+      "nodeId": "n-329",
+      "name": "Bus stop (south-east)",
+      "kind": "bus-stop",
+      "localName": "Cybersquare"
     },
     {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-11",
       "nodeId": "n-142",
-      "name": "Bus stop",
+      "name": "Bus stop on Teknokrat 3 Road",
       "kind": "bus-stop",
       "localName": "Quill 18"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-78",
-      "name": "Convenience store",
+      "id": "dest-bus-stop-13",
+      "nodeId": "n-529",
+      "name": "Bus stop (north-east)",
+      "kind": "bus-stop",
+      "localName": "Multimedia Development Corporation (MDEC)"
+    },
+    {
+      "id": "dest-shops-1",
+      "nodeId": "n-321",
+      "name": "Supermarket",
       "kind": "shops",
-      "localName": "7-Eleven"
+      "localName": "Star Grocer"
+    },
+    {
+      "id": "dest-school-1",
+      "nodeId": "n-522",
+      "name": "University (north-east)",
+      "kind": "school",
+      "localName": "UniMAP@KL"
+    },
+    {
+      "id": "dest-school-2",
+      "nodeId": "n-184",
+      "name": "University (north-west)",
+      "kind": "school",
+      "localName": "City University Cyberjaya Campus"
     }
   ],
   "meta": {
@@ -13791,14 +13814,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 250000,
+      "max": 200000,
       "step": 5000,
-      "demo": 100000
+      "demo": 80000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-bus-stop-13-to-school-1"
   }
 }

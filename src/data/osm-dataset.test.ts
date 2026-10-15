@@ -32,6 +32,16 @@ describe.each(loaded)('area $entry.slug', ({ entry, data, context }) => {
   const meta = neighbourhood.meta!;
   const graph = buildGraph(neighbourhood.nodes, neighbourhood.segments);
 
+  test('shelter candidates are separate places, not neighbouring halves of one corridor', () => {
+    const segmentById = new Map(neighbourhood.segments.map((s) => [s.id, s]));
+    const nodesOf = (ids: readonly string[]) =>
+      new Set(ids.flatMap((id) => [segmentById.get(id)!.from, segmentById.get(id)!.to]));
+    const shelters = interventions.filter((i) => i.type === 'shelter').map((i) => nodesOf(i.segmentIds));
+    shelters.forEach((a, i) =>
+      shelters.slice(i + 1).forEach((b) => expect([...a].some((n) => b.has(n))).toBe(false)),
+    );
+  });
+
   test('has metadata, a demo journey and a sensible budget', () => {
     expect(meta.name).toBe(entry.name);
     expect(meta.source).toBe('openstreetmap');
@@ -41,10 +51,24 @@ describe.each(loaded)('area $entry.slug', ({ entry, data, context }) => {
     expect(journeys.some((j) => j.id === meta.demoJourneyId)).toBe(true);
   });
 
-  test('has enough paths, homes and journeys', () => {
+  test('has enough paths and journeys', () => {
     expect(neighbourhood.segments.length).toBeGreaterThanOrEqual(40);
-    expect(neighbourhood.destinations.filter((d) => d.kind === 'home').length).toBeGreaterThanOrEqual(1);
     expect(journeys.length).toBeGreaterThanOrEqual(4);
+  });
+
+  test('walks start at public transport; home clusters only top up areas with too little transit', () => {
+    const kindOf = new Map(neighbourhood.destinations.map((d) => [d.id, d.kind]));
+    const transitWalks = journeys.filter((j) => ['rail-station', 'bus-stop'].includes(kindOf.get(j.originId)!));
+    const homeWalks = journeys.filter((j) => kindOf.get(j.originId) === 'home');
+    expect(transitWalks.length + homeWalks.length).toBe(journeys.length);
+    if (transitWalks.length >= 4) expect(homeWalks).toHaveLength(0);
+  });
+
+  test('a mapped rail station is always one of the places walks start from', () => {
+    const hasStation = (context?.landmarks ?? []).some((l) => l.kind === 'rail-station');
+    if (!hasStation) return;
+    const stations = new Set(neighbourhood.destinations.filter((d) => d.kind === 'rail-station').map((d) => d.id));
+    expect(journeys.some((j) => stations.has(j.originId))).toBe(true);
   });
 
   test('uses plain English for everything people read', () => {

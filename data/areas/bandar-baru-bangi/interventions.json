@@ -2,21 +2,6 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Kajang Impian 2/7 Road, SW (69 m)",
-    "segmentIds": [
-      "seg-149"
-    ],
-    "installCost": 85000,
-    "annualMaintenance": 2130,
-    "shadeNow": 0.95,
-    "shadeFuture": 0.95,
-    "yearsToMature": 0,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "shelter-2",
-    "type": "shelter",
     "name": "Shelter on a path, E (69 m)",
     "segmentIds": [
       "seg-125"
@@ -30,14 +15,31 @@
     "costSource": "estimated"
   },
   {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on Kajang Impian 2/7 Road, SW (69 m)",
+    "segmentIds": [
+      "seg-149"
+    ],
+    "installCost": 85000,
+    "annualMaintenance": 2130,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on a path, S (67 m)",
+    "name": "Shelter on Putra 5 Road, E (75 m)",
     "segmentIds": [
-      "seg-47"
+      "seg-128",
+      "seg-109",
+      "seg-97"
     ],
-    "installCost": 86000,
-    "annualMaintenance": 2150,
+    "installCost": 92000,
+    "annualMaintenance": 2300,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -47,11 +49,11 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, SW (9)",
+    "name": "Trees on a service lane, E (5)",
     "segmentIds": [
-      "seg-49"
+      "seg-108"
     ],
-    "installCost": 7900,
+    "installCost": 4800,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -62,11 +64,11 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a service lane, SE (9)",
+    "name": "Trees on Putra 4 Road, E (7)",
     "segmentIds": [
-      "seg-46"
+      "seg-98"
     ],
-    "installCost": 7900,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -76,21 +78,6 @@
   },
   {
     "id": "trees-3",
-    "type": "tree",
-    "name": "Trees on a service lane, S (9)",
-    "segmentIds": [
-      "seg-48"
-    ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-4",
     "type": "tree",
     "name": "Trees on a service lane, SW (7)",
     "segmentIds": [
@@ -105,13 +92,28 @@
     "costSource": "estimated"
   },
   {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on a service lane, S (9)",
+    "segmentIds": [
+      "seg-47"
+    ],
+    "installCost": 7900,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Putra 5 Road, E (5)",
+    "name": "Trees on a service lane, SW (9)",
     "segmentIds": [
-      "seg-128"
+      "seg-49"
     ],
-    "installCost": 4800,
+    "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

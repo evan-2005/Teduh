@@ -2,13 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, N (86 m)",
+    "name": "Shelter on a path, NE (90 m)",
     "segmentIds": [
-      "seg-433",
-      "seg-436"
+      "seg-605",
+      "seg-604"
     ],
-    "installCost": 110000,
-    "annualMaintenance": 2750,
+    "installCost": 103000,
+    "annualMaintenance": 2580,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -18,12 +18,12 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on a path, W (75 m)",
+    "name": "Shelter on a path, NE (57 m)",
     "segmentIds": [
-      "seg-273"
+      "seg-618"
     ],
-    "installCost": 86000,
-    "annualMaintenance": 2150,
+    "installCost": 66000,
+    "annualMaintenance": 1650,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -33,14 +33,14 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on a path, NW (94 m)",
+    "name": "Shelter on a path, NE (93 m)",
     "segmentIds": [
-      "seg-434",
-      "seg-435",
-      "seg-41"
+      "seg-625",
+      "seg-50",
+      "seg-634"
     ],
-    "installCost": 106000,
-    "annualMaintenance": 2650,
+    "installCost": 104000,
+    "annualMaintenance": 2600,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -50,11 +50,11 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a footpath, N (8)",
+    "name": "Trees on a service lane, NE (4)",
     "segmentIds": [
-      "seg-102"
+      "seg-606"
     ],
-    "installCost": 7200,
+    "installCost": 4000,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -65,11 +65,11 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a footpath, W (8)",
+    "name": "Trees on a footpath, NW (10)",
     "segmentIds": [
-      "seg-268"
+      "seg-140"
     ],
-    "installCost": 7200,
+    "installCost": 8700,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -80,39 +80,9 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a footpath, NW (7)",
+    "name": "Trees on Multimedia Avenue, N (7) – A",
     "segmentIds": [
-      "seg-270"
-    ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-4",
-    "type": "tree",
-    "name": "Trees on a service lane, E (5)",
-    "segmentIds": [
-      "seg-411"
-    ],
-    "installCost": 4800,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-5",
-    "type": "tree",
-    "name": "Trees on Teknokrat 3 Road, N (7)",
-    "segmentIds": [
-      "seg-159"
+      "seg-688"
     ],
     "installCost": 6400,
     "annualMaintenance": 420,
@@ -120,6 +90,36 @@
     "shadeFuture": 0.75,
     "yearsToMature": 6,
     "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on Multimedia Avenue, N (7) – B",
+    "segmentIds": [
+      "seg-689"
+    ],
+    "installCost": 6400,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on a footpath, NE (6)",
+    "segmentIds": [
+      "seg-621"
+    ],
+    "installCost": 5600,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
     "costSource": "estimated"
   }
 ]

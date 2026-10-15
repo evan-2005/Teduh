@@ -14080,40 +14080,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-316",
-      "name": "Homes (south-west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-493",
-      "name": "Homes (north)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-475",
-      "name": "School",
-      "kind": "school",
-      "localName": "Eutrain Centre Sdn Bhd"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-1",
       "nodeId": "n-115",
-      "name": "Bus stop",
+      "name": "Bus stop on Tun Mohd Fuad Road",
       "kind": "bus-stop",
       "localName": "TTDI Market, Jalan Tun Mohd Fuad"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-148",
-      "name": "Shop",
-      "kind": "shops",
-      "localName": "Kori Wellness"
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-466",
+      "name": "Bus stop on Zaaba Avenue",
+      "kind": "bus-stop",
+      "localName": "Komersial Tun Fuad (3)"
     },
     {
-      "id": "dest-clinic",
+      "id": "dest-rail-station-1",
+      "nodeId": "n-358",
+      "name": "MRT station",
+      "kind": "rail-station",
+      "localName": "KG10 Taman Tun Dr Ismail"
+    },
+    {
+      "id": "dest-school-1",
+      "nodeId": "n-454",
+      "name": "School",
+      "kind": "school",
+      "localName": "Global Art"
+    },
+    {
+      "id": "dest-shops-1",
+      "nodeId": "n-432",
+      "name": "Supermarket",
+      "kind": "shops",
+      "localName": "HeroMarket"
+    },
+    {
+      "id": "dest-shops-2",
+      "nodeId": "n-124",
+      "name": "Market",
+      "kind": "shops",
+      "localName": "Pasar Malam Taman Tun Dr. Ismail"
+    },
+    {
+      "id": "dest-worship-1",
+      "nodeId": "n-326",
+      "name": "Place of worship",
+      "kind": "worship",
+      "localName": "Persatuan Bible Malaysia"
+    },
+    {
+      "id": "dest-clinic-2",
+      "nodeId": "n-438",
+      "name": "Clinic",
+      "kind": "clinic",
+      "localName": "Dr. K & Associates Clinic"
+    },
+    {
+      "id": "dest-clinic-19",
       "nodeId": "n-340",
       "name": "Hospital",
       "kind": "clinic",
@@ -14133,14 +14156,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. 13 mapped trees are included.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 250000,
       "step": 5000,
-      "demo": 110000
+      "demo": 90000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-rail-station-1-to-clinic-19"
   }
 }

@@ -7,7 +7,9 @@ const MAX_WEIGHT = 3;
 const WEIGHT_STEP = 0.5;
 const DEFAULT_WEIGHT = 1;
 
-const targets = dataset.neighbourhood.destinations.filter((d) => d.kind !== 'home');
+// Priorities weight where people walk to, so list only the places that end a journey.
+const endpoints = new Set(dataset.journeys.map((j) => j.destinationId));
+const targets = dataset.neighbourhood.destinations.filter((d) => endpoints.has(d.id));
 
 export function PriorityControls() {
   const weights = useScenarioStore((s) => s.scenario.priorityWeights);

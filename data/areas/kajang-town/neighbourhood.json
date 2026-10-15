@@ -9665,47 +9665,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-205",
-      "name": "Homes (south-west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-94",
-      "name": "Homes (north-east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-136",
-      "name": "School",
-      "kind": "school",
-      "localName": "Sekolah Kebangsaan Kajang"
-    },
-    {
-      "id": "dest-bus-stop",
-      "nodeId": "n-213",
-      "name": "Bus stop",
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-77",
+      "name": "Bus stop on Semenyih Road A",
       "kind": "bus-stop",
-      "localName": "Maybank Pekan Kajang"
-    },
-    {
-      "id": "dest-shops",
-      "nodeId": "n-352",
-      "name": "Convenience store",
-      "kind": "shops",
-      "localName": "KK Super Mart"
-    },
-    {
-      "id": "dest-clinic",
-      "nodeId": "n-98",
-      "name": "Hospital",
-      "kind": "clinic",
       "localName": "Hospital Kajang"
     },
     {
-      "id": "dest-park",
+      "id": "dest-bus-stop-7",
+      "nodeId": "n-311",
+      "name": "Bus stop on Semenyih Road B",
+      "kind": "bus-stop",
+      "localName": "Komersial Bandar Kajang"
+    },
+    {
+      "id": "dest-rail-station-1",
+      "nodeId": "n-269",
+      "name": "MRT station",
+      "kind": "rail-station",
+      "localName": "KG34 Stadium Kajang"
+    },
+    {
+      "id": "dest-clinic-1",
+      "nodeId": "n-166",
+      "name": "Hospital",
+      "kind": "clinic",
+      "localName": "Pusat Perubatan Kajang Plaza (KPMC)"
+    },
+    {
+      "id": "dest-worship-1",
+      "nodeId": "n-238",
+      "name": "Place of worship",
+      "kind": "worship",
+      "localName": "Shen Sze She Yar Temple"
+    },
+    {
+      "id": "dest-mall-1",
+      "nodeId": "n-25",
+      "name": "Shopping mall",
+      "kind": "mall",
+      "localName": "Plaza Metro Kajang"
+    },
+    {
+      "id": "dest-shops-2",
+      "nodeId": "n-67",
+      "name": "Market",
+      "kind": "shops",
+      "localName": "Pasar Kajang"
+    },
+    {
+      "id": "dest-school-3",
+      "nodeId": "n-285",
+      "name": "School",
+      "kind": "school",
+      "localName": "SMK Convent Kajang"
+    },
+    {
+      "id": "dest-park-1",
       "nodeId": "n-383",
       "name": "Park",
       "kind": "park"
@@ -9724,14 +9740,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 250000,
+      "max": 150000,
       "step": 5000,
-      "demo": 100000
+      "demo": 50000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-rail-station-1-to-mall-1"
   }
 }

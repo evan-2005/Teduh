@@ -3392,25 +3392,32 @@
       "kind": "home"
     },
     {
-      "id": "dest-school",
-      "nodeId": "n-96",
-      "name": "School",
-      "kind": "school",
-      "localName": "Akademi Darul Huffaz"
-    },
-    {
-      "id": "dest-shops",
-      "nodeId": "n-63",
-      "name": "Convenience store",
+      "id": "dest-shops-1",
+      "nodeId": "n-91",
+      "name": "Supermarket",
       "kind": "shops",
-      "localName": "KK Super Mart"
+      "localName": "99 Speedmart"
     },
     {
-      "id": "dest-clinic",
+      "id": "dest-worship-1",
+      "nodeId": "n-55",
+      "name": "Mosque",
+      "kind": "worship",
+      "localName": "Surau Al-Ittifaqiah"
+    },
+    {
+      "id": "dest-clinic-1",
       "nodeId": "n-13",
       "name": "Clinic",
       "kind": "clinic",
       "localName": "Pusat Dialisis Airah"
+    },
+    {
+      "id": "dest-school-1",
+      "nodeId": "n-96",
+      "name": "School",
+      "kind": "school",
+      "localName": "Akademi Darul Huffaz"
     }
   ],
   "meta": {
@@ -3426,7 +3433,8 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
@@ -3434,6 +3442,6 @@
       "step": 5000,
       "demo": 100000
     },
-    "demoJourneyId": "j-home-1-school"
+    "demoJourneyId": "j-home-2-to-school-1"
   }
 }

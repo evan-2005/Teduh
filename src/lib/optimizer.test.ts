@@ -77,6 +77,25 @@ describe('recommend', () => {
     future.forEach((p) => p.interventionIds.forEach((id) => expect(id).toMatch(/^tree-/)));
   });
 
+  test('alternatives are real trade-offs: each one is cheaper than every plan ranked above it', () => {
+    for (const budget of [12_000, 25_000, 40_000]) {
+      const plans = createEvaluator(input()).recommend(budget);
+      for (let i = 1; i < plans.length; i++) {
+        expect(plans[i]!.installCost, `budget ${budget}`).toBeLessThan(plans[i - 1]!.installCost);
+      }
+    }
+  });
+
+  test('an interchangeable copy of a candidate never shows up as a separate option', () => {
+    const connector = interventions.find((i) => i.id === 'shelter-connector')!;
+    const copy = { ...connector, id: 'shelter-connector-copy', name: `${connector.name} (copy)` };
+    const plans = createEvaluator(input({ candidates: [...interventions, copy] })).recommend(40_000);
+    const signature = (ids: readonly string[]) =>
+      ids.map((id) => (id === copy.id ? connector.id : id)).sort().join('|');
+    const signatures = plans.map((p) => signature(p.interventionIds));
+    expect(new Set(signatures).size).toBe(signatures.length);
+  });
+
   test('rejects more candidates than MAX_CANDIDATES', () => {
     const many = Array.from({ length: 13 }, (_, i) => ({ ...interventions[0]!, id: `c${i}` }));
     expect(() => createEvaluator(input({ candidates: many }))).toThrow(/Too many candidates/);

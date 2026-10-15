@@ -4400,40 +4400,63 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-7",
-      "name": "Homes (north-west)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-home-2",
-      "nodeId": "n-164",
-      "name": "Homes (east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-school",
-      "nodeId": "n-76",
-      "name": "School",
-      "kind": "school",
-      "localName": "Nobel International School"
-    },
-    {
-      "id": "dest-bus-stop",
-      "nodeId": "n-147",
-      "name": "Bus stop",
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-3",
+      "name": "Bus stop on SS 4B/10 Road",
       "kind": "bus-stop",
-      "localName": "Perumahan SS 3"
+      "localName": "Petronas/Shell (Opp)"
     },
     {
-      "id": "dest-shops",
+      "id": "dest-bus-stop-2",
+      "nodeId": "n-31",
+      "name": "Bus stop on SS 4A/4 Road",
+      "kind": "bus-stop",
+      "localName": "Rumah No 57"
+    },
+    {
+      "id": "dest-bus-stop-4",
+      "nodeId": "n-115",
+      "name": "Bus stop on SS 5/2 Road A",
+      "kind": "bus-stop",
+      "localName": "Wisma Redha"
+    },
+    {
+      "id": "dest-bus-stop-7",
+      "nodeId": "n-107",
+      "name": "Bus stop on SS 5/2 Road B",
+      "kind": "bus-stop",
+      "localName": "Perumahan SS 5"
+    },
+    {
+      "id": "dest-shops-1",
       "nodeId": "n-10",
       "name": "Supermarket",
       "kind": "shops",
       "localName": "99 Speedmart"
     },
     {
-      "id": "dest-park",
+      "id": "dest-school-1",
+      "nodeId": "n-79",
+      "name": "School",
+      "kind": "school",
+      "localName": "Sekolah Kebangsaan Kelana Jaya 2"
+    },
+    {
+      "id": "dest-worship-1",
+      "nodeId": "n-163",
+      "name": "Mosque on SS 4A/2 Road",
+      "kind": "worship",
+      "localName": "Masjid Al-Ehsan"
+    },
+    {
+      "id": "dest-worship-2",
+      "nodeId": "n-154",
+      "name": "Mosque on SS 5D/9A Road",
+      "kind": "worship",
+      "localName": "Surau Al Ittifaqiah"
+    },
+    {
+      "id": "dest-park-1",
       "nodeId": "n-8",
       "name": "Park",
       "kind": "park"
@@ -4452,14 +4475,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 250000,
       "step": 5000,
-      "demo": 110000
+      "demo": 100000
     },
-    "demoJourneyId": "j-home-2-bus-stop"
+    "demoJourneyId": "j-bus-stop-4-to-school-1"
   }
 }

@@ -2,22 +2,6 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Midah Barat Road, SW (85 m)",
-    "segmentIds": [
-      "seg-75",
-      "seg-76"
-    ],
-    "installCost": 109000,
-    "annualMaintenance": 2730,
-    "shadeNow": 0.95,
-    "shadeFuture": 0.95,
-    "yearsToMature": 0,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "shelter-2",
-    "type": "shelter",
     "name": "Shelter on Jaya 5 Road, W (93 m)",
     "segmentIds": [
       "seg-111",
@@ -32,15 +16,30 @@
     "costSource": "estimated"
   },
   {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on Midah Barat Road, NW (79 m)",
+    "segmentIds": [
+      "seg-346",
+      "seg-344"
+    ],
+    "installCost": 101000,
+    "annualMaintenance": 2530,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Jaya Road, W (70 m)",
+    "name": "Shelter on Midah 12 Road, N (50 m)",
     "segmentIds": [
-      "seg-107",
-      "seg-108"
+      "seg-386"
     ],
-    "installCost": 86000,
-    "annualMaintenance": 2150,
+    "installCost": 62000,
+    "annualMaintenance": 1550,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -50,11 +49,11 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Midah Barat Road, W (8) – A",
+    "name": "Trees on Midah 12 Road, N (7)",
     "segmentIds": [
-      "seg-73"
+      "seg-387"
     ],
-    "installCost": 7200,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -65,11 +64,11 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Midah Barat Road, W (8) – B",
+    "name": "Trees on Midah 12B Road, NW (7) – A",
     "segmentIds": [
-      "seg-74"
+      "seg-52"
     ],
-    "installCost": 7200,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -80,11 +79,11 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Jaya 5 Road, W (4)",
+    "name": "Trees on Midah 12B Road, NW (7) – B",
     "segmentIds": [
-      "seg-336"
+      "seg-51"
     ],
-    "installCost": 4000,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -95,26 +94,26 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Midah Besar Road, E (10)",
+    "name": "Trees on Midah Barat Road, NW (7)",
     "segmentIds": [
-      "seg-43"
+      "seg-347"
     ],
-    "installCost": 8700,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Midah 14 Road, SW (9)",
+    "name": "Trees on a service lane, E (10)",
     "segmentIds": [
-      "seg-157"
+      "seg-298"
     ],
-    "installCost": 7900,
+    "installCost": 8700,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

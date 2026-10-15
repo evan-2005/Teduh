@@ -1,6 +1,7 @@
-import { TIME_SLOTS } from '../config';
+import { DEMO_TIME, TIME_SLOTS } from '../config';
 import { dataset, meta } from '../data/dataset';
-import { formatMyr } from '../lib/format';
+import { demoWalkNames } from '../data/meta';
+import { demoLabel, formatMyr } from '../lib/format';
 import { useDemoPreset } from '../hooks/useDemoPreset';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
@@ -10,6 +11,11 @@ import { PriorityControls } from './PriorityControls';
 
 const MAX_DETOUR = 0.5;
 const DETOUR_STEP = 0.05;
+
+const DEMO_LABEL = demoLabel(
+  DEMO_TIME,
+  demoWalkNames(dataset.neighbourhood, dataset.journeys, meta.demoJourneyId),
+);
 
 const destinationName = (id: string): string =>
   dataset.neighbourhood.destinations.find((d) => d.id === id)?.name ?? id;
@@ -33,7 +39,7 @@ export function ControlsPanel({ plans }: ControlsPanelProps) {
       <h2 className="panel__title">Controls</h2>
 
       <button type="button" className="button" onClick={loadDemoPreset}>
-        Demo: 2 pm walk to the shops
+        {DEMO_LABEL}
       </button>
 
       <label className="field">

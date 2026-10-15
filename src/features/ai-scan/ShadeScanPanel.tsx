@@ -1,16 +1,18 @@
-import { useEffect, useState, type ChangeEvent } from 'react';
+import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { SourceBadge } from '../../components/SourceBadge';
 import { TIME_SLOTS } from '../../config';
 import { dataset } from '../../data/dataset';
+import { createLatestTracker } from '../../lib/latest';
 import { useScenarioStore } from '../../store/scenario';
-import type { ShadeScanResult, TimeSlot } from '../../types';
+import type { TimeSlot } from '../../types';
 import { requestShadeScan } from './client';
+import { overrideFromScan, type ScannedPhoto } from './override';
 
 type Status =
   | { kind: 'idle' }
   | { kind: 'loading' }
   | { kind: 'error'; message: string }
-  | { kind: 'done'; result: ShadeScanResult };
+  | { kind: 'done'; scan: ScannedPhoto };
 
 const percent = (fraction: number): string => `${Math.round(fraction * 100)}%`;
 const toMessage = (error: unknown): string =>
@@ -30,6 +32,14 @@ export function ShadeScanPanel() {
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
   const [adjusted, setAdjusted] = useState(0.5);
   const [confirmed, setConfirmed] = useState(false);
+  const requests = useRef(createLatestTracker());
+
+  /** Any change to the form makes the current estimate (and any reply in flight) stale. */
+  const resetEstimate = () => {
+    requests.current.cancel();
+    setStatus({ kind: 'idle' });
+    setConfirmed(false);
+  };
 
   useEffect(() => {
     if (!file) return setPreviewUrl(null);
@@ -40,25 +50,26 @@ export function ShadeScanPanel() {
 
   const onFile = (e: ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files?.[0] ?? null);
-    setStatus({ kind: 'idle' });
-    setConfirmed(false);
+    resetEstimate();
   };
 
   const scan = async () => {
     if (!file) return;
+    const isCurrent = requests.current.start();
     setStatus({ kind: 'loading' });
     setConfirmed(false);
     try {
       const result = await requestShadeScan({ image: file, segmentId, time });
+      if (!isCurrent()) return;
       setAdjusted(result.shadeFraction);
-      setStatus({ kind: 'done', result });
+      setStatus({ kind: 'done', scan: { result, time } });
     } catch (error) {
-      setStatus({ kind: 'error', message: toMessage(error) });
+      if (isCurrent()) setStatus({ kind: 'error', message: toMessage(error) });
     }
   };
 
-  const confirm = () => {
-    applyShadeOverride({ segmentId, time, shade: adjusted, source: 'ai-confirmed' });
+  const confirm = (scan: ScannedPhoto) => {
+    applyShadeOverride(overrideFromScan(scan, adjusted));
     setConfirmed(true);
   };
 
@@ -71,7 +82,13 @@ export function ShadeScanPanel() {
 
       <label className="field field--tight">
         <span className="field__label">Path segment</span>
-        <select value={segmentId} onChange={(e) => setSegmentId(e.target.value)}>
+        <select
+          value={segmentId}
+          onChange={(e) => {
+            setSegmentId(e.target.value);
+            resetEstimate();
+          }}
+        >
           {dataset.neighbourhood.segments.map((s) => (
             <option key={s.id} value={s.id}>
               {s.id}
@@ -81,7 +98,13 @@ export function ShadeScanPanel() {
       </label>
       <label className="field field--tight">
         <span className="field__label">Time of the photo</span>
-        <select value={time} onChange={(e) => setTime(e.target.value as TimeSlot)}>
+        <select
+          value={time}
+          onChange={(e) => {
+            setTime(e.target.value as TimeSlot);
+            resetEstimate();
+          }}
+        >
           {TIME_SLOTS.map((t) => (
             <option key={t} value={t}>
               {t}
@@ -114,15 +137,15 @@ export function ShadeScanPanel() {
       {status.kind === 'done' && (
         <div className="scan__result">
           <p>
-            {status.result.isMock && <span className="badge badge--missing">MOCK</span>}
-            AI estimate: <span className="num">{percent(status.result.shadeFraction)}</span> shaded,{' '}
-            {status.result.confidence} confidence
+            {status.scan.result.isMock && <span className="badge badge--missing">MOCK</span>}
+            AI estimate: <span className="num">{percent(status.scan.result.shadeFraction)}</span> shaded,{' '}
+            {status.scan.result.confidence} confidence
           </p>
           <p className="card__hint">
-            Sources: {status.result.shadeSources.join(', ') || 'none named'}. Obstacles:{' '}
-            {status.result.obstacles.join(', ') || 'none seen'}.
+            Sources: {status.scan.result.shadeSources.join(', ') || 'none named'}. Obstacles:{' '}
+            {status.scan.result.obstacles.join(', ') || 'none seen'}.
           </p>
-          <p className="card__hint">{status.result.notes}</p>
+          <p className="card__hint">{status.scan.result.notes}</p>
           <label className="field">
             <span className="field__label">
               Your value: <span className="num">{percent(adjusted)}</span>
@@ -136,12 +159,17 @@ export function ShadeScanPanel() {
               onChange={(e) => setAdjusted(Number(e.target.value))}
             />
           </label>
-          <button type="button" className="button button--primary" onClick={confirm}>
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={() => confirm(status.scan)}
+          >
             Confirm and apply to map
           </button>
           {confirmed && (
             <p className="card__hint" role="status">
-              Applied to {segmentId} at {time} as <SourceBadge source="ai-confirmed" />
+              Applied to {status.scan.result.segmentId} at {status.scan.time} as{' '}
+              <SourceBadge source="ai-confirmed" />
             </p>
           )}
         </div>

@@ -237,6 +237,19 @@
   cursor: pointer;
 }
 
+.candidate-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.candidate__details {
+  flex: none;
+  padding-top: var(--space-1);
+  font-size: 0.78rem;
+}
+
 .candidate__body {
   display: flex;
   flex-direction: column;
@@ -722,9 +735,15 @@
   fill: currentColor;
 }
 
-.landmark--bus-stop .landmark__chip {
+.landmark--bus-stop .landmark__chip,
+.landmark--rail-station .landmark__chip {
   border-color: #2f5d9e;
   color: #2f5d9e;
+}
+
+.landmark--rail-station .landmark__chip {
+  background: #2f5d9e;
+  color: var(--color-card);
 }
 
 .landmark--school .landmark__chip,
@@ -863,4 +882,54 @@
 .place-search__results span {
   color: var(--color-ink-soft);
   font-size: 0.8rem;
+}
+
+/* ---- Hint shown on the map before any plan is chosen ---- */
+.map-hint {
+  position: absolute;
+  z-index: 900;
+  top: var(--space-3);
+  left: 50%;
+  max-width: calc(100% - 2 * var(--space-3));
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-canopy);
+  background: var(--color-card);
+  color: var(--color-canopy);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .shell__header-tools {
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .area-picker select {
+    max-width: min(16rem, 60vw);
+  }
+
+  .place-search__panel {
+    width: min(24rem, calc(100vw - 2 * var(--space-3)));
+  }
+}
+
+@media (max-width: 640px) {
+  .map-toolbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .map-toolbar > * {
+    flex: none;
+  }
+
+  .map-hint {
+    top: auto;
+    bottom: var(--space-3);
+  }
 }

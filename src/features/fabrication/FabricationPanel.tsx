@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { SourceBadge } from '../../components/SourceBadge';
 import { dataset, graph } from '../../data/dataset';
 import { formatMyr } from '../../lib/format';
@@ -55,6 +55,12 @@ export function FabricationPanel() {
   const selectIntervention = useScenarioStore((s) => s.selectIntervention);
   const intervention = dataset.interventions.find((i) => i.id === selectedId) ?? null;
   const spec = useMemo(() => (intervention ? specFor(intervention) : null), [intervention]);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // The pack opens from the map or the candidate list; bring it into view either way.
+  useEffect(() => {
+    if (selectedId) sectionRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [selectedId]);
 
   if (!intervention || !spec) {
     return (
@@ -69,7 +75,7 @@ export function FabricationPanel() {
   const elevation = spec.type === 'shelter' ? shelterElevationSvg(spec) : null;
 
   return (
-    <section className="card fabrication" aria-label="Fabrication pack">
+    <section ref={sectionRef} className="card fabrication" aria-label="Fabrication pack">
       <div className="fabrication__head">
         <h3 className="card__title">Fabrication pack: {intervention.name}</h3>
         <button type="button" className="link-button" onClick={() => selectIntervention(null)}>

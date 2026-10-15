@@ -9,6 +9,7 @@ export const CONTEXT_PANE = 'contextPane';
 
 const KIND_LABELS: Readonly<Record<LandmarkKind, string>> = {
   school: 'Education',
+  'rail-station': 'Train station',
   'bus-stop': 'Bus stop',
   shops: 'Shops',
   food: 'Food',
@@ -20,6 +21,7 @@ const KIND_LABELS: Readonly<Record<LandmarkKind, string>> = {
 
 const GLYPHS: Readonly<Record<LandmarkKind, string>> = {
   school: '<path d="M2 8 9 3l7 5v1H2z"/><rect x="4" y="9" width="10" height="6"/>',
+  'rail-station': '<rect x="4" y="2" width="10" height="11" rx="3"/><path d="M5 17l2-3h4l2 3z"/>',
   'bus-stop': '<rect x="3" y="3" width="12" height="10" rx="2"/><circle cx="6" cy="14.5" r="1.4"/><circle cx="12" cy="14.5" r="1.4"/>',
   shops: '<path d="M3 6h12l-1 9H4z"/>',
   food: '<path d="M5 3h8l-1 7a3 3 0 0 1-6 0z"/><rect x="8" y="12" width="2" height="3"/>',

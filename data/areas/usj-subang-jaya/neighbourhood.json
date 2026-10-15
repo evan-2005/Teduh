@@ -8570,40 +8570,56 @@
   ],
   "destinations": [
     {
-      "id": "dest-home-1",
-      "nodeId": "n-81",
-      "name": "Homes (west)",
-      "kind": "home"
+      "id": "dest-bus-stop-1",
+      "nodeId": "n-331",
+      "name": "Bus stop on USJ 10/1G Road",
+      "kind": "bus-stop",
+      "localName": "Rozel USJ 10"
     },
     {
-      "id": "dest-home-2",
-      "nodeId": "n-214",
-      "name": "Homes (south-east)",
-      "kind": "home"
-    },
-    {
-      "id": "dest-bus-stop",
+      "id": "dest-bus-stop-2",
       "nodeId": "n-25",
-      "name": "Bus stop",
+      "name": "Bus stop on USJ 10/1F Road",
       "kind": "bus-stop",
       "localName": "USJ 10 Taipan (Barat)"
     },
     {
-      "id": "dest-shops",
-      "nodeId": "n-3",
-      "name": "Shop",
+      "id": "dest-shops-1",
+      "nodeId": "n-56",
+      "name": "Supermarket (east)",
       "kind": "shops",
-      "localName": "Joo Hing"
+      "localName": "99 Speedmart"
     },
     {
-      "id": "dest-clinic",
-      "nodeId": "n-344",
-      "name": "Clinic",
+      "id": "dest-shops-2",
+      "nodeId": "n-117",
+      "name": "Supermarket on USJ 11/3 Road",
+      "kind": "shops",
+      "localName": "99 Speedmart"
+    },
+    {
+      "id": "dest-clinic-1",
+      "nodeId": "n-3",
+      "name": "Clinic on USJ 10/1B Road",
       "kind": "clinic",
-      "localName": "Klinik Taipan"
+      "localName": "Allow Clinic"
     },
     {
-      "id": "dest-park",
+      "id": "dest-clinic-2",
+      "nodeId": "n-208",
+      "name": "Clinic on USJ 11/3J Road",
+      "kind": "clinic",
+      "localName": "Pusat Perubatan Homeopati GHC"
+    },
+    {
+      "id": "dest-clinic-4",
+      "nodeId": "n-40",
+      "name": "Clinic on USJ 10/1 Road",
+      "kind": "clinic",
+      "localName": "Klinik Mediviron"
+    },
+    {
+      "id": "dest-park-1",
       "nodeId": "n-108",
       "name": "Park",
       "kind": "park"
@@ -8622,14 +8638,15 @@
     "assumptions": [
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
-      "Trips per day are rough estimates from the number of buildings near each home cluster.",
+      "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
+      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 250000,
       "step": 5000,
-      "demo": 120000
+      "demo": 100000
     },
-    "demoJourneyId": "j-home-1-shops"
+    "demoJourneyId": "j-bus-stop-2-to-shops-1"
   }
 }

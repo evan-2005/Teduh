@@ -1,44 +1,72 @@
 [
   {
-    "id": "j-home-1-school",
-    "originId": "dest-home-1",
-    "destinationId": "dest-school",
-    "dailyTrips": 124,
+    "id": "j-bus-stop-2-to-school-1",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-school-1",
+    "dailyTrips": 67,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-school",
-    "originId": "dest-home-2",
-    "destinationId": "dest-school",
-    "dailyTrips": 62,
+    "id": "j-bus-stop-4-to-school-1",
+    "originId": "dest-bus-stop-4",
+    "destinationId": "dest-school-1",
+    "dailyTrips": 36,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-bus-stop",
-    "originId": "dest-home-1",
-    "destinationId": "dest-bus-stop",
-    "dailyTrips": 248,
+    "id": "j-bus-stop-2-to-school-2",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-school-2",
+    "dailyTrips": 34,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-bus-stop",
-    "originId": "dest-home-2",
-    "destinationId": "dest-bus-stop",
-    "dailyTrips": 123,
+    "id": "j-bus-stop-5-to-school-2",
+    "originId": "dest-bus-stop-5",
+    "destinationId": "dest-school-2",
+    "dailyTrips": 33,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-1-shops",
-    "originId": "dest-home-1",
-    "destinationId": "dest-shops",
-    "dailyTrips": 310,
+    "id": "j-bus-stop-2-to-shops-1",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-shops-1",
+    "dailyTrips": 29,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-home-2-shops",
-    "originId": "dest-home-2",
-    "destinationId": "dest-shops",
-    "dailyTrips": 154,
+    "id": "j-bus-stop-1-to-school-3",
+    "originId": "dest-bus-stop-1",
+    "destinationId": "dest-school-3",
+    "dailyTrips": 27,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-bus-stop-1-to-shops-1",
+    "originId": "dest-bus-stop-1",
+    "destinationId": "dest-shops-1",
+    "dailyTrips": 26,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-bus-stop-2-to-worship-2",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-worship-2",
+    "dailyTrips": 18,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-bus-stop-4-to-worship-2",
+    "originId": "dest-bus-stop-4",
+    "destinationId": "dest-worship-2",
+    "dailyTrips": 17,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-bus-stop-5-to-school-3",
+    "originId": "dest-bus-stop-5",
+    "destinationId": "dest-school-3",
+    "dailyTrips": 10,
     "tripsSource": "estimated"
   }
 ]

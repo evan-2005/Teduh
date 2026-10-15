@@ -2,13 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Development Road, NE (98 m)",
+    "name": "Shelter on a path, N (98 m)",
     "segmentIds": [
-      "seg-58",
-      "seg-59"
+      "seg-8",
+      "seg-7"
     ],
-    "installCost": 119000,
-    "annualMaintenance": 2980,
+    "installCost": 125000,
+    "annualMaintenance": 3130,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -18,12 +18,14 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Development Road, W (72 m)",
+    "name": "Shelter on Kepong Road, NW (93 m)",
     "segmentIds": [
-      "seg-215"
+      "seg-272",
+      "seg-269",
+      "seg-273"
     ],
-    "installCost": 82000,
-    "annualMaintenance": 2050,
+    "installCost": 106000,
+    "annualMaintenance": 2650,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -33,25 +35,25 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Kuang Bulan Lane, S (92 m)",
+    "name": "Shelter on Kepong Road, N (99 m)",
     "segmentIds": [
-      "seg-148",
-      "seg-147"
+      "seg-5",
+      "seg-12"
     ],
-    "installCost": 111000,
-    "annualMaintenance": 2780,
+    "installCost": 113000,
+    "annualMaintenance": 2830,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Development Road, N (7)",
+    "name": "Trees on a service lane, W (7) – A",
     "segmentIds": [
-      "seg-64"
+      "seg-313"
     ],
     "installCost": 6400,
     "annualMaintenance": 420,
@@ -64,11 +66,11 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Development Road, W (6)",
+    "name": "Trees on a service lane, W (7) – B",
     "segmentIds": [
-      "seg-224"
+      "seg-314"
     ],
-    "installCost": 5600,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -79,41 +81,41 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a footpath, NW (6)",
+    "name": "Trees on Kepong Road, NW (7) – A",
     "segmentIds": [
-      "seg-266"
+      "seg-3"
     ],
-    "installCost": 5600,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Kuang Bulan Lane, S (6)",
+    "name": "Trees on Kepong Road, NW (7) – B",
     "segmentIds": [
-      "seg-146"
+      "seg-4"
     ],
-    "installCost": 5600,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Kuang Bulan Lane, SW (6)",
+    "name": "Trees on 7 Road, W (7)",
     "segmentIds": [
-      "seg-145"
+      "seg-168"
     ],
-    "installCost": 5600,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

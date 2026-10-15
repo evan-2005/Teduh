@@ -8,6 +8,7 @@ import { ENABLE_AI, FOOTER_DISCLAIMER } from './config';
 import { meta } from './data/dataset';
 import { PlanExplainer, ShadeScanPanel } from './features/ai-scan';
 import { FabricationPanel } from './features/fabrication';
+import { useInitialPlan } from './hooks/useInitialPlan';
 import { useNetworkView } from './hooks/useNetworkView';
 import { useOptimizer } from './hooks/useOptimizer';
 import { useScenarioStore } from './store/scenario';
@@ -17,6 +18,7 @@ export function App() {
   const mapMode = useScenarioStore((s) => s.scenario.mapMode);
   const comparison = mapMode === 'before' ? before.comparison : after.comparison;
   const { plans, selectedPlan } = useOptimizer();
+  useInitialPlan(plans);
   return (
     <div className="shell">
       <header className="shell__header">

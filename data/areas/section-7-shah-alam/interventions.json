@@ -2,13 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Ferum 7/31 Road, SW (97 m)",
+    "name": "Shelter on a path, W (84 m)",
     "segmentIds": [
-      "seg-8",
-      "seg-7"
+      "seg-257",
+      "seg-256"
     ],
-    "installCost": 118000,
-    "annualMaintenance": 2950,
+    "installCost": 108000,
+    "annualMaintenance": 2700,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -18,14 +18,13 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on a path, SW (92 m)",
+    "name": "Shelter on a path, W (86 m)",
     "segmentIds": [
-      "seg-394",
-      "seg-17",
-      "seg-19"
+      "seg-253",
+      "seg-258"
     ],
-    "installCost": 117000,
-    "annualMaintenance": 2930,
+    "installCost": 110000,
+    "annualMaintenance": 2750,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -35,13 +34,13 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Ferum 7/31 Road, S (96 m)",
+    "name": "Shelter on a path, N (80 m)",
     "segmentIds": [
-      "seg-392",
-      "seg-290"
+      "seg-75",
+      "seg-76"
     ],
-    "installCost": 115000,
-    "annualMaintenance": 2880,
+    "installCost": 91000,
+    "annualMaintenance": 2280,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -51,9 +50,9 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Paladium 3 Road, S (8)",
+    "name": "Trees on a cycle path, N (8)",
     "segmentIds": [
-      "seg-379"
+      "seg-74"
     ],
     "installCost": 7200,
     "annualMaintenance": 420,
@@ -66,41 +65,41 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Paladium 3 Road, SE (7)",
+    "name": "Trees on Kayangan Avenue, W (7) – A",
     "segmentIds": [
-      "seg-383"
+      "seg-48"
     ],
     "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a residential street, E (6) – A",
+    "name": "Trees on Kayangan Avenue, W (7) – B",
     "segmentIds": [
-      "seg-322"
+      "seg-47"
     ],
-    "installCost": 5600,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on a residential street, E (6) – B",
+    "name": "Trees on Ferum 7/31 Road, SW (10)",
     "segmentIds": [
-      "seg-321"
+      "seg-8"
     ],
-    "installCost": 5600,
+    "installCost": 8700,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -111,16 +110,16 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, SW (9)",
+    "name": "Trees on Ferum 7/31 Road, S (9)",
     "segmentIds": [
-      "seg-6"
+      "seg-395"
     ],
     "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   }
 ]

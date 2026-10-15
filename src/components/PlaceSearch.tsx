@@ -1,6 +1,7 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { analysePlace, AnalyseError } from '../data/analysePlace';
 import { searchPlaces, SearchError, type Place } from '../data/geocode';
+import { createLatestTracker } from '../lib/latest';
 import { goToArea } from './AreaPicker';
 
 type Status =
@@ -21,15 +22,19 @@ export function PlaceSearch() {
   const [places, setPlaces] = useState<Place[] | null>(null);
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
   const busy = status.kind === 'searching' || status.kind === 'analysing';
+  const searches = useRef(createLatestTracker());
 
   const search = async (event: FormEvent) => {
     event.preventDefault();
+    const isCurrent = searches.current.start();
     setStatus({ kind: 'searching' });
     try {
-      setPlaces(await searchPlaces(query));
+      const found = await searchPlaces(query);
+      if (!isCurrent()) return;
+      setPlaces(found);
       setStatus({ kind: 'idle' });
     } catch (error) {
-      setStatus({ kind: 'error', message: messageOf(error) });
+      if (isCurrent()) setStatus({ kind: 'error', message: messageOf(error) });
     }
   };
 

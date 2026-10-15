@@ -10,4 +10,4 @@ export interface AreaIndexEntry {
 /** Areas that ship with the app (built by `npm run data:areas`). */
 export const AREA_INDEX: readonly AreaIndexEntry[] = indexRaw as AreaIndexEntry[];
 
-export const DEFAULT_AREA_ID = 'ss4-petaling-jaya';
+export const DEFAULT_AREA_ID = 'ss15-subang-jaya';

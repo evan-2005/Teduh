@@ -133,3 +133,66 @@ body {
     --column-results: 280px;
   }
 }
+
+/* Narrow screens: map on top at full width, then Controls and Results side by side. */
+@media (max-width: 900px) {
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+
+  .shell {
+    min-height: 100vh;
+    height: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      'header header'
+      'map map'
+      'controls results'
+      'footer footer';
+  }
+
+  .shell__header {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .shell__map {
+    height: 62vh;
+    min-height: 340px;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .shell__controls,
+  .shell__results {
+    overflow: visible;
+  }
+}
+
+/* Phones: one column. */
+@media (max-width: 640px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'header'
+      'map'
+      'controls'
+      'results'
+      'footer';
+  }
+
+  .shell__controls {
+    border-right-width: 0;
+    border-bottom-width: 1px;
+  }
+
+  .shell__results {
+    border-left-width: 0;
+  }
+
+  .tagline {
+    display: none;
+  }
+}

@@ -130,3 +130,9 @@ export function pointInPolygon(p: XY, ring: readonly XY[]): boolean {
   }
   return inside;
 }
+
+const COMPASS = ['east', 'north-east', 'north', 'north-west', 'west', 'south-west', 'south', 'south-east'];
+
+/** Eight-point compass direction of an offset (x east, y north), e.g. "north-east". */
+export const compassName = (dx: number, dy: number): string =>
+  COMPASS[Math.round((Math.atan2(dy, dx) / (Math.PI / 4) + 8) % 8) % 8]!;

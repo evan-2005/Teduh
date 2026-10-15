@@ -16,7 +16,7 @@ export const areaContextSchema = z.object({
   landmarks: z.array(
     z.object({
       id: z.string(),
-      kind: z.enum(['school', 'bus-stop', 'shops', 'food', 'worship', 'health', 'park', 'other']),
+      kind: z.enum(['school', 'rail-station', 'bus-stop', 'shops', 'food', 'worship', 'health', 'park', 'other']),
       name: z.string(),
       localName: z.string().optional(),
       lat: z.number(),

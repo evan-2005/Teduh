@@ -12,3 +12,35 @@ export function formatPedestrianSun(minutes: number): { value: string; unit: str
 }
 
 export const formatMultiplier = (weight: number): string => `×${weight.toFixed(1)}`;
+
+const NOON = 12;
+
+/** '14:00' -> '2 pm', '09:00' -> '9 am', '12:00' -> '12 pm'. */
+export function formatClock(time: string): string {
+  const [hourText = '0', minuteText = '00'] = time.split(':');
+  const hour = Number(hourText);
+  const suffix = hour >= NOON ? 'pm' : 'am';
+  const hour12 = hour % NOON === 0 ? NOON : hour % NOON;
+  return minuteText === '00' ? `${hour12} ${suffix}` : `${hour12}:${minuteText} ${suffix}`;
+}
+
+/** "Bus stop" -> "bus stop" for running text, but leave acronyms such as "LRT station" alone. */
+const inSentence = (name: string): string =>
+  /^[A-Z][A-Z]/.test(name) ? name : `${name.charAt(0).toLowerCase()}${name.slice(1)}`;
+
+/** "the bus stop", but "homes (east)": a group of homes takes no article. */
+const withArticle = (name: string): string =>
+  /^homes\b/i.test(name) ? inSentence(name) : `the ${inSentence(name)}`;
+
+export interface WalkNames {
+  from: string | null;
+  to: string | null;
+}
+
+/** Button text for the demo preset, e.g. "Demo: 2 pm walk from the LRT station to the shopping mall". */
+export function demoLabel(time: string, walk: WalkNames | null): string {
+  const clock = formatClock(time);
+  if (!walk?.to) return `Demo: ${clock} walk to a nearby place`;
+  const from = walk.from ? ` from ${withArticle(walk.from)}` : '';
+  return `Demo: ${clock} walk${from} to ${withArticle(walk.to)}`;
+}

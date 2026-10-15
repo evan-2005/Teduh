@@ -6,15 +6,21 @@
  *   npm run screenshots    (terminal 3)
  *
  * Uses the Microsoft Edge already installed on Windows (no browser download).
- * Set BASE_URL to point at another port, and BROWSER_CHANNEL=chrome to use Chrome.
+ * Set BASE_URL to point at another port, BROWSER_CHANNEL=chrome to use Chrome, and
+ * SCREENSHOT_DIR to save the images somewhere other than docs/screenshots.
  */
 import { mkdirSync } from 'node:fs';
 import { chromium } from 'playwright-core';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:5173';
 const CHANNEL = process.env.BROWSER_CHANNEL ?? 'msedge';
-const OUT = 'docs/screenshots';
+const OUT = process.env.SCREENSHOT_DIR ?? 'docs/screenshots';
 const VIEWPORT = { width: 1440, height: 900 };
+const NARROW_VIEWPORTS = [
+  { width: 1024, height: 768 },
+  { width: 390, height: 844 },
+];
+const MIN_MAP_WIDTH_PX = 300;
 const AI_TIMEOUT_MS = 15000;
 const LOOKUP_TIMEOUT_MS = 20000;
 
@@ -40,11 +46,39 @@ const shot = async (name) => {
 };
 const scrollToTop = (locator) => locator.evaluate((el) => el.scrollIntoView({ block: "start" }));
 const settle = () => page.waitForTimeout(700);
-const demoButton = () => page.getByRole('button', { name: /Demo: 2 pm/ });
+const demoButton = () => page.getByRole('button', { name: /^Demo: \d+ (am|pm) walk / });
+
+/** True when the topmost element at a marker's centre is that marker (so a click reaches it). */
+const markersClickable = () =>
+  page.locator('.marker').evaluateAll((els) =>
+    els.every((el) => {
+      const r = el.getBoundingClientRect();
+      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return hit !== null && el.contains(hit);
+    }),
+  );
 
 await page.goto(BASE_URL);
 await demoButton().waitFor();
 await page.waitForLoadState('networkidle').catch(() => undefined);
+
+// First load: a plan is already applied, so Swipe has something to compare
+await settle();
+check('first load applies the best plan', (await page.locator('.candidate input:checked').count()) > 0);
+check('no "no plan" hint once a plan is applied', (await page.locator('.map-hint').count()) === 0);
+const demoText = await demoButton().innerText();
+const demoJourney = await page.locator('.controls select').last().locator('option:checked').innerText();
+const [walkFrom = '', walkTo = ''] = demoJourney.toLowerCase().split(' → ');
+check(
+  'demo button names both ends of its own journey',
+  demoText.toLowerCase().includes(walkFrom) && demoText.toLowerCase().endsWith(walkTo),
+  `${demoText} / ${demoJourney}`,
+);
+check(
+  'walks start at public transport',
+  /^(Bus stop|LRT station|MRT station|Train station|Monorail station)/.test(demoJourney),
+  demoJourney,
+);
 
 // 0. Area context: real layout, landmarks and a switchable background map
 check('area card names the place', (await page.locator('.area__name').innerText()).length > 0);
@@ -74,14 +108,24 @@ check('demo preset loads and recommends a plan', Number(headline) > 1, `headline
 check('swipe divider is shown', await divider.isVisible());
 await shot('01-before-after-swipe');
 
-// 2. Map modes
-await page.getByRole('radio', { name: 'Before' }).click();
-await settle();
-check('before mode hides intervention markers', (await page.locator('.marker').count()) === 0);
-await page.getByRole('radio', { name: 'After' }).click();
-await settle();
-check('after mode shows intervention markers', (await page.locator('.marker').count()) === 8);
-await page.getByRole('radio', { name: 'Swipe' }).click();
+// 2. Map modes: every candidate marker stays visible and clickable in all three
+const candidateCount = await page.locator('.candidate').count();
+for (const mode of ['Before', 'After', 'Swipe']) {
+  await page.getByRole('radio', { name: mode, exact: true }).click();
+  await settle();
+  check(`${mode}: all ${candidateCount} markers shown`, (await page.locator('.marker').count()) === candidateCount);
+  check(`${mode}: every marker can be clicked`, await markersClickable());
+}
+
+// 2b. Recommended alternatives are real trade-offs (each cheaper than the one above)
+const planCosts = await page.locator('.plan__meta').evaluateAll((els) =>
+  els.map((el) => Number(el.textContent.match(/RM ([\d,]+)/)[1].replace(/,/g, ''))),
+);
+check(
+  'each alternative plan is cheaper than the one above it',
+  planCosts.every((cost, i) => i === 0 || cost < planCosts[i - 1]),
+  planCosts.join(' > '),
+);
 
 // 3. Time of day recolours the map
 const exposedCount = () => page.locator('.leaflet-pane path[stroke-dasharray]').count();
@@ -95,9 +139,11 @@ await page.getByRole('radio', { name: '14:00' }).click();
 const baseline = await page.locator('.headline__value').innerText();
 await page.locator('.candidate input:checked').first().uncheck();
 await settle();
-const afterUntick = await page.locator('.headline__value').innerText();
+// Unticking the only chosen item leaves no headline figure, which is also a recalculation.
+const headlineNow = page.locator('.headline__value');
+const afterUntick = (await headlineNow.count()) > 0 ? await headlineNow.innerText() : 'no plan';
 check('unticking a candidate recalculates results', afterUntick !== baseline, `${baseline} -> ${afterUntick}`);
-await page.getByRole('slider', { name: /^Supermarket/ }).fill('3');
+await page.getByRole('group', { name: 'Priorities' }).getByRole('slider').first().fill('3');
 await settle();
 check('priority sliders keep recommendations available', (await page.locator('.plan').count()) > 0);
 await demoButton().click();
@@ -112,11 +158,15 @@ await settle();
 await shot('02-future-canopy');
 await demoButton().click();
 
-// 6. Fabrication pack (markers live on the After side, so leave swipe first)
-await page.getByRole("radio", { name: "After" }).click();
-await page.locator('[title^="Shelter on"]').first().click();
+// 6. Fabrication pack: opens from the candidate list, and from a marker in Before mode
+await page.getByRole('button', { name: /^Fabrication details for Trees/ }).first().click();
 const pack = page.locator('.fabrication');
 await pack.waitFor();
+check('candidate list "Details" opens the fabrication pack', (await pack.innerText()).includes('Trees'));
+await page.getByRole('radio', { name: 'Before', exact: true }).click();
+await page.locator('[title^="Shelter on"]').first().click();
+await pack.getByText(/Fabrication pack: Shelter/).waitFor();
+await page.getByRole('radio', { name: 'After', exact: true }).click();
 await scrollToTop(pack);
 check('fabrication pack shows a bill of materials', (await pack.innerText()).includes('Bill of materials'));
 check('fabrication pack draws an elevation', (await pack.locator('svg .post').count()) > 10);
@@ -205,6 +255,19 @@ if (other) {
   await settle();
   check('demo preset works in the new area', Number(await page.locator('.headline__value').innerText()) >= 0);
 }
+
+// 10. Narrow screens: the map stays usable and the page never scrolls sideways
+for (const size of NARROW_VIEWPORTS) {
+  await page.setViewportSize(size);
+  await settle();
+  const layout = await page.evaluate(() => ({
+    mapWidth: document.querySelector('.leaflet-container').getBoundingClientRect().width,
+    sideways: document.documentElement.scrollWidth > window.innerWidth,
+  }));
+  check(`${size.width}px: map is at least ${MIN_MAP_WIDTH_PX}px wide`, layout.mapWidth >= MIN_MAP_WIDTH_PX, `${Math.round(layout.mapWidth)}px`);
+  check(`${size.width}px: no horizontal page scroll`, !layout.sideways);
+}
+await page.setViewportSize(VIEWPORT);
 
 check('no uncaught page errors', errors.length === 0, errors.join(' | '));
 await browser.close();

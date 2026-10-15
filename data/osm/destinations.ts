@@ -1,31 +1,39 @@
-/** Pick homes, destinations and journeys for a real area. */
-import type { Destination, DestinationKind, Journey, PathNode } from '../../src/types';
+/**
+ * Pick the places and walks to model for a real area. Walks start at public transport (rail
+ * stations, bus stops) and end at the places people walk to from it. Home clusters are only a
+ * fallback, for areas where too little transit is mapped to give enough walks.
+ */
+import type { Destination, Journey, PathNode } from '../../src/types';
 import type { Graph } from '../../src/lib/graph';
 import { shortestRoute } from '../../src/lib/routing';
 import { centroid, distance, type XY } from './geometry';
 import type { Building, GreenFeature, Poi } from './parse';
+import {
+  estimateTrips,
+  mergeNearby,
+  nameDestinations,
+  PARK_PLACE,
+  placeFromTags,
+  selectJourneys,
+  type Place,
+  type SelectionLimits,
+  type TripCandidate,
+} from './trips';
 
 const HOME_BUILDINGS = new Set(['house', 'terrace', 'semidetached_house', 'residential', 'apartments', 'yes']);
 const MAX_SNAP_M = 60;
-const SKIPPED_LABELS = new Set(['Kindergarten', 'Pharmacy']);
-const MIN_WALK_M = 300;
-const TARGET_WALK_M = 650;
 const KMEANS_ROUNDS = 25;
-const MIN_TRIPS = 20;
-/** Daily trips per nearby building: deliberately rough, and labelled "estimated". */
-const TRIPS_PER_BUILDING: Readonly<Record<string, number>> = {
-  school: 0.1,
-  clinic: 0.03,
-  'bus-stop': 0.2,
-  shops: 0.25,
-  park: 0.06,
-};
-const COMPASS = ['east', 'north-east', 'north', 'north-west', 'west', 'south-west', 'south', 'south-east'];
+/** Shorter walks barely matter for shade; longer ones are rarely made on foot. */
+const MIN_WALK_M = 150;
+const MAX_WALK_M = 1000;
+const MIN_TRANSIT_JOURNEYS = 4;
+const HOME_BUILDINGS_PER_WEIGHT = 30;
+const MAX_HOME_WEIGHT = 6;
+const LIMITS: SelectionLimits = { maxJourneys: 10, maxPerDestination: 2, maxPerOrigin: 4, maxPlaces: 9 };
 
 export interface NodeXY { node: PathNode; xy: XY }
 
-export const compassName = (dx: number, dy: number): string =>
-  COMPASS[Math.round((Math.atan2(dy, dx) / (Math.PI / 4) + 8) % 8) % 8]!;
+export { compassName } from './geometry';
 
 /** Two clusters of homes (k-means with a deterministic start). Returns centroid and size. */
 export function clusterHomes(buildings: readonly Building[]): { centre: XY; size: number }[] {
@@ -54,33 +62,66 @@ function nearestNode(nodes: readonly NodeXY[], xy: XY): { entry: NodeXY; distanc
   return best;
 }
 
-interface Candidate { kind: DestinationKind; node: PathNode; name: string; localName?: string }
+type Draft = Omit<Place, 'id'>;
 
-/** Candidate destinations mapped to the network, grouped by kind. */
-function candidatesOf(pois: readonly Poi[], greens: readonly GreenFeature[], nodes: readonly NodeXY[]): Candidate[] {
-  const wanted: Record<string, DestinationKind> = {
-    school: 'school',
-    'bus-stop': 'bus-stop',
-    shops: 'shops',
-    health: 'clinic',
-  };
-  const result: Candidate[] = [];
-  for (const poi of pois) {
-    const kind = wanted[poi.landmark];
-    const snap = kind ? nearestNode(nodes, poi.xy) : null;
-    if (kind && snap && snap.distanceM <= MAX_SNAP_M && !SKIPPED_LABELS.has(poi.label)) {
-      result.push({ kind, node: snap.entry.node, name: poi.label, localName: poi.tags['name'] });
-    }
-  }
-  for (const green of greens.filter((g) => g.kind === 'park')) {
-    const snap = nearestNode(nodes, centroid(green.ring));
-    if (snap && snap.distanceM <= MAX_SNAP_M * 2) result.push({ kind: 'park', node: snap.entry.node, name: 'Park' });
-  }
-  return result;
+function snapPlace(
+  kind: ReturnType<typeof placeFromTags>,
+  xy: XY,
+  nodes: readonly NodeXY[],
+  maxM: number,
+  localName?: string,
+): Draft | null {
+  const snap = kind ? nearestNode(nodes, xy) : null;
+  if (!kind || !snap || snap.distanceM > maxM) return null;
+  return { ...kind, nodeId: snap.entry.node.id, xy, ...(localName ? { localName } : {}) };
 }
 
-function walkFrom(graph: Graph, from: string, to: string): number | null {
-  return shortestRoute(graph, from, to)?.lengthM ?? null;
+/** Transit stops and attractors on the path network, one per real-world spot, with stable ids. */
+function placesFrom(pois: readonly Poi[], greens: readonly GreenFeature[], nodes: readonly NodeXY[]): Place[] {
+  const drafts = [
+    ...pois.map((poi) => snapPlace(placeFromTags(poi.tags), poi.xy, nodes, MAX_SNAP_M, poi.tags['name'])),
+    ...greens
+      .filter((g) => g.kind === 'park')
+      .map((g) => snapPlace(PARK_PLACE, centroid(g.ring), nodes, MAX_SNAP_M * 2)),
+  ].filter((d): d is Draft => d !== null);
+  const counts = new Map<string, number>();
+  const withIds = drafts.map((d) => {
+    const n = (counts.get(d.kind) ?? 0) + 1;
+    counts.set(d.kind, n);
+    return { ...d, id: `${d.kind}-${n}` };
+  });
+  return mergeNearby(withIds);
+}
+
+function homePlaces(homes: readonly { centre: XY; size: number }[], nodes: readonly NodeXY[]): Place[] {
+  return homes.flatMap((home, index) => {
+    const snap = nearestNode(nodes, home.centre);
+    if (!snap) return [];
+    const weight = Math.min(MAX_HOME_WEIGHT, home.size / HOME_BUILDINGS_PER_WEIGHT);
+    const place: Place = {
+      id: `home-${index + 1}`,
+      kind: 'home',
+      role: 'homes',
+      label: 'Homes',
+      nodeId: snap.entry.node.id,
+      xy: home.centre,
+      weight,
+    };
+    return [place];
+  });
+}
+
+/** Every walk from an origin to a target that is a sensible length on the real path network. */
+function tripsBetween(graph: Graph, origins: readonly Place[], targets: readonly Place[]): TripCandidate[] {
+  return origins.flatMap((origin) =>
+    targets.flatMap((target) => {
+      if (target.nodeId === origin.nodeId) return [];
+      const walkM = shortestRoute(graph, origin.nodeId, target.nodeId)?.lengthM;
+      if (walkM === undefined || walkM < MIN_WALK_M || walkM > MAX_WALK_M) return [];
+      const trips = estimateTrips(origin.weight, target.weight, walkM);
+      return [{ originId: origin.id, destinationId: target.id, destinationKind: target.kind, walkM, trips }];
+    }),
+  );
 }
 
 export interface Planned { destinations: Destination[]; journeys: Journey[] }
@@ -92,58 +133,39 @@ export function planDestinations(args: {
   pois: readonly Poi[];
   greens: readonly GreenFeature[];
   areaCentre: XY;
+  /** English name of a street at a path node, used to tell repeated places apart. */
+  streetOf?: (nodeId: string) => string | undefined;
 }): Planned {
   const { graph, nodes, homes, pois, greens, areaCentre } = args;
-  const destinations: Destination[] = [];
-  const homeEntries: { dest: Destination; size: number }[] = [];
+  const places = placesFrom(pois, greens, nodes);
+  const transit = places.filter((p) => p.role === 'transit');
+  const attractors = places.filter((p) => p.role === 'attractor');
 
-  homes.forEach((home, index) => {
-    const snap = nearestNode(nodes, home.centre);
-    if (!snap) return;
-    const where = compassName(home.centre[0] - areaCentre[0], home.centre[1] - areaCentre[1]);
-    const dest: Destination = {
-      id: `dest-home-${index + 1}`,
-      nodeId: snap.entry.node.id,
-      name: `Homes (${where})`,
-      kind: 'home',
-    };
-    destinations.push(dest);
-    homeEntries.push({ dest, size: home.size });
-  });
-
-  const journeys: Journey[] = [];
-  const all = candidatesOf(pois, greens, nodes);
-  for (const kind of ['school', 'bus-stop', 'shops', 'clinic', 'park'] as const) {
-    const scored = all
-      .filter((c) => c.kind === kind)
-      .map((c) => {
-        const walks = homeEntries.map((h) => walkFrom(graph, h.dest.nodeId, c.node.id));
-        if (walks.some((w) => w === null)) return null;
-        const average = (walks as number[]).reduce((a, b) => a + b, 0) / walks.length;
-        return average >= MIN_WALK_M ? { c, miss: Math.abs(average - TARGET_WALK_M) } : null;
-      })
-      .filter((x): x is { c: Candidate; miss: number } => x !== null)
-      .sort((a, b) => a.miss - b.miss);
-    const chosen = scored[0]?.c;
-    if (!chosen) continue;
-
-    const dest: Destination = {
-      id: `dest-${kind}`,
-      nodeId: chosen.node.id,
-      name: chosen.name,
-      kind,
-      ...(chosen.localName ? { localName: chosen.localName } : {}),
-    };
-    destinations.push(dest);
-    for (const home of homeEntries) {
-      journeys.push({
-        id: `j-${home.dest.id.replace('dest-', '')}-${kind}`,
-        originId: home.dest.id,
-        destinationId: dest.id,
-        dailyTrips: Math.max(MIN_TRIPS, Math.round(home.size * (TRIPS_PER_BUILDING[kind] ?? 0.1))),
-        tripsSource: 'estimated',
-      });
-    }
+  let candidates = tripsBetween(graph, transit, attractors);
+  let chosen = selectJourneys(candidates, LIMITS);
+  const homesUsed = chosen.length < MIN_TRANSIT_JOURNEYS ? homePlaces(homes, nodes) : [];
+  if (homesUsed.length > 0) {
+    // Too little transit: residents walking to the stops and to the attractors fill the gap.
+    candidates = [...candidates, ...tripsBetween(graph, homesUsed, [...transit, ...attractors])];
+    chosen = selectJourneys(candidates, LIMITS);
   }
+
+  const usedIds = new Set(chosen.flatMap((c) => [c.originId, c.destinationId]));
+  const used = [...transit, ...homesUsed, ...attractors].filter((p) => usedIds.has(p.id));
+  const names = nameDestinations(used, areaCentre, args.streetOf);
+  const destinations: Destination[] = used.map((p) => ({
+    id: `dest-${p.id}`,
+    nodeId: p.nodeId,
+    name: names.get(p.id) ?? p.label,
+    kind: p.kind,
+    ...(p.localName ? { localName: p.localName } : {}),
+  }));
+  const journeys: Journey[] = chosen.map((c) => ({
+    id: `j-${c.originId}-to-${c.destinationId}`,
+    originId: `dest-${c.originId}`,
+    destinationId: `dest-${c.destinationId}`,
+    dailyTrips: c.trips,
+    tripsSource: 'estimated',
+  }));
   return { destinations, journeys };
 }

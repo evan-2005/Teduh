@@ -14,7 +14,7 @@ export interface RawElement {
   tags?: Record<string, string>;
 }
 
-type Tags = Record<string, string>;
+export type Tags = Record<string, string>;
 
 export interface Highway { id: number; tags: Tags; points: XY[] }
 export interface Building {
@@ -64,10 +64,23 @@ export function buildingHeightM(tags: Tags): number {
   return HEIGHT_BY_BUILDING[tags['building'] ?? ''] ?? DEFAULT_HEIGHT_M;
 }
 
+const RAIL_LABELS: Readonly<Record<string, string>> = {
+  light_rail: 'LRT station',
+  subway: 'MRT station',
+  monorail: 'Monorail station',
+};
+
+/** True for a rail station or halt (Overpass often returns several points for one station). */
+export const isRailStation = (tags: Tags): boolean =>
+  tags['railway'] === 'station' || tags['railway'] === 'halt' || tags['public_transport'] === 'station';
+
 /** Plain-English kind and generic name for a mapped place, or null if we do not show it. */
 export function classifyPoi(tags: Tags): { landmark: LandmarkKind; label: string } | null {
   const amenity = tags['amenity'];
   const shop = tags['shop'];
+  if (isRailStation(tags)) {
+    return { landmark: 'rail-station', label: RAIL_LABELS[tags['station'] ?? ''] ?? 'Train station' };
+  }
   if (tags['highway'] === 'bus_stop') return { landmark: 'bus-stop', label: 'Bus stop' };
   if (amenity === 'school') return { landmark: 'school', label: 'School' };
   if (amenity === 'kindergarten') return { landmark: 'school', label: 'Kindergarten' };
@@ -85,7 +98,8 @@ export function classifyPoi(tags: Tags): { landmark: LandmarkKind; label: string
     return { landmark: 'food', label: amenity === 'cafe' ? 'Cafe' : 'Restaurant' };
   }
   if (amenity === 'marketplace') return { landmark: 'shops', label: 'Market' };
-  if (shop === 'supermarket' || shop === 'mall') return { landmark: 'shops', label: 'Supermarket' };
+  if (shop === 'mall') return { landmark: 'shops', label: 'Shopping mall' };
+  if (shop === 'supermarket') return { landmark: 'shops', label: 'Supermarket' };
   if (shop) return { landmark: 'shops', label: shop === 'convenience' ? 'Convenience store' : 'Shop' };
   if (amenity) return { landmark: 'other', label: 'Public facility' };
   return null;
@@ -134,7 +148,9 @@ export function parseOsm(elements: readonly RawElement[], proj: Projection): Par
     const poi = classifyPoi(tags);
     const xy = poi ? centre(element, proj) : null;
     // Buildings tagged as a school or mosque are the same place as the amenity; keep the amenity.
-    if (poi && xy && !(element.type === 'way' && tags['building'] && !tags['amenity'] && !tags['shop'])) {
+    // Rail stations are usually mapped only as a station roof, so keep those outlines.
+    const plainBuilding = element.type === 'way' && tags['building'] && !tags['amenity'] && !tags['shop'];
+    if (poi && xy && (!plainBuilding || isRailStation(tags))) {
       result.pois.push({ id: `${element.type[0]}${element.id}`, tags, xy, ...poi });
     }
   }

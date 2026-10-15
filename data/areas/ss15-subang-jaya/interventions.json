@@ -2,29 +2,28 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on SS 15/2F Road, NE (87 m)",
+    "name": "Shelter on Jengka Avenue, SW (69 m)",
     "segmentIds": [
-      "seg-172",
-      "seg-171"
+      "seg-116"
     ],
-    "installCost": 110000,
-    "annualMaintenance": 2750,
+    "installCost": 79000,
+    "annualMaintenance": 1980,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on SS 17/2G Road, W (88 m)",
+    "name": "Shelter on SS 15/8A Road, S (92 m)",
     "segmentIds": [
-      "seg-300",
-      "seg-316"
+      "seg-9",
+      "seg-8"
     ],
-    "installCost": 107000,
-    "annualMaintenance": 2680,
+    "installCost": 112000,
+    "annualMaintenance": 2800,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -34,14 +33,13 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on SS 17/2H Road, W (94 m)",
+    "name": "Shelter on SS 15/4G Road, W (80 m)",
     "segmentIds": [
-      "seg-301",
-      "seg-302",
-      "seg-303"
+      "seg-119",
+      "seg-118"
     ],
-    "installCost": 114000,
-    "annualMaintenance": 2850,
+    "installCost": 97000,
+    "annualMaintenance": 2430,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -51,11 +49,11 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Jengka Avenue, NW (7) – A",
+    "name": "Trees on Jengka Avenue, SW (9)",
     "segmentIds": [
-      "seg-241"
+      "seg-117"
     ],
-    "installCost": 6400,
+    "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -66,24 +64,24 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Jengka Avenue, NW (7) – B",
+    "name": "Trees on SS 15/8A Road, S (5)",
     "segmentIds": [
-      "seg-242"
+      "seg-546"
     ],
-    "installCost": 6400,
+    "installCost": 4800,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on SS 17/2 Road, NW (7)",
+    "name": "Trees on SS 15/8A Road, S (7)",
     "segmentIds": [
-      "seg-338"
+      "seg-10"
     ],
     "installCost": 6400,
     "annualMaintenance": 420,
@@ -96,31 +94,31 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on SS 15/2E Road, NW (9)",
+    "name": "Trees on SS 15/4 Road, S (3)",
     "segmentIds": [
-      "seg-190"
+      "seg-101"
     ],
-    "installCost": 7900,
+    "installCost": 3300,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on SS 15/2A Road, NW (9)",
+    "name": "Trees on Jengka Avenue, S (2)",
     "segmentIds": [
-      "seg-234"
+      "seg-113"
     ],
-    "installCost": 7900,
+    "installCost": 2500,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   }
 ]

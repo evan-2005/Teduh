@@ -132,11 +132,37 @@ describe('area pipeline on a synthetic town', () => {
     neighbourhood.segments.forEach((s) => expect(s.notes ?? '').not.toMatch(/jalan|lorong/i));
   });
 
-  test('refuses an area with no homes, with a helpful message', () => {
+  test('with a station mapped, every walk starts at public transport and no home clusters are made', () => {
+    const { neighbourhood, journeys } = buildArea({
+      area: MINI_AREA,
+      elements: miniAreaElements({ withStation: true }),
+      unitCosts,
+      fetchedAt: '2026-10-15',
+    });
+    const kindOf = new Map(neighbourhood.destinations.map((d) => [d.id, d.kind]));
+    expect(journeys.length).toBeGreaterThanOrEqual(4);
+    journeys.forEach((j) => expect(['rail-station', 'bus-stop']).toContain(kindOf.get(j.originId)));
+    expect(neighbourhood.destinations.some((d) => d.kind === 'home')).toBe(false);
+    const station = neighbourhood.destinations.find((d) => d.kind === 'rail-station');
+    expect(station).toMatchObject({ name: 'LRT station', localName: 'Stesen Ujian' });
+    const fromStation = journeys.filter((j) => j.originId === station!.id);
+    const fromBus = journeys.filter((j) => kindOf.get(j.originId) === 'bus-stop');
+    const busiest = (list: typeof journeys) => Math.max(0, ...list.map((j) => j.dailyTrips));
+    expect(busiest(fromStation)).toBeGreaterThan(busiest(fromBus));
+  });
+
+  test('with too few transit walks, home clusters top up the trips', () => {
+    const { neighbourhood, journeys } = build();
+    const kindOf = new Map(neighbourhood.destinations.map((d) => [d.id, d.kind]));
+    expect(journeys.some((j) => kindOf.get(j.originId) === 'bus-stop')).toBe(true);
+    expect(journeys.some((j) => kindOf.get(j.originId) === 'home')).toBe(true);
+  });
+
+  test('refuses an area with no homes and too little transit, with a helpful message', () => {
     const sparse = () =>
       buildArea({ area: MINI_AREA, elements: miniAreaElements({ withHouses: false }), unitCosts, fetchedAt: '2026-10-15' });
     expect(sparse).toThrow(AreaTooSparseError);
-    expect(sparse).toThrow(/homes/);
+    expect(sparse).toThrow(/bus stops, stations or homes/);
   });
 
   test('refuses an area with almost no paths', () => {

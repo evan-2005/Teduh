@@ -2,44 +2,16 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, E (100 m)",
+    "name": "Shelter on Kelab Road, W (86 m)",
     "segmentIds": [
-      "seg-91",
-      "seg-89"
+      "seg-314",
+      "seg-311",
+      "seg-270",
+      "seg-299",
+      "seg-281"
     ],
-    "installCost": 127000,
-    "annualMaintenance": 3180,
-    "shadeNow": 0.95,
-    "shadeFuture": 0.95,
-    "yearsToMature": 0,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "shelter-2",
-    "type": "shelter",
-    "name": "Shelter on Kendersly Road, SW (87 m)",
-    "segmentIds": [
-      "seg-223",
-      "seg-220"
-    ],
-    "installCost": 112000,
-    "annualMaintenance": 2800,
-    "shadeNow": 0.95,
-    "shadeFuture": 0.95,
-    "yearsToMature": 0,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "shelter-3",
-    "type": "shelter",
-    "name": "Shelter on Semenyih Road, E (68 m)",
-    "segmentIds": [
-      "seg-401"
-    ],
-    "installCost": 79000,
-    "annualMaintenance": 1980,
+    "installCost": 105000,
+    "annualMaintenance": 2630,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -47,13 +19,44 @@
     "costSource": "estimated"
   },
   {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Shelter on Hishamuddin Road, W (96 m)",
+    "segmentIds": [
+      "seg-338",
+      "seg-328"
+    ],
+    "installCost": 112000,
+    "annualMaintenance": 2800,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "shelter-3",
+    "type": "shelter",
+    "name": "Shelter on a path, W (23 m)",
+    "segmentIds": [
+      "seg-296"
+    ],
+    "installCost": 30000,
+    "annualMaintenance": 750,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Semenyih Road, E (9)",
+    "name": "Trees on Hishamuddin Road, W (6)",
     "segmentIds": [
-      "seg-400"
+      "seg-238"
     ],
-    "installCost": 7900,
+    "installCost": 5600,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -64,11 +67,11 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a service lane, E (5)",
+    "name": "Trees on Kelab Road, W (3)",
     "segmentIds": [
-      "seg-95"
+      "seg-285"
     ],
-    "installCost": 4800,
+    "installCost": 3300,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -79,26 +82,26 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Tun Abdul Aziz Road, S (9)",
+    "name": "Trees on Cheras Road, NW (7)",
     "segmentIds": [
-      "seg-49"
+      "seg-208"
     ],
-    "installCost": 7900,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Bukit Road, SE (4)",
+    "name": "Trees on Cheras Road, W (7)",
     "segmentIds": [
-      "seg-509"
+      "seg-210"
     ],
-    "installCost": 4000,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -109,11 +112,11 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a service lane, E (4)",
+    "name": "Trees on a service lane, SW (6)",
     "segmentIds": [
-      "seg-96"
+      "seg-496"
     ],
-    "installCost": 4000,
+    "installCost": 5600,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

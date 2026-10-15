@@ -2,29 +2,32 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on SS 20/21 Road, SW (72 m)",
+    "name": "Shelter on Damansara Road, S (94 m)",
     "segmentIds": [
-      "seg-350"
+      "seg-413",
+      "seg-412",
+      "seg-411"
     ],
-    "installCost": 89000,
-    "annualMaintenance": 2230,
+    "installCost": 109000,
+    "annualMaintenance": 2730,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on SS 20/21 Road, SW (86 m)",
+    "name": "Shelter on a path, S (99 m)",
     "segmentIds": [
-      "seg-349",
-      "seg-348",
-      "seg-311"
+      "seg-431",
+      "seg-432",
+      "seg-524",
+      "seg-416"
     ],
-    "installCost": 105000,
-    "annualMaintenance": 2630,
+    "installCost": 119000,
+    "annualMaintenance": 2980,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -34,43 +37,41 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on a path, SW (77 m)",
+    "name": "Shelter on Damansara Road, SW (66 m)",
     "segmentIds": [
-      "seg-345",
-      "seg-344",
-      "seg-343"
+      "seg-334"
     ],
-    "installCost": 87000,
-    "annualMaintenance": 2180,
+    "installCost": 76000,
+    "annualMaintenance": 1900,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Tun Mohd Fuad Road, W (8)",
+    "name": "Trees on Damansara Road, S (9)",
     "segmentIds": [
-      "seg-203"
+      "seg-414"
     ],
-    "installCost": 7200,
+    "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a steps, SW (7)",
+    "name": "Trees on a local road, S (4)",
     "segmentIds": [
-      "seg-347"
+      "seg-415"
     ],
-    "installCost": 6400,
+    "installCost": 4000,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -81,26 +82,26 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Tun Mohd Fuad Road, W (6)",
+    "name": "Trees on Damansara Road, SW (9)",
     "segmentIds": [
-      "seg-727"
+      "seg-335"
     ],
-    "installCost": 5600,
+    "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Tun Mohd Fuad 1 Road, N (10)",
+    "name": "Trees on SS 20/10 Road, SW (7)",
     "segmentIds": [
-      "seg-582"
+      "seg-310"
     ],
-    "installCost": 8700,
+    "installCost": 6400,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -111,9 +112,9 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Wan Kadir 2 Road, SW (6)",
+    "name": "Trees on a footpath, SE (6)",
     "segmentIds": [
-      "seg-197"
+      "seg-502"
     ],
     "installCost": 5600,
     "annualMaintenance": 420,

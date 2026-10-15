@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { dataset } from '../../data/dataset';
+import { createLatestTracker } from '../../lib/latest';
 import { pedestrianSunMinutesAvoided } from '../../lib/optimizer';
 import type { PlanResult } from '../../types';
 import { requestExplanation } from './client';
@@ -17,11 +18,17 @@ const namesById = Object.fromEntries(dataset.interventions.map((i) => [i.id, i.n
 export function PlanExplainer({ plan }: { plan: PlanResult }) {
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
   const planKey = plan.interventionIds.join('|');
+  const requests = useRef(createLatestTracker());
 
-  // A summary describes one plan; drop it when the selection changes.
-  useEffect(() => setStatus({ kind: 'idle' }), [planKey]);
+  // A summary describes one plan: drop it, and ignore any reply still on its way, when the
+  // selection changes.
+  useEffect(() => {
+    requests.current.cancel();
+    setStatus({ kind: 'idle' });
+  }, [planKey]);
 
   const explain = async () => {
+    const isCurrent = requests.current.start();
     setStatus({ kind: 'loading' });
     try {
       const response = await requestExplanation({
@@ -29,8 +36,9 @@ export function PlanExplainer({ plan }: { plan: PlanResult }) {
         interventionNames: namesById,
         pedestrianSunMinutesAvoided: pedestrianSunMinutesAvoided(plan, dataset.journeys),
       });
-      setStatus({ kind: 'done', response });
+      if (isCurrent()) setStatus({ kind: 'done', response });
     } catch (error) {
+      if (!isCurrent()) return;
       const message = error instanceof Error ? error.message : 'Something went wrong. Try again.';
       setStatus({ kind: 'error', message });
     }
