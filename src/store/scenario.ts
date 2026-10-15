@@ -18,6 +18,9 @@ interface ScenarioState {
   selectIntervention: (id: string | null) => void;
   selectJourney: (id: string | null) => void;
   setBasemap: (patch: Partial<BasemapSettings>) => void;
+  toggleIntervention: (id: string) => void;
+  applyPlan: (interventionIds: readonly string[]) => void;
+  setPriorityWeight: (destinationId: string, weight: number) => void;
 }
 
 /** Replace any override for the same segment + time, keeping the list immutable. */
@@ -41,4 +44,22 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   selectIntervention: (id) => set({ selectedInterventionId: id }),
   selectJourney: (id) => set({ selectedJourneyId: id }),
   setBasemap: (patch) => set((s) => ({ basemap: { ...s.basemap, ...patch } })),
+  toggleIntervention: (id) =>
+    set((s) => ({
+      scenario: {
+        ...s.scenario,
+        selectedInterventionIds: s.scenario.selectedInterventionIds.includes(id)
+          ? s.scenario.selectedInterventionIds.filter((other) => other !== id)
+          : [...s.scenario.selectedInterventionIds, id],
+      },
+    })),
+  applyPlan: (interventionIds) =>
+    set((s) => ({ scenario: { ...s.scenario, selectedInterventionIds: [...interventionIds] } })),
+  setPriorityWeight: (destinationId, weight) =>
+    set((s) => ({
+      scenario: {
+        ...s.scenario,
+        priorityWeights: { ...s.scenario.priorityWeights, [destinationId]: weight },
+      },
+    })),
 }));

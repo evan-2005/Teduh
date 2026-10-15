@@ -37,3 +37,36 @@ describe('scenario store', () => {
     expect(useScenarioStore.getState().selectedInterventionId).toBeNull();
   });
 });
+
+describe('plan actions', () => {
+  beforeEach(() => {
+    useScenarioStore.setState({ scenario: DEFAULT_SCENARIO });
+  });
+
+  test('toggleIntervention adds then removes an id', () => {
+    const { toggleIntervention } = useScenarioStore.getState();
+    toggleIntervention('a');
+    toggleIntervention('b');
+    expect(useScenarioStore.getState().scenario.selectedInterventionIds).toEqual(['a', 'b']);
+    toggleIntervention('a');
+    expect(useScenarioStore.getState().scenario.selectedInterventionIds).toEqual(['b']);
+  });
+
+  test('applyPlan replaces the selection with a copy', () => {
+    const ids = ['x', 'y'];
+    useScenarioStore.getState().applyPlan(ids);
+    const stored = useScenarioStore.getState().scenario.selectedInterventionIds;
+    expect(stored).toEqual(['x', 'y']);
+    expect(stored).not.toBe(ids);
+  });
+
+  test('setPriorityWeight updates one destination and keeps the others', () => {
+    const { setPriorityWeight } = useScenarioStore.getState();
+    setPriorityWeight('dest-school', 2);
+    setPriorityWeight('dest-bus', 0.5);
+    expect(useScenarioStore.getState().scenario.priorityWeights).toEqual({
+      'dest-school': 2,
+      'dest-bus': 0.5,
+    });
+  });
+});

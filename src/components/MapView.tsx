@@ -1,5 +1,5 @@
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import {
   CircleMarker,
   MapContainer,
@@ -13,7 +13,15 @@ import { EXPOSED_THRESHOLD, MAP_CENTER, MAP_ZOOM } from '../config';
 import { dataset, graph } from '../data/dataset';
 import type { NetworkView } from '../hooks/useNetworkView';
 import { useScenarioStore } from '../store/scenario';
-import type { PathSegment } from '../types';
+import { InterventionMarkers } from './InterventionMarkers';
+import { MapLegend } from './MapLegend';
+import {
+  nodeCoords,
+  networkBounds,
+  segmentPath,
+  segmentsById,
+  type LatLngTuple,
+} from './mapGeometry';
 import {
   DESTINATION_COLOR,
   EXPOSED_COLOR,
@@ -26,25 +34,12 @@ import {
   SHADED_COLOR,
   SHORTEST_COLOR,
 } from './mapStyle';
-import { MapLegend } from './MapLegend';
 import { SegmentPopup } from './SegmentPopup';
-
-type LatLngTuple = [number, number];
 
 const OSM_TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const OSM_ATTRIBUTION = '&copy; OpenStreetMap contributors';
 
-const { nodes, segments, destinations } = dataset.neighbourhood;
-const nodeCoords = new Map<string, LatLngTuple>(nodes.map((n) => [n.id, [n.lat, n.lng]]));
-const bounds: [LatLngTuple, LatLngTuple] = [
-  [Math.min(...nodes.map((n) => n.lat)), Math.min(...nodes.map((n) => n.lng))],
-  [Math.max(...nodes.map((n) => n.lat)), Math.max(...nodes.map((n) => n.lng))],
-];
-
-const segmentPath = (s: PathSegment): LatLngTuple[] => [
-  nodeCoords.get(s.from)!,
-  nodeCoords.get(s.to)!,
-];
+const { segments, destinations } = dataset.neighbourhood;
 
 /** Fit the network on mount and whenever the map container is resized. */
 function FitToNetwork() {
@@ -52,7 +47,7 @@ function FitToNetwork() {
   useEffect(() => {
     const fit = () => {
       map.invalidateSize();
-      map.fitBounds(bounds, { padding: [MAP_PADDING_PX, MAP_PADDING_PX], animate: false });
+      map.fitBounds(networkBounds, { padding: [MAP_PADDING_PX, MAP_PADDING_PX], animate: false });
     };
     fit();
     const observer = new ResizeObserver(fit);
@@ -70,13 +65,12 @@ interface RouteLayerProps {
 }
 
 function RouteLayer({ segmentIds, color, weight, opacity }: RouteLayerProps) {
-  const byId = useMemo(() => new Map(segments.map((s) => [s.id, s])), []);
   return (
     <>
       {segmentIds.map((id) => (
         <Polyline
           key={id}
-          positions={segmentPath(byId.get(id)!)}
+          positions={segmentPath(segmentsById.get(id)!)}
           pathOptions={{ color, weight, opacity, lineCap: 'round' }}
           interactive={false}
         />
@@ -156,6 +150,8 @@ export function MapView({ shade, comparison }: Pick<NetworkView, 'shade' | 'comp
             </Tooltip>
           </CircleMarker>
         ))}
+
+        <InterventionMarkers />
       </MapContainer>
       <MapLegend />
     </div>
