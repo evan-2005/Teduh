@@ -1,4 +1,5 @@
 import { Polyline, Popup } from 'react-leaflet';
+import { useScenarioStore } from '../store/scenario';
 import { EXPOSED_THRESHOLD } from '../config';
 import { dataset, graph } from '../data/dataset';
 import type { LayerView } from '../hooks/useNetworkView';
@@ -46,6 +47,9 @@ interface NetworkLayersProps extends LayerView {
 
 /** One complete rendering of the network (segments + both routes). Render inside a <Pane>. */
 export function NetworkLayers({ shade, comparison, caption }: NetworkLayersProps) {
+  const time = useScenarioStore((s) => s.scenario.time);
+  const overrides = useScenarioStore((s) => s.shadeOverrides);
+  const confirmed = new Set(overrides.filter((o) => o.time === time).map((o) => o.segmentId));
   return (
     <>
       {comparison && (
@@ -77,6 +81,7 @@ export function NetworkLayers({ shade, comparison, caption }: NetworkLayersProps
                 lengthM={graph.lengthBySegment.get(segment.id) ?? 0}
                 effectiveShade={effective}
                 caption={caption}
+                sourceOverride={confirmed.has(segment.id) ? 'ai-confirmed' : undefined}
               />
             </Popup>
           </Polyline>

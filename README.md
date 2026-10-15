@@ -6,6 +6,20 @@
 - Product brief & feature ranking: [`BRIEF.md`](BRIEF.md)
 - Team roles, branches, timeline: [`PLAN.md`](PLAN.md)
 
+## Quick start
+
+```bash
+npm install
+npm run dev            # app on http://localhost:5173
+npm run dev:server     # optional: AI scan + explainer API on :8787 (second terminal)
+npm run test && npm run build
+npm run build && npm run preview   # production build; works offline except map tiles
+```
+
+- Copy `.env.example` to `.env`. Set `VITE_ENABLE_AI=true` to show the AI panels. With no `ANTHROPIC_API_KEY` the server returns clearly labelled **mock** results, so the demo never depends on the network.
+- Click **Demo: 2 pm walk to the shops** to load the demo scenario.
+- Pitch material is in `pitch/`; replacing the synthetic data is described in `data/README.md`.
+
 ---
 
 ## 0. Instructions for Claude (read first)

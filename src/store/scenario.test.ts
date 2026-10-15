@@ -70,3 +70,24 @@ describe('plan actions', () => {
     });
   });
 });
+
+describe('demo and AI edits', () => {
+  test('loadDemo resets the scenario, applies the plan and clears AI edits', () => {
+    const state = useScenarioStore.getState();
+    state.setScenario({ budget: 1, time: '09:00', mapMode: 'before' });
+    state.applyShadeOverride({ segmentId: 's', time: '09:00', shade: 1, source: 'ai-confirmed' });
+    state.selectJourney('j-home-b-bus');
+    state.loadDemo(['shelter-connector']);
+    const next = useScenarioStore.getState();
+    expect(next.scenario).toEqual({ ...DEFAULT_SCENARIO, selectedInterventionIds: ['shelter-connector'] });
+    expect(next.shadeOverrides).toEqual([]);
+    expect(next.selectedJourneyId).toBe('j-home-a-shops');
+  });
+
+  test('clearShadeOverrides removes every override', () => {
+    const state = useScenarioStore.getState();
+    state.applyShadeOverride({ segmentId: 's', time: '12:00', shade: 0.4, source: 'ai-confirmed' });
+    state.clearShadeOverrides();
+    expect(useScenarioStore.getState().shadeOverrides).toEqual([]);
+  });
+});

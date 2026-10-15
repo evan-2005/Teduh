@@ -34,7 +34,7 @@ export function App() {
         <RouteComparison journey={journey} comparison={comparison} />
         <FabricationPanel />
         {ENABLE_AI && <ShadeScanPanel />}
-        {ENABLE_AI && <PlanExplainer />}
+        {ENABLE_AI && <PlanExplainer plan={selectedPlan} />}
       </aside>
 
       <footer className="shell__footer">{FOOTER_DISCLAIMER}</footer>

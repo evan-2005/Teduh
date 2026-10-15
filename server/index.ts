@@ -1,11 +1,19 @@
 import { serve } from '@hono/node-server';
-import { Hono } from 'hono';
+import { createApp } from './app';
+import { clientFromKey } from './claude';
 
-// STUB (Teammate B owns this file): add POST /api/shade-scan and POST /api/explain.
 const PORT = 8787;
 
-export const app = new Hono();
+// Load .env if present. The key stays on the server and is never logged.
+try {
+  process.loadEnvFile('.env');
+} catch {
+  // No .env file: the server runs in mock mode.
+}
 
-app.get('/api/health', (c) => c.json({ ok: true }));
+const app = createApp({ getClient: () => clientFromKey(process.env['ANTHROPIC_API_KEY']) });
 
-serve({ fetch: app.fetch, port: PORT });
+serve({ fetch: app.fetch, port: PORT }, () => {
+  const mode = process.env['ANTHROPIC_API_KEY'] ? 'Claude' : 'mock (no ANTHROPIC_API_KEY)';
+  console.error(`Teduh API listening on http://localhost:${PORT} in ${mode} mode`);
+});

@@ -22,7 +22,8 @@ export const smoothstep = (x: number): number => {
 export const treeGrowth = (canopyYear: number, yearsToMature: number): number =>
   yearsToMature <= 0 ? 1 : smoothstep(canopyYear / yearsToMature);
 
-export const ENABLE_AI = import.meta.env.VITE_ENABLE_AI === 'true';
+// `env` is undefined when this module is loaded by the Node server rather than Vite.
+export const ENABLE_AI = import.meta.env?.VITE_ENABLE_AI === 'true';
 
 export const DEMO_BUDGET = 25_000;
 export const DEMO_TIME: TimeSlot = '14:00';

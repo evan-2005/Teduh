@@ -21,6 +21,9 @@ interface ScenarioState {
   toggleIntervention: (id: string) => void;
   applyPlan: (interventionIds: readonly string[]) => void;
   setPriorityWeight: (destinationId: string, weight: number) => void;
+  clearShadeOverrides: () => void;
+  /** Reset to the demo scenario with the given plan applied. */
+  loadDemo: (interventionIds: readonly string[]) => void;
 }
 
 /** Replace any override for the same segment + time, keeping the list immutable. */
@@ -62,4 +65,12 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
         priorityWeights: { ...s.scenario.priorityWeights, [destinationId]: weight },
       },
     })),
+  clearShadeOverrides: () => set({ shadeOverrides: [] }),
+  loadDemo: (interventionIds) =>
+    set({
+      scenario: { ...DEFAULT_SCENARIO, selectedInterventionIds: [...interventionIds] },
+      shadeOverrides: [],
+      selectedJourneyId: DEMO_JOURNEY_ID,
+      selectedInterventionId: null,
+    }),
 }));

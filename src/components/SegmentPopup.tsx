@@ -1,5 +1,5 @@
 import { TIME_SLOTS } from '../config';
-import type { PathSegment } from '../types';
+import type { DataSource, PathSegment } from '../types';
 import { SourceBadge } from './SourceBadge';
 
 interface SegmentPopupProps {
@@ -9,11 +9,13 @@ interface SegmentPopupProps {
   effectiveShade: number;
   /** Which layer this popup belongs to, e.g. "before plan" or "with plan". */
   caption?: string;
+  /** Set when a human-confirmed AI value replaces the survey value at this time. */
+  sourceOverride?: DataSource;
 }
 
 const percent = (fraction: number): string => `${Math.round(fraction * 100)}%`;
 
-export function SegmentPopup({ segment, lengthM, effectiveShade, caption }: SegmentPopupProps) {
+export function SegmentPopup({ segment, lengthM, effectiveShade, caption, sourceOverride }: SegmentPopupProps) {
   return (
     <div className="segment-popup">
       <strong>{segment.id}</strong>
@@ -35,7 +37,7 @@ export function SegmentPopup({ segment, lengthM, effectiveShade, caption }: Segm
         </tbody>
       </table>
       <p>
-        Source: <SourceBadge source={segment.shadeSource} />
+        Source: <SourceBadge source={sourceOverride ?? segment.shadeSource} />
       </p>
       {segment.notes && <p>{segment.notes}</p>}
     </div>

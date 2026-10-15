@@ -1,6 +1,7 @@
 import { TIME_SLOTS } from '../config';
 import { dataset } from '../data/dataset';
 import { formatMyr } from '../lib/format';
+import { useDemoPreset } from '../hooks/useDemoPreset';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
 import { CandidateList } from './CandidateList';
@@ -27,10 +28,15 @@ export function ControlsPanel({ plans }: ControlsPanelProps) {
   const basemap = useScenarioStore((s) => s.basemap);
   const setBasemap = useScenarioStore((s) => s.setBasemap);
   const best = plans[0];
+  const loadDemoPreset = useDemoPreset();
 
   return (
     <div className="controls">
       <h2 className="panel__title">Controls</h2>
+
+      <button type="button" className="button" onClick={loadDemoPreset}>
+        Demo: 2 pm walk to the shops
+      </button>
 
       <label className="field">
         <span className="field__label">
