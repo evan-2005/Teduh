@@ -49,26 +49,32 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, E (5)",
+    "name": "Trees on Putra 5 Road, E (16 trees)",
     "segmentIds": [
-      "seg-108"
+      "seg-98",
+      "seg-165",
+      "seg-20",
+      "seg-166",
+      "seg-169"
     ],
-    "installCost": 4800,
-    "annualMaintenance": 420,
+    "installCost": 14300,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Putra 4 Road, E (7)",
+    "name": "Trees on a service lane, SW (10 trees)",
     "segmentIds": [
-      "seg-98"
+      "seg-159",
+      "seg-157",
+      "seg-156"
     ],
-    "installCost": 6400,
+    "installCost": 8700,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -79,12 +85,14 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a service lane, SW (7)",
+    "name": "Trees on a service lane, SE (18 trees)",
     "segmentIds": [
-      "seg-159"
+      "seg-47",
+      "seg-46",
+      "seg-160"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -94,12 +102,13 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on a service lane, S (9)",
+    "name": "Trees on a service lane, SW (17 trees)",
     "segmentIds": [
-      "seg-47"
+      "seg-49",
+      "seg-48"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -109,16 +118,18 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a service lane, SW (9)",
+    "name": "Trees on Putra 3 Road, E (18 trees)",
     "segmentIds": [
-      "seg-49"
+      "seg-111",
+      "seg-110",
+      "seg-130"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   }
 ]

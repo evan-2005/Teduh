@@ -48,7 +48,7 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Desa Bakti Road, NW (7)",
+    "name": "Trees on Desa Bakti Road, NW (7 trees)",
     "segmentIds": [
       "seg-141"
     ],
@@ -63,12 +63,15 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Desa Bakti Road, N (10)",
+    "name": "Trees on Desa Bakti Road, N (18 trees)",
     "segmentIds": [
-      "seg-94"
+      "seg-94",
+      "seg-150",
+      "seg-95",
+      "seg-118"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -78,12 +81,13 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Desa Jaya Road, SE (6)",
+    "name": "Trees on Desa Jaya Road, SE (13 trees)",
     "segmentIds": [
-      "seg-78"
+      "seg-78",
+      "seg-162"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 12000,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -93,12 +97,15 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on 3/109F Road, SE (8)",
+    "name": "Trees on 1/109F Road, SE (20 trees)",
     "segmentIds": [
-      "seg-162"
+      "seg-172",
+      "seg-191",
+      "seg-167",
+      "seg-166"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -108,12 +115,21 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on 2/109F Road, SE (7)",
+    "name": "Trees on a service lane, N (20 trees)",
     "segmentIds": [
-      "seg-172"
+      "seg-85",
+      "seg-86",
+      "seg-89",
+      "seg-90",
+      "seg-91",
+      "seg-92",
+      "seg-93",
+      "seg-154",
+      "seg-155",
+      "seg-156"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

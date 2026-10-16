@@ -50,12 +50,15 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on USJ 11/3K Road, NE (7)",
+    "name": "Trees on USJ 11/3K Road, NE (20 trees)",
     "segmentIds": [
-      "seg-225"
+      "seg-225",
+      "seg-131",
+      "seg-130",
+      "seg-129"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -65,12 +68,15 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Bakti Avenue, E (7)",
+    "name": "Trees on Bakti Avenue, E (20 trees)",
     "segmentIds": [
-      "seg-66"
+      "seg-66",
+      "seg-67",
+      "seg-402",
+      "seg-392"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -80,12 +86,15 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on USJ 10/1F Road, E (6)",
+    "name": "Trees on USJ 10/1F Road, E (18 trees)",
     "segmentIds": [
-      "seg-417"
+      "seg-417",
+      "seg-418",
+      "seg-59",
+      "seg-415"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -95,12 +104,16 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on USJ 11/3K Road, N (9)",
+    "name": "Trees on a footpath, E (15 trees)",
     "segmentIds": [
-      "seg-130"
+      "seg-222",
+      "seg-221",
+      "seg-214",
+      "seg-213",
+      "seg-212"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 13500,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -110,12 +123,15 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on USJ 10/1G Road, E (6)",
+    "name": "Trees on USJ 11/3K Road, W (18 trees)",
     "segmentIds": [
-      "seg-415"
+      "seg-125",
+      "seg-128",
+      "seg-127",
+      "seg-118"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

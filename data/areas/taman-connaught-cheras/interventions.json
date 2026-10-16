@@ -49,12 +49,15 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Midah 12 Road, N (7)",
+    "name": "Trees on Midah 12 Road, NE (17 trees)",
     "segmentIds": [
-      "seg-387"
+      "seg-387",
+      "seg-29",
+      "seg-30",
+      "seg-31"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -64,12 +67,17 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Midah 12B Road, NW (7) – A",
+    "name": "Trees on Midah 12B Road, NW (20 trees)",
     "segmentIds": [
-      "seg-52"
+      "seg-52",
+      "seg-51",
+      "seg-362",
+      "seg-361",
+      "seg-356",
+      "seg-364"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -79,12 +87,15 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Midah 12B Road, NW (7) – B",
+    "name": "Trees on Midah 12 Road, NW (18 trees)",
     "segmentIds": [
-      "seg-51"
+      "seg-347",
+      "seg-67",
+      "seg-353",
+      "seg-61"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -94,12 +105,13 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Midah Barat Road, NW (7)",
+    "name": "Trees on a service lane, SE (20 trees)",
     "segmentIds": [
-      "seg-347"
+      "seg-298",
+      "seg-299"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -109,12 +121,14 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a service lane, E (10)",
+    "name": "Trees on Jaya Road, W (18 trees)",
     "segmentIds": [
-      "seg-298"
+      "seg-106",
+      "seg-107",
+      "seg-108"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

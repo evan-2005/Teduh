@@ -53,12 +53,13 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a footpath, SE (8)",
+    "name": "Trees on a footpath, E (15 trees)",
     "segmentIds": [
-      "seg-533"
+      "seg-533",
+      "seg-55"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 13500,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -68,7 +69,7 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a local road, SE (6)",
+    "name": "Trees on a local road, SE (6 trees)",
     "segmentIds": [
       "seg-66"
     ],
@@ -83,12 +84,14 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on a footpath, E (8)",
+    "name": "Trees on SS 2/45 Road, S (18 trees)",
     "segmentIds": [
-      "seg-55"
+      "seg-224",
+      "seg-219",
+      "seg-223"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -98,27 +101,34 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on a service lane, S (8)",
+    "name": "Trees on SS 2/24 Road, SE (20 trees)",
     "segmentIds": [
-      "seg-224"
+      "seg-385",
+      "seg-399",
+      "seg-400",
+      "seg-384"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a service lane, SE (8)",
+    "name": "Trees on SS 2/64 Road, NE (17 trees)",
     "segmentIds": [
-      "seg-223"
+      "seg-519",
+      "seg-518",
+      "seg-95",
+      "seg-513",
+      "seg-520"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

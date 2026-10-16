@@ -36,7 +36,7 @@ Click **Look up a place**, type a town or neighbourhood, and pick a result. The 
 4. **Trips per day (estimated):** a simple gravity estimate. Bigger places draw more walks (a rail station counts 10× a bus stop; a mall 8, a school 5, a supermarket 3, a park 1.5), and longer walks draw fewer. Up to 10 walks are kept: first the busiest walk to each kind of place, then the busiest of the rest, with at most 2 walks per destination, 4 per stop and 9 places in all, so the map stays readable.
    - **Fallback:** where fewer than 4 transit walks exist (for example no bus stops are mapped), home clusters are added as starting points.
    - **Names:** plain English ("LRT station", "Shopping mall"). Repeated kinds are told apart by their street ("Bus stop on Majlis Road"), or else by side of the area. The official name is kept as a secondary "Local name".
-5. **Candidates:** up to 3 shelters and 5 street-tree rows where exposed paths carry the most trips. Costs come from the same bill of materials the Fabrication panel shows, so the two always agree.
+5. **Candidates:** up to 3 shelters (at most 100 m each, never touching each other) and 5 street-tree rows where exposed paths carry the most trips. A tree row follows its street along connected exposed paths for 40–160 m, so it plants 5 to 20 trees at about 8 m spacing. Costs come from the same bill of materials the Fabrication panel shows, so the two always agree.
 6. **Budget range and demo journey:** derived from the candidate costs.
 
 ### Known limits (also shown in the app under "How this was built")

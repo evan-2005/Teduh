@@ -49,7 +49,7 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Jengka Avenue, SW (9)",
+    "name": "Trees on Jengka Avenue, SW (9 trees)",
     "segmentIds": [
       "seg-117"
     ],
@@ -64,11 +64,12 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on SS 15/8A Road, S (5)",
+    "name": "Trees on SS 15/8A Road, S (8 trees)",
     "segmentIds": [
-      "seg-546"
+      "seg-546",
+      "seg-2"
     ],
-    "installCost": 4800,
+    "installCost": 7200,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -79,12 +80,13 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on SS 15/8A Road, S (7)",
+    "name": "Trees on SS 15/8A Road, SE (13 trees)",
     "segmentIds": [
-      "seg-10"
+      "seg-10",
+      "seg-11"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 12000,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -94,11 +96,15 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on SS 15/4 Road, S (3)",
+    "name": "Trees on SS 15/4 Road, S (8 trees)",
     "segmentIds": [
-      "seg-101"
+      "seg-101",
+      "seg-102",
+      "seg-362",
+      "seg-110",
+      "seg-113"
     ],
-    "installCost": 3300,
+    "installCost": 7200,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -109,12 +115,16 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Jengka Avenue, S (2)",
+    "name": "Trees on Jengka Avenue, NW (20 trees)",
     "segmentIds": [
-      "seg-113"
+      "seg-129",
+      "seg-128",
+      "seg-125",
+      "seg-124",
+      "seg-123"
     ],
-    "installCost": 2500,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

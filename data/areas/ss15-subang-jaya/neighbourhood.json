@@ -10527,7 +10527,7 @@
     "budget": {
       "max": 250000,
       "step": 5000,
-      "demo": 90000
+      "demo": 100000
     },
     "demoJourneyId": "j-rail-station-1-to-mall-1"
   }

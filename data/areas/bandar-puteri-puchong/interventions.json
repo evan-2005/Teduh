@@ -51,7 +51,7 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a local road, E (8)",
+    "name": "Trees on a local road, E (8 trees)",
     "segmentIds": [
       "seg-90"
     ],
@@ -66,12 +66,17 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Bandar 10 Road, E (6)",
+    "name": "Trees on Bandar 10 Road, SE (19 trees)",
     "segmentIds": [
-      "seg-54"
+      "seg-54",
+      "seg-53",
+      "seg-212",
+      "seg-103",
+      "seg-102",
+      "seg-214"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 16600,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -81,12 +86,16 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Bandar 10 Road, SE (6)",
+    "name": "Trees on Bandar 8 Road, SE (20 trees)",
     "segmentIds": [
-      "seg-53"
+      "seg-218",
+      "seg-119",
+      "seg-121",
+      "seg-124",
+      "seg-125"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -96,12 +105,16 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on a service lane, SE (5)",
+    "name": "Trees on Bandar 3 Road, SE (19 trees)",
     "segmentIds": [
-      "seg-214"
+      "seg-129",
+      "seg-128",
+      "seg-130",
+      "seg-105",
+      "seg-131"
     ],
-    "installCost": 4800,
-    "annualMaintenance": 420,
+    "installCost": 16600,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -111,11 +124,11 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a local road, SE (5)",
+    "name": "Trees on TMP 1 Road, S (8 trees)",
     "segmentIds": [
-      "seg-218"
+      "seg-41"
     ],
-    "installCost": 4800,
+    "installCost": 7200,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

@@ -56,11 +56,12 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Telawi Road, NW (7)",
+    "name": "Trees on Telawi Road, N (8 trees)",
     "segmentIds": [
-      "seg-4"
+      "seg-4",
+      "seg-628"
     ],
-    "installCost": 6400,
+    "installCost": 7200,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -71,12 +72,14 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a service lane, N (10)",
+    "name": "Trees on Telawi 1 Road, N (15 trees)",
     "segmentIds": [
-      "seg-531"
+      "seg-531",
+      "seg-532",
+      "seg-629"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 13500,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -86,12 +89,13 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Ara Road, SW (4)",
+    "name": "Trees on Ara Road, S (11 trees)",
     "segmentIds": [
-      "seg-78"
+      "seg-78",
+      "seg-77"
     ],
-    "installCost": 4000,
-    "annualMaintenance": 420,
+    "installCost": 10400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -101,7 +105,7 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on a service lane, NE (6)",
+    "name": "Trees on a service lane, NE (6 trees)",
     "segmentIds": [
       "seg-564"
     ],
@@ -116,12 +120,15 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a local road, NE (10)",
+    "name": "Trees on Telawi 4 Road, NE (18 trees)",
     "segmentIds": [
-      "seg-460"
+      "seg-460",
+      "seg-141",
+      "seg-462",
+      "seg-569"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

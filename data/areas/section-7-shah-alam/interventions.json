@@ -50,7 +50,7 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a cycle path, N (8)",
+    "name": "Trees on a cycle path, N (8 trees)",
     "segmentIds": [
       "seg-74"
     ],
@@ -65,12 +65,13 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, W (7) – A",
+    "name": "Trees on Kayangan Avenue, W (14 trees)",
     "segmentIds": [
-      "seg-48"
+      "seg-48",
+      "seg-47"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -80,12 +81,16 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, W (7) – B",
+    "name": "Trees on Kayangan Avenue, NW (15 trees)",
     "segmentIds": [
-      "seg-47"
+      "seg-49",
+      "seg-212",
+      "seg-66",
+      "seg-168",
+      "seg-77"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 13500,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -95,12 +100,13 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Ferum 7/31 Road, SW (10)",
+    "name": "Trees on Ferum 7/31 Road, S (19 trees)",
     "segmentIds": [
-      "seg-8"
+      "seg-8",
+      "seg-395"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 16600,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -110,12 +116,14 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Ferum 7/31 Road, S (9)",
+    "name": "Trees on Ferum 7/31 Road, S (20 trees)",
     "segmentIds": [
-      "seg-395"
+      "seg-392",
+      "seg-290",
+      "seg-379"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

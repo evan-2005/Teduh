@@ -11947,7 +11947,7 @@
     "budget": {
       "max": 300000,
       "step": 5000,
-      "demo": 110000
+      "demo": 120000
     },
     "demoJourneyId": "j-bus-stop-8-to-mall-1"
   }

@@ -50,12 +50,17 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, NE (4)",
+    "name": "Trees on a footpath, NW (18 trees)",
     "segmentIds": [
-      "seg-606"
+      "seg-140",
+      "seg-141",
+      "seg-144",
+      "seg-115",
+      "seg-114",
+      "seg-107"
     ],
-    "installCost": 4000,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -65,26 +70,28 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a footpath, NW (10)",
+    "name": "Trees on Multimedia Avenue, N (14 trees)",
     "segmentIds": [
-      "seg-140"
+      "seg-688",
+      "seg-687"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Multimedia Avenue, N (7) – A",
+    "name": "Trees on Multimedia Avenue, N (9 trees)",
     "segmentIds": [
-      "seg-688"
+      "seg-689",
+      "seg-49"
     ],
-    "installCost": 6400,
+    "installCost": 7900,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -95,27 +102,35 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Multimedia Avenue, N (7) – B",
+    "name": "Trees on a footpath, NE (18 trees)",
     "segmentIds": [
-      "seg-689"
+      "seg-621",
+      "seg-620",
+      "seg-619",
+      "seg-601",
+      "seg-603"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a footpath, NE (6)",
+    "name": "Trees on a service lane, NW (17 trees)",
     "segmentIds": [
-      "seg-621"
+      "seg-146",
+      "seg-145",
+      "seg-147",
+      "seg-212",
+      "seg-211"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

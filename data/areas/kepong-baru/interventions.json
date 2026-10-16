@@ -51,12 +51,14 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, W (7) – A",
+    "name": "Trees on 2 Road, W (17 trees)",
     "segmentIds": [
-      "seg-313"
+      "seg-313",
+      "seg-314",
+      "seg-204"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -66,27 +68,33 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a service lane, W (7) – B",
+    "name": "Trees on Kepong Road, NW (13 trees)",
     "segmentIds": [
-      "seg-314"
+      "seg-3",
+      "seg-4"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 12000,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Kepong Road, NW (7) – A",
+    "name": "Trees on 7 Road, W (19 trees)",
     "segmentIds": [
-      "seg-3"
+      "seg-168",
+      "seg-322",
+      "seg-179",
+      "seg-180",
+      "seg-325",
+      "seg-163"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 16600,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -96,11 +104,14 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Kepong Road, NW (7) – B",
+    "name": "Trees on Development Road, NW (8 trees)",
     "segmentIds": [
-      "seg-4"
+      "seg-303",
+      "seg-247",
+      "seg-248",
+      "seg-249"
     ],
-    "installCost": 6400,
+    "installCost": 7200,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -111,12 +122,17 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on 7 Road, W (7)",
+    "name": "Trees on a footpath, NW (13 trees)",
     "segmentIds": [
-      "seg-168"
+      "seg-266",
+      "seg-265",
+      "seg-264",
+      "seg-267",
+      "seg-268",
+      "seg-277"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 12000,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

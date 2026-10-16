@@ -50,12 +50,13 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, W (7)",
+    "name": "Trees on a service lane, W (11 trees)",
     "segmentIds": [
-      "seg-85"
+      "seg-85",
+      "seg-84"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 10400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -65,12 +66,13 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, N (9) – A",
+    "name": "Trees on Kayangan Avenue, N (17 trees)",
     "segmentIds": [
-      "seg-34"
+      "seg-34",
+      "seg-33"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -80,12 +82,13 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, N (9) – B",
+    "name": "Trees on Kayangan Avenue, NE (14 trees)",
     "segmentIds": [
-      "seg-33"
+      "seg-1",
+      "seg-328"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -95,12 +98,13 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Bandaraya Avenue, NW (10)",
+    "name": "Trees on Bandaraya Avenue, NW (16 trees)",
     "segmentIds": [
-      "seg-185"
+      "seg-185",
+      "seg-184"
     ],
-    "installCost": 8700,
-    "annualMaintenance": 420,
+    "installCost": 14300,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -110,12 +114,14 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Damai Avenue, W (8)",
+    "name": "Trees on Damai Avenue, W (14 trees)",
     "segmentIds": [
-      "seg-263"
+      "seg-263",
+      "seg-264",
+      "seg-77"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

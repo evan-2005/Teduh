@@ -7586,9 +7586,9 @@
       "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 300000,
+      "max": 350000,
       "step": 5000,
-      "demo": 120000
+      "demo": 140000
     },
     "demoJourneyId": "j-bus-stop-1-to-school-2"
   }

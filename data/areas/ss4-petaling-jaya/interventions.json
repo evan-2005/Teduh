@@ -49,7 +49,7 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on SS 5D/7 Road, S (8)",
+    "name": "Trees on SS 5D/7 Road, S (8 trees)",
     "segmentIds": [
       "seg-80"
     ],
@@ -64,12 +64,14 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on SS 5/2 Road, S (9)",
+    "name": "Trees on SS 5/2 Road, S (16 trees)",
     "segmentIds": [
-      "seg-117"
+      "seg-117",
+      "seg-116",
+      "seg-154"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 14300,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -79,12 +81,14 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on SS 4B/10 Road, NW (7)",
+    "name": "Trees on SS 4B/10 Road, NW (17 trees)",
     "segmentIds": [
-      "seg-4"
+      "seg-4",
+      "seg-3",
+      "seg-5"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 15100,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -94,12 +98,14 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on SS 4A/4 Road, E (9)",
+    "name": "Trees on SS 4A/4 Road, E (20 trees)",
     "segmentIds": [
-      "seg-18"
+      "seg-18",
+      "seg-17",
+      "seg-16"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -109,12 +115,13 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on SS 4B/10 Road, NW (6)",
+    "name": "Trees on SS 4B/10 Road, NW (16 trees)",
     "segmentIds": [
-      "seg-3"
+      "seg-9",
+      "seg-8"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 14300,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

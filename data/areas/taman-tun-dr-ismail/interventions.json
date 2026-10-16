@@ -52,12 +52,13 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Damansara Road, S (9)",
+    "name": "Trees on Damansara Road, S (13 trees)",
     "segmentIds": [
-      "seg-414"
+      "seg-414",
+      "seg-415"
     ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 12000,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -67,27 +68,14 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a local road, S (4)",
+    "name": "Trees on SS 20/21 Road, SW (14 trees)",
     "segmentIds": [
-      "seg-415"
+      "seg-335",
+      "seg-319",
+      "seg-341"
     ],
-    "installCost": 4000,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-3",
-    "type": "tree",
-    "name": "Trees on Damansara Road, SW (9)",
-    "segmentIds": [
-      "seg-335"
-    ],
-    "installCost": 7900,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -95,14 +83,36 @@
     "costSource": "estimated"
   },
   {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on SS 20/10 Road, SW (11 trees)",
+    "segmentIds": [
+      "seg-310",
+      "seg-388",
+      "seg-375",
+      "seg-376"
+    ],
+    "installCost": 10400,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on SS 20/10 Road, SW (7)",
+    "name": "Trees on Wan Kadir 3 Road, SE (12 trees)",
     "segmentIds": [
-      "seg-310"
+      "seg-502",
+      "seg-500",
+      "seg-490",
+      "seg-491",
+      "seg-492"
     ],
-    "installCost": 6400,
-    "annualMaintenance": 420,
+    "installCost": 11200,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -112,9 +122,9 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a footpath, SE (6)",
+    "name": "Trees on a footpath, S (6 trees)",
     "segmentIds": [
-      "seg-502"
+      "seg-514"
     ],
     "installCost": 5600,
     "annualMaintenance": 420,
