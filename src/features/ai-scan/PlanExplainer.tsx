@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { dataset } from '../../data/dataset';
+import { useInterventions } from '../../hooks/useInterventions';
 import { createLatestTracker } from '../../lib/latest';
 import { pedestrianSunMinutesAvoided } from '../../lib/optimizer';
 import type { PlanResult } from '../../types';
@@ -12,12 +13,18 @@ type Status =
   | { kind: 'error'; message: string }
   | { kind: 'done'; response: ExplainResponse };
 
-const namesById = Object.fromEntries(dataset.interventions.map((i) => [i.id, i.name]));
-
 /** A written summary of the chosen plan, built only from numbers the calculator produced. */
 export function PlanExplainer({ plan }: { plan: PlanResult }) {
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
-  const planKey = plan.interventionIds.join('|');
+  const interventions = useInterventions();
+  // Names carry figures ("13 trees", "69 m") the explainer may repeat, so send the current ones.
+  const namesById = Object.fromEntries(interventions.map((i) => [i.id, i.name]));
+  // Any change to the plan's figures or names (spacing, species, walkway length) drops the summary.
+  const planKey = [
+    ...plan.interventionIds.map((id) => namesById[id] ?? id),
+    plan.installCost,
+    plan.sunMinutesAvoidedPerDay,
+  ].join('|');
   const requests = useRef(createLatestTracker());
 
   // A summary describes one plan: drop it, and ignore any reply still on its way, when the
@@ -69,7 +76,11 @@ export function PlanExplainer({ plan }: { plan: PlanResult }) {
             {status.response.isMock && <span className="badge badge--estimated">template</span>}
             {status.response.summary}
           </p>
-          <p className="card__hint">Generated from the numbers above.</p>
+          <p className="card__hint">
+            {status.response.source
+              ? `Written by ${status.response.source} from the numbers above.`
+              : 'Generated from the numbers above.'}
+          </p>
         </>
       )}
     </section>

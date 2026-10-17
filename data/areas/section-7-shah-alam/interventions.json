@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, W (84 m)",
+    "name": "Covered walkway from the hospital (84 m)",
     "segmentIds": [
       "seg-257",
       "seg-256"
@@ -18,13 +18,12 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on a path, W (86 m)",
+    "name": "Covered walkway from the bus stop (north) (64 m)",
     "segmentIds": [
-      "seg-253",
-      "seg-258"
+      "seg-74"
     ],
-    "installCost": 110000,
-    "annualMaintenance": 2750,
+    "installCost": 73000,
+    "annualMaintenance": 1830,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -34,28 +33,30 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on a path, N (80 m)",
+    "name": "Covered walkway from the park on Kayangan Avenue (86 m)",
     "segmentIds": [
-      "seg-75",
-      "seg-76"
+      "seg-36",
+      "seg-37"
     ],
-    "installCost": 91000,
-    "annualMaintenance": 2280,
+    "installCost": 99000,
+    "annualMaintenance": 2480,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a cycle path, N (8 trees)",
+    "name": "Trees on a service lane, W (14 trees)",
     "segmentIds": [
-      "seg-74"
+      "seg-253",
+      "seg-254",
+      "seg-258"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 12700,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -64,6 +65,26 @@
   },
   {
     "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on Kayangan Avenue, N (18 trees)",
+    "segmentIds": [
+      "seg-75",
+      "seg-76",
+      "seg-77",
+      "seg-168",
+      "seg-66",
+      "seg-212"
+    ],
+    "installCost": 15900,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
     "type": "tree",
     "name": "Trees on Kayangan Avenue, W (14 trees)",
     "segmentIds": [
@@ -79,18 +100,14 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-3",
+    "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, NW (15 trees)",
+    "name": "Trees on Kayangan Avenue, NW (7 trees)",
     "segmentIds": [
-      "seg-49",
-      "seg-212",
-      "seg-66",
-      "seg-168",
-      "seg-77"
+      "seg-49"
     ],
-    "installCost": 13500,
-    "annualMaintenance": 840,
+    "installCost": 6400,
+    "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -98,7 +115,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-4",
+    "id": "trees-5",
     "type": "tree",
     "name": "Trees on Ferum 7/31 Road, S (19 trees)",
     "segmentIds": [
@@ -106,23 +123,6 @@
       "seg-395"
     ],
     "installCost": 16600,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-5",
-    "type": "tree",
-    "name": "Trees on Ferum 7/31 Road, S (20 trees)",
-    "segmentIds": [
-      "seg-392",
-      "seg-290",
-      "seg-379"
-    ],
-    "installCost": 17400,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

@@ -2,12 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, E (69 m)",
+    "name": "Covered walkway from the school on Putra 4 Road (87 m)",
     "segmentIds": [
-      "seg-125"
+      "seg-98",
+      "seg-97"
     ],
-    "installCost": 88000,
-    "annualMaintenance": 2200,
+    "installCost": 105000,
+    "annualMaintenance": 2630,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -17,12 +18,13 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Kajang Impian 2/7 Road, SW (69 m)",
+    "name": "Covered walkway from the clinic on Putra 8 Road (66 m)",
     "segmentIds": [
-      "seg-149"
+      "seg-11",
+      "seg-13"
     ],
-    "installCost": 85000,
-    "annualMaintenance": 2130,
+    "installCost": 82000,
+    "annualMaintenance": 2050,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -32,14 +34,12 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Putra 5 Road, E (75 m)",
+    "name": "Covered walkway from the mosque on Kajang Impian 2/7 Road (73 m)",
     "segmentIds": [
-      "seg-128",
-      "seg-109",
-      "seg-97"
+      "seg-57"
     ],
-    "installCost": 92000,
-    "annualMaintenance": 2300,
+    "installCost": 90000,
+    "annualMaintenance": 2250,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -49,24 +49,39 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Putra 5 Road, E (16 trees)",
+    "name": "Trees on Putra 5 Road, E (19 trees)",
     "segmentIds": [
-      "seg-98",
-      "seg-165",
-      "seg-20",
-      "seg-166",
-      "seg-169"
+      "seg-125",
+      "seg-108",
+      "seg-109",
+      "seg-128"
     ],
-    "installCost": 14300,
+    "installCost": 16600,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on Kajang Impian 2/7 Road, SW (19 trees)",
+    "segmentIds": [
+      "seg-149",
+      "seg-50"
+    ],
+    "installCost": 16600,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
     "type": "tree",
     "name": "Trees on a service lane, SW (10 trees)",
     "segmentIds": [
@@ -83,7 +98,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-3",
+    "id": "trees-4",
     "type": "tree",
     "name": "Trees on a service lane, SE (18 trees)",
     "segmentIds": [
@@ -100,7 +115,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-4",
+    "id": "trees-5",
     "type": "tree",
     "name": "Trees on a service lane, SW (17 trees)",
     "segmentIds": [
@@ -113,23 +128,6 @@
     "shadeFuture": 0.75,
     "yearsToMature": 6,
     "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-5",
-    "type": "tree",
-    "name": "Trees on Putra 3 Road, E (18 trees)",
-    "segmentIds": [
-      "seg-111",
-      "seg-110",
-      "seg-130"
-    ],
-    "installCost": 15900,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "needs-check",
     "costSource": "estimated"
   }
 ]

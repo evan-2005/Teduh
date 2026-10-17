@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { DEFAULT_SCENARIO } from '../config';
 import { meta } from '../data/dataset';
+import { DEFAULT_PLANNER, type PlannerSettings } from '../lib/planner';
 import type { Scenario, ShadeOverride } from '../types';
 
 export type BasemapStyle = 'streets' | 'light' | 'satellite' | 'none';
@@ -19,6 +20,9 @@ export interface ContextLayers {
   trees: boolean;
 }
 
+/** The pages of the app. The map stays on screen on every page. */
+export type AppView = 'overview' | 'plan' | 'spec' | 'ai';
+
 /** The scenario a fresh page (and the demo preset) starts from, for the active dataset. */
 export const INITIAL_SCENARIO = { ...DEFAULT_SCENARIO, budget: meta.budget.demo };
 
@@ -29,6 +33,12 @@ interface ScenarioState {
   selectedJourneyId: string | null;
   basemap: BasemapSettings;
   contextLayers: ContextLayers;
+  view: AppView;
+  planner: PlannerSettings;
+  setView: (view: AppView) => void;
+  setPlanner: (patch: Partial<PlannerSettings>) => void;
+  /** Select an intervention and open its spec pack. */
+  openIntervention: (id: string) => void;
   setScenario: (patch: Partial<Scenario>) => void;
   applyShadeOverride: (override: ShadeOverride) => void;
   selectIntervention: (id: string | null) => void;
@@ -59,6 +69,11 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   selectedJourneyId: meta.demoJourneyId,
   basemap: { style: 'streets', opacity: 0.6 },
   contextLayers: { buildings: true, greens: true, landmarks: true, food: false, trees: true },
+  view: 'overview',
+  planner: DEFAULT_PLANNER,
+  setView: (view) => set({ view }),
+  setPlanner: (patch) => set((s) => ({ planner: { ...s.planner, ...patch } })),
+  openIntervention: (id) => set({ selectedInterventionId: id, view: 'spec' }),
   setScenario: (patch) => set((s) => ({ scenario: { ...s.scenario, ...patch } })),
   applyShadeOverride: (override) =>
     set((s) => ({ shadeOverrides: withOverride(s.shadeOverrides, override) })),
@@ -91,5 +106,6 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
       shadeOverrides: [],
       selectedJourneyId: meta.demoJourneyId,
       selectedInterventionId: null,
+      planner: DEFAULT_PLANNER,
     }),
 }));

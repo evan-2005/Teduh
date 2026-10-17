@@ -4,6 +4,7 @@ import { compareJourney, type RouteComparison } from '../lib/compare';
 import { buildShadeLookup, type ShadeLookup } from '../lib/shade';
 import { useScenarioStore } from '../store/scenario';
 import type { Journey } from '../types';
+import { useInterventions } from './useInterventions';
 
 export interface LayerView {
   shade: ShadeLookup;
@@ -23,6 +24,7 @@ export function useNetworkView(): NetworkView {
   const scenario = useScenarioStore((s) => s.scenario);
   const overrides = useScenarioStore((s) => s.shadeOverrides);
   const journeyId = useScenarioStore((s) => s.selectedJourneyId);
+  const candidates = useInterventions();
   const journey = dataset.journeys.find((j) => j.id === journeyId) ?? null;
 
   const shadeBefore = useMemo(
@@ -38,7 +40,7 @@ export function useNetworkView(): NetworkView {
   );
 
   const shadeAfter = useMemo(() => {
-    const interventions = dataset.interventions.filter((i) =>
+    const interventions = candidates.filter((i) =>
       scenario.selectedInterventionIds.includes(i.id),
     );
     return buildShadeLookup(dataset.neighbourhood.segments, {
@@ -49,6 +51,7 @@ export function useNetworkView(): NetworkView {
       overrides,
     });
   }, [
+    candidates,
     scenario.time,
     scenario.canopy,
     scenario.canopyYear,

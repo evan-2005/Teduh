@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Desa Bakti Road, N (76 m)",
+    "name": "Covered walkway from the clinic on Desa Bakti Road (76 m)",
     "segmentIds": [
       "seg-149"
     ],
@@ -17,7 +17,7 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Desa Utama Road, NW (67 m)",
+    "name": "Covered walkway from the bus stop on Desa Utama Road A (67 m)",
     "segmentIds": [
       "seg-151"
     ],
@@ -32,7 +32,7 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Desa Jaya Road, SE (98 m)",
+    "name": "Covered walkway from the shopping mall on Desa Jaya Road (98 m)",
     "segmentIds": [
       "seg-80",
       "seg-79"

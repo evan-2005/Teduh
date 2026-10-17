@@ -1,0 +1,111 @@
+/* ---- Pages: numbered notebook tabs in the header, one panel beside the map ---- */
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-left: var(--space-2);
+}
+
+.app-nav__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2);
+  border: 1px solid color-mix(in srgb, var(--color-paper) 35%, transparent);
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: var(--color-paper);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+
+.app-nav__item:hover {
+  background: color-mix(in srgb, var(--color-paper) 14%, transparent);
+}
+
+.app-nav__item[aria-current='page'] {
+  background: var(--color-paper);
+  border-color: var(--color-paper);
+  color: var(--color-canopy);
+  font-weight: 700;
+}
+
+.app-nav__step {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--color-sun);
+  color: var(--color-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.view__group {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-rule);
+}
+
+.view__next {
+  display: block;
+  margin: 0 0 var(--space-4);
+}
+
+.field__help {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+}
+
+.planner {
+  padding: var(--space-3);
+  border: 1px solid var(--color-rule);
+  border-left: 4px solid var(--color-canopy);
+  background: var(--color-card);
+}
+
+.planner select,
+.view > .field select {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid var(--color-rule);
+  background: var(--color-card);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.link-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.facts th[scope='row'] {
+  width: 48%;
+}
+
+.facts td {
+  text-align: left;
+  white-space: normal;
+}
+
+/* A tree mark is clickable: it opens the row's spec pack. */
+.planted-tree {
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .app-nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .app-nav__item {
+    flex: 1 1 45%;
+  }
+}

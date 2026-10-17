@@ -29,3 +29,22 @@ export const TREE_STYLE = {
   fillColor: '#4f8f62',
   fillOpacity: 0.8,
 } as const;
+
+// Planted street trees (one mark per tree) and covered walkways.
+export const TRUNK_RADIUS_PX = 3;
+export const CROWN_CHOSEN_STYLE = {
+  crown: { color: '#1f5d4c', weight: 1, fillColor: '#2f7d4f', fillOpacity: 0.45 },
+  trunk: { color: '#f6f3ea', weight: 1, fillColor: '#1f5d4c', fillOpacity: 1 },
+} as const;
+export const CROWN_CANDIDATE_STYLE = {
+  crown: { color: '#1f5d4c', weight: 1, dashArray: '2 2', fillColor: '#2f7d4f', fillOpacity: 0.08 },
+  trunk: { color: '#1f5d4c', weight: 1.5, fillColor: '#f6f3ea', fillOpacity: 1 },
+} as const;
+export const WALKWAY_CHOSEN_STYLE = { color: '#6b4f3a', weight: 7, opacity: 0.85, lineCap: 'butt' } as const;
+export const WALKWAY_CANDIDATE_STYLE = {
+  color: '#6b4f3a',
+  weight: 6,
+  opacity: 0.5,
+  dashArray: '6 4',
+  lineCap: 'butt',
+} as const;

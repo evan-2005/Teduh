@@ -1,4 +1,5 @@
 import { FABRICATION_DISCLAIMER } from '../../config';
+import { TREE_SPACING, treeCount } from '../../lib/planting';
 import type {
   BomLine,
   FabricationSpec,
@@ -17,7 +18,6 @@ const MODULES_PER_LABOUR_DAY = 2;
 const TREE_PIT = { lengthM: 1.2, widthM: 1.2, depthM: 1.0 } as const;
 const TREE_STAKES = 3;
 const MAINTENANCE_MONTHS = 24;
-const TREE_SPACING_M = 8;
 const TREES_PER_CARE_VISIT = 10;
 const CENTS = 100;
 
@@ -108,14 +108,15 @@ export function buildShelterSpec(
 
 /**
  * Tree spec: a planting pit per tree, materials and a two-year care plan, with species to verify.
- * `rowLengthM` > 0 plans a row of trees every ${TREE_SPACING_M} m; otherwise it is a single tree.
+ * `rowLengthM` > 0 plans a row of trees every `spacingM` metres; otherwise it is a single tree.
  */
 export function generateTreeSpec(
   intervention: Intervention,
   unitCosts: UnitCosts,
   rowLengthM = 0,
+  spacingM: number = TREE_SPACING.default,
 ): FabricationSpec {
-  const trees = Math.max(1, Math.ceil(rowLengthM / TREE_SPACING_M));
+  const trees = treeCount(rowLengthM, spacingM);
   const pitVolumeM3 = TREE_PIT.lengthM * TREE_PIT.widthM * TREE_PIT.depthM;
   const barrierM = 2 * (TREE_PIT.lengthM + TREE_PIT.widthM);
   const careVisits = MAINTENANCE_MONTHS * Math.ceil(trees / TREES_PER_CARE_VISIT);
@@ -153,7 +154,7 @@ export function generateTreeSpec(
     bom,
     totalCost,
     assumptions: [
-      `${trees} tree(s), spaced about ${TREE_SPACING_M} m apart along the row.`,
+      `${trees} tree(s), spaced about ${spacingM} m apart along the row.`,
       `Each pit ${TREE_PIT.lengthM} x ${TREE_PIT.widthM} x ${TREE_PIT.depthM} m, backfilled with soil mix.`,
       `Two-year care plan: monthly visits, one crew visit per ${TREES_PER_CARE_VISIT} trees (${careVisits} visits).`,
       `Suggested species, to verify with the landscape team: ${species || 'none listed'}.`,

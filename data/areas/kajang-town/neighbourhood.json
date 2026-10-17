@@ -9742,13 +9742,13 @@
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
       "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
       "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
-      "Intervention locations are chosen where exposed paths carry the most trips; costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
+      "Intervention locations are chosen where exposed paths carry the most trips. Covered walkways start at a bus stop, a station or the entrance of a place people walk to (or where its existing cover ends); street trees go along the footpath edge about 8 m apart. Costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {
-      "max": 150000,
+      "max": 250000,
       "step": 5000,
-      "demo": 50000
+      "demo": 90000
     },
-    "demoJourneyId": "j-rail-station-1-to-clinic-1"
+    "demoJourneyId": "j-rail-station-1-to-mall-1"
   }
 }

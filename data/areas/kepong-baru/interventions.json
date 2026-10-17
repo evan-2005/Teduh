@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, N (98 m)",
+    "name": "Covered walkway from the school (north) (98 m)",
     "segmentIds": [
       "seg-8",
       "seg-7"
@@ -18,62 +18,64 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Kepong Road, NW (93 m)",
+    "name": "Covered walkway from the supermarket (west) (51 m)",
     "segmentIds": [
-      "seg-272",
-      "seg-269",
-      "seg-273"
+      "seg-313"
     ],
-    "installCost": 106000,
-    "annualMaintenance": 2650,
+    "installCost": 65000,
+    "annualMaintenance": 1630,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Kepong Road, N (99 m)",
+    "name": "Covered walkway from the school on 7 Lane (64 m)",
     "segmentIds": [
-      "seg-5",
-      "seg-12"
+      "seg-162",
+      "seg-163",
+      "seg-325"
     ],
-    "installCost": 113000,
-    "annualMaintenance": 2830,
+    "installCost": 82000,
+    "annualMaintenance": 2050,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on 2 Road, W (17 trees)",
+    "name": "Trees on Kepong Road, NW (18 trees)",
     "segmentIds": [
-      "seg-313",
-      "seg-314",
-      "seg-204"
+      "seg-272",
+      "seg-3",
+      "seg-269",
+      "seg-273"
     ],
-    "installCost": 15100,
+    "installCost": 15900,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Kepong Road, NW (13 trees)",
+    "name": "Trees on Kepong Road, N (20 trees)",
     "segmentIds": [
-      "seg-3",
-      "seg-4"
+      "seg-5",
+      "seg-4",
+      "seg-12",
+      "seg-13"
     ],
-    "installCost": 12000,
+    "installCost": 17400,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -84,14 +86,14 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on 7 Road, W (19 trees)",
+    "name": "Trees on Development Road, NW (19 trees)",
     "segmentIds": [
-      "seg-168",
-      "seg-322",
-      "seg-179",
-      "seg-180",
-      "seg-325",
-      "seg-163"
+      "seg-314",
+      "seg-204",
+      "seg-303",
+      "seg-247",
+      "seg-248",
+      "seg-249"
     ],
     "installCost": 16600,
     "annualMaintenance": 840,
@@ -104,15 +106,16 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Development Road, NW (8 trees)",
+    "name": "Trees on 7 Road, W (20 trees)",
     "segmentIds": [
-      "seg-303",
-      "seg-247",
-      "seg-248",
-      "seg-249"
+      "seg-168",
+      "seg-322",
+      "seg-179",
+      "seg-180",
+      "seg-181"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

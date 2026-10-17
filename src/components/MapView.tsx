@@ -24,14 +24,23 @@ import { MapToolbar } from './MapToolbar';
 import { networkBounds, nodeCoords, type LatLngTuple } from './mapGeometry';
 import { DESTINATION_COLOR, MAP_PADDING_PX, SHORTEST_COLOR } from './mapStyle';
 import { NetworkLayers } from './NetworkLayers';
+import { PlantingLayer } from './PlantingLayer';
 import { AFTER_PANE, BEFORE_PANE, DESTINATION_PANE, SwipeClip } from './SwipeClip';
 import { SwipeDivider } from './SwipeDivider';
 
 const INITIAL_DIVIDER = 0.5;
 
 // Above Leaflet's overlay pane (400) and below its marker pane (600).
-const PANE_Z = { context: 405, before: 410, after: 420, destinations: 430, interventions: 440 } as const;
+const PANE_Z = {
+  context: 405,
+  before: 410,
+  after: 420,
+  planting: 425,
+  destinations: 430,
+  interventions: 440,
+} as const;
 const INTERVENTION_PANE = 'interventionPane';
+const PLANTING_PANE = 'plantingPane';
 
 const { destinations } = dataset.neighbourhood;
 
@@ -100,6 +109,11 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
             {showAfter && <NetworkLayers {...after} caption="with plan" />}
           </Pane>
           <SwipeClip active={swiping} fraction={divider} />
+
+          {/* Every tree of every row and each walkway, unclipped like the markers above them. */}
+          <Pane name={PLANTING_PANE} style={{ zIndex: PANE_Z.planting }}>
+            <PlantingLayer context={context} showChosen={showAfter} />
+          </Pane>
 
           <Pane name={DESTINATION_PANE} style={{ zIndex: PANE_Z.destinations }}>
             {destinations.map((d) => (

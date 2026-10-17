@@ -19,7 +19,7 @@ describe('demo preset label', () => {
 
   test.each([
     ['ss15-subang-jaya', 'Demo: 2 pm walk from the LRT station to the shopping mall'],
-    ['kajang-town', 'Demo: 2 pm walk from the MRT station to the hospital'],
+    ['kajang-town', 'Demo: 2 pm walk from the MRT station to the shopping mall'],
     ['bandar-baru-bangi', 'Demo: 2 pm walk from homes (east) to the school'],
   ])('%s: the label follows the demo journey in its data', (slug, label) => {
     const { neighbourhood, journeys } = readArea(slug);

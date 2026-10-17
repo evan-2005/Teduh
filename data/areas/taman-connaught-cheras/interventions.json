@@ -2,23 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Jaya 5 Road, W (93 m)",
-    "segmentIds": [
-      "seg-111",
-      "seg-92"
-    ],
-    "installCost": 112000,
-    "annualMaintenance": 2800,
-    "shadeNow": 0.95,
-    "shadeFuture": 0.95,
-    "yearsToMature": 0,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "shelter-2",
-    "type": "shelter",
-    "name": "Shelter on Midah Barat Road, NW (79 m)",
+    "name": "Covered walkway from the bus stop on Midah Barat Road (79 m)",
     "segmentIds": [
       "seg-346",
       "seg-344"
@@ -32,14 +16,33 @@
     "costSource": "estimated"
   },
   {
+    "id": "shelter-2",
+    "type": "shelter",
+    "name": "Covered walkway from the bus stop on Jaya 5 Road (93 m)",
+    "segmentIds": [
+      "seg-92",
+      "seg-111"
+    ],
+    "installCost": 112000,
+    "annualMaintenance": 2800,
+    "shadeNow": 0.95,
+    "shadeFuture": 0.95,
+    "yearsToMature": 0,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Midah 12 Road, N (50 m)",
+    "name": "Covered walkway from the school (north) (72 m)",
     "segmentIds": [
-      "seg-386"
+      "seg-357",
+      "seg-356",
+      "seg-361",
+      "seg-362"
     ],
-    "installCost": 62000,
-    "annualMaintenance": 1550,
+    "installCost": 91000,
+    "annualMaintenance": 2280,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -49,14 +52,14 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Midah 12 Road, NE (17 trees)",
+    "name": "Trees on Midah 12 Road, N (19 trees)",
     "segmentIds": [
+      "seg-386",
       "seg-387",
       "seg-29",
-      "seg-30",
-      "seg-31"
+      "seg-30"
     ],
-    "installCost": 15100,
+    "installCost": 16600,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -67,16 +70,14 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Midah 12B Road, NW (20 trees)",
+    "name": "Trees on Midah 12B Road, NW (18 trees)",
     "segmentIds": [
       "seg-52",
       "seg-51",
-      "seg-362",
-      "seg-361",
-      "seg-356",
-      "seg-364"
+      "seg-364",
+      "seg-345"
     ],
-    "installCost": 17400,
+    "installCost": 15900,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

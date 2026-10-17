@@ -1,20 +1,16 @@
 import { dataset } from '../data/dataset';
+import { useInterventions } from '../hooks/useInterventions';
 import { formatMyr, formatPedestrianSun } from '../lib/format';
 import { pedestrianSunMinutesAvoided } from '../lib/optimizer';
 import { useScenarioStore } from '../store/scenario';
-import type { PlanResult } from '../types';
+import type { Intervention, PlanResult } from '../types';
 import { SourceBadge } from './SourceBadge';
-
-const nameOf = (id: string): string =>
-  dataset.interventions.find((i) => i.id === id)?.name ?? id;
-
-const typeOf = (id: string): string => dataset.interventions.find((i) => i.id === id)?.type ?? 'tree';
 
 const plural = (n: number, one: string, many: string): string => `${n} ${n === 1 ? one : many}`;
 
 /** "1 shelter + 3 tree rows": the shape of a plan at a glance. */
-function summarise(ids: readonly string[]): string {
-  const shelters = ids.filter((id) => typeOf(id) === 'shelter').length;
+function summarise(ids: readonly string[], byId: ReadonlyMap<string, Intervention>): string {
+  const shelters = ids.filter((id) => byId.get(id)?.type === 'shelter').length;
   const trees = ids.length - shelters;
   return [
     shelters > 0 ? plural(shelters, 'shelter', 'shelters') : null,
@@ -30,6 +26,9 @@ const sameSet = (a: readonly string[], b: readonly string[]): boolean =>
 export function PlanList({ plans }: { plans: readonly PlanResult[] }) {
   const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
   const applyPlan = useScenarioStore((s) => s.applyPlan);
+  const interventions = useInterventions();
+  const byId = new Map(interventions.map((i) => [i.id, i]));
+  const nameOf = (id: string): string => byId.get(id)?.name ?? id;
 
   if (plans.length === 0) return null;
   return (
@@ -48,7 +47,7 @@ export function PlanList({ plans }: { plans: readonly PlanResult[] }) {
                 onClick={() => applyPlan(plan.interventionIds)}
               >
                 <span className="plan__rank">{index === 0 ? 'Best' : `Option ${index + 1}`}</span>
-                <span className="plan__items">{summarise(plan.interventionIds)}</span>
+                <span className="plan__items">{summarise(plan.interventionIds, byId)}</span>
                 <span className="plan__names">{plan.interventionIds.map(nameOf).join('; ')}</span>
                 <span className="plan__meta num">
                   {formatMyr(plan.installCost)} · {sun.value} {sun.unit}/day <SourceBadge source="estimated" />

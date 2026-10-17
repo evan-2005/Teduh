@@ -2,13 +2,13 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on a path, E (96 m)",
+    "name": "Covered walkway from the supermarket (south-east) on Bandar 9 Road (95 m)",
     "segmentIds": [
-      "seg-132",
-      "seg-133"
+      "seg-218",
+      "seg-48"
     ],
-    "installCost": 120000,
-    "annualMaintenance": 3000,
+    "installCost": 115000,
+    "annualMaintenance": 2880,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -18,13 +18,13 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Bandar 9 Road, SE (98 m)",
+    "name": "Covered walkway from the clinic (81 m)",
     "segmentIds": [
-      "seg-48",
-      "seg-49"
+      "seg-128",
+      "seg-129"
     ],
-    "installCost": 125000,
-    "annualMaintenance": 3130,
+    "installCost": 104000,
+    "annualMaintenance": 2600,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -34,14 +34,13 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Bandar 3 Road, E (88 m)",
+    "name": "Covered walkway from the bus stop on TMP 1 Road (84 m)",
     "segmentIds": [
-      "seg-94",
-      "seg-95",
-      "seg-91"
+      "seg-41",
+      "seg-125"
     ],
-    "installCost": 107000,
-    "annualMaintenance": 2680,
+    "installCost": 103000,
+    "annualMaintenance": 2580,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -51,12 +50,14 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a local road, E (8 trees)",
+    "name": "Trees on a local road, E (20 trees)",
     "segmentIds": [
-      "seg-90"
+      "seg-132",
+      "seg-90",
+      "seg-133"
     ],
-    "installCost": 7200,
-    "annualMaintenance": 420,
+    "installCost": 17400,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -66,14 +67,14 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Bandar 10 Road, SE (19 trees)",
+    "name": "Trees on Bandar 3 Road, E (19 trees)",
     "segmentIds": [
-      "seg-54",
-      "seg-53",
-      "seg-212",
-      "seg-103",
+      "seg-94",
       "seg-102",
-      "seg-214"
+      "seg-91",
+      "seg-131",
+      "seg-105",
+      "seg-130"
     ],
     "installCost": 16600,
     "annualMaintenance": 840,
@@ -86,32 +87,13 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Bandar 8 Road, SE (20 trees)",
+    "name": "Trees on Bandar 10 Road, SE (19 trees)",
     "segmentIds": [
-      "seg-218",
-      "seg-119",
-      "seg-121",
-      "seg-124",
-      "seg-125"
-    ],
-    "installCost": 17400,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-4",
-    "type": "tree",
-    "name": "Trees on Bandar 3 Road, SE (19 trees)",
-    "segmentIds": [
-      "seg-129",
-      "seg-128",
-      "seg-130",
-      "seg-105",
-      "seg-131"
+      "seg-54",
+      "seg-53",
+      "seg-212",
+      "seg-103",
+      "seg-214"
     ],
     "installCost": 16600,
     "annualMaintenance": 840,
@@ -122,13 +104,30 @@
     "costSource": "estimated"
   },
   {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on Bandar 8 Road, SE (18 trees)",
+    "segmentIds": [
+      "seg-124",
+      "seg-121",
+      "seg-120"
+    ],
+    "installCost": 15900,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on TMP 1 Road, S (8 trees)",
+    "name": "Trees on a local road, SE (6 trees)",
     "segmentIds": [
-      "seg-41"
+      "seg-119"
     ],
-    "installCost": 7200,
+    "installCost": 5600,
     "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

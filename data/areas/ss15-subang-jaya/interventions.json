@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Jengka Avenue, SW (69 m)",
+    "name": "Covered walkway from the LRT station on Jengka Avenue (69 m)",
     "segmentIds": [
       "seg-116"
     ],
@@ -17,7 +17,7 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on SS 15/8A Road, S (92 m)",
+    "name": "Covered walkway from the supermarket on SS 15/8A Road (92 m)",
     "segmentIds": [
       "seg-9",
       "seg-8"
@@ -33,7 +33,7 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on SS 15/4G Road, W (80 m)",
+    "name": "Covered walkway from the shopping mall on SS 15/4G Road (80 m)",
     "segmentIds": [
       "seg-119",
       "seg-118"

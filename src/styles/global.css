@@ -27,19 +27,20 @@ body {
 .shell {
   display: grid;
   height: 100%;
-  grid-template-columns: var(--column-controls) minmax(0, 1fr) var(--column-results);
+  grid-template-columns: var(--column-panel) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
-    'header header header'
-    'controls map results'
-    'footer footer footer';
+    'header header'
+    'panel map'
+    'footer footer';
 }
 
 .shell__header {
   grid-area: header;
   display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
   padding: var(--space-2) var(--space-3);
   background: var(--color-canopy);
   color: var(--color-paper);
@@ -60,21 +61,11 @@ body {
   opacity: 0.85;
 }
 
-.shell__controls,
-.shell__results {
+.shell__panel {
+  grid-area: panel;
   overflow-y: auto;
   padding: var(--space-3);
-  border: 0 solid var(--color-rule);
-}
-
-.shell__controls {
-  grid-area: controls;
-  border-right-width: 1px;
-}
-
-.shell__results {
-  grid-area: results;
-  border-left-width: 1px;
+  border-right: 1px solid var(--color-rule);
 }
 
 .shell__map {
@@ -129,12 +120,11 @@ body {
 
 @media (max-width: 1100px) {
   .shell {
-    --column-controls: 240px;
-    --column-results: 280px;
+    --column-panel: 340px;
   }
 }
 
-/* Narrow screens: map on top at full width, then Controls and Results side by side. */
+/* Narrow screens: map on top at full width, then the page panel below it. */
 @media (max-width: 900px) {
   html,
   body,
@@ -145,13 +135,13 @@ body {
   .shell {
     min-height: 100vh;
     height: auto;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-      'header header'
-      'map map'
-      'controls results'
-      'footer footer';
+      'header'
+      'map'
+      'panel'
+      'footer';
   }
 
   .shell__header {
@@ -165,33 +155,14 @@ body {
     border-bottom: 1px solid var(--color-rule);
   }
 
-  .shell__controls,
-  .shell__results {
+  .shell__panel {
     overflow: visible;
+    border-right: 0;
   }
 }
 
-/* Phones: one column. */
+/* Phones: no tagline, so the page nav fits. */
 @media (max-width: 640px) {
-  .shell {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      'header'
-      'map'
-      'controls'
-      'results'
-      'footer';
-  }
-
-  .shell__controls {
-    border-right-width: 0;
-    border-bottom-width: 1px;
-  }
-
-  .shell__results {
-    border-left-width: 0;
-  }
-
   .tagline {
     display: none;
   }

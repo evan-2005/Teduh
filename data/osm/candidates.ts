@@ -6,7 +6,17 @@
 import { DEFAULT_DETOUR, EXPOSED_THRESHOLD } from '../../src/config';
 import { generateShelterSpec, generateTreeSpec } from '../../src/features/fabrication/spec';
 import type { Graph } from '../../src/lib/graph';
+import { anchorReach, walkwayStart } from '../../src/lib/anchors';
 import { leastSunRoute } from '../../src/lib/routing';
+import {
+  SHELTER_LENGTH,
+  SHELTER_SHADE,
+  shelterPlanningCost,
+  TREE_SHADE_FUTURE,
+  TREE_SHADE_NOW,
+  TREE_YEARS_TO_MATURE,
+  treePlanningCost,
+} from '../../src/lib/planting';
 import { buildShadeLookup } from '../../src/lib/shade';
 import type {
   Destination,
@@ -20,21 +30,12 @@ import type {
 const SHELTER_COUNT = 3;
 const TREE_COUNT = 5;
 const MAX_TREE_ROWS_PER_STREET = 2;
-const MAX_SHELTER_M = 100;
 const SHARED_CORRIDOR_RATIO = 0.5;
 /** Street trees go in as a run along a block, not one or two at a time: 5 to 20 trees. */
 const MIN_TREE_ROW_M = 40;
 const MAX_TREE_ROW_M = 160;
 /** Trees help any walked exposed path, so a row may continue into less busy stretches. */
 const TREE_CORRIDOR_RATIO = 0.25;
-const SHELTER_SHADE = 0.95;
-const TREE_SHADE_NOW = 0.2;
-const TREE_SHADE_FUTURE = 0.75;
-const TREE_YEARS_TO_MATURE = 6;
-const SHELTER_COST_STEP = 1000;
-const TREE_COST_STEP = 100;
-const SHELTER_UPKEEP_RATE = 0.025;
-const UPKEEP_STEP = 10;
 const BUSY_ROADS = new Set(['secondary', 'tertiary', 'primary']);
 
 export interface SegmentInfo { name?: string; highway: string }
@@ -63,8 +64,6 @@ const COMPASS_ABBREVIATIONS: Readonly<Record<string, string>> = {
 };
 const abbreviate = (side: string): string => COMPASS_ABBREVIATIONS[side] ?? side;
 
-const roundTo = (value: number, step: number): number => Math.max(step, Math.round(value / step) * step);
-
 function usageBySegment(ctx: Context): Map<string, number> {
   const shade = buildShadeLookup(ctx.segments, {
     time: '14:00', canopy: 'now', canopyYear: 0, interventions: [], overrides: [],
@@ -92,7 +91,18 @@ const commonName = (ids: readonly string[], info: ReadonlyMap<string, SegmentInf
 const feasibilityOf = (ids: readonly string[], info: ReadonlyMap<string, SegmentInfo>): Feasibility =>
   ids.some((id) => BUSY_ROADS.has(info.get(id)?.highway ?? '')) ? 'needs-check' : 'likely';
 
-export function generateCandidates(ctx: Context): Intervention[] {
+interface Picker {
+  ctx: Context;
+  usage: ReadonlyMap<string, number>;
+  lengthOf: (id: string) => number;
+  /** Trips x length x sun: how much an exposed segment matters. */
+  score: (s: PathSegment) => number;
+  /** Exposed, used segments not yet taken by a candidate. */
+  free: () => PathSegment[];
+  used: Set<string>;
+}
+
+function createPicker(ctx: Context): Picker {
   const usage = usageBySegment(ctx);
   const lengthOf = (id: string): number => ctx.graph.lengthBySegment.get(id) ?? 0;
   const shade14 = (s: PathSegment): number => s.shade['14:00'];
@@ -100,45 +110,67 @@ export function generateCandidates(ctx: Context): Intervention[] {
   const used = new Set<string>();
   const score = (s: PathSegment): number => (usage.get(s.id) ?? 0) * lengthOf(s.id) * (1 - shade14(s));
   const free = (): PathSegment[] => exposed.filter((s) => !used.has(s.id) && score(s) > 0);
+  return { ctx, usage, lengthOf, score, free, used };
+}
 
-  const result: Intervention[] = [];
+export function generateCandidates(ctx: Context): Intervention[] {
+  const picker = createPicker(ctx);
+  const shelters = pickShelters(picker);
+  return uniqueNames([...shelters, ...pickTreeRows(picker)]);
+}
 
-  // A shelter may not touch an earlier one: otherwise the next "candidate" is just the
-  // neighbouring stretch of the same corridor, serving the same trips (an interchangeable twin).
+/**
+ * Covered walkways go where people wait or arrive: they start at a bus stop, a station, or the
+ * entrance of a place people walk to, and run away from it along the busiest exposed path.
+ * A shelter may not touch an earlier one: otherwise the next "candidate" is just the
+ * neighbouring stretch of the same corridor, serving the same trips (an interchangeable twin).
+ */
+function pickShelters(p: Picker): Intervention[] {
+  const anchors = anchorReach(p.ctx.segments, p.ctx.destinations, p.lengthOf);
+  const anchorOf = (s: PathSegment): Destination | undefined => anchors.get(s.from) ?? anchors.get(s.to);
   const shelterNodes = new Set<string>();
   const freeForShelter = (): PathSegment[] =>
-    free().filter((s) => !shelterNodes.has(s.from) && !shelterNodes.has(s.to));
-
+    p.free().filter((s) => !shelterNodes.has(s.from) && !shelterNodes.has(s.to));
+  const result: Intervention[] = [];
   for (let k = 1; k <= SHELTER_COUNT; k++) {
-    const seed = freeForShelter().sort((a, b) => score(b) - score(a))[0];
+    const seed = freeForShelter()
+      .filter((s) => anchorOf(s))
+      .sort((a, b) => p.score(b) - p.score(a))[0];
     if (!seed) break;
-    const window = growWindow(seed, freeForShelter(), usage, lengthOf);
+    const anchor = anchorOf(seed)!;
+    const window = growWindow(seed, freeForShelter(), p.usage, p.lengthOf, {
+      ...SHELTER_WINDOW,
+      closedEnd: walkwayStart(seed, anchors),
+    });
     window.forEach((s) => {
-      used.add(s.id);
+      p.used.add(s.id);
       shelterNodes.add(s.from);
       shelterNodes.add(s.to);
     });
-    result.push(shelterFor(k, window, ctx));
+    result.push(shelterFor(k, window, anchor, p.ctx));
   }
+  return result;
+}
 
-  const streetOf = (s: PathSegment): string => ctx.info.get(s.id)?.name ?? s.id;
+function pickTreeRows(p: Picker): Intervention[] {
+  const streetOf = (s: PathSegment): string => p.ctx.info.get(s.id)?.name ?? s.id;
   const perStreet = new Map<string, number>();
-  for (const seed of free().sort((a, b) => score(b) - score(a))) {
-    const rows = result.filter((r) => r.type === 'tree').length;
+  const result: Intervention[] = [];
+  for (const seed of p.free().sort((a, b) => p.score(b) - p.score(a))) {
     const street = streetOf(seed);
-    if (rows >= TREE_COUNT) break;
-    if (used.has(seed.id) || (perStreet.get(street) ?? 0) >= MAX_TREE_ROWS_PER_STREET) continue;
-    const row = growWindow(seed, free(), usage, lengthOf, {
+    if (result.length >= TREE_COUNT) break;
+    if (p.used.has(seed.id) || (perStreet.get(street) ?? 0) >= MAX_TREE_ROWS_PER_STREET) continue;
+    const row = growWindow(seed, p.free(), p.usage, p.lengthOf, {
       maxM: MAX_TREE_ROW_M,
       minShare: TREE_CORRIDOR_RATIO,
       prefer: (s) => streetOf(s) === street,
     });
-    if (row.reduce((sum, s) => sum + lengthOf(s.id), 0) < MIN_TREE_ROW_M) continue;
-    row.forEach((s) => used.add(s.id));
+    if (row.reduce((sum, s) => sum + p.lengthOf(s.id), 0) < MIN_TREE_ROW_M) continue;
+    row.forEach((s) => p.used.add(s.id));
     perStreet.set(street, (perStreet.get(street) ?? 0) + 1);
-    result.push(treesFor(rows + 1, row, ctx));
+    result.push(treesFor(result.length + 1, row, p.ctx));
   }
-  return uniqueNames(result);
+  return result;
 }
 
 /** Two candidates can share a street and side; tell them apart with A, B, C. */
@@ -161,9 +193,11 @@ interface WindowOptions {
   minShare: number;
   /** Neighbours to try first, e.g. ones on the same street, so a row follows the street. */
   prefer?: (s: PathSegment) => boolean;
+  /** A node the run must not grow past, e.g. the bus stop a walkway starts at. */
+  closedEnd?: string;
 }
 
-const SHELTER_WINDOW: WindowOptions = { maxM: MAX_SHELTER_M, minShare: SHARED_CORRIDOR_RATIO };
+const SHELTER_WINDOW: WindowOptions = { maxM: SHELTER_LENGTH.max, minShare: SHARED_CORRIDOR_RATIO };
 
 /** Extend a seed segment along neighbouring busy exposed segments (a shared corridor). */
 function growWindow(
@@ -174,7 +208,7 @@ function growWindow(
   options: WindowOptions = SHELTER_WINDOW,
 ): PathSegment[] {
   const window = [seed];
-  let ends = [seed.from, seed.to];
+  let ends = [seed.from, seed.to].filter((e) => e !== options.closedEnd);
   let total = lengthOf(seed.id);
   const seedUsage = usage.get(seed.id) ?? 0;
   const preferred = (s: PathSegment): number => (options.prefer?.(s) ? 1 : 0);
@@ -195,14 +229,20 @@ function growWindow(
   }
 }
 
-function shelterFor(k: number, window: readonly PathSegment[], ctx: Context): Intervention {
+/** "Bus stop on X" -> "bus stop on X"; "LRT station" keeps its capitals. */
+const lowerFirst = (text: string): string =>
+  /^[A-Z][a-z]/.test(text) ? text.charAt(0).toLowerCase() + text.slice(1) : text;
+
+function shelterFor(k: number, window: readonly PathSegment[], anchor: Destination, ctx: Context): Intervention {
   const ids = window.map((s) => s.id);
   const lengthM = ids.reduce((sum, id) => sum + (ctx.graph.lengthBySegment.get(id) ?? 0), 0);
   const street = commonName(ids, ctx.info);
+  const joiner = anchor.name.includes(' on ') ? ', along' : ' on';
+  const along = street && !anchor.name.includes(street) ? `${joiner} ${street}` : '';
   const draft: Intervention = {
     id: `shelter-${k}`,
     type: 'shelter',
-    name: `Shelter on ${street ?? 'a path'}, ${abbreviate(ctx.sideOf(ids))} (${Math.round(lengthM)} m)`,
+    name: `Covered walkway from the ${lowerFirst(anchor.name)}${along} (${Math.round(lengthM)} m)`,
     segmentIds: ids,
     installCost: 0,
     annualMaintenance: 0,
@@ -213,8 +253,7 @@ function shelterFor(k: number, window: readonly PathSegment[], ctx: Context): In
     costSource: 'estimated',
   };
   const spec = generateShelterSpec(draft, ctx.segments, ctx.unitCosts, ctx.graph.lengthBySegment);
-  const installCost = roundTo(spec.totalCost, SHELTER_COST_STEP);
-  return { ...draft, installCost, annualMaintenance: roundTo(installCost * SHELTER_UPKEEP_RATE, UPKEEP_STEP) };
+  return { ...draft, ...shelterPlanningCost(spec) };
 }
 
 function treesFor(k: number, row: readonly PathSegment[], ctx: Context): Intervention {
@@ -237,11 +276,9 @@ function treesFor(k: number, row: readonly PathSegment[], ctx: Context): Interve
   const spec = generateTreeSpec(draft, ctx.unitCosts, lengthM);
   const count = spec.dimensions['trees'] ?? 1;
   const where = commonName(ids, ctx.info) ?? `a ${HIGHWAY_LABELS[info?.highway ?? ''] ?? 'path'}`;
-  const careLine = spec.bom.find((l) => l.item === ctx.unitCosts.items['maintenanceVisit']?.label);
   return {
     ...draft,
     name: `Trees on ${where}, ${abbreviate(ctx.sideOf(ids))} (${count} trees)`,
-    installCost: roundTo(spec.totalCost, TREE_COST_STEP),
-    annualMaintenance: roundTo((careLine?.total ?? 0) / 2, UPKEEP_STEP),
+    ...treePlanningCost(spec, ctx.unitCosts),
   };
 }

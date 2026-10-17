@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on USJ 10/1F Road, E (70 m)",
+    "name": "Covered walkway from the bus stop on USJ 10/1F Road (70 m)",
     "segmentIds": [
       "seg-25"
     ],
@@ -17,13 +17,13 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on USJ 11/3K Road, E (73 m)",
+    "name": "Covered walkway from the bus stop on USJ 10/1G Road (92 m)",
     "segmentIds": [
-      "seg-226",
-      "seg-142"
+      "seg-415",
+      "seg-417"
     ],
-    "installCost": 90000,
-    "annualMaintenance": 2250,
+    "installCost": 111000,
+    "annualMaintenance": 2780,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -33,49 +33,48 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Bakti Avenue, E (81 m)",
+    "name": "Covered walkway from the clinic on USJ 10/1B Road, along USJ 10/1D Road (51 m)",
     "segmentIds": [
-      "seg-65",
-      "seg-61",
-      "seg-60"
+      "seg-6"
     ],
-    "installCost": 93000,
-    "annualMaintenance": 2330,
+    "installCost": 62000,
+    "annualMaintenance": 1550,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on USJ 11/3K Road, NE (20 trees)",
+    "name": "Trees on USJ 11/3K Road, E (19 trees)",
     "segmentIds": [
+      "seg-226",
+      "seg-142",
       "seg-225",
       "seg-131",
-      "seg-130",
-      "seg-129"
+      "seg-67"
     ],
-    "installCost": 17400,
+    "installCost": 16600,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Bakti Avenue, E (20 trees)",
+    "name": "Trees on Bakti Avenue, E (17 trees)",
     "segmentIds": [
       "seg-66",
-      "seg-67",
-      "seg-402",
-      "seg-392"
+      "seg-65",
+      "seg-61",
+      "seg-60"
     ],
-    "installCost": 17400,
+    "installCost": 15100,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -86,14 +85,14 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on USJ 10/1F Road, E (18 trees)",
+    "name": "Trees on USJ 11/3K Road, NW (19 trees)",
     "segmentIds": [
-      "seg-417",
-      "seg-418",
-      "seg-59",
-      "seg-415"
+      "seg-130",
+      "seg-129",
+      "seg-128",
+      "seg-125"
     ],
-    "installCost": 15900,
+    "installCost": 16600,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -123,15 +122,13 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on USJ 11/3K Road, W (18 trees)",
+    "name": "Trees on USJ 10/1F Road, E (7 trees)",
     "segmentIds": [
-      "seg-125",
-      "seg-128",
-      "seg-127",
-      "seg-118"
+      "seg-59",
+      "seg-418"
     ],
-    "installCost": 15900,
-    "annualMaintenance": 840,
+    "installCost": 6400,
+    "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

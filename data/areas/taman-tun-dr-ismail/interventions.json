@@ -2,14 +2,12 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Damansara Road, S (94 m)",
+    "name": "Covered walkway from the MRT station on Damansara Road (66 m)",
     "segmentIds": [
-      "seg-413",
-      "seg-412",
-      "seg-411"
+      "seg-414"
     ],
-    "installCost": 109000,
-    "annualMaintenance": 2730,
+    "installCost": 75000,
+    "annualMaintenance": 1880,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -19,15 +17,16 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on a path, S (99 m)",
+    "name": "Covered walkway from the supermarket on Wan Kadir 3 Road (89 m)",
     "segmentIds": [
-      "seg-431",
-      "seg-432",
-      "seg-524",
-      "seg-416"
+      "seg-502",
+      "seg-500",
+      "seg-490",
+      "seg-491",
+      "seg-492"
     ],
-    "installCost": 119000,
-    "annualMaintenance": 2980,
+    "installCost": 113000,
+    "annualMaintenance": 2830,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -37,27 +36,29 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Damansara Road, SW (66 m)",
+    "name": "Covered walkway from the clinic (41 m)",
     "segmentIds": [
-      "seg-334"
+      "seg-514"
     ],
-    "installCost": 76000,
-    "annualMaintenance": 1900,
+    "installCost": 47000,
+    "annualMaintenance": 1180,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Damansara Road, S (13 trees)",
+    "name": "Trees on Damansara Road, S (16 trees)",
     "segmentIds": [
-      "seg-414",
-      "seg-415"
+      "seg-413",
+      "seg-412",
+      "seg-411",
+      "seg-246"
     ],
-    "installCost": 12000,
+    "installCost": 14300,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -68,31 +69,15 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on SS 20/21 Road, SW (14 trees)",
+    "name": "Trees on a footpath, S (17 trees)",
     "segmentIds": [
-      "seg-335",
-      "seg-319",
-      "seg-341"
+      "seg-431",
+      "seg-432",
+      "seg-524",
+      "seg-416",
+      "seg-415"
     ],
-    "installCost": 12700,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "needs-check",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-3",
-    "type": "tree",
-    "name": "Trees on SS 20/10 Road, SW (11 trees)",
-    "segmentIds": [
-      "seg-310",
-      "seg-388",
-      "seg-375",
-      "seg-376"
-    ],
-    "installCost": 10400,
+    "installCost": 15100,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -101,17 +86,34 @@
     "costSource": "estimated"
   },
   {
+    "id": "trees-3",
+    "type": "tree",
+    "name": "Trees on Damansara Road, S (17 trees)",
+    "segmentIds": [
+      "seg-334",
+      "seg-333"
+    ],
+    "installCost": 15100,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Wan Kadir 3 Road, SE (12 trees)",
+    "name": "Trees on SS 20/21 Road, SW (17 trees)",
     "segmentIds": [
-      "seg-502",
-      "seg-500",
-      "seg-490",
-      "seg-491",
-      "seg-492"
+      "seg-310",
+      "seg-388",
+      "seg-375",
+      "seg-376",
+      "seg-341",
+      "seg-319"
     ],
-    "installCost": 11200,
+    "installCost": 15100,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -122,12 +124,13 @@
   {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on a footpath, S (6 trees)",
+    "name": "Trees on Zaaba Avenue, NW (18 trees)",
     "segmentIds": [
-      "seg-514"
+      "seg-565",
+      "seg-564"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,

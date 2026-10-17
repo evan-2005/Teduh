@@ -2,7 +2,7 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Tepak 11/8 Road, SW (76 m)",
+    "name": "Covered walkway from the school on Tepak 11/8 Road (76 m)",
     "segmentIds": [
       "seg-86"
     ],
@@ -17,7 +17,7 @@
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Kayangan Avenue, N (67 m)",
+    "name": "Covered walkway from the mosque on Kayangan Avenue (67 m)",
     "segmentIds": [
       "seg-35"
     ],
@@ -32,15 +32,12 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on Bandaraya Avenue, NW (93 m)",
+    "name": "Covered walkway from the bus stop on Teluk Belanga 10/1 Road, along Kayangan Avenue (67 m)",
     "segmentIds": [
-      "seg-190",
-      "seg-191",
-      "seg-192",
-      "seg-186"
+      "seg-33"
     ],
-    "installCost": 117000,
-    "annualMaintenance": 2930,
+    "installCost": 78000,
+    "annualMaintenance": 1950,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -50,12 +47,14 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on a service lane, W (11 trees)",
+    "name": "Trees on a service lane, W (16 trees)",
     "segmentIds": [
       "seg-85",
-      "seg-84"
+      "seg-84",
+      "seg-192",
+      "seg-191"
     ],
-    "installCost": 10400,
+    "installCost": 14300,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -66,12 +65,12 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, N (17 trees)",
+    "name": "Trees on Bandaraya Avenue, NW (16 trees)",
     "segmentIds": [
-      "seg-34",
-      "seg-33"
+      "seg-190",
+      "seg-185"
     ],
-    "installCost": 15100,
+    "installCost": 14300,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
@@ -82,13 +81,12 @@
   {
     "id": "trees-3",
     "type": "tree",
-    "name": "Trees on Kayangan Avenue, NE (14 trees)",
+    "name": "Trees on Kayangan Avenue, N (9 trees)",
     "segmentIds": [
-      "seg-1",
-      "seg-328"
+      "seg-34"
     ],
-    "installCost": 12700,
-    "annualMaintenance": 840,
+    "installCost": 7900,
+    "annualMaintenance": 420,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -98,12 +96,12 @@
   {
     "id": "trees-4",
     "type": "tree",
-    "name": "Trees on Bandaraya Avenue, NW (16 trees)",
+    "name": "Trees on Kayangan Avenue, NE (14 trees)",
     "segmentIds": [
-      "seg-185",
-      "seg-184"
+      "seg-1",
+      "seg-328"
     ],
-    "installCost": 14300,
+    "installCost": 12700,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

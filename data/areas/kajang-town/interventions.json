@@ -2,47 +2,48 @@
   {
     "id": "shelter-1",
     "type": "shelter",
-    "name": "Shelter on Kelab Road, W (86 m)",
+    "name": "Covered walkway from the MRT station on Kelab Road (82 m)",
     "segmentIds": [
-      "seg-314",
-      "seg-311",
-      "seg-270",
+      "seg-296",
+      "seg-285",
+      "seg-281",
       "seg-299",
-      "seg-281"
+      "seg-270",
+      "seg-311"
     ],
-    "installCost": 105000,
-    "annualMaintenance": 2630,
+    "installCost": 104000,
+    "annualMaintenance": 2600,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "shelter-2",
     "type": "shelter",
-    "name": "Shelter on Hishamuddin Road, W (96 m)",
+    "name": "Covered walkway from the shopping mall (42 m)",
     "segmentIds": [
-      "seg-338",
-      "seg-328"
+      "seg-496"
     ],
-    "installCost": 112000,
-    "annualMaintenance": 2800,
+    "installCost": 54000,
+    "annualMaintenance": 1350,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "needs-check",
+    "feasibility": "likely",
     "costSource": "estimated"
   },
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Shelter on a path, W (23 m)",
+    "name": "Covered walkway from the school (86 m)",
     "segmentIds": [
-      "seg-296"
+      "seg-320",
+      "seg-319"
     ],
-    "installCost": 30000,
-    "annualMaintenance": 750,
+    "installCost": 104000,
+    "annualMaintenance": 2600,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -52,12 +53,14 @@
   {
     "id": "trees-1",
     "type": "tree",
-    "name": "Trees on Hishamuddin Road, W (6 trees)",
+    "name": "Trees on Hishamuddin Road, W (18 trees)",
     "segmentIds": [
-      "seg-238"
+      "seg-314",
+      "seg-238",
+      "seg-338"
     ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
+    "installCost": 15900,
+    "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,
     "yearsToMature": 6,
@@ -66,6 +69,23 @@
   },
   {
     "id": "trees-2",
+    "type": "tree",
+    "name": "Trees on Cheras Road, W (20 trees)",
+    "segmentIds": [
+      "seg-328",
+      "seg-210",
+      "seg-209"
+    ],
+    "installCost": 17400,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-3",
     "type": "tree",
     "name": "Trees on Cheras Road, NW (20 trees)",
     "segmentIds": [
@@ -82,38 +102,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-3",
-    "type": "tree",
-    "name": "Trees on Cheras Road, W (14 trees)",
-    "segmentIds": [
-      "seg-210",
-      "seg-209"
-    ],
-    "installCost": 12700,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "needs-check",
-    "costSource": "estimated"
-  },
-  {
     "id": "trees-4",
-    "type": "tree",
-    "name": "Trees on a service lane, SW (6 trees)",
-    "segmentIds": [
-      "seg-496"
-    ],
-    "installCost": 5600,
-    "annualMaintenance": 420,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-5",
     "type": "tree",
     "name": "Trees on Raja Haroun Road, W (7 trees)",
     "segmentIds": [
@@ -125,6 +114,23 @@
     "shadeFuture": 0.75,
     "yearsToMature": 6,
     "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
+    "id": "trees-5",
+    "type": "tree",
+    "name": "Trees on Reko Road, SW (18 trees)",
+    "segmentIds": [
+      "seg-232",
+      "seg-231",
+      "seg-316"
+    ],
+    "installCost": 15900,
+    "annualMaintenance": 840,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "needs-check",
     "costSource": "estimated"
   }
 ]

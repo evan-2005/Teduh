@@ -2,6 +2,7 @@ import L from 'leaflet';
 import { useMemo, useState } from 'react';
 import { Marker, Tooltip, useMap, useMapEvents } from 'react-leaflet';
 import { dataset } from '../data/dataset';
+import { useInterventions } from '../hooks/useInterventions';
 import { formatMyr } from '../lib/format';
 import { spreadOverlapping, type Offset } from '../lib/spread';
 import { useScenarioStore } from '../store/scenario';
@@ -55,20 +56,21 @@ interface InterventionMarkersProps {
 /** Candidate markers: hollow when not chosen, filled when part of the current selection. */
 export function InterventionMarkers({ showChosen }: InterventionMarkersProps) {
   const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
-  const selectIntervention = useScenarioStore((s) => s.selectIntervention);
+  const openIntervention = useScenarioStore((s) => s.openIntervention);
+  const interventions = useInterventions();
   const offsets = useSpreadOffsets();
 
   return (
     <>
-      {dataset.interventions.map((intervention) => {
+      {interventions.map((intervention) => {
         const selected = showChosen && selectedIds.includes(intervention.id);
         return (
           <Marker
-            key={`${intervention.id}-${selected}`}
+            key={`${intervention.id}-${selected}-${intervention.name}`}
             position={positions.get(intervention.id)!}
             icon={iconFor(intervention.type, selected, offsets.get(intervention.id) ?? NO_OFFSET)}
             title={intervention.name}
-            eventHandlers={{ click: () => selectIntervention(intervention.id) }}
+            eventHandlers={{ click: () => openIntervention(intervention.id) }}
           >
             <Tooltip direction="bottom" offset={[0, 12]}>
               {intervention.name} · {formatMyr(intervention.installCost)}

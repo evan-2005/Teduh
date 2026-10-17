@@ -1,12 +1,14 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 import { SourceBadge } from '../../components/SourceBadge';
 import { dataset, graph } from '../../data/dataset';
+import { useInterventions } from '../../hooks/useInterventions';
 import { formatMyr } from '../../lib/format';
+import { coveredLengthM, shelterBuiltLengthM, type PlannerSettings } from '../../lib/planner';
 import { useScenarioStore } from '../../store/scenario';
 import type { FabricationSpec, Intervention } from '../../types';
 import { shelterElevationSvg } from './elevation';
 import { downloadFile, toCsv, toJson } from './export';
-import { generateShelterSpec, generateTreeSpec } from './spec';
+import { buildShelterSpec, generateTreeSpec } from './spec';
 
 const DIMENSION_LABELS: Readonly<Record<string, string>> = {
   lengthM: 'Length (m)',
@@ -28,14 +30,18 @@ const DIMENSION_LABELS: Readonly<Record<string, string>> = {
   rowLengthM: 'Row length (m)',
 };
 
-const coveredLengthM = (intervention: Intervention): number =>
-  intervention.segmentIds.reduce((sum, id) => sum + (graph.lengthBySegment.get(id) ?? 0), 0);
-
-function specFor(intervention: Intervention): FabricationSpec {
+/** The build spec under the planner settings: the chosen species, spacing and walkway length. */
+function specFor(intervention: Intervention, planner: PlannerSettings): FabricationSpec {
   const { neighbourhood, unitCosts } = dataset;
-  return intervention.type === 'shelter'
-    ? generateShelterSpec(intervention, neighbourhood.segments, unitCosts, graph.lengthBySegment)
-    : generateTreeSpec(intervention, unitCosts, coveredLengthM(intervention));
+  const lengthM = coveredLengthM(intervention, graph.lengthBySegment);
+  if (intervention.type === 'tree') {
+    const species = unitCosts.speciesSuggestions[planner.speciesIndex];
+    const chosen = { ...unitCosts, speciesSuggestions: species ? [species] : unitCosts.speciesSuggestions };
+    return generateTreeSpec(intervention, chosen, lengthM, planner.treeSpacingM);
+  }
+  const covered = neighbourhood.segments.filter((s) => intervention.segmentIds.includes(s.id));
+  const widthM = Math.max(0, ...covered.map((s) => s.widthM));
+  return buildShelterSpec(intervention, shelterBuiltLengthM(lengthM, planner), widthM, unitCosts);
 }
 
 const MATCH_TOLERANCE = 0.02;
@@ -53,14 +59,12 @@ const fileStem = (spec: FabricationSpec): string => `teduh-fabrication-${spec.in
 export function FabricationPanel() {
   const selectedId = useScenarioStore((s) => s.selectedInterventionId);
   const selectIntervention = useScenarioStore((s) => s.selectIntervention);
-  const intervention = dataset.interventions.find((i) => i.id === selectedId) ?? null;
-  const spec = useMemo(() => (intervention ? specFor(intervention) : null), [intervention]);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // The pack opens from the map or the candidate list; bring it into view either way.
-  useEffect(() => {
-    if (selectedId) sectionRef.current?.scrollIntoView({ block: 'nearest' });
-  }, [selectedId]);
+  const planner = useScenarioStore((s) => s.planner);
+  const intervention = useInterventions().find((i) => i.id === selectedId) ?? null;
+  const spec = useMemo(
+    () => (intervention ? specFor(intervention, planner) : null),
+    [intervention, planner],
+  );
 
   if (!intervention || !spec) {
     return (
@@ -75,7 +79,7 @@ export function FabricationPanel() {
   const elevation = spec.type === 'shelter' ? shelterElevationSvg(spec) : null;
 
   return (
-    <section ref={sectionRef} className="card fabrication" aria-label="Fabrication pack">
+    <section className="card fabrication" aria-label="Fabrication pack">
       <div className="fabrication__head">
         <h3 className="card__title">Fabrication pack: {intervention.name}</h3>
         <button type="button" className="link-button" onClick={() => selectIntervention(null)}>

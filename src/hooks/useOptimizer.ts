@@ -1,6 +1,7 @@
 import { useDeferredValue, useMemo } from 'react';
 import { dataset, graph } from '../data/dataset';
 import { createEvaluator } from '../lib/optimizer';
+import { useInterventions } from './useInterventions';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
 
@@ -15,6 +16,7 @@ export interface OptimizerView {
 export function useOptimizer(): OptimizerView {
   const scenario = useScenarioStore((s) => s.scenario);
   const overrides = useScenarioStore((s) => s.shadeOverrides);
+  const interventions = useInterventions();
   // Keep the budget slider responsive: recommendations may lag a frame behind.
   const budget = useDeferredValue(scenario.budget);
 
@@ -25,7 +27,7 @@ export function useOptimizer(): OptimizerView {
         segments: dataset.neighbourhood.segments,
         destinations: dataset.neighbourhood.destinations,
         journeys: dataset.journeys,
-        candidates: dataset.interventions,
+        candidates: interventions,
         time: scenario.time,
         canopy: scenario.canopy,
         canopyYear: scenario.canopyYear,
@@ -34,6 +36,7 @@ export function useOptimizer(): OptimizerView {
         overrides,
       }),
     [
+      interventions,
       scenario.time,
       scenario.canopy,
       scenario.canopyYear,

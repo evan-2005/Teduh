@@ -21,7 +21,8 @@ const NARROW_VIEWPORTS = [
   { width: 390, height: 844 },
 ];
 const MIN_MAP_WIDTH_PX = 300;
-const AI_TIMEOUT_MS = 15000;
+// A local model's first call loads it into GPU memory (server timeout is 60 s).
+const AI_TIMEOUT_MS = 75000;
 const LOOKUP_TIMEOUT_MS = 20000;
 
 mkdirSync(OUT, { recursive: true });
@@ -47,6 +48,17 @@ const shot = async (name) => {
 const scrollToTop = (locator) => locator.evaluate((el) => el.scrollIntoView({ block: "start" }));
 const settle = () => page.waitForTimeout(700);
 const demoButton = () => page.getByRole('button', { name: /^Demo: \d+ (am|pm) walk / });
+/** The app's pages: Map & routes, Plan builder, Spec pack, AI scan. The map stays on screen. */
+const openPage = (name) => page.getByRole('navigation', { name: 'Pages' }).getByRole('button', { name }).click();
+const loadDemo = async () => {
+  await openPage('Map & routes');
+  await demoButton().click();
+};
+/** Sum of the "(13 trees)" counts in the candidate names, to compare with the trees drawn. */
+const promisedTrees = () =>
+  page.locator('.candidate__name').evaluateAll((els) =>
+    els.reduce((sum, el) => sum + Number(/\((\d+) trees\)/.exec(el.textContent)?.[1] ?? 0), 0),
+  );
 
 /** True when the topmost element at a marker's centre is that marker (so a click reaches it). */
 const markersClickable = () =>
@@ -64,10 +76,14 @@ await page.waitForLoadState('networkidle').catch(() => undefined);
 
 // First load: a plan is already applied, so Swipe has something to compare
 await settle();
+await openPage('Plan builder');
 check('first load applies the best plan', (await page.locator('.candidate input:checked').count()) > 0);
 check('no "no plan" hint once a plan is applied', (await page.locator('.map-hint').count()) === 0);
+const treesPromised = await promisedTrees();
+check('the map draws every tree the candidates promise', (await page.locator('.planted-tree').count()) === treesPromised, `${treesPromised} trees`);
+await openPage('Map & routes');
 const demoText = await demoButton().innerText();
-const demoJourney = await page.locator('.controls select').last().locator('option:checked').innerText();
+const demoJourney = await page.locator('.journey-select').locator('option:checked').innerText();
 const [walkFrom = '', walkTo = ''] = demoJourney.toLowerCase().split(' → ');
 check(
   'demo button names both ends of its own journey',
@@ -98,7 +114,7 @@ await page.getByRole('button', { name: 'Map layers' }).click();
 await page.waitForTimeout(800);
 
 // 1. Demo preset + swipe
-await demoButton().click();
+await loadDemo();
 const divider = page.getByRole('slider', { name: 'Before and after divider' });
 await divider.focus();
 for (let i = 0; i < 4; i++) await divider.press('ArrowRight');
@@ -109,6 +125,7 @@ check('swipe divider is shown', await divider.isVisible());
 await shot('01-before-after-swipe');
 
 // 2. Map modes: every candidate marker stays visible and clickable in all three
+await openPage('Plan builder');
 const candidateCount = await page.locator('.candidate').count();
 for (const mode of ['Before', 'After', 'Swipe']) {
   await page.getByRole('radio', { name: mode, exact: true }).click();
@@ -128,6 +145,7 @@ check(
 );
 
 // 3. Time of day recolours the map
+await openPage('Map & routes');
 const exposedCount = () => page.locator('.leaflet-pane path[stroke-dasharray]').count();
 const at1400 = await exposedCount();
 await page.getByRole('radio', { name: '09:00' }).click();
@@ -136,6 +154,7 @@ check('changing time changes the exposed segments', (await exposedCount()) !== a
 await page.getByRole('radio', { name: '14:00' }).click();
 
 // 4. Candidates and priorities recalculate
+await openPage('Plan builder');
 const baseline = await page.locator('.headline__value').innerText();
 await page.locator('.candidate input:checked').first().uncheck();
 await settle();
@@ -146,26 +165,36 @@ check('unticking a candidate recalculates results', afterUntick !== baseline, `$
 await page.getByRole('group', { name: 'Priorities' }).getByRole('slider').first().fill('3');
 await settle();
 check('priority sliders keep recommendations available', (await page.locator('.plan').count()) > 0);
-await demoButton().click();
+
+// 4b. Site planning: closer tree spacing plants more trees, and the map draws every one
+await page.getByLabel(/Street-tree spacing/).fill('6');
+await settle();
+const closer = await promisedTrees();
+check('closer spacing plants more trees', closer > treesPromised, `${treesPromised} -> ${closer}`);
+check('the map draws every tree at the new spacing', (await page.locator('.planted-tree').count()) === closer);
+await page.getByRole('button', { name: 'Reset site planning' }).click();
+await loadDemo();
 
 // 5. Future canopy + growth
 await page.getByRole('radio', { name: 'Future' }).click();
+await openPage('Plan builder');
 await page.getByRole('button', { name: 'Recommend a plan' }).click();
 await settle();
 check('future canopy recommends tree plans', /tree/i.test(await page.locator('.plans').innerText()));
 await page.getByRole('radio', { name: 'After' }).click();
 await settle();
 await shot('02-future-canopy');
-await demoButton().click();
+await loadDemo();
 
-// 6. Fabrication pack: opens from the candidate list, and from a marker in Before mode
-await page.getByRole('button', { name: /^Fabrication details for Trees/ }).first().click();
+// 6. Spec pack: opens from the candidate list, and from a marker in Before mode
+await openPage('Plan builder');
+await page.getByRole('button', { name: /^Spec pack for Trees/ }).first().click();
 const pack = page.locator('.fabrication');
 await pack.waitFor();
 check('candidate list "Details" opens the fabrication pack', (await pack.innerText()).includes('Trees'));
 await page.getByRole('radio', { name: 'Before', exact: true }).click();
-await page.locator('[title^="Shelter on"]').first().click();
-await pack.getByText(/Fabrication pack: Shelter/).waitFor();
+await page.locator('[title^="Covered walkway"]').first().click();
+await pack.getByText(/Fabrication pack: Covered walkway/).waitFor();
 await page.getByRole('radio', { name: 'After', exact: true }).click();
 await scrollToTop(pack);
 check('fabrication pack shows a bill of materials', (await pack.innerText()).includes('Bill of materials'));
@@ -179,6 +208,9 @@ await scrollToTop(pack);
 await shot('03-fabrication-pack');
 
 // 7. AI shade scan (mock if the server has no key) + explainer
+if (await page.getByRole('navigation', { name: 'Pages' }).getByRole('button', { name: 'AI scan' }).count()) {
+  await openPage('AI scan');
+}
 const scan = page.getByRole('region', { name: 'AI shade scan' });
 if (await scan.count()) {
   await scrollToTop(scan);
@@ -223,7 +255,7 @@ if (await scan.count()) {
   await scrollToTop(scan);
   await shot('04-ai-shade-scan');
   await page.getByRole('button', { name: 'Explain this plan' }).click();
-  await page.getByText('Generated from the numbers above.').waitFor({ timeout: AI_TIMEOUT_MS });
+  await page.getByText(/from the numbers above\./).waitFor({ timeout: AI_TIMEOUT_MS });
   check('plan explainer writes a summary', true);
   await scrollToTop(page.getByRole('region', { name: 'Plan explainer' }));
   await shot('05-plan-explainer');
@@ -245,13 +277,14 @@ await page.getByRole('button', { name: 'Look up a place' }).click();
 const picker = page.getByLabel('Choose an area');
 const options = await picker.locator('option').evaluateAll((els) => els.map((e) => ({ value: e.value, label: e.textContent })));
 check('area picker lists several shipped areas', options.filter((o) => !o.value.startsWith('custom:') && o.value !== 'seed').length >= 6, `${options.length} options`);
+await openPage('Map & routes');
 const currentName = await page.locator('.area__name').innerText();
 const other = options.find((o) => o.label !== currentName && o.value !== 'seed' && !o.value.startsWith('custom:'));
 if (other) {
   await Promise.all([page.waitForNavigation(), picker.selectOption(other.value)]);
   await page.locator('.area__name').waitFor();
   check('switching area loads that area', (await page.locator('.area__name').innerText()) === other.label, other.label);
-  await demoButton().click();
+  await loadDemo();
   await settle();
   check('demo preset works in the new area', Number(await page.locator('.headline__value').innerText()) >= 0);
 }

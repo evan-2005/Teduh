@@ -19,6 +19,5 @@
 
   --radius-card: 2px;
   --duration-fast: 150ms;
-  --column-controls: 280px;
-  --column-results: 320px;
+  --column-panel: 400px;
 }
