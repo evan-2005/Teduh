@@ -1,0 +1,537 @@
+{
+  "source": "Prasarana Rapid Rail origin-destination ridership (ticket gates), via data.gov.my",
+  "url": "https://data.gov.my/data-catalogue/ridership_od_rapidrail_daily",
+  "licence": "CC BY 4.0",
+  "from": "2026-08-22",
+  "to": "2026-10-16",
+  "stations": {
+    "AG01": {
+      "name": "Sentul Timur",
+      "weekdayExits": 5191
+    },
+    "AG02": {
+      "name": "Sentul",
+      "weekdayExits": 2907
+    },
+    "AG03": {
+      "name": "Titiwangsa",
+      "weekdayExits": 3888
+    },
+    "AG04": {
+      "name": "PWTC",
+      "weekdayExits": 6026
+    },
+    "AG05": {
+      "name": "Sultan Ismail",
+      "weekdayExits": 2380
+    },
+    "AG06": {
+      "name": "Bandaraya",
+      "weekdayExits": 7272
+    },
+    "AG07": {
+      "name": "Masjid Jamek",
+      "weekdayExits": 10468
+    },
+    "AG08": {
+      "name": "Plaza Rakyat",
+      "weekdayExits": 4494
+    },
+    "AG09": {
+      "name": "Hang Tuah",
+      "weekdayExits": 3420
+    },
+    "AG10": {
+      "name": "Pudu",
+      "weekdayExits": 6438
+    },
+    "AG11": {
+      "name": "Chan Sow Lin",
+      "weekdayExits": 1959
+    },
+    "AG12": {
+      "name": "Miharja",
+      "weekdayExits": 1924
+    },
+    "AG13": {
+      "name": "Maluri",
+      "weekdayExits": 3769
+    },
+    "AG14": {
+      "name": "Pandan Jaya",
+      "weekdayExits": 4025
+    },
+    "AG15": {
+      "name": "Pandan Indah",
+      "weekdayExits": 3164
+    },
+    "AG16": {
+      "name": "Cempaka",
+      "weekdayExits": 4929
+    },
+    "AG17": {
+      "name": "Cahaya",
+      "weekdayExits": 3025
+    },
+    "AG18": {
+      "name": "Ampang",
+      "weekdayExits": 5555
+    },
+    "KG04": {
+      "name": "Kwasa Damansara",
+      "weekdayExits": 2816
+    },
+    "KG05": {
+      "name": "Kwasa Sentral",
+      "weekdayExits": 4303
+    },
+    "KG06": {
+      "name": "Kota Damansara",
+      "weekdayExits": 6091
+    },
+    "KG07": {
+      "name": "Surian",
+      "weekdayExits": 8516
+    },
+    "KG08": {
+      "name": "Mutiara Damansara",
+      "weekdayExits": 7883
+    },
+    "KG09": {
+      "name": "Bandar Utama",
+      "weekdayExits": 16319
+    },
+    "KG10": {
+      "name": "TTDI",
+      "weekdayExits": 6910
+    },
+    "KG12": {
+      "name": "Phileo Damansara",
+      "weekdayExits": 4731
+    },
+    "KG13": {
+      "name": "Pusat Bandar Damansara",
+      "weekdayExits": 6645
+    },
+    "KG14": {
+      "name": "Semantan",
+      "weekdayExits": 7484
+    },
+    "KG15": {
+      "name": "Muzium Negara",
+      "weekdayExits": 13776
+    },
+    "KG16": {
+      "name": "Pasar Seni",
+      "weekdayExits": 6833
+    },
+    "KG17": {
+      "name": "Merdeka",
+      "weekdayExits": 4346
+    },
+    "KG18": {
+      "name": "Bukit Bintang",
+      "weekdayExits": 29816
+    },
+    "KG20": {
+      "name": "Tun Razak Exchange",
+      "weekdayExits": 26029
+    },
+    "KG21": {
+      "name": "Cochrane",
+      "weekdayExits": 10581
+    },
+    "KG22": {
+      "name": "Maluri",
+      "weekdayExits": 16510
+    },
+    "KG23": {
+      "name": "Taman Pertama",
+      "weekdayExits": 3649
+    },
+    "KG24": {
+      "name": "Taman Midah",
+      "weekdayExits": 4493
+    },
+    "KG25": {
+      "name": "Taman Mutiara",
+      "weekdayExits": 8208
+    },
+    "KG26": {
+      "name": "Taman Connaught",
+      "weekdayExits": 6392
+    },
+    "KG27": {
+      "name": "Taman Suntex",
+      "weekdayExits": 5482
+    },
+    "KG28": {
+      "name": "Sri Raya",
+      "weekdayExits": 2956
+    },
+    "KG29": {
+      "name": "Bandar Tun Hussien Onn",
+      "weekdayExits": 4746
+    },
+    "KG30": {
+      "name": "Batu 11 Cheras",
+      "weekdayExits": 3379
+    },
+    "KG31": {
+      "name": "Bukit Dukung",
+      "weekdayExits": 3288
+    },
+    "KG33": {
+      "name": "Sungai Jernih",
+      "weekdayExits": 4121
+    },
+    "KG34": {
+      "name": "Stadium Kajang",
+      "weekdayExits": 3332
+    },
+    "KG35": {
+      "name": "Kajang",
+      "weekdayExits": 9078
+    },
+    "KJ01": {
+      "name": "Gombak",
+      "weekdayExits": 4816
+    },
+    "KJ02": {
+      "name": "Taman Melati",
+      "weekdayExits": 6245
+    },
+    "KJ03": {
+      "name": "Wangsa Maju",
+      "weekdayExits": 9582
+    },
+    "KJ04": {
+      "name": "Sri Rampai",
+      "weekdayExits": 6302
+    },
+    "KJ05": {
+      "name": "Setiawangsa",
+      "weekdayExits": 4656
+    },
+    "KJ06": {
+      "name": "Jelatek",
+      "weekdayExits": 4381
+    },
+    "KJ07": {
+      "name": "Dato' Keramat",
+      "weekdayExits": 1683
+    },
+    "KJ08": {
+      "name": "Damai",
+      "weekdayExits": 2254
+    },
+    "KJ09": {
+      "name": "Ampang Park",
+      "weekdayExits": 15930
+    },
+    "KJ10": {
+      "name": "KLCC",
+      "weekdayExits": 22725
+    },
+    "KJ11": {
+      "name": "Kampung Baru",
+      "weekdayExits": 3307
+    },
+    "KJ12": {
+      "name": "Dang Wangi",
+      "weekdayExits": 4999
+    },
+    "KJ13": {
+      "name": "Masjid Jamek",
+      "weekdayExits": 6383
+    },
+    "KJ14": {
+      "name": "Pasar Seni",
+      "weekdayExits": 11400
+    },
+    "KJ15": {
+      "name": "KL Sentral",
+      "weekdayExits": 21388
+    },
+    "KJ16": {
+      "name": "Bank Rakyat Bangsar",
+      "weekdayExits": 9681
+    },
+    "KJ17": {
+      "name": "Abdullah Hukum",
+      "weekdayExits": 16815
+    },
+    "KJ18": {
+      "name": "Kerinchi",
+      "weekdayExits": 8918
+    },
+    "KJ19": {
+      "name": "Universiti",
+      "weekdayExits": 8189
+    },
+    "KJ20": {
+      "name": "Taman Jaya",
+      "weekdayExits": 4737
+    },
+    "KJ21": {
+      "name": "Asia Jaya",
+      "weekdayExits": 6099
+    },
+    "KJ22": {
+      "name": "Taman Paramount",
+      "weekdayExits": 2991
+    },
+    "KJ23": {
+      "name": "Taman Bahagia",
+      "weekdayExits": 3043
+    },
+    "KJ24": {
+      "name": "Kelana Jaya",
+      "weekdayExits": 2969
+    },
+    "KJ25": {
+      "name": "Lembah Subang",
+      "weekdayExits": 4191
+    },
+    "KJ26": {
+      "name": "Ara Damansara",
+      "weekdayExits": 5458
+    },
+    "KJ27": {
+      "name": "Cgc Glenmarie",
+      "weekdayExits": 10829
+    },
+    "KJ28": {
+      "name": "Subang Jaya",
+      "weekdayExits": 5565
+    },
+    "KJ29": {
+      "name": "SS 15",
+      "weekdayExits": 5165
+    },
+    "KJ30": {
+      "name": "SS 18",
+      "weekdayExits": 1360
+    },
+    "KJ31": {
+      "name": "USJ 7",
+      "weekdayExits": 2676
+    },
+    "KJ32": {
+      "name": "Taipan",
+      "weekdayExits": 2700
+    },
+    "KJ33": {
+      "name": "Wawasan",
+      "weekdayExits": 1661
+    },
+    "KJ34": {
+      "name": "USJ 21",
+      "weekdayExits": 1726
+    },
+    "KJ35": {
+      "name": "Alam Megah",
+      "weekdayExits": 1794
+    },
+    "KJ36": {
+      "name": "Subang Alam",
+      "weekdayExits": 659
+    },
+    "MR01": {
+      "name": "KL Sentral",
+      "weekdayExits": 6654
+    },
+    "MR02": {
+      "name": "Tun Sambanthan",
+      "weekdayExits": 2035
+    },
+    "MR03": {
+      "name": "Maharajalela",
+      "weekdayExits": 1582
+    },
+    "MR04": {
+      "name": "Hang Tuah",
+      "weekdayExits": 6071
+    },
+    "MR05": {
+      "name": "Imbi",
+      "weekdayExits": 4908
+    },
+    "MR06": {
+      "name": "Bukit Bintang",
+      "weekdayExits": 10336
+    },
+    "MR07": {
+      "name": "Raja Chulan",
+      "weekdayExits": 6143
+    },
+    "MR08": {
+      "name": "Bukit Nanas",
+      "weekdayExits": 4795
+    },
+    "MR09": {
+      "name": "Medan Tuanku",
+      "weekdayExits": 4209
+    },
+    "MR10": {
+      "name": "Chow Kit",
+      "weekdayExits": 3887
+    },
+    "MR11": {
+      "name": "Titiwangsa",
+      "weekdayExits": 1923
+    },
+    "SA01": {
+      "name": "Bandar Utama",
+      "weekdayExits": 6405
+    },
+    "SA02": {
+      "name": "Kayu Ara",
+      "weekdayExits": 804
+    },
+    "SA03": {
+      "name": "Bandar Utama 11",
+      "weekdayExits": 432
+    },
+    "SA05": {
+      "name": "Damansara Idaman",
+      "weekdayExits": 623
+    },
+    "SA06": {
+      "name": "Subang",
+      "weekdayExits": 702
+    },
+    "SA07": {
+      "name": "Glenmarie 2",
+      "weekdayExits": 7246
+    },
+    "SA09": {
+      "name": "Kerjaya",
+      "weekdayExits": 1130
+    },
+    "SA10": {
+      "name": "Stadium Shah Alam",
+      "weekdayExits": 2101
+    },
+    "SA12": {
+      "name": "Dato' Menteri - SA Sentral",
+      "weekdayExits": 1336
+    },
+    "SA14": {
+      "name": "UiTM Shah Alam",
+      "weekdayExits": 687
+    },
+    "SA15": {
+      "name": "Seksyen 7",
+      "weekdayExits": 1832
+    },
+    "SA17": {
+      "name": "Bandar Baru Klang",
+      "weekdayExits": 726
+    },
+    "SA18": {
+      "name": "Pasar Klang",
+      "weekdayExits": 1519
+    },
+    "SA19": {
+      "name": "Jalan Meru",
+      "weekdayExits": 280
+    },
+    "SA20": {
+      "name": "Jambatan Kota",
+      "weekdayExits": 1234
+    },
+    "SA21": {
+      "name": "Taman Selatan",
+      "weekdayExits": 493
+    },
+    "SA22": {
+      "name": "Seri Andalas",
+      "weekdayExits": 1133
+    },
+    "SA23": {
+      "name": "Klang Jaya",
+      "weekdayExits": 586
+    },
+    "SA24": {
+      "name": "Bandar Bukit Tinggi",
+      "weekdayExits": 1388
+    },
+    "SA26": {
+      "name": "Johan Setia",
+      "weekdayExits": 1230
+    },
+    "SP12": {
+      "name": "Cheras",
+      "weekdayExits": 2857
+    },
+    "SP13": {
+      "name": "Salak Selatan",
+      "weekdayExits": 4876
+    },
+    "SP14": {
+      "name": "Bandar Tun Razak",
+      "weekdayExits": 2060
+    },
+    "SP15": {
+      "name": "Bandar Tasik Selatan",
+      "weekdayExits": 5671
+    },
+    "SP16": {
+      "name": "Sungai Besi",
+      "weekdayExits": 546
+    },
+    "SP17": {
+      "name": "Bukit Jalil",
+      "weekdayExits": 3846
+    },
+    "SP18": {
+      "name": "Sri Petaling",
+      "weekdayExits": 1736
+    },
+    "SP19": {
+      "name": "Awan Besar",
+      "weekdayExits": 3556
+    },
+    "SP20": {
+      "name": "Muhibbah",
+      "weekdayExits": 2429
+    },
+    "SP21": {
+      "name": "Alam Sutera",
+      "weekdayExits": 2013
+    },
+    "SP22": {
+      "name": "Kinrara",
+      "weekdayExits": 3593
+    },
+    "SP24": {
+      "name": "IOI Puchong Jaya",
+      "weekdayExits": 3671
+    },
+    "SP25": {
+      "name": "Pusat Bandar Puchong",
+      "weekdayExits": 3220
+    },
+    "SP26": {
+      "name": "Taman Perindustrian Puchong",
+      "weekdayExits": 1815
+    },
+    "SP27": {
+      "name": "Bandar Puteri",
+      "weekdayExits": 2129
+    },
+    "SP28": {
+      "name": "Puchong Perdana",
+      "weekdayExits": 2146
+    },
+    "SP29": {
+      "name": "Puchong Prima",
+      "weekdayExits": 3811
+    },
+    "SP31": {
+      "name": "Putra Heights",
+      "weekdayExits": 3769
+    }
+  }
+}

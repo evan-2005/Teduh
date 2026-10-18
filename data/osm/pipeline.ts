@@ -21,7 +21,8 @@ import type {
   UnitCosts,
 } from '../../src/types';
 import { generateCandidates, HIGHWAY_LABELS, type SegmentInfo } from './candidates';
-import { clusterHomes, compassName, planDestinations, residentialBuildings } from './destinations';
+import { clusterHomes, compassName, planDestinations, residentialBuildings, type CountedStation } from './destinations';
+import type { RailRidership } from './ridership';
 import { createProjection, type Projection, type XY } from './geometry';
 import { buildNetwork, DEFAULT_NETWORK_OPTIONS, type Network } from './network';
 import { parseOsm, type ParsedOsm, type RawElement } from './parse';
@@ -44,6 +45,8 @@ export interface BuildInput {
   surveyedTrees?: readonly (readonly [number, number])[];
   /** Date the raw data was downloaded (YYYY-MM-DD). */
   fetchedAt: string;
+  /** Real rail station exits (data/rail-ridership.json); without it every station gets a default weight. */
+  ridership?: RailRidership;
 }
 
 export interface BuiltArea {
@@ -201,7 +204,23 @@ function pickDemoJourney(args: {
   return ranked[0]?.id ?? args.journeys[0]?.id ?? '';
 }
 
-function assumptionsFor(radiusM: number, treeCount: number): string[] {
+const thousands = (n: number): string => n.toLocaleString('en-US');
+
+/** How the trips from each counted station were scaled, or why the stations use a default. */
+function tripsNote(counted: readonly CountedStation[], ridership: RailRidership | undefined): string {
+  if (counted.length === 0 || !ridership) {
+    return 'Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.';
+  }
+  const stations = counted
+    .map((s) => `the ${s.label} (${s.localName ?? s.code}) has ${thousands(s.exits)} exits on a typical weekday`)
+    .join('; ');
+  return (
+    `Walks from rail stations are scaled to real ticket-gate counts: ${stations} (median weekday, ${ridership.from} to ${ridership.to}; Prasarana Rapid Rail data via data.gov.my, ${ridership.licence}). ` +
+    'How those people split between the places nearby is still modelled: bigger places and shorter walks draw more, and the modelled walks never add up to more than half of the exits. Bus stop and other trips are rough estimates, not counts.'
+  );
+}
+
+function assumptionsFor(radiusM: number, treeCount: number, trips: string): string[] {
   const treeNote =
     treeCount === 0
       ? ' OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.'
@@ -210,7 +229,7 @@ function assumptionsFor(radiusM: number, treeCount: number): string[] {
     `Paths are walkable ways from OpenStreetMap within ${radiusM} m of the centre, simplified into segments of at most ${DEFAULT_NETWORK_OPTIONS.maxSegmentM} m.`,
     `Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways.${treeNote}`,
     'Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.',
-    'Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.',
+    trips,
     'Intervention locations are chosen where exposed paths carry the most trips. Covered walkways start at a bus stop, a station or the entrance of a place people walk to (or where its existing cover ends); street trees go along the footpath edge about 8 m apart. Costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes.',
   ];
 }
@@ -244,7 +263,7 @@ export function buildArea(input: BuildInput): BuiltArea {
     if (!streetAtNode.has(s.from)) streetAtNode.set(s.from, name);
     if (!streetAtNode.has(s.to)) streetAtNode.set(s.to, name);
   });
-  const { destinations, journeys } = planDestinations({
+  const { destinations, journeys, counted } = planDestinations({
     graph,
     nodes: nodesXY,
     homes,
@@ -252,6 +271,7 @@ export function buildArea(input: BuildInput): BuiltArea {
     greens: parsed.greens,
     areaCentre: [0, 0],
     streetOf: (nodeId) => streetAtNode.get(nodeId),
+    ridership: input.ridership,
   });
   if (journeys.length < MIN_JOURNEYS) {
     throw new AreaTooSparseError(
@@ -280,7 +300,7 @@ export function buildArea(input: BuildInput): BuiltArea {
     source: 'openstreetmap',
     attribution: 'Map data © OpenStreetMap contributors (ODbL)',
     generatedAt: input.fetchedAt.slice(0, 10),
-    assumptions: assumptionsFor(radiusM, parsed.trees.length),
+    assumptions: assumptionsFor(radiusM, parsed.trees.length, tripsNote(counted, input.ridership)),
     budget,
     demoJourneyId: pickDemoJourney({ graph, segments, destinations, journeys, interventions, budget: budget.demo }),
   };

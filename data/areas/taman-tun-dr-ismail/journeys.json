@@ -3,21 +3,28 @@
     "id": "j-rail-station-1-to-shops-1",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-shops-1",
-    "dailyTrips": 259,
+    "dailyTrips": 359,
     "tripsSource": "estimated"
   },
   {
     "id": "j-rail-station-1-to-clinic-19",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-clinic-19",
-    "dailyTrips": 194,
+    "dailyTrips": 269,
     "tripsSource": "estimated"
   },
   {
-    "id": "j-rail-station-1-to-clinic-2",
+    "id": "j-rail-station-1-to-school-1",
     "originId": "dest-rail-station-1",
-    "destinationId": "dest-clinic-2",
-    "dailyTrips": 171,
+    "destinationId": "dest-school-1",
+    "dailyTrips": 138,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-rail-station-1-to-worship-1",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-worship-1",
+    "dailyTrips": 132,
     "tripsSource": "estimated"
   },
   {
@@ -25,13 +32,6 @@
     "originId": "dest-bus-stop-2",
     "destinationId": "dest-school-1",
     "dailyTrips": 109,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-rail-station-1-to-worship-1",
-    "originId": "dest-rail-station-1",
-    "destinationId": "dest-worship-1",
-    "dailyTrips": 95,
     "tripsSource": "estimated"
   },
   {
@@ -49,10 +49,17 @@
     "tripsSource": "estimated"
   },
   {
-    "id": "j-bus-stop-1-to-school-1",
+    "id": "j-bus-stop-1-to-shops-5",
     "originId": "dest-bus-stop-1",
-    "destinationId": "dest-school-1",
-    "dailyTrips": 60,
+    "destinationId": "dest-shops-5",
+    "dailyTrips": 54,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-bus-stop-2-to-shops-5",
+    "originId": "dest-bus-stop-2",
+    "destinationId": "dest-shops-5",
+    "dailyTrips": 41,
     "tripsSource": "estimated"
   },
   {
@@ -60,13 +67,6 @@
     "originId": "dest-bus-stop-1",
     "destinationId": "dest-clinic-19",
     "dailyTrips": 31,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-bus-stop-1-to-shops-1",
-    "originId": "dest-bus-stop-1",
-    "destinationId": "dest-shops-1",
-    "dailyTrips": 26,
     "tripsSource": "estimated"
   }
 ]

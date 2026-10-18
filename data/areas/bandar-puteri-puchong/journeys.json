@@ -3,21 +3,21 @@
     "id": "j-rail-station-1-to-shops-2",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-shops-2",
-    "dailyTrips": 194,
+    "dailyTrips": 125,
     "tripsSource": "estimated"
   },
   {
     "id": "j-rail-station-1-to-shops-1",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-shops-1",
-    "dailyTrips": 175,
+    "dailyTrips": 113,
     "tripsSource": "estimated"
   },
   {
     "id": "j-rail-station-1-to-clinic-1",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-clinic-1",
-    "dailyTrips": 152,
+    "dailyTrips": 98,
     "tripsSource": "estimated"
   },
   {

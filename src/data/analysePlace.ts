@@ -1,6 +1,8 @@
 import { AreaTooSparseError, buildArea } from '../../data/osm/pipeline';
 import type { RawElement } from '../../data/osm/parse';
 import { fetchOverpass, type Area, type FetchLike } from '../../data/osm/overpass';
+import ridershipRaw from '../../data/rail-ridership.json';
+import type { RailRidership } from '../../data/osm/ridership';
 import unitCostsRaw from '../../data/unit-costs.json';
 import type { UnitCosts } from '../types';
 import { saveCustomArea } from './customAreas';
@@ -75,6 +77,7 @@ export async function analysePlace(
       elements,
       unitCosts: (deps.unitCosts ?? (unitCostsRaw as unknown as UnitCosts)),
       fetchedAt: new Date().toISOString(),
+      ridership: ridershipRaw as RailRidership,
     });
   } catch (error) {
     if (error instanceof AreaTooSparseError) throw new AnalyseError(error.message);

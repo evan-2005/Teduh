@@ -37,17 +37,17 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Covered walkway from the school (86 m)",
+    "name": "Covered walkway from the bus stop on Semenyih Road B (66 m)",
     "segmentIds": [
-      "seg-320",
-      "seg-319"
+      "seg-359",
+      "seg-501"
     ],
-    "installCost": 104000,
-    "annualMaintenance": 2600,
+    "installCost": 79000,
+    "annualMaintenance": 1980,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
-    "feasibility": "likely",
+    "feasibility": "needs-check",
     "costSource": "estimated"
   },
   {

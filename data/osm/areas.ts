@@ -14,6 +14,7 @@ import type { UnitCosts } from '../../src/types';
 import { fetchOverpass, type Area } from './overpass';
 import { AreaTooSparseError, buildArea } from './pipeline';
 import type { RawElement } from './parse';
+import type { RailRidership } from './ridership';
 
 interface AreaEntry extends Area {
   slug: string;
@@ -44,6 +45,9 @@ async function rawFor(entry: AreaEntry, allowFetch: boolean, refresh: boolean): 
   return { elements: raw.elements, fetchedAt };
 }
 
+const RIDERSHIP_PATH = 'data/rail-ridership.json';
+const ridership = existsSync(RIDERSHIP_PATH) ? readJson<RailRidership>(RIDERSHIP_PATH) : undefined;
+
 async function buildOne(entry: AreaEntry, unitCosts: UnitCosts, allowFetch: boolean, refresh: boolean): Promise<boolean> {
   const dir = `${ROOT}/${entry.slug}`;
   mkdirSync(dir, { recursive: true });
@@ -55,7 +59,7 @@ async function buildOne(entry: AreaEntry, unitCosts: UnitCosts, allowFetch: bool
           .features.filter((f) => f.geometry.type === 'Point')
           .map((f) => f.geometry.coordinates)
       : [];
-    const built = buildArea({ area: entry, elements, unitCosts, surveyedTrees, fetchedAt });
+    const built = buildArea({ area: entry, elements, unitCosts, surveyedTrees, fetchedAt, ridership });
     write(`${dir}/neighbourhood.json`, built.neighbourhood, 2);
     write(`${dir}/journeys.json`, built.journeys, 2);
     write(`${dir}/interventions.json`, built.interventions, 2);

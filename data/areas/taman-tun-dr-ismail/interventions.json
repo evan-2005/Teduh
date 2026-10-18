@@ -36,12 +36,14 @@
   {
     "id": "shelter-3",
     "type": "shelter",
-    "name": "Covered walkway from the clinic (41 m)",
+    "name": "Covered walkway from the place of worship on SS 20/10 Road (94 m)",
     "segmentIds": [
-      "seg-514"
+      "seg-361",
+      "seg-394",
+      "seg-294"
     ],
-    "installCost": 47000,
-    "annualMaintenance": 1180,
+    "installCost": 114000,
+    "annualMaintenance": 2850,
     "shadeNow": 0.95,
     "shadeFuture": 0.95,
     "yearsToMature": 0,
@@ -69,25 +71,6 @@
   {
     "id": "trees-2",
     "type": "tree",
-    "name": "Trees on a footpath, S (17 trees)",
-    "segmentIds": [
-      "seg-431",
-      "seg-432",
-      "seg-524",
-      "seg-416",
-      "seg-415"
-    ],
-    "installCost": 15100,
-    "annualMaintenance": 840,
-    "shadeNow": 0.2,
-    "shadeFuture": 0.75,
-    "yearsToMature": 6,
-    "feasibility": "likely",
-    "costSource": "estimated"
-  },
-  {
-    "id": "trees-3",
-    "type": "tree",
     "name": "Trees on Damansara Road, S (17 trees)",
     "segmentIds": [
       "seg-334",
@@ -102,7 +85,7 @@
     "costSource": "estimated"
   },
   {
-    "id": "trees-4",
+    "id": "trees-3",
     "type": "tree",
     "name": "Trees on SS 20/21 Road, SW (17 trees)",
     "segmentIds": [
@@ -122,14 +105,34 @@
     "costSource": "estimated"
   },
   {
+    "id": "trees-4",
+    "type": "tree",
+    "name": "Trees on a local road, SE (9 trees)",
+    "segmentIds": [
+      "seg-415",
+      "seg-416",
+      "seg-524",
+      "seg-433",
+      "seg-434"
+    ],
+    "installCost": 7900,
+    "annualMaintenance": 420,
+    "shadeNow": 0.2,
+    "shadeFuture": 0.75,
+    "yearsToMature": 6,
+    "feasibility": "likely",
+    "costSource": "estimated"
+  },
+  {
     "id": "trees-5",
     "type": "tree",
-    "name": "Trees on Zaaba Avenue, NW (18 trees)",
+    "name": "Trees on a local road, N (19 trees)",
     "segmentIds": [
-      "seg-565",
-      "seg-564"
+      "seg-171",
+      "seg-170",
+      "seg-169"
     ],
-    "installCost": 15900,
+    "installCost": 16600,
     "annualMaintenance": 840,
     "shadeNow": 0.2,
     "shadeFuture": 0.75,

@@ -10521,7 +10521,7 @@
       "Paths are walkable ways from OpenStreetMap within 450 m of the centre, simplified into segments of at most 80 m.",
       "Shade is modelled, not surveyed: building shadows from mapped footprints (7 m high when the height is not mapped), the sun position on 15 October at this latitude, and covered walkways. OpenStreetMap has no mapped trees in this area, so tree canopy is not included and shade is understated.",
       "Walks start at public transport (rail stations and bus stops) and end at the places people walk to from it: malls, markets, supermarkets, schools, clinics, places of worship and parks. Home clusters are used only where too little transit is mapped.",
-      "Trips per day are rough estimates: bigger places (a rail station, a mall) draw more walks, and longer walks fewer. They are not counts.",
+      "Walks from rail stations are scaled to real ticket-gate counts: the LRT station (KJ29 SS15) has 5,165 exits on a typical weekday (median weekday, 2026-08-22 to 2026-10-16; Prasarana Rapid Rail data via data.gov.my, CC BY 4.0). How those people split between the places nearby is still modelled: bigger places and shorter walks draw more, and the modelled walks never add up to more than half of the exits. Bus stop and other trips are rough estimates, not counts.",
       "Intervention locations are chosen where exposed paths carry the most trips. Covered walkways start at a bus stop, a station or the entrance of a place people walk to (or where its existing cover ends); street trees go along the footpath edge about 8 m apart. Costs come from the unit-cost bill of materials. Replace both with a real survey and contractor quotes."
     ],
     "budget": {

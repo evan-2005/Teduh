@@ -3,28 +3,21 @@
     "id": "j-rail-station-1-to-mall-1",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-mall-1",
-    "dailyTrips": 329,
+    "dailyTrips": 219,
     "tripsSource": "estimated"
   },
   {
     "id": "j-rail-station-1-to-clinic-1",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-clinic-1",
-    "dailyTrips": 217,
+    "dailyTrips": 145,
     "tripsSource": "estimated"
   },
   {
     "id": "j-rail-station-1-to-school-3",
     "originId": "dest-rail-station-1",
     "destinationId": "dest-school-3",
-    "dailyTrips": 165,
-    "tripsSource": "estimated"
-  },
-  {
-    "id": "j-rail-station-1-to-worship-1",
-    "originId": "dest-rail-station-1",
-    "destinationId": "dest-worship-1",
-    "dailyTrips": 148,
+    "dailyTrips": 110,
     "tripsSource": "estimated"
   },
   {
@@ -32,6 +25,13 @@
     "originId": "dest-bus-stop-7",
     "destinationId": "dest-mall-1",
     "dailyTrips": 108,
+    "tripsSource": "estimated"
+  },
+  {
+    "id": "j-rail-station-1-to-worship-1",
+    "originId": "dest-rail-station-1",
+    "destinationId": "dest-worship-1",
+    "dailyTrips": 98,
     "tripsSource": "estimated"
   },
   {

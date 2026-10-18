@@ -20,6 +20,10 @@ export interface Place {
   xy: XY;
   /** Relative pull of the place: how many walking trips it starts or attracts. */
   weight: number;
+  /** Real weekday exits from the ticket gates, for a rail station the ridership data covers. */
+  dailyExits?: number;
+  /** The station code those exits belong to, e.g. "KJ29". */
+  stationCode?: string;
 }
 
 export interface TripCandidate {
@@ -45,6 +49,30 @@ const MERGE_TRANSIT_M = 120;
 /** Schools, hospitals and malls are big sites, often mapped as a point and as their grounds. */
 const MERGE_ATTRACTOR_M = 200;
 const MAX_BUS_STOP_WEIGHT = 3;
+/**
+ * A station's pull from its real exits: one weight unit per 500 exits a weekday, so a station
+ * of about 5,000 exits keeps the old default of 10 and a bus stop (weight 1) stands for about 500.
+ */
+export const EXITS_PER_WEIGHT = 500;
+/** The modelled walks from a station never add up to more than half of the people leaving it. */
+export const MAX_WALKING_SHARE = 0.5;
+
+/** A rail station's weight from its real weekday exits. */
+export const weightFromExits = (exits: number): number => exits / EXITS_PER_WEIGHT;
+
+/**
+ * Scale down the walks chosen from a counted station if they add up to more than
+ * MAX_WALKING_SHARE of its real exits (the rest go home, to work, or on by bus or car).
+ */
+export function capToExits(chosen: readonly TripCandidate[], places: readonly Place[]): TripCandidate[] {
+  return chosen.map((c) => {
+    const exits = places.find((p) => p.id === c.originId)?.dailyExits;
+    if (!exits) return c;
+    const total = chosen.filter((x) => x.originId === c.originId).reduce((sum, x) => sum + x.trips, 0);
+    const limit = exits * MAX_WALKING_SHARE;
+    return total > limit ? { ...c, trips: Math.max(MIN_TRIPS, Math.round((c.trips * limit) / total)) } : c;
+  });
+}
 
 type PlaceKind = Pick<Place, 'kind' | 'role' | 'label' | 'weight'>;
 
@@ -112,7 +140,13 @@ export function mergeNearby(places: readonly Place[]): Place[] {
       place.kind === 'bus-stop'
         ? Math.min(MAX_BUS_STOP_WEIGHT, existing.weight + place.weight)
         : Math.max(existing.weight, place.weight);
-    kept[index] = { ...existing, weight, localName: existing.localName ?? place.localName };
+    const counted = (existing.dailyExits ?? 0) >= (place.dailyExits ?? 0) ? existing : place;
+    kept[index] = {
+      ...existing,
+      weight,
+      localName: existing.localName ?? place.localName,
+      ...(counted.dailyExits ? { dailyExits: counted.dailyExits, stationCode: counted.stationCode } : {}),
+    };
   }
   return kept;
 }

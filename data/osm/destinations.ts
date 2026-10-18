@@ -8,7 +8,9 @@ import type { Graph } from '../../src/lib/graph';
 import { shortestRoute } from '../../src/lib/routing';
 import { centroid, distance, type XY } from './geometry';
 import type { Building, GreenFeature, Poi } from './parse';
+import { exitsFor, type RailRidership } from './ridership';
 import {
+  capToExits,
   estimateTrips,
   mergeNearby,
   nameDestinations,
@@ -18,6 +20,7 @@ import {
   type Place,
   type SelectionLimits,
   type TripCandidate,
+  weightFromExits,
 } from './trips';
 
 const HOME_BUILDINGS = new Set(['house', 'terrace', 'semidetached_house', 'residential', 'apartments', 'yes']);
@@ -76,10 +79,23 @@ function snapPlace(
   return { ...kind, nodeId: snap.entry.node.id, xy, ...(localName ? { localName } : {}) };
 }
 
+/** A rail station the ridership data covers takes its weight from its real exits. */
+function placeKind(poi: Poi, ridership: RailRidership | undefined) {
+  const kind = placeFromTags(poi.tags);
+  const counted = kind?.kind === 'rail-station' ? exitsFor(poi.tags, ridership) : null;
+  if (!kind || !counted) return kind;
+  return { ...kind, weight: weightFromExits(counted.exits), dailyExits: counted.exits, stationCode: counted.code };
+}
+
 /** Transit stops and attractors on the path network, one per real-world spot, with stable ids. */
-function placesFrom(pois: readonly Poi[], greens: readonly GreenFeature[], nodes: readonly NodeXY[]): Place[] {
+function placesFrom(
+  pois: readonly Poi[],
+  greens: readonly GreenFeature[],
+  nodes: readonly NodeXY[],
+  ridership: RailRidership | undefined,
+): Place[] {
   const drafts = [
-    ...pois.map((poi) => snapPlace(placeFromTags(poi.tags), poi.xy, nodes, MAX_SNAP_M, poi.tags['name'])),
+    ...pois.map((poi) => snapPlace(placeKind(poi, ridership), poi.xy, nodes, MAX_SNAP_M, poi.tags['name'])),
     ...greens
       .filter((g) => g.kind === 'park')
       .map((g) => snapPlace(PARK_PLACE, centroid(g.ring), nodes, MAX_SNAP_M * 2)),
@@ -124,7 +140,10 @@ function tripsBetween(graph: Graph, origins: readonly Place[], targets: readonly
   );
 }
 
-export interface Planned { destinations: Destination[]; journeys: Journey[] }
+/** A station whose walks are scaled to its real exits, for the "How this was built" notes. */
+export interface CountedStation { label: string; localName?: string; code: string; exits: number }
+
+export interface Planned { destinations: Destination[]; journeys: Journey[]; counted: CountedStation[] }
 
 export function planDestinations(args: {
   graph: Graph;
@@ -135,9 +154,11 @@ export function planDestinations(args: {
   areaCentre: XY;
   /** English name of a street at a path node, used to tell repeated places apart. */
   streetOf?: (nodeId: string) => string | undefined;
+  /** Real station exits; stations it covers replace the default rail weight. */
+  ridership?: RailRidership;
 }): Planned {
   const { graph, nodes, homes, pois, greens, areaCentre } = args;
-  const places = placesFrom(pois, greens, nodes);
+  const places = placesFrom(pois, greens, nodes, args.ridership);
   const transit = places.filter((p) => p.role === 'transit');
   const attractors = places.filter((p) => p.role === 'attractor');
 
@@ -149,6 +170,7 @@ export function planDestinations(args: {
     candidates = [...candidates, ...tripsBetween(graph, homesUsed, [...transit, ...attractors])];
     chosen = selectJourneys(candidates, LIMITS);
   }
+  chosen = capToExits(chosen, places);
 
   const usedIds = new Set(chosen.flatMap((c) => [c.originId, c.destinationId]));
   const used = [...transit, ...homesUsed, ...attractors].filter((p) => usedIds.has(p.id));
@@ -167,5 +189,10 @@ export function planDestinations(args: {
     dailyTrips: c.trips,
     tripsSource: 'estimated',
   }));
-  return { destinations, journeys };
+  const counted = used.flatMap((p) =>
+    p.dailyExits && p.stationCode
+      ? [{ label: p.label, code: p.stationCode, exits: p.dailyExits, ...(p.localName ? { localName: p.localName } : {}) }]
+      : [],
+  );
+  return { destinations, journeys, counted };
 }
