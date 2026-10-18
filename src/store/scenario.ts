@@ -67,7 +67,7 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   shadeOverrides: [],
   selectedInterventionId: null,
   selectedJourneyId: meta.demoJourneyId,
-  basemap: { style: 'streets', opacity: 0.6 },
+  basemap: { style: 'light', opacity: 0.9 },
   contextLayers: { buildings: true, greens: true, landmarks: true, food: false, trees: true },
   view: 'overview',
   planner: DEFAULT_PLANNER,

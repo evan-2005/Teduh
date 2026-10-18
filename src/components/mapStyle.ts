@@ -7,6 +7,11 @@ export const LEAST_SUN_COLOR = '#2f5d9e';
 export const DESTINATION_COLOR = '#f6f3ea';
 
 export const SEGMENT_WEIGHT = 4;
+/** A path the plan takes from direct sun into shade: brighter and wider, over a white casing. */
+export const NEWLY_SHADED_COLOR = '#22a45d';
+export const NEWLY_SHADED_WEIGHT = 7;
+export const CASING_COLOR = '#ffffff';
+export const CASING_EXTRA_PX = 4;
 export const EXPOSED_DASH = '5 5';
 export const ROUTE_UNDERLAY_WEIGHT = 9;
 export const ROUTE_OVERLAY_WEIGHT = 2;
@@ -31,14 +36,15 @@ export const TREE_STYLE = {
 } as const;
 
 // Planted street trees (one mark per tree) and covered walkways.
-export const TRUNK_RADIUS_PX = 3;
+export const TRUNK_RADIUS_PX = 4;
 export const CROWN_CHOSEN_STYLE = {
-  crown: { color: '#1f5d4c', weight: 1, fillColor: '#2f7d4f', fillOpacity: 0.45 },
-  trunk: { color: '#f6f3ea', weight: 1, fillColor: '#1f5d4c', fillOpacity: 1 },
+  crown: { color: '#1f7a45', weight: 1, fillColor: '#22a45d', fillOpacity: 0.4 },
+  trunk: { color: '#ffffff', weight: 1.5, fillColor: '#1f7a45', fillOpacity: 1 },
 } as const;
+/** A candidate previewed from its spec pack: hollow and dashed, not yet in the plan. */
 export const CROWN_CANDIDATE_STYLE = {
-  crown: { color: '#1f5d4c', weight: 1, dashArray: '2 2', fillColor: '#2f7d4f', fillOpacity: 0.08 },
-  trunk: { color: '#1f5d4c', weight: 1.5, fillColor: '#f6f3ea', fillOpacity: 1 },
+  crown: { color: '#1f7a45', weight: 1, dashArray: '2 2', fillColor: '#22a45d', fillOpacity: 0.1 },
+  trunk: { color: '#1f7a45', weight: 2, dashArray: '2 1', fillColor: '#ffffff', fillOpacity: 1 },
 } as const;
 export const WALKWAY_CHOSEN_STYLE = { color: '#6b4f3a', weight: 7, opacity: 0.85, lineCap: 'butt' } as const;
 export const WALKWAY_CANDIDATE_STYLE = {

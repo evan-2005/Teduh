@@ -54,9 +54,9 @@ const loadDemo = async () => {
   await openPage('Map & routes');
   await demoButton().click();
 };
-/** Sum of the "(13 trees)" counts in the candidate names, to compare with the trees drawn. */
+/** Trees the chosen rows promise ("(13 trees)" in their names), to compare with the trees drawn. */
 const promisedTrees = () =>
-  page.locator('.candidate__name').evaluateAll((els) =>
+  page.locator('.candidate:has(input:checked) .candidate__name').evaluateAll((els) =>
     els.reduce((sum, el) => sum + Number(/\((\d+) trees\)/.exec(el.textContent)?.[1] ?? 0), 0),
   );
 
@@ -80,7 +80,7 @@ await openPage('Plan builder');
 check('first load applies the best plan', (await page.locator('.candidate input:checked').count()) > 0);
 check('no "no plan" hint once a plan is applied', (await page.locator('.map-hint').count()) === 0);
 const treesPromised = await promisedTrees();
-check('the map draws every tree the candidates promise', (await page.locator('.planted-tree').count()) === treesPromised, `${treesPromised} trees`);
+check('the map draws every tree the chosen rows promise', (await page.locator('.planted-tree').count()) === treesPromised, `${treesPromised} trees`);
 await openPage('Map & routes');
 const demoText = await demoButton().innerText();
 const demoJourney = await page.locator('.journey-select').locator('option:checked').innerText();
@@ -107,7 +107,7 @@ check(
   (await page.locator('img.leaflet-tile[src*="arcgisonline"]').count()) > 0,
 );
 await shot('06-area-layers-satellite');
-await page.getByRole('radio', { name: 'Streets' }).click();
+await page.getByRole('radio', { name: 'Light' }).click();
 await page.getByLabel('Buildings').uncheck();
 await page.getByLabel('Buildings').check();
 await page.getByRole('button', { name: 'Map layers' }).click();
@@ -167,10 +167,11 @@ await settle();
 check('priority sliders keep recommendations available', (await page.locator('.plan').count()) > 0);
 
 // 4b. Site planning: closer tree spacing plants more trees, and the map draws every one
+const atDefaultSpacing = await promisedTrees();
 await page.getByLabel(/Street-tree spacing/).fill('6');
 await settle();
 const closer = await promisedTrees();
-check('closer spacing plants more trees', closer > treesPromised, `${treesPromised} -> ${closer}`);
+check('closer spacing plants more trees', closer > atDefaultSpacing, `${atDefaultSpacing} -> ${closer}`);
 check('the map draws every tree at the new spacing', (await page.locator('.planted-tree').count()) === closer);
 await page.getByRole('button', { name: 'Reset site planning' }).click();
 await loadDemo();

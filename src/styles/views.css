@@ -109,3 +109,25 @@
     flex: 1 1 45%;
   }
 }
+
+/* Everyday places stay in the background; transit, schools, clinics and parks keep their colour. */
+.landmark--shops,
+.landmark--food,
+.landmark--other,
+.landmark--worship {
+  opacity: 0.6;
+}
+
+.landmark--shops .landmark__chip,
+.landmark--food .landmark__chip,
+.landmark--other .landmark__chip,
+.landmark--worship .landmark__chip {
+  transform: scale(0.8);
+  border-color: var(--color-rule);
+  color: var(--color-ink-soft);
+}
+
+/* "Light" background: the street map in soft greys, so shade colours read clearly on top. */
+.tiles--light {
+  filter: grayscale(1) contrast(0.8) brightness(1.08);
+}

@@ -94,6 +94,7 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
               opacity={basemap.opacity}
               subdomains={tiles.subdomains ?? 'abc'}
               maxNativeZoom={tiles.maxNativeZoom}
+              className={tiles.className}
             />
           )}
 
@@ -106,13 +107,15 @@ export function MapView({ before, after }: Pick<NetworkView, 'before' | 'after'>
           </Pane>
 
           <Pane name={AFTER_PANE} style={{ zIndex: PANE_Z.after }}>
-            {showAfter && <NetworkLayers {...after} caption="with plan" />}
+            {showAfter && <NetworkLayers {...after} caption="with plan" baseline={before.shade} />}
+            {/* What the plan builds belongs to the After side only, so Swipe compares like with like. */}
+            {showAfter && <PlantingLayer context={context} show="chosen" />}
           </Pane>
           <SwipeClip active={swiping} fraction={divider} />
 
-          {/* Every tree of every row and each walkway, unclipped like the markers above them. */}
+          {/* A candidate whose spec pack is open, previewed on both sides even if not in the plan. */}
           <Pane name={PLANTING_PANE} style={{ zIndex: PANE_Z.planting }}>
-            <PlantingLayer context={context} showChosen={showAfter} />
+            <PlantingLayer context={context} show={showAfter ? 'preview' : 'preview-all'} />
           </Pane>
 
           <Pane name={DESTINATION_PANE} style={{ zIndex: PANE_Z.destinations }}>

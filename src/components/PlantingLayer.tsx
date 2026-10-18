@@ -52,47 +52,63 @@ function useCrownRadiusM(): number {
   return (SAPLING_CROWN_M + (matureM - SAPLING_CROWN_M) * growth) / 2;
 }
 
+/**
+ * Which items to draw: `chosen` = everything in the plan (the After side); `preview` = the
+ * candidate whose spec pack is open, when it is not already drawn as chosen; `preview-all` =
+ * the open candidate even if chosen (Before mode, where nothing is planted yet).
+ */
+export type PlantingShow = 'chosen' | 'preview' | 'preview-all';
+
 interface PlantingLayerProps {
   context: AreaContext | null;
-  /** False in Before mode: nothing is planted yet, so every item is drawn as a candidate. */
-  showChosen: boolean;
+  show: PlantingShow;
 }
 
-/** Every tree of every row, and each covered walkway, where they would stand on the ground. */
-export function PlantingLayer({ context, showChosen }: PlantingLayerProps) {
+function useVisible(show: PlantingShow): (id: string) => boolean {
+  const chosenIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
+  const openId = useScenarioStore((s) => s.view === 'spec' ? s.selectedInterventionId : null);
+  if (show === 'chosen') return (id) => chosenIds.includes(id);
+  if (show === 'preview') return (id) => id === openId && !chosenIds.includes(id);
+  return (id) => id === openId;
+}
+
+/** Every tree of a row, and each covered walkway, where they would stand on the ground. */
+export function PlantingLayer({ context, show }: PlantingLayerProps) {
   const placed = usePlacements(context);
   const crownM = useCrownRadiusM();
-  const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
+  const visible = useVisible(show);
   const openIntervention = useScenarioStore((s) => s.openIntervention);
+  const built = show === 'chosen';
 
   return (
     <>
-      {placed.map(({ intervention, trees, walkway }) => {
-        const chosen = showChosen && selectedIds.includes(intervention.id);
-        const open = { click: () => openIntervention(intervention.id) };
-        if (intervention.type === 'shelter') {
-          return (
-            <Polyline
-              key={`${intervention.id}-${chosen}`}
-              positions={walkway}
-              pathOptions={chosen ? WALKWAY_CHOSEN_STYLE : WALKWAY_CANDIDATE_STYLE}
-              eventHandlers={open}
-            >
-              <Tooltip sticky>{intervention.name}</Tooltip>
-            </Polyline>
-          );
-        }
-        return trees.map((position, index) => (
-          <TreeMark
-            key={`${intervention.id}-${index}-${chosen}`}
-            position={position}
-            crownM={crownM}
-            chosen={chosen}
-            label={`Tree ${index + 1} of ${trees.length} · ${intervention.name}`}
-            onClick={open.click}
-          />
-        ));
-      })}
+      {placed
+        .filter(({ intervention }) => visible(intervention.id))
+        .map(({ intervention, trees, walkway }) => {
+          const open = () => openIntervention(intervention.id);
+          if (intervention.type === 'shelter') {
+            return (
+              <Polyline
+                key={`${intervention.id}-${built}`}
+                positions={walkway}
+                pathOptions={built ? WALKWAY_CHOSEN_STYLE : WALKWAY_CANDIDATE_STYLE}
+                eventHandlers={{ click: open }}
+              >
+                <Tooltip sticky>{intervention.name}</Tooltip>
+              </Polyline>
+            );
+          }
+          return trees.map((position, index) => (
+            <TreeMark
+              key={`${intervention.id}-${index}-${built}`}
+              position={position}
+              crownM={crownM}
+              chosen={built}
+              label={`Tree ${index + 1} of ${trees.length} · ${intervention.name}`}
+              onClick={open}
+            />
+          ));
+        })}
     </>
   );
 }
