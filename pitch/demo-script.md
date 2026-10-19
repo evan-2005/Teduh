@@ -82,7 +82,7 @@ If you are recording, use **Snipping Tool → Record** (Win+Shift+R) or OBS, at 
 | **3:45** | Steven | "Under the hood: open map data, the real sun position, real station counts, and a score anyone can inspect: hours walked in direct sun, avoided." | Alt+Tab to the deck, **How it works** slide. | |
 | **4:05** | Thien Gen | "In this scenario, RM 94,000 takes 12.7 pedestrian-hours a day out of direct sun. These are model estimates; a pilot measures the real effect." | Next slide: **Impact**. | |
 | **4:20** | Thien Gen | "Routing apps like Singapore's Undercover help a walker. Teduh helps a township decide what to build." | Next slide: **Innovation**. | |
-| **4:30** | Steven | "It already runs on 16 Klang Valley areas and any other place in about 40 seconds: this is SDP's Ara Damansara." | Next slide: **Feasibility**. | |
+| **4:30** | Steven | "It already runs on 15 Klang Valley areas and any other place in about 40 seconds: this is SDP's Ara Damansara." | Next slide: **Feasibility**. | |
 | **4:45** | Thien Gen | "Our ask: one SDP township to pilot, a landscape contact and a small budget line. Survey, build, measure in six months. Thank you." | Next slide: **Implementation**. Stop at 5:00. | |
 
 ★ **If the headline drops after Confirm** (for example 12.7 → 7.9): the photo says the walkway's path already has some shade, so the walkway is worth less. If you have time, say: *"See, one photo changed the decision. That's why the survey matters."* Before the next run, click **Undo all** in **4 AI scan** (or the **Demo** button again).
@@ -97,7 +97,7 @@ If you are recording, use **Snipping Tool → Record** (Win+Shift+R) or OBS, at 
 | Top bar **2 Plan builder** | Budget, **Recommend a plan**, the plan cards (Best, Option 2, Option 3), site planning, unit costs, **Place your own**, candidates, priorities |
 | Top bar **3 Spec pack** | The build details for one tree row or walkway: drawing, bill of materials, CSV/JSON download |
 | Top bar **4 AI scan** | Upload a path photo → AI shade estimate → adjust → confirm. Also **Plan explainer** (a written summary of the plan) |
-| **Area** dropdown | Switch between the 16 built-in neighbourhoods. Keep it on **SS 15, Subang Jaya** for the demo |
+| **Area** dropdown | Switch between the 15 built-in Klang Valley neighbourhoods (plus one invented test area). Keep it on **SS 15, Subang Jaya** for the demo |
 | **Look up a place** | Builds any place from OpenStreetMap in about 40 s. Needs internet |
 | **Before / After / Swipe** (top of map) | Which version of the map you see. **Swipe** shows both with a draggable divider |
 | **Now / Future**, **Year**, **Grow** | Today's shade or the shade once the trees grow. **Grow** animates years 0→10 |

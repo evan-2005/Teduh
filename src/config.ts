@@ -1,6 +1,6 @@
 import type { ClockTime, Scenario, TimeSlot } from './types';
 
-// Placeholder Malaysian township coordinate. Teammate C supplies the real one.
+// Fallback map centre for the invented seed area (real areas carry their own centre).
 export const MAP_CENTER: readonly [number, number] = [3.1075, 101.607];
 export const MAP_ZOOM = 16;
 

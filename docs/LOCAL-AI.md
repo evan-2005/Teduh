@@ -98,7 +98,7 @@ OLLAMA_MODEL=gemma3:4b
    - **Scan:** `{ model, stream: false, messages: [{ role: 'user', content: SHADE_PROMPT, images: [base64] }], format: <JSON schema for shadeScanBodySchema>, options: { temperature: 0 } }`. Ollama's `format` field accepts a JSON schema and constrains the output to it; still validate with zod afterwards. Generate the schema with zod's `z.toJSONSchema(shadeScanBodySchema)` (zod v4 is installed), or write it by hand if that output does not suit Ollama.
    - **Explainer:** same endpoint, no images, with `EXPLAIN_SYSTEM` as a system message and `planFacts(plan)` as the user message.
    - **Timeout:** use `AbortSignal.timeout(...)` with a named constant of about 60 s, since the first call loads the model.
-   - Pass the photo's time slot into the prompt (the Claude path ignores it today, which is item 23 in `docs/IMPROVEMENTS.md`).
+   - Pass the photo's time slot into the prompt (the Claude path ignores it today, which is item 23 in `docs/archive/IMPROVEMENTS.md`).
 3. Pick the provider in `server/index.ts` from env: `AI_PROVIDER=ollama` uses Ollama (`OLLAMA_URL` defaults to `http://localhost:11434`, `OLLAMA_MODEL` defaults to `gemma3:4b`). Otherwise use Claude when `ANTHROPIC_API_KEY` is set, else mock. Log the chosen mode once at startup, like today.
    - `createApp` should take `getProvider: () => AiProvider | null` instead of `getClient`, and keep the existing tests working by adapting them.
 4. **Guard against banned claims.** Small local models drift more than Claude. If an explanation mentions temperature, cooler or cooling, health, healthy, safe or safety, fall back to `templateSummary`. Put the word list in one named constant and test it.

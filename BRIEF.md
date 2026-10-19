@@ -3,7 +3,7 @@
 > **Small changes. Cooler journeys.**
 > Track: Planet · Focus: Climate resilience · Supporting: green transport, biodiversity
 > v2 adds **Map Restoration (before/after simulation)** and **AI Reconstruction & Fabrication Data**, and ranks every feature by feasibility.
-> **Build window: Thu 15 Oct → deadline Tue 20 Oct 2026** (5 days; demo freeze Mon 19 noon).
+> **Submission: 23 Oct 2026, 11:59 pm** (deck, 5-minute video, code link). The build ran 15–19 Oct.
 
 ---
 
