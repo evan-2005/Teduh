@@ -5,8 +5,12 @@ import { z } from 'zod';
 const MAX_LIST_ITEMS = 10;
 const MAX_LABEL_CHARS = 80;
 const MAX_NOTES_CHARS = 400;
+const MAX_SOURCE_CHARS = 80;
 
-/** What Claude is asked to return (the server adds segmentId and isMock). */
+/** Which model wrote a non-mock reply, e.g. "Claude" or "a local model (gemma3:4b)". */
+const sourceSchema = z.string().max(MAX_SOURCE_CHARS).optional();
+
+/** What the vision model is asked to return (the server adds segmentId and isMock). */
 export const shadeScanBodySchema = z.object({
   shadeFraction: z.number().min(0).max(1),
   shadeSources: z.array(z.string().max(MAX_LABEL_CHARS)).max(MAX_LIST_ITEMS),
@@ -18,11 +22,13 @@ export const shadeScanBodySchema = z.object({
 export const shadeScanResultSchema = shadeScanBodySchema.extend({
   segmentId: z.string().min(1),
   isMock: z.boolean(),
+  source: sourceSchema,
 });
 
 export const explainResponseSchema = z.object({
   summary: z.string().min(1),
   isMock: z.boolean(),
+  source: sourceSchema,
 });
 
 const routeSchema = z.object({

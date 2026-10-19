@@ -8,6 +8,10 @@ export default defineConfig({
   server: {
     proxy: { '/api': `http://localhost:${API_PORT}` },
   },
+  // The demo runs on the production build (npm run preview), which needs the same proxy.
+  preview: {
+    proxy: { '/api': `http://localhost:${API_PORT}` },
+  },
   test: {
     environment: 'node',
     // Unit tests assert on the synthetic dataset; the app defaults to the real-area one.

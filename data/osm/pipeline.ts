@@ -272,10 +272,11 @@ export function buildArea(input: BuildInput): BuiltArea {
     areaCentre: [0, 0],
     streetOf: (nodeId) => streetAtNode.get(nodeId),
     ridership: input.ridership,
+    buildings: parsed.buildings,
   });
   if (journeys.length < MIN_JOURNEYS) {
     throw new AreaTooSparseError(
-      'Too few bus stops, stations or homes are mapped here, within walking distance of schools, shops, clinics or parks. Try a denser built-up area.',
+      'Too few bus stops, stations, homes, shops or shophouse rows are mapped here, within walking distance of each other. Try a nearby town centre.',
     );
   }
 

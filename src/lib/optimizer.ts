@@ -8,7 +8,7 @@ import type {
   PlanResult,
   RouteResult,
   ShadeOverride,
-  TimeSlot,
+  ClockTime,
 } from '../types';
 import type { Graph } from './graph';
 import { routeResult } from './metrics';
@@ -21,7 +21,7 @@ export interface OptimizerInput {
   destinations: readonly Destination[];
   journeys: readonly Journey[];
   candidates: readonly Intervention[];
-  time: TimeSlot;
+  time: ClockTime;
   canopy: CanopyMode;
   canopyYear: number;
   detourLimit: number;

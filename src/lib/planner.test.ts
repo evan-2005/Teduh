@@ -6,6 +6,7 @@ import {
   adjustInterventions,
   coveredLengthM,
   DEFAULT_PLANNER,
+  effectiveUnitCosts,
   isDefaultPlanner,
   shelterBuiltLengthM,
   treesInRow,
@@ -76,6 +77,44 @@ describe('adjustInterventions', () => {
       expect(after.shadeNow).toBeCloseTo((SHELTER_SHADE * 40) / stretchM, 2);
     }
     expect(capped.filter((i) => i.type === 'tree')).toEqual(trees);
+  });
+});
+
+describe('costs the planner enters', () => {
+  test('a dearer sapling re-prices every tree row and leaves counts and shade alone', () => {
+    const sapling = area.unitCosts.items['sapling']!.unitCost;
+    const settings = { ...DEFAULT_PLANNER, unitCosts: { sapling: sapling * 2 } };
+    const dearer = adjustInterventions(area.interventions, settings, ctx);
+    for (const tree of trees) {
+      const after = dearer.find((i) => i.id === tree.id)!;
+      expect(after.installCost).toBeGreaterThan(tree.installCost);
+      expect(after.name).toBe(tree.name);
+      expect(after.shadeFuture).toBe(tree.shadeFuture);
+    }
+  });
+
+  test('a dearer steel post re-prices every walkway at its full length', () => {
+    const settings = { ...DEFAULT_PLANNER, unitCosts: { steelPost: 760 } };
+    const dearer = adjustInterventions(area.interventions, settings, ctx);
+    for (const shelter of shelters) {
+      const after = dearer.find((i) => i.id === shelter.id)!;
+      expect(after.installCost).toBeGreaterThan(shelter.installCost);
+      expect(after.shadeNow).toBe(shelter.shadeNow);
+    }
+  });
+
+  test('the edited prices feed the bill of materials', () => {
+    const costs = effectiveUnitCosts(area.unitCosts, { unitCosts: { sapling: 300 } });
+    expect(costs.items['sapling']!.unitCost).toBe(300);
+    expect(costs.items['treeGuard']).toBe(area.unitCosts.items['treeGuard']);
+    expect(effectiveUnitCosts(area.unitCosts, DEFAULT_PLANNER)).toBe(area.unitCosts);
+  });
+
+  test('a quote replaces the install cost of one item and nothing else', () => {
+    const first = area.interventions[0]!;
+    const quoted = adjustInterventions(area.interventions, { ...DEFAULT_PLANNER, quotes: { [first.id]: 55_000 } }, ctx);
+    expect(quoted[0]).toEqual({ ...first, installCost: 55_000 });
+    expect(quoted.slice(1)).toEqual(area.interventions.slice(1));
   });
 });
 

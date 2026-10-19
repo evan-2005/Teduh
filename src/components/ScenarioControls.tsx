@@ -1,8 +1,10 @@
-import { DEMO_TIME, TIME_SLOTS } from '../config';
+import { useState } from 'react';
+import { DEMO_TIME, TIME_RANGE, TIME_SLOTS } from '../config';
 import { dataset, meta } from '../data/dataset';
 import { demoWalkNames } from '../data/meta';
 import { useDemoPreset } from '../hooks/useDemoPreset';
-import { demoLabel, formatMyr } from '../lib/format';
+import { clockOf, isSlot, minutesOf } from '../lib/clock';
+import { demoLabel, formatClock, formatMyr } from '../lib/format';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
 
@@ -28,7 +30,44 @@ export function DemoButton() {
   );
 }
 
-/** Budget slider and the button that applies the best plan within it. */
+/** The most anyone can type in: well above any area's slider range. */
+const MAX_TYPED_BUDGET = 10_000_000;
+
+/** A typed budget, kept whole and within 0..MAX_TYPED_BUDGET; null when it is not a number. */
+export function parseBudget(text: string): number | null {
+  const value = Number(text.replace(/[,\s]/g, ''));
+  if (text.trim() === '' || !Number.isFinite(value) || value < 0) return null;
+  return Math.min(MAX_TYPED_BUDGET, Math.max(0, Math.round(value)));
+}
+
+function BudgetInput() {
+  const budget = useScenarioStore((s) => s.scenario.budget);
+  const setScenario = useScenarioStore((s) => s.setScenario);
+  // What the person is typing; the box shows the stored budget again once they leave it.
+  const [draft, setDraft] = useState<string | null>(null);
+  return (
+    <label className="budget-input">
+      <span>RM</span>
+      <input
+        type="number"
+        inputMode="numeric"
+        min={0}
+        max={MAX_TYPED_BUDGET}
+        step={meta.budget.step}
+        value={draft ?? String(budget)}
+        aria-label="Budget in ringgit"
+        onChange={(e) => {
+          setDraft(e.target.value);
+          const value = parseBudget(e.target.value);
+          if (value !== null) setScenario({ budget: value });
+        }}
+        onBlur={() => setDraft(null)}
+      />
+    </label>
+  );
+}
+
+/** Budget slider, a box to type an exact amount, and the button that applies the best plan. */
 export function BudgetControl({ plans }: { plans: readonly PlanResult[] }) {
   const budget = useScenarioStore((s) => s.scenario.budget);
   const setScenario = useScenarioStore((s) => s.setScenario);
@@ -36,19 +75,23 @@ export function BudgetControl({ plans }: { plans: readonly PlanResult[] }) {
   const best = plans[0];
   return (
     <>
-      <label className="field">
+      <div className="field">
         <span className="field__label">
           Budget: <span className="num">{formatMyr(budget)}</span>
         </span>
-        <input
-          type="range"
-          min={0}
-          max={meta.budget.max}
-          step={meta.budget.step}
-          value={budget}
-          onChange={(e) => setScenario({ budget: Number(e.target.value) })}
-        />
-      </label>
+        <div className="budget">
+          <input
+            type="range"
+            min={0}
+            max={Math.max(meta.budget.max, budget)}
+            step={meta.budget.step}
+            value={budget}
+            aria-label="Budget"
+            onChange={(e) => setScenario({ budget: Number(e.target.value) })}
+          />
+          <BudgetInput />
+        </div>
+      </div>
       <button
         type="button"
         className="button button--primary"
@@ -62,27 +105,47 @@ export function BudgetControl({ plans }: { plans: readonly PlanResult[] }) {
   );
 }
 
+const START_MIN = minutesOf(TIME_RANGE.start);
+const END_MIN = minutesOf(TIME_RANGE.end);
+
+/** Time of day in half hours. Shade between the four snapshot times is interpolated. */
 export function TimeOfDayControl() {
   const time = useScenarioStore((s) => s.scenario.time);
   const setScenario = useScenarioStore((s) => s.setScenario);
   return (
-    <fieldset className="field">
-      <legend className="field__label">Time of day</legend>
-      <div className="segmented" role="radiogroup" aria-label="Time of day">
+    <label className="field">
+      <span className="field__label">
+        Time of day: <span className="num">{formatClock(time)}</span>
+      </span>
+      <input
+        type="range"
+        min={START_MIN}
+        max={END_MIN}
+        step={TIME_RANGE.stepMinutes}
+        value={minutesOf(time)}
+        aria-label="Time of day"
+        aria-valuetext={formatClock(time)}
+        list="time-snapshots"
+        onChange={(e) => setScenario({ time: clockOf(Number(e.target.value)) })}
+      />
+      <datalist id="time-snapshots">
         {TIME_SLOTS.map((t) => (
-          <button
-            key={t}
-            type="button"
-            role="radio"
-            aria-checked={time === t}
-            className="segmented__option num"
-            onClick={() => setScenario({ time: t })}
-          >
-            {t}
-          </button>
+          <option key={t} value={minutesOf(t)} label={formatClock(t)} />
         ))}
-      </div>
-    </fieldset>
+      </datalist>
+      <span className="time-ticks num" aria-hidden="true">
+        {TIME_SLOTS.map((t) => (
+          <span key={t} style={{ left: `${((minutesOf(t) - START_MIN) / (END_MIN - START_MIN)) * 100}%` }}>
+            {formatClock(t)}
+          </span>
+        ))}
+      </span>
+      <span className="field__help">
+        {isSlot(time)
+          ? 'Shade at a modelled snapshot time.'
+          : 'Between snapshot times, shade is interpolated from the two either side.'}
+      </span>
+    </label>
   );
 }
 

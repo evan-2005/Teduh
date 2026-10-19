@@ -2,7 +2,8 @@ import { create } from 'zustand';
 import { DEFAULT_SCENARIO } from '../config';
 import { meta } from '../data/dataset';
 import { DEFAULT_PLANNER, type PlannerSettings } from '../lib/planner';
-import type { Scenario, ShadeOverride } from '../types';
+import type { Intervention, InterventionType, Scenario, ShadeOverride } from '../types';
+import { loadUserItems, saveUserItems } from './userItems';
 
 export type BasemapStyle = 'streets' | 'light' | 'satellite' | 'none';
 
@@ -18,6 +19,12 @@ export interface ContextLayers {
   /** Restaurants and cafes: many in busy areas, so off by default. */
   food: boolean;
   trees: boolean;
+}
+
+/** A tree row or walkway being placed: the kind, and the paths picked on the map so far. */
+export interface Placing {
+  type: InterventionType;
+  segmentIds: readonly string[];
 }
 
 /** The pages of the app. The map stays on screen on every page. */
@@ -39,6 +46,12 @@ interface ScenarioState {
   setPlanner: (patch: Partial<PlannerSettings>) => void;
   /** Select an intervention and open its spec pack. */
   openIntervention: (id: string) => void;
+  /** Tree rows and walkways the person placed themselves (saved per area in this browser). */
+  userItems: readonly Intervention[];
+  placing: Placing | null;
+  setPlacing: (placing: Placing | null) => void;
+  addUserItem: (item: Intervention) => void;
+  removeUserItem: (id: string) => void;
   setScenario: (patch: Partial<Scenario>) => void;
   applyShadeOverride: (override: ShadeOverride) => void;
   selectIntervention: (id: string | null) => void;
@@ -71,9 +84,38 @@ export const useScenarioStore = create<ScenarioState>((set) => ({
   contextLayers: { buildings: true, greens: true, landmarks: true, food: false, trees: true },
   view: 'overview',
   planner: DEFAULT_PLANNER,
-  setView: (view) => set({ view }),
+  // Pick mode only has controls in the Plan builder, so leaving it cancels a half-picked row.
+  setView: (view) => set((s) => ({ view, placing: view === 'plan' ? s.placing : null })),
   setPlanner: (patch) => set((s) => ({ planner: { ...s.planner, ...patch } })),
-  openIntervention: (id) => set({ selectedInterventionId: id, view: 'spec' }),
+  openIntervention: (id) => set({ selectedInterventionId: id, view: 'spec', placing: null }),
+  userItems: loadUserItems(),
+  placing: null,
+  setPlacing: (placing) => set({ placing }),
+  addUserItem: (item) =>
+    set((s) => {
+      const userItems = [...s.userItems, item];
+      saveUserItems(userItems);
+      return {
+        userItems,
+        placing: null,
+        scenario: { ...s.scenario, selectedInterventionIds: [...s.scenario.selectedInterventionIds, item.id] },
+      };
+    }),
+  removeUserItem: (id) =>
+    set((s) => {
+      const userItems = s.userItems.filter((i) => i.id !== id);
+      saveUserItems(userItems);
+      const { [id]: _quote, ...quotes } = s.planner.quotes;
+      return {
+        userItems,
+        planner: { ...s.planner, quotes },
+        selectedInterventionId: s.selectedInterventionId === id ? null : s.selectedInterventionId,
+        scenario: {
+          ...s.scenario,
+          selectedInterventionIds: s.scenario.selectedInterventionIds.filter((other) => other !== id),
+        },
+      };
+    }),
   setScenario: (patch) => set((s) => ({ scenario: { ...s.scenario, ...patch } })),
   applyShadeOverride: (override) =>
     set((s) => ({ shadeOverrides: withOverride(s.shadeOverrides, override) })),

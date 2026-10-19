@@ -53,7 +53,7 @@ This shows the neighbourhood's shade network being restored, so the gap closes v
 
 This turns field photos into map data, and turns chosen plans into something a contractor could quote on.
 
-- **AI shade reconstruction.** Upload a survey photo of a path segment. Claude (vision) estimates shade fraction, shade sources (tree, awning, building) and obstacles, with a confidence level. **A human confirms or adjusts** before it touches the map, and the data is labelled `ai-confirmed`.
+- **AI shade reconstruction.** Upload a survey photo of a path segment. A vision model (Claude in the cloud, or a small open model running on the laptop) estimates shade fraction, shade sources (tree, awning, building) and obstacles, with a confidence level. **A human confirms or adjusts** before it touches the map, and the data is labelled `ai-confirmed`.
 - **Fabrication data (rule-based, no AI needed).** For each selected shelter: modules, posts, footings, roof area, bill of materials, cost, and a simple dimensioned SVG elevation. For each tree: pit size, planting spec, suggested species list (flagged *to verify with landscape team*). Exports to CSV and JSON.
 - **AI plan explainer** (optional). An LLM writes the manager-facing summary **from numbers the calculator already produced**. It never invents figures.
 - **Stretch:** photo "after" mockup, 3D canopy view, sun-position shadow simulation, CAD/DXF export.

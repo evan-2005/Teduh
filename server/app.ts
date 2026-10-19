@@ -1,7 +1,8 @@
 import { Hono } from 'hono';
 import { TIME_SLOTS } from '../src/config';
 import { explainRequestSchema } from '../src/features/ai-scan/schemas';
-import { explainPlan, scanShade, type ClaudeClient, type ImageMediaType } from './claude';
+import type { TimeSlot } from '../src/types';
+import { explainWith, scanWith, type AiProvider, type ImageMediaType } from './ai';
 import { createRateLimiter } from './rateLimit';
 
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
@@ -11,8 +12,8 @@ const SEGMENT_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
 const ALLOWED_TYPES: readonly ImageMediaType[] = ['image/jpeg', 'image/png', 'image/webp'];
 
 export interface AppOptions {
-  /** Called per request so tests can swap clients and the key is never held in the module. */
-  getClient: () => ClaudeClient | null;
+  /** Called per request so tests can swap providers and the key is never held in the module. Null means mock. */
+  getProvider: () => AiProvider | null;
   allow?: (key: string) => boolean;
 }
 
@@ -25,6 +26,9 @@ export function sniffImageType(bytes: Uint8Array): ImageMediaType | null {
   const isWebp = bytes[8] === 0x57 && bytes[9] === 0x45 && bytes[10] === 0x42 && bytes[11] === 0x50;
   return isRiff && isWebp ? 'image/webp' : null;
 }
+
+const isTimeSlot = (value: unknown): value is TimeSlot =>
+  typeof value === 'string' && (TIME_SLOTS as readonly string[]).includes(value);
 
 export function createApp(options: AppOptions): Hono {
   const allow = options.allow ?? createRateLimiter();
@@ -49,7 +53,7 @@ export function createApp(options: AppOptions): Hono {
     if (typeof segmentId !== 'string' || segmentId.length > MAX_SEGMENT_ID_CHARS || !SEGMENT_ID_PATTERN.test(segmentId)) {
       return c.json({ error: 'Invalid segmentId.' }, 400);
     }
-    if (typeof time !== 'string' || !(TIME_SLOTS as readonly string[]).includes(time)) {
+    if (!isTimeSlot(time)) {
       return c.json({ error: 'Invalid time slot.' }, 400);
     }
     if (image.size > MAX_IMAGE_BYTES) return c.json({ error: 'Photo is larger than 5 MB.' }, 413);
@@ -62,13 +66,13 @@ export function createApp(options: AppOptions): Hono {
     if (!mediaType) return c.json({ error: 'File is not a valid JPEG, PNG or WebP image.' }, 400);
 
     const base64 = Buffer.from(bytes).toString('base64');
-    return c.json(await scanShade(options.getClient(), { base64, mediaType }, segmentId));
+    return c.json(await scanWith(options.getProvider(), { base64, mediaType }, segmentId, time));
   });
 
   app.post('/api/explain', async (c) => {
     const parsed = explainRequestSchema.safeParse(await c.req.json().catch(() => null));
     if (!parsed.success) return c.json({ error: 'Send a plan with at least one intervention.' }, 400);
-    return c.json(await explainPlan(options.getClient(), parsed.data));
+    return c.json(await explainWith(options.getProvider(), parsed.data));
   });
 
   return app;

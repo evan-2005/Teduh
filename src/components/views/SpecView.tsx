@@ -1,6 +1,7 @@
 import { FabricationPanel } from '../../features/fabrication';
 import { useInterventions } from '../../hooks/useInterventions';
 import { useScenarioStore } from '../../store/scenario';
+import { QuoteInput } from '../CostControls';
 import { InterventionFacts } from '../InterventionFacts';
 
 /** Page 3: one candidate in detail, with its build spec pack. */
@@ -32,6 +33,7 @@ export function SpecView() {
         <section className="card" aria-label="Candidate details">
           <h3 className="card__title">{intervention.name}</h3>
           <InterventionFacts intervention={intervention} />
+          <QuoteInput intervention={intervention} />
           <label className="field__inline">
             <input
               type="checkbox"

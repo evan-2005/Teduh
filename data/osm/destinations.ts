@@ -9,6 +9,7 @@ import { shortestRoute } from '../../src/lib/routing';
 import { centroid, distance, type XY } from './geometry';
 import type { Building, GreenFeature, Poi } from './parse';
 import { exitsFor, type RailRidership } from './ridership';
+import { shopRowPlaces } from './shopRows';
 import {
   capToExits,
   estimateTrips,
@@ -156,11 +157,13 @@ export function planDestinations(args: {
   streetOf?: (nodeId: string) => string | undefined;
   /** Real station exits; stations it covers replace the default rail weight. */
   ridership?: RailRidership;
+  /** Every mapped building: shophouse and commercial blocks become destinations if needed. */
+  buildings?: readonly Building[];
 }): Planned {
   const { graph, nodes, homes, pois, greens, areaCentre } = args;
   const places = placesFrom(pois, greens, nodes, args.ridership);
   const transit = places.filter((p) => p.role === 'transit');
-  const attractors = places.filter((p) => p.role === 'attractor');
+  let attractors = places.filter((p) => p.role === 'attractor');
 
   let candidates = tripsBetween(graph, transit, attractors);
   let chosen = selectJourneys(candidates, LIMITS);
@@ -168,6 +171,16 @@ export function planDestinations(args: {
   if (homesUsed.length > 0) {
     // Too little transit: residents walking to the stops and to the attractors fill the gap.
     candidates = [...candidates, ...tripsBetween(graph, homesUsed, [...transit, ...attractors])];
+    chosen = selectJourneys(candidates, LIMITS);
+  }
+  if (chosen.length < MIN_TRANSIT_JOURNEYS && args.buildings) {
+    // Few tagged shops: the shophouse rows themselves are where people walk to.
+    attractors = mergeNearby([...attractors, ...shopRowPlaces(args.buildings, nodes)]);
+    // Rebuild against the merged attractors, keeping the residents' walks to the stops.
+    candidates = [
+      ...tripsBetween(graph, [...transit, ...homesUsed], attractors),
+      ...tripsBetween(graph, homesUsed, transit),
+    ];
     chosen = selectJourneys(candidates, LIMITS);
   }
   chosen = capToExits(chosen, places);

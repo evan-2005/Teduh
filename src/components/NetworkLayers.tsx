@@ -3,6 +3,7 @@ import { useScenarioStore } from '../store/scenario';
 import { EXPOSED_THRESHOLD } from '../config';
 import { dataset, graph } from '../data/dataset';
 import type { LayerView } from '../hooks/useNetworkView';
+import { nearestSlot } from '../lib/clock';
 import type { ShadeLookup } from '../lib/shade';
 import type { PathSegment } from '../types';
 import { segmentPath, segmentsById } from './mapGeometry';
@@ -112,7 +113,7 @@ function SegmentLine({ segment, state, effectiveShade, caption, confirmed }: Seg
 export function NetworkLayers({ shade, comparison, caption, baseline }: NetworkLayersProps) {
   const time = useScenarioStore((s) => s.scenario.time);
   const overrides = useScenarioStore((s) => s.shadeOverrides);
-  const confirmed = new Set(overrides.filter((o) => o.time === time).map((o) => o.segmentId));
+  const confirmed = new Set(overrides.filter((o) => o.time === nearestSlot(time)).map((o) => o.segmentId));
   const states = new Map(segments.map((s) => [s.id, segmentState(s.id, shade, baseline)]));
   const changed = segments.filter((s) => states.get(s.id) === 'newly-shaded').map((s) => s.id);
   return (

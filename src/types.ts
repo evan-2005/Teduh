@@ -3,6 +3,8 @@
 
 export type DataSource = 'surveyed' | 'estimated' | 'ai-confirmed' | 'missing';
 export type TimeSlot = '09:00' | '12:00' | '14:00' | '17:00';
+/** Any time of day as "HH:MM"; shade between the TimeSlot snapshots is interpolated. */
+export type ClockTime = string;
 export type CanopyMode = 'now' | 'future';
 export type MapMode = 'before' | 'after' | 'swipe';
 
@@ -57,7 +59,7 @@ export interface Intervention {
 
 export interface Scenario {
   budget: number;
-  time: TimeSlot;
+  time: ClockTime;                    // e.g. '14:30'; 09:00..17:00 in the UI
   canopy: CanopyMode;
   canopyYear: number;                 // 0..10, drives growth slider
   detourLimit: number;                // 0.25 = up to 25% longer than shortest
@@ -125,6 +127,7 @@ export interface ShadeScanResult {
   confidence: 'low' | 'medium' | 'high';
   notes: string;
   isMock: boolean;
+  source?: string;                    // model behind a non-mock estimate, shown in the UI
 }
 export interface ShadeOverride { segmentId: string; time: TimeSlot; shade: number; source: 'ai-confirmed' }
 

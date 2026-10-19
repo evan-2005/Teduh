@@ -148,10 +148,14 @@ check(
 await openPage('Map & routes');
 const exposedCount = () => page.locator('.leaflet-pane path[stroke-dasharray]').count();
 const at1400 = await exposedCount();
-await page.getByRole('radio', { name: '09:00' }).click();
+const timeSlider = page.getByRole('slider', { name: 'Time of day' });
+await timeSlider.fill(String(9 * 60));
 await settle();
 check('changing time changes the exposed segments', (await exposedCount()) !== at1400);
-await page.getByRole('radio', { name: '14:00' }).click();
+await timeSlider.fill(String(13 * 60 + 30));
+await settle();
+check('the time slider moves in half hours (1:30 pm)', (await page.getByText('Time of day: 1:30 pm').count()) > 0);
+await timeSlider.fill(String(14 * 60));
 
 // 4. Candidates and priorities recalculate
 await openPage('Plan builder');
@@ -174,6 +178,19 @@ const closer = await promisedTrees();
 check('closer spacing plants more trees', closer > atDefaultSpacing, `${atDefaultSpacing} -> ${closer}`);
 check('the map draws every tree at the new spacing', (await page.locator('.planted-tree').count()) === closer);
 await page.getByRole('button', { name: 'Reset site planning' }).click();
+
+// 4c. Budget box and prices: a typed budget sticks; a dearer sapling re-prices tree rows
+await page.getByLabel('Budget in ringgit').fill('123456');
+await settle();
+check('a typed budget is used', (await page.getByText('Budget: RM 123,456').count()) > 0);
+const treeCost = () =>
+  page.locator('.candidate-row', { hasText: 'Trees on' }).first().locator('.candidate__meta .num').innerText();
+const before = await treeCost();
+await page.getByText(/^Unit costs \(MYR\)/).click();
+await page.getByLabel(/Sapling, 2 m container-grown/).fill('500');
+await settle();
+check('editing a unit price re-prices the tree rows', (await treeCost()) !== before, `${before} -> ${await treeCost()}`);
+await page.getByRole('button', { name: 'Back to the estimated prices' }).click();
 await loadDemo();
 
 // 5. Future canopy + growth

@@ -1,13 +1,12 @@
 import L from 'leaflet';
 import { useMemo, useState } from 'react';
 import { Marker, Tooltip, useMap, useMapEvents } from 'react-leaflet';
-import { dataset } from '../data/dataset';
 import { useInterventions } from '../hooks/useInterventions';
 import { formatMyr } from '../lib/format';
 import { spreadOverlapping, type Offset } from '../lib/spread';
 import { useScenarioStore } from '../store/scenario';
 import type { InterventionType } from '../types';
-import { interventionPosition } from './mapGeometry';
+import { interventionPosition, type LatLngTuple } from './mapGeometry';
 
 const ICON_SIZE = 30;
 
@@ -25,17 +24,13 @@ const iconFor = (type: InterventionType, selected: boolean, offset: Offset): L.D
     iconAnchor: [ICON_SIZE / 2 - offset.dx, ICON_SIZE / 2 - offset.dy],
   });
 
-const positions = new Map(
-  dataset.interventions.map((i) => [i.id, interventionPosition(i)] as const),
-);
-
 const NO_OFFSET: Offset = { dx: 0, dy: 0 };
 
 /**
  * Markers that would overlap at the current zoom are laid out side by side, so each one stays
  * visible and clickable. Recomputed when the zoom changes, since overlap depends on it.
  */
-function useSpreadOffsets(): Map<string, Offset> {
+function useSpreadOffsets(positions: ReadonlyMap<string, LatLngTuple>): Map<string, Offset> {
   const map = useMap();
   const [zoom, setZoom] = useState(() => map.getZoom());
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) });
@@ -45,7 +40,7 @@ function useSpreadOffsets(): Map<string, Offset> {
       return { id, x, y };
     });
     return spreadOverlapping(points, ICON_SIZE);
-  }, [map, zoom]);
+  }, [map, zoom, positions]);
 }
 
 interface InterventionMarkersProps {
@@ -58,7 +53,14 @@ export function InterventionMarkers({ showChosen }: InterventionMarkersProps) {
   const selectedIds = useScenarioStore((s) => s.scenario.selectedInterventionIds);
   const openIntervention = useScenarioStore((s) => s.openIntervention);
   const interventions = useInterventions();
-  const offsets = useSpreadOffsets();
+  // Positions depend only on the paths, so they change only when items are added or removed.
+  const segmentKey = interventions.map((i) => `${i.id}:${i.segmentIds.join(',')}`).join('|');
+  const positions = useMemo(
+    () => new Map(interventions.map((i) => [i.id, interventionPosition(i)] as const)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [segmentKey],
+  );
+  const offsets = useSpreadOffsets(positions);
 
   return (
     <>

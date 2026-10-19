@@ -54,3 +54,8 @@ export const WALKWAY_CANDIDATE_STYLE = {
   dashArray: '6 4',
   lineCap: 'butt',
 } as const;
+
+// Placing your own tree row or walkway: wide, nearly invisible click targets on every path,
+// and a strong purple for the paths picked so far (a colour the map uses for nothing else).
+export const PICK_TARGET_STYLE = { color: '#6d28d9', weight: 10, opacity: 0.06, lineCap: 'butt' } as const;
+export const PICKED_STYLE = { color: '#6d28d9', weight: 9, opacity: 0.85, lineCap: 'round' } as const;

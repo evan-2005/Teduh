@@ -2,10 +2,12 @@ import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { SourceBadge } from '../../components/SourceBadge';
 import { TIME_SLOTS } from '../../config';
 import { dataset } from '../../data/dataset';
+import { nearestSlot } from '../../lib/clock';
 import { createLatestTracker } from '../../lib/latest';
 import { useScenarioStore } from '../../store/scenario';
 import type { TimeSlot } from '../../types';
 import { requestShadeScan } from './client';
+import { downscalePhoto } from './downscale';
 import { overrideFromScan, type ScannedPhoto } from './override';
 
 type Status =
@@ -15,6 +17,23 @@ type Status =
   | { kind: 'done'; scan: ScannedPhoto };
 
 const percent = (fraction: number): string => `${Math.round(fraction * 100)}%`;
+
+/** "Jengka Avenue (Main road) · seg-116": readable enough to find a path in a long list. */
+const segmentLabel = (id: string, notes: string | undefined): string => {
+  const [kind, street] = (notes ?? '').split(':').map((part) => part.trim());
+  return street ? `${street} (${kind}) · ${id}` : `${kind || 'Path'} · ${id}`;
+};
+
+/** Every path, sorted by street name so the ones on one street sit together. */
+const SEGMENT_OPTIONS = dataset.neighbourhood.segments
+  .map((s) => ({ id: s.id, label: segmentLabel(s.id, s.notes) }))
+  .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+
+/** Start on a path the demo talks about: the open item's first path, else the first candidate's. */
+const defaultSegmentId = (interventionId: string | null): string => {
+  const open = dataset.interventions.find((i) => i.id === interventionId) ?? dataset.interventions[0];
+  return open?.segmentIds[0] ?? dataset.neighbourhood.segments[0]!.id;
+};
 const toMessage = (error: unknown): string =>
   error instanceof Error ? error.message : 'Something went wrong. Try again.';
 
@@ -24,9 +43,10 @@ export function ShadeScanPanel() {
   const overrides = useScenarioStore((s) => s.shadeOverrides);
   const applyShadeOverride = useScenarioStore((s) => s.applyShadeOverride);
   const clearShadeOverrides = useScenarioStore((s) => s.clearShadeOverrides);
+  const openInterventionId = useScenarioStore((s) => s.selectedInterventionId);
 
-  const [segmentId, setSegmentId] = useState(dataset.neighbourhood.segments[0]!.id);
-  const [time, setTime] = useState<TimeSlot>(scenarioTime);
+  const [segmentId, setSegmentId] = useState(() => defaultSegmentId(openInterventionId));
+  const [time, setTime] = useState<TimeSlot>(nearestSlot(scenarioTime));
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
@@ -59,7 +79,8 @@ export function ShadeScanPanel() {
     setStatus({ kind: 'loading' });
     setConfirmed(false);
     try {
-      const result = await requestShadeScan({ image: file, segmentId, time });
+      const image = await downscalePhoto(file);
+      const result = await requestShadeScan({ image, segmentId, time });
       if (!isCurrent()) return;
       setAdjusted(result.shadeFraction);
       setStatus({ kind: 'done', scan: { result, time } });
@@ -89,9 +110,9 @@ export function ShadeScanPanel() {
             resetEstimate();
           }}
         >
-          {dataset.neighbourhood.segments.map((s) => (
+          {SEGMENT_OPTIONS.map((s) => (
             <option key={s.id} value={s.id}>
-              {s.id}
+              {s.label}
             </option>
           ))}
         </select>
@@ -141,6 +162,9 @@ export function ShadeScanPanel() {
             AI estimate: <span className="num">{percent(status.scan.result.shadeFraction)}</span> shaded,{' '}
             {status.scan.result.confidence} confidence
           </p>
+          {status.scan.result.source && (
+            <p className="card__hint">Estimated by {status.scan.result.source}.</p>
+          )}
           <p className="card__hint">
             Sources: {status.scan.result.shadeSources.join(', ') || 'none named'}. Obstacles:{' '}
             {status.scan.result.obstacles.join(', ') || 'none seen'}.

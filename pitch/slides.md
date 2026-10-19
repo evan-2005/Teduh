@@ -1,6 +1,6 @@
-# TEDUH: slide outline
+# TEDUH: slide outline (superseded)
 
-One idea per slide. Paste into your slide tool; screenshots come from the running app.
+The finished deck is the **TEDUH Pitch Deck** artifact (10 main slides + appendix, speaker notes included). The run sheet and two-presenter script are in `demo-script.md`. This outline is kept for reference.
 
 ## 1. Title
 **Teduh.** Small changes. Cooler journeys. *Teduh* is Malay for shaded or sheltered. Track: Planet, climate resilience.

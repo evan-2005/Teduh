@@ -1,5 +1,7 @@
 import type { PlanResult } from '../../types';
 import { CandidateList } from '../CandidateList';
+import { UnitCostEditor } from '../CostControls';
+import { PlaceYourOwn } from '../PlaceYourOwn';
 import { PlanList } from '../PlanList';
 import { PlannerControls } from '../PlannerControls';
 import { Contributions, PlanSummary } from '../PlanSummary';
@@ -26,6 +28,8 @@ export function PlanBuilderView({ plans, selectedPlan }: PlanBuilderViewProps) {
       <section className="view__group" aria-label="What to build">
         <h2 className="panel__title">What to build</h2>
         <PlannerControls />
+        <UnitCostEditor />
+        <PlaceYourOwn />
         <CandidateList />
         <Contributions plan={selectedPlan} />
       </section>

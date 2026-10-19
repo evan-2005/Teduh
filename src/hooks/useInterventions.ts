@@ -11,12 +11,17 @@ const PLANNER_CONTEXT: PlannerContext = {
 };
 
 /**
- * The area's candidates with the planner settings applied (tree spacing and species, walkway
- * length). Use this, not `dataset.interventions`, so every panel shows the same figures.
+ * The area's candidates plus the person's own tree rows and walkways, with the planner settings
+ * applied (spacing, species, walkway length, prices, quotes). Use this, not
+ * `dataset.interventions`, so every panel shows the same figures.
  */
 export function useInterventions(): readonly Intervention[] {
   const planner = useScenarioStore((s) => s.planner);
-  return useMemo(() => adjustInterventions(dataset.interventions, planner, PLANNER_CONTEXT), [planner]);
+  const userItems = useScenarioStore((s) => s.userItems);
+  return useMemo(
+    () => adjustInterventions([...dataset.interventions, ...userItems], planner, PLANNER_CONTEXT),
+    [planner, userItems],
+  );
 }
 
 /** Name lookup for the current candidates, falling back to the id. */

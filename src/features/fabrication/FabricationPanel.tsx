@@ -3,7 +3,7 @@ import { SourceBadge } from '../../components/SourceBadge';
 import { dataset, graph } from '../../data/dataset';
 import { useInterventions } from '../../hooks/useInterventions';
 import { formatMyr } from '../../lib/format';
-import { coveredLengthM, shelterBuiltLengthM, type PlannerSettings } from '../../lib/planner';
+import { coveredLengthM, effectiveUnitCosts, shelterBuiltLengthM, type PlannerSettings } from '../../lib/planner';
 import { useScenarioStore } from '../../store/scenario';
 import type { FabricationSpec, Intervention } from '../../types';
 import { shelterElevationSvg } from './elevation';
@@ -32,7 +32,8 @@ const DIMENSION_LABELS: Readonly<Record<string, string>> = {
 
 /** The build spec under the planner settings: the chosen species, spacing and walkway length. */
 function specFor(intervention: Intervention, planner: PlannerSettings): FabricationSpec {
-  const { neighbourhood, unitCosts } = dataset;
+  const { neighbourhood } = dataset;
+  const unitCosts = effectiveUnitCosts(dataset.unitCosts, planner);
   const lengthM = coveredLengthM(intervention, graph.lengthBySegment);
   if (intervention.type === 'tree') {
     const species = unitCosts.speciesSuggestions[planner.speciesIndex];

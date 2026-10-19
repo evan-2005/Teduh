@@ -51,8 +51,11 @@ export function MapToolbar() {
   const setScenario = useScenarioStore((s) => s.setScenario);
   const { playing, toggle } = useGrowthPlayback();
   const isFuture = scenario.canopy === 'future';
+  // "Now" is today's canopy whatever the slider last held, so show year 0 rather than a stale year.
+  const shownYear = isFuture ? scenario.canopyYear : 0;
 
   const chooseCanopy = (canopy: CanopyMode) => {
+    if (canopy === 'now' && playing) toggle();
     // Future at year 0 would look identical to Now, so jump to maturity.
     const canopyYear = canopy === 'future' && scenario.canopyYear === 0 ? MAX_CANOPY_YEAR : scenario.canopyYear;
     setScenario({ canopy, canopyYear });
@@ -68,13 +71,13 @@ export function MapToolbar() {
       />
       <Segmented label="Canopy" options={CANOPIES} value={scenario.canopy} onChange={chooseCanopy} />
       <label className="map-toolbar__year">
-        <span className="num">Year {Math.round(scenario.canopyYear)}</span>
+        <span className="num">Year {Math.round(shownYear)}</span>
         <input
           type="range"
           min={0}
           max={MAX_CANOPY_YEAR}
           step={1}
-          value={scenario.canopyYear}
+          value={shownYear}
           disabled={!isFuture}
           aria-label="Canopy growth year"
           onChange={(e) => setScenario({ canopyYear: Number(e.target.value) })}

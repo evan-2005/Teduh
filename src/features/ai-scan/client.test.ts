@@ -62,6 +62,12 @@ describe('requestShadeScan', () => {
     expect(seen?.body).toBeInstanceOf(FormData);
   });
 
+  test('keeps the model label so the UI can say who made the estimate', async () => {
+    const labelled = { ...GOOD_SCAN, source: 'a local model (gemma3:4b)' };
+    const result = await requestShadeScan(scanArgs, async () => json(labelled));
+    expect(result.source).toBe('a local model (gemma3:4b)');
+  });
+
   test('turns a 500 into a friendly message', async () => {
     const message = await rejects(requestShadeScan(scanArgs, async () => json({}, 500)));
     expect(message).toMatch(/had a problem/);

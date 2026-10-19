@@ -1,5 +1,5 @@
 import { dataset } from '../data/dataset';
-import { DEFAULT_PLANNER, isDefaultPlanner } from '../lib/planner';
+import { DEFAULT_PLANNER, isDefaultSitePlanning } from '../lib/planner';
 import { SHELTER_LENGTH, TREE_SPACING } from '../lib/planting';
 import { useScenarioStore } from '../store/scenario';
 
@@ -88,8 +88,14 @@ export function PlannerControls() {
       <button
         type="button"
         className="link-button"
-        disabled={isDefaultPlanner(planner)}
-        onClick={() => setPlanner(DEFAULT_PLANNER)}
+        disabled={isDefaultSitePlanning(planner)}
+        onClick={() =>
+          setPlanner({
+            treeSpacingM: DEFAULT_PLANNER.treeSpacingM,
+            speciesIndex: DEFAULT_PLANNER.speciesIndex,
+            maxShelterM: DEFAULT_PLANNER.maxShelterM,
+          })
+        }
       >
         Reset site planning
       </button>

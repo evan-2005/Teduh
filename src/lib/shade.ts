@@ -1,17 +1,19 @@
 import { treeGrowth } from '../config';
 import type {
   CanopyMode,
+  ClockTime,
   Intervention,
   PathSegment,
   ShadeOverride,
   TimeSlot,
 } from '../types';
+import { valueAt } from './clock';
 
 /** Effective shade (0..1) per segment id. */
 export type ShadeLookup = ReadonlyMap<string, number>;
 
 export interface ShadeParams {
-  time: TimeSlot;
+  time: ClockTime;
   canopy: CanopyMode;
   canopyYear: number;
   /** Only the interventions that are applied (selected or part of a plan). */
@@ -32,12 +34,11 @@ export function interventionShade(
   return lerp(intervention.shadeNow, intervention.shadeFuture, growth);
 }
 
-/** base = override ?? survey snapshot; then the max with every covering intervention. */
+/** base = override ?? survey snapshot (interpolated between snapshot times); then the max with every covering intervention. */
 export function effectiveShade(segment: PathSegment, params: ShadeParams): number {
-  const override = params.overrides.find(
-    (o) => o.segmentId === segment.id && o.time === params.time,
-  );
-  let shade = override?.shade ?? segment.shade[params.time];
+  const atSlot = (slot: TimeSlot): number =>
+    params.overrides.find((o) => o.segmentId === segment.id && o.time === slot)?.shade ?? segment.shade[slot];
+  let shade = valueAt(atSlot, params.time);
   for (const intervention of params.interventions) {
     if (!intervention.segmentIds.includes(segment.id)) continue;
     shade = Math.max(shade, interventionShade(intervention, params.canopy, params.canopyYear));

@@ -162,7 +162,7 @@ describe('area pipeline on a synthetic town', () => {
     const sparse = () =>
       buildArea({ area: MINI_AREA, elements: miniAreaElements({ withHouses: false }), unitCosts, fetchedAt: '2026-10-15' });
     expect(sparse).toThrow(AreaTooSparseError);
-    expect(sparse).toThrow(/bus stops, stations or homes/);
+    expect(sparse).toThrow(/bus stops, stations, homes, shops or shophouse rows/);
   });
 
   test('refuses an area with almost no paths', () => {

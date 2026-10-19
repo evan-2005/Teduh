@@ -2,7 +2,9 @@ import type Anthropic from '@anthropic-ai/sdk';
 import { describe, expect, test } from 'vitest';
 import type { ExplainRequest } from '../src/features/ai-scan/schemas';
 import { createApp, MAX_IMAGE_BYTES, sniffImageType } from './app';
-import { extractJson, templateSummary, type ClaudeClient } from './claude';
+import { extractJson } from './ai';
+import { createClaudeProvider, type ClaudeClient } from './claude';
+import { templateSummary } from './prompts';
 import { createRateLimiter } from './rateLimit';
 
 const PNG_BYTES = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 0]);
@@ -36,7 +38,9 @@ function scanForm(over: { file?: File; segmentId?: string; time?: string } = {})
 const post = (app: ReturnType<typeof createApp>, form: FormData) =>
   app.request('/api/shade-scan', { method: 'POST', body: form });
 
-const noKeyApp = () => createApp({ getClient: () => null });
+const noKeyApp = () => createApp({ getProvider: () => null });
+const appWith = (client: ClaudeClient) =>
+  createApp({ getProvider: () => createClaudeProvider(client) });
 
 describe('GET /api/health', () => {
   test('returns ok', async () => {
@@ -81,20 +85,19 @@ describe('POST /api/shade-scan results', () => {
   });
 
   test('returns the validated Claude estimate', async () => {
-    const app = createApp({ getClient: () => fakeClient(GOOD_SCAN) });
-    const body = await (await post(app, scanForm())).json();
-    expect(body).toMatchObject({ isMock: false, shadeFraction: 0.7, confidence: 'high' });
+    const body = await (await post(appWith(fakeClient(GOOD_SCAN)), scanForm())).json();
+    expect(body).toMatchObject({ isMock: false, shadeFraction: 0.7, confidence: 'high', source: 'Claude' });
   });
 
   test('accepts JSON wrapped in code fences', async () => {
-    const app = createApp({ getClient: () => fakeClient('```json\n' + GOOD_SCAN + '\n```') });
+    const app = appWith(fakeClient('```json\n' + GOOD_SCAN + '\n```'));
     expect((await (await post(app, scanForm())).json()).isMock).toBe(false);
   });
 
   test('falls back to mock on invalid JSON, out-of-range values and API errors', async () => {
     const bad = JSON.stringify({ ...JSON.parse(GOOD_SCAN), shadeFraction: 4 });
     for (const client of [fakeClient('sorry, no'), fakeClient(bad), failingClient]) {
-      const app = createApp({ getClient: () => client });
+      const app = appWith(client);
       const res = await post(app, scanForm());
       expect(res.status).toBe(200);
       expect((await res.json()).isMock).toBe(true);
@@ -131,12 +134,22 @@ describe('POST /api/explain', () => {
   });
 
   test('returns the model summary when a client is available', async () => {
-    const app = createApp({ getClient: () => fakeClient('A short summary.') });
-    expect(await (await postJson(app, PLAN)).json()).toEqual({ summary: 'A short summary.', isMock: false });
+    const app = appWith(fakeClient('A short summary.'));
+    expect(await (await postJson(app, PLAN)).json()).toEqual({
+      summary: 'A short summary.',
+      isMock: false,
+      source: 'Claude',
+    });
+  });
+
+  test('falls back to the template when the model makes a banned claim', async () => {
+    const body = await (await postJson(appWith(fakeClient('The walk will be safer.')), PLAN)).json();
+    expect(body.isMock).toBe(true);
+    expect(body.source).toBeUndefined();
   });
 
   test('falls back to the template when the API fails', async () => {
-    const app = createApp({ getClient: () => failingClient });
+    const app = appWith(failingClient);
     expect((await (await postJson(app, PLAN)).json()).isMock).toBe(true);
   });
 
@@ -148,7 +161,7 @@ describe('POST /api/explain', () => {
 
 describe('rate limiting', () => {
   test('returns 429 when the limiter refuses', async () => {
-    const app = createApp({ getClient: () => null, allow: () => false });
+    const app = createApp({ getProvider: () => null, allow: () => false });
     expect((await postJson(app, PLAN)).status).toBe(429);
     expect((await app.request('/api/health')).status).toBe(200);
   });

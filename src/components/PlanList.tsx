@@ -8,12 +8,12 @@ import { SourceBadge } from './SourceBadge';
 
 const plural = (n: number, one: string, many: string): string => `${n} ${n === 1 ? one : many}`;
 
-/** "1 shelter + 3 tree rows": the shape of a plan at a glance. */
+/** "1 covered walkway + 3 tree rows": the shape of a plan at a glance. */
 function summarise(ids: readonly string[], byId: ReadonlyMap<string, Intervention>): string {
   const shelters = ids.filter((id) => byId.get(id)?.type === 'shelter').length;
   const trees = ids.length - shelters;
   return [
-    shelters > 0 ? plural(shelters, 'shelter', 'shelters') : null,
+    shelters > 0 ? plural(shelters, 'covered walkway', 'covered walkways') : null,
     trees > 0 ? plural(trees, 'tree row', 'tree rows') : null,
   ]
     .filter(Boolean)

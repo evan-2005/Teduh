@@ -22,12 +22,18 @@ export interface PlannerSettings {
   speciesIndex: number;
   /** Longest covered walkway to build; longer stretches are covered from their start. */
   maxShelterM: number;
+  /** Unit-cost item key (e.g. "sapling") -> the price the planner entered, in MYR per unit. */
+  unitCosts: Readonly<Record<string, number>>;
+  /** Intervention id -> a contractor quote that replaces its estimated install cost. */
+  quotes: Readonly<Record<string, number>>;
 }
 
 export const DEFAULT_PLANNER: PlannerSettings = {
   treeSpacingM: TREE_SPACING.default,
   speciesIndex: 0,
   maxShelterM: SHELTER_LENGTH.max,
+  unitCosts: {},
+  quotes: {},
 };
 
 export interface PlannerContext {
@@ -43,8 +49,26 @@ const METRES_IN_NAME = /\(\d+ m\)/;
 const hasDefaultTrees = (s: PlannerSettings): boolean =>
   s.treeSpacingM === DEFAULT_PLANNER.treeSpacingM && s.speciesIndex === DEFAULT_PLANNER.speciesIndex;
 
-export const isDefaultPlanner = (s: PlannerSettings): boolean =>
+const hasDefaultUnitCosts = (s: PlannerSettings): boolean => Object.keys(s.unitCosts).length === 0;
+
+/** Site-planning choices at their defaults (costs are judged separately). */
+export const isDefaultSitePlanning = (s: PlannerSettings): boolean =>
   hasDefaultTrees(s) && s.maxShelterM >= DEFAULT_PLANNER.maxShelterM;
+
+export const isDefaultPlanner = (s: PlannerSettings): boolean =>
+  isDefaultSitePlanning(s) && hasDefaultUnitCosts(s) && Object.keys(s.quotes).length === 0;
+
+/** The area's unit costs with the planner's own prices in place of the estimates. */
+export function effectiveUnitCosts(base: UnitCosts, settings: Pick<PlannerSettings, 'unitCosts'>): UnitCosts {
+  if (Object.keys(settings.unitCosts).length === 0) return base;
+  const items = Object.fromEntries(
+    Object.entries(base.items).map(([key, item]) => {
+      const price = settings.unitCosts[key];
+      return [key, price === undefined ? item : { ...item, unitCost: price }];
+    }),
+  );
+  return { ...base, items };
+}
 
 /** Total length of the path an intervention covers, in metres. */
 export const coveredLengthM = (
@@ -65,15 +89,18 @@ export function treesInRow(intervention: Pick<Intervention, 'name'>, rowM: numbe
 export const shelterBuiltLengthM = (stretchM: number, settings: PlannerSettings): number =>
   Math.min(stretchM, settings.maxShelterM);
 
+/** A tree row priced (and, when the spacing or species changed, counted and shaded) afresh. */
 function adjustTreeRow(tree: Intervention, settings: PlannerSettings, ctx: PlannerContext): Intervention {
   const rowM = coveredLengthM(tree, ctx.lengthBySegment);
+  const unitCosts = effectiveUnitCosts(ctx.unitCosts, settings);
+  const spec = generateTreeSpec(tree, unitCosts, rowM, settings.treeSpacingM);
+  const priced = { ...tree, ...treePlanningCost(spec, unitCosts) };
+  if (hasDefaultTrees(settings)) return priced;
   const species = ctx.unitCosts.speciesSuggestions[settings.speciesIndex];
-  const spec = generateTreeSpec(tree, ctx.unitCosts, rowM, settings.treeSpacingM);
   const count = treeCount(rowM, settings.treeSpacingM);
   return {
-    ...tree,
+    ...priced,
     name: tree.name.replace(TREES_IN_NAME, `(${count} ${count === 1 ? 'tree' : 'trees'})`),
-    ...treePlanningCost(spec, ctx.unitCosts),
     ...treeRowShade(species, settings.treeSpacingM),
     yearsToMature: species?.yearsToMature ?? tree.yearsToMature,
   };
@@ -86,10 +113,12 @@ function adjustTreeRow(tree: Intervention, settings: PlannerSettings, ctx: Plann
 function adjustShelter(shelter: Intervention, settings: PlannerSettings, ctx: PlannerContext): Intervention {
   const stretchM = coveredLengthM(shelter, ctx.lengthBySegment);
   const builtM = shelterBuiltLengthM(stretchM, settings);
-  if (stretchM <= 0 || builtM >= stretchM) return shelter;
+  const capped = stretchM > 0 && builtM < stretchM;
+  if (!capped && hasDefaultUnitCosts(settings)) return shelter;
   const covered = ctx.segments.filter((s) => shelter.segmentIds.includes(s.id));
   const widthM = Math.max(0, ...covered.map((s) => s.widthM));
-  const spec = buildShelterSpec(shelter, builtM, widthM, ctx.unitCosts);
+  const spec = buildShelterSpec(shelter, builtM, widthM, effectiveUnitCosts(ctx.unitCosts, settings));
+  if (!capped) return { ...shelter, ...shelterPlanningCost(spec) };
   const shade = Math.round(((SHELTER_SHADE * builtM) / stretchM) * SHADE_DECIMALS) / SHADE_DECIMALS;
   return {
     ...shelter,
@@ -110,9 +139,13 @@ export function adjustInterventions(
   ctx: PlannerContext,
 ): readonly Intervention[] {
   if (isDefaultPlanner(settings)) return interventions;
-  const treesChanged = !hasDefaultTrees(settings);
+  const treesChanged = !hasDefaultTrees(settings) || !hasDefaultUnitCosts(settings);
   return interventions.map((i) => {
-    if (i.type === 'shelter') return adjustShelter(i, settings, ctx);
-    return treesChanged ? adjustTreeRow(i, settings, ctx) : i;
+    const adjusted = i.type === 'shelter' ? adjustShelter(i, settings, ctx) : treesChanged ? adjustTreeRow(i, settings, ctx) : i;
+    return withQuote(adjusted, settings.quotes[i.id]);
   });
 }
+
+/** A contractor quote replaces the estimated install cost; upkeep stays estimated. */
+const withQuote = (intervention: Intervention, quote: number | undefined): Intervention =>
+  quote === undefined ? intervention : { ...intervention, installCost: quote };
