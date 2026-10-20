@@ -3,6 +3,8 @@ import {
   shadeScanBodySchema,
   type ExplainRequest,
   type ExplainResponse,
+  type SettingsSuggestion,
+  type SuggestRequest,
 } from '../src/features/ai-scan/schemas';
 import type { ShadeScanResult, TimeSlot } from '../src/types';
 import {
@@ -14,6 +16,7 @@ import {
   type ScanImage,
 } from './ai';
 import { EXPLAIN_SYSTEM, planFacts, shadePrompt } from './prompts';
+import { fallbackSuggestion, rawSuggestionSchema, SUGGEST_SYSTEM, suggestFacts, suggestionFromReply } from './suggest';
 
 /** The first call loads the model into GPU memory, which can take tens of seconds. */
 export const DEFAULT_TIMEOUT_MS = 60_000;
@@ -21,6 +24,7 @@ const MS_PER_SECOND = 1000;
 const MAX_REPLY_TOKENS = 500;
 const SCAN_TEMPERATURE = 0;
 const EXPLAIN_TEMPERATURE = 0.3;
+const SUGGEST_TEMPERATURE = 0.2;
 /** Keep the model loaded between demo clicks instead of Ollama's 5-minute default. */
 const KEEP_ALIVE = '30m';
 const HTTP_NOT_FOUND = 404;
@@ -34,6 +38,8 @@ export interface OllamaOptions {
 
 /** Ollama constrains its output to this schema; the reply is still validated with zod. */
 const { $schema: _unused, ...SHADE_FORMAT } = z.toJSONSchema(shadeScanBodySchema);
+
+const { $schema: _unusedSuggest, ...SUGGEST_FORMAT } = z.toJSONSchema(rawSuggestionSchema);
 
 const chatReplySchema = z.object({ message: z.object({ content: z.string() }) });
 
@@ -124,6 +130,22 @@ async function explainPlan(
   }
 }
 
+async function suggestSettings(options: OllamaOptions, name: string, req: SuggestRequest): Promise<SettingsSuggestion> {
+  try {
+    const text = await chat(options, {
+      messages: [
+        { role: 'system', content: SUGGEST_SYSTEM },
+        { role: 'user', content: suggestFacts(req) },
+      ],
+      format: SUGGEST_FORMAT,
+      temperature: SUGGEST_TEMPERATURE,
+    });
+    return suggestionFromReply(text, req, name);
+  } catch (error) {
+    return fallbackSuggestion(req, reasonFrom(error, options));
+  }
+}
+
 /** A local vision model served by Ollama (https://ollama.com), called with plain fetch. */
 export function createOllamaProvider(options: OllamaOptions): AiProvider {
   const name = `a local model (${options.model})`;
@@ -131,5 +153,6 @@ export function createOllamaProvider(options: OllamaOptions): AiProvider {
     name,
     scanShade: (image, segmentId, time) => scanShade(options, name, { image, segmentId, time }),
     explainPlan: (plan) => explainPlan(options, name, plan),
+    suggestSettings: (req) => suggestSettings(options, name, req),
   };
 }

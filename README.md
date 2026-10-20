@@ -114,8 +114,8 @@ The map stays on screen; four pages sit beside it.
 
 | Page | What you do there |
 |---|---|
-| **1 Map & routes** | Load the demo, read the headline (pedestrian-hours in direct sun avoided per day), compare walks before and after, change the time of day |
-| **2 Plan builder** | Set the budget, recommend a plan, compare the best plan with cheaper options, edit tree spacing, species and unit costs, set destination priorities, tick candidates, or **place your own** tree row or walkway on the map |
+| **1 Map & routes** | Load the demo, read the headline (pedestrian-hours in direct sun avoided per day; **How is this number worked out?** shows the formula with this plan's numbers, walk by walk), compare walks before and after, change the time of day |
+| **2 Plan builder** | Set the budget, recommend a plan, compare the best plan with cheaper options, edit tree spacing, species and unit costs, tick candidates, or **place your own** tree row or walkway on the map. Under **Who walks where**, describe who lives here and **Suggest settings** proposes a detour limit and destination weights, each with a reason, for you to apply or undo; or set the weights (×0 to ×5) yourself |
 | **3 Spec pack** | Build details for one item: drawing, bill of materials, cost, CSV/JSON |
 | **4 AI scan** | Upload a path photo, review and adjust the AI's shade estimate, confirm it onto the map; get a written plan summary |
 
@@ -128,6 +128,15 @@ All the maths is in pure functions in `src/lib/`, with tests.
 - **Shade** (`shade.ts`). Each path segment has a shaded fraction at 09:00, 12:00, 14:00 and 17:00, modelled from the real sun position and mapped buildings (`data/osm/shade.ts`). Times in between are interpolated. A confirmed AI estimate overrides the modelled value. A chosen tree row or walkway raises shade on its segments; trees grow along a smoothstep curve to maturity, walkways are full shade on day one.
 - **Walks** (`data/osm/trips.ts`, `destinations.ts`). Walks start at rail stations and bus stops and end at malls, supermarkets, schools, clinics, places of worship and parks. Rail stations are scaled to real Prasarana ticket-gate exits from data.gov.my; the split between places is a gravity estimate.
 - **Routes** (`routing.ts`, `metrics.ts`). Dijkstra on length for the shortest route. For the least-sun route, a sweep of weights (λ = 10 → 0) on `length × (1 + λ × sun)` returns the first route within the detour limit (25% by default). Each route reports walk time, minutes in direct sun and the longest exposed stretch.
+- **Headline** (`headline.ts`). The figure is unweighted, so priorities never inflate it:
+
+  ```
+  pedestrian-hours avoided per day = Σ over walks [ trips per day × (sun-minutes before − sun-minutes after) ] ÷ 60
+  sun-minutes on a walk           = Σ over path pieces [ length ÷ 72 m per min × (1 − shade) ]
+  ```
+
+  In the SS 15 demo: 592 trips × (3.05 − 1.95) min on the station-to-mall walk, plus four smaller walks, is 759 min ÷ 60 = 12.7.
+- **Suggested settings** (`lib/suggestSettings.ts`, `server/suggest.ts`). The AI sees only your description and the destinations with their modelled trips per day, and is told not to invent demographics or weight a place just because it is busy. Its reply is snapped to the slider ranges and any health, safety or temperature claim is removed. Without an AI it falls back to simple, labelled keyword rules (for example "older residents" → clinic ×2 and a 15% detour).
 - **Optimiser** (`optimizer.ts`). Tries every subset of up to 12 candidates (at most 4,096) that fits the budget. Score = Σ trips per day × priority × sun-minutes avoided. Shade overlaps count once, because every walk is recomputed with the combined plan. It returns the best plan plus cheaper alternatives that are not dominated, and how much each item adds.
 - **Spec pack** (`features/fabrication/spec.ts`). Walkways: 3 m modules, two posts per grid line, a footing per post, polycarbonate roof. Tree rows: pit, soil mix, root barrier, guard, stakes, sapling and two years of upkeep. Unit costs are in `data/unit-costs.json` and editable in the app.
 

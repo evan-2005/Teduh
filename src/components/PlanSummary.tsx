@@ -4,6 +4,7 @@ import { formatMyr, formatPedestrianSun } from '../lib/format';
 import { pedestrianSunMinutesAvoided } from '../lib/optimizer';
 import { useScenarioStore } from '../store/scenario';
 import type { DataSource, PlanResult } from '../types';
+import { HeadlineFormula } from './HeadlineFormula';
 import { SourceBadge } from './SourceBadge';
 
 interface PlanProps {
@@ -36,6 +37,7 @@ export function PlanSummary({ plan }: PlanProps) {
           {sun.unit} in direct sun avoided / day
           <SourceBadge source="estimated" />
         </p>
+        <HeadlineFormula plan={plan} />
       </section>
       <dl className="costs">
         <dt>Install cost</dt>

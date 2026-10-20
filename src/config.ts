@@ -7,6 +7,9 @@ export const MAP_ZOOM = 16;
 export const WALK_SPEED_M_PER_MIN = 72; // 1.2 m/s
 export const EXPOSED_THRESHOLD = 0.5; // segment is "exposed" if effective shade < 0.5
 export const DEFAULT_DETOUR = 0.25;
+/** Detour limit slider: 0 to 50% longer than the shortest walk, in 5% steps. */
+export const MAX_DETOUR = 0.5;
+export const DETOUR_STEP = 0.05;
 export const MAX_CANDIDATES = 12; // 2^12 subsets is still instant
 export const LAMBDA_SWEEP: readonly number[] = [10, 5, 3, 2, 1, 0.5, 0];
 

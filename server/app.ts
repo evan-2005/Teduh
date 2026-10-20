@@ -1,8 +1,8 @@
 import { Hono } from 'hono';
 import { TIME_SLOTS } from '../src/config';
-import { explainRequestSchema, type AiStatus } from '../src/features/ai-scan/schemas';
+import { explainRequestSchema, suggestRequestSchema, type AiStatus } from '../src/features/ai-scan/schemas';
 import type { TimeSlot } from '../src/types';
-import { explainWith, scanWith, type AiProvider, type ImageMediaType } from './ai';
+import { explainWith, scanWith, suggestWith, type AiProvider, type ImageMediaType } from './ai';
 import { createRateLimiter } from './rateLimit';
 
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
@@ -80,6 +80,12 @@ export function createApp(options: AppOptions): Hono {
     const parsed = explainRequestSchema.safeParse(await c.req.json().catch(() => null));
     if (!parsed.success) return c.json({ error: 'Send a plan with at least one intervention.' }, 400);
     return c.json(await explainWith(options.getProvider(), parsed.data));
+  });
+
+  app.post('/api/suggest-settings', async (c) => {
+    const parsed = suggestRequestSchema.safeParse(await c.req.json().catch(() => null));
+    if (!parsed.success) return c.json({ error: 'Send the area and at least one destination.' }, 400);
+    return c.json(await suggestWith(options.getProvider(), parsed.data));
   });
 
   return app;
