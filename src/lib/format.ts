@@ -11,7 +11,9 @@ export function formatPedestrianSun(minutes: number): { value: string; unit: str
   return { value: String(Math.round(minutes)), unit: 'pedestrian-minutes' };
 }
 
-export const formatMultiplier = (weight: number): string => `×${weight.toFixed(1)}`;
+/** ×1.0, ×2.5, ×1.25: one decimal unless the weight needs two. */
+export const formatMultiplier = (weight: number): string =>
+  `×${Number.isInteger(weight * 10) ? weight.toFixed(1) : weight.toFixed(2)}`;
 
 const NOON = 12;
 

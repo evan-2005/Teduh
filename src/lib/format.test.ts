@@ -14,9 +14,11 @@ describe('format', () => {
     expect(formatPedestrianSun(2520)).toEqual({ value: '42.0', unit: 'pedestrian-hours' });
   });
 
-  test('formatMultiplier shows one decimal', () => {
+  test('formatMultiplier shows one decimal, or two for quarters', () => {
     expect(formatMultiplier(1)).toBe('×1.0');
     expect(formatMultiplier(2.5)).toBe('×2.5');
+    expect(formatMultiplier(1.25)).toBe('×1.25');
+    expect(formatMultiplier(0.75)).toBe('×0.75');
   });
 
   test('formatClock reads time slots as a 12-hour clock', () => {
