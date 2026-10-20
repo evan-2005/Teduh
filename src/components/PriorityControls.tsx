@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import { dataset } from '../data/dataset';
+import { walkTargets as targets } from '../data/walkPlaces';
 import { formatMultiplier } from '../lib/format';
 import { DEFAULT_WEIGHT, MAX_WEIGHT, MIN_WEIGHT, parseWeight, WEIGHT_STEP } from '../lib/priority';
 import { useScenarioStore } from '../store/scenario';
 import type { Destination } from '../types';
 
-// Priorities weight where people walk to, so list only the places that end a journey.
-const endpoints = new Set(dataset.journeys.map((j) => j.destinationId));
-const targets = dataset.neighbourhood.destinations.filter((d) => endpoints.has(d.id));
 
 interface WeightRowProps {
   destination: Destination;

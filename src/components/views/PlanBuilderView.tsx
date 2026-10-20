@@ -1,3 +1,4 @@
+import { SuggestSettings } from '../../features/ai-scan';
 import type { PlanResult } from '../../types';
 import { CandidateList } from '../CandidateList';
 import { UnitCostEditor } from '../CostControls';
@@ -36,6 +37,7 @@ export function PlanBuilderView({ plans, selectedPlan }: PlanBuilderViewProps) {
 
       <section className="view__group" aria-label="Who walks where">
         <h2 className="panel__title">Who walks where</h2>
+        <SuggestSettings />
         <DetourControl />
         <PriorityControls />
       </section>

@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import type { ExplainRequest, ExplainResponse } from '../src/features/ai-scan/schemas';
+import type { ExplainRequest, ExplainResponse, SettingsSuggestion, SuggestRequest } from '../src/features/ai-scan/schemas';
 import type { ShadeScanResult, TimeSlot } from '../src/types';
 import {
   explanationFromReply,
@@ -10,12 +10,14 @@ import {
   type ScanImage,
 } from './ai';
 import { EXPLAIN_SYSTEM, planFacts, shadePrompt } from './prompts';
+import { fallbackSuggestion, SUGGEST_SYSTEM, suggestFacts, suggestionFromReply } from './suggest';
 
 export const MODEL = 'claude-sonnet-5-5';
 const PROVIDER_NAME = 'Claude';
 
 const SHADE_MAX_TOKENS = 500;
 const EXPLAIN_MAX_TOKENS = 500;
+const SUGGEST_MAX_TOKENS = 900;
 
 /** The one call we need from the SDK, so tests can supply a fake. */
 export interface ClaudeClient {
@@ -79,10 +81,25 @@ async function explainPlan(client: ClaudeClient, plan: ExplainRequest): Promise<
   }
 }
 
+async function suggestSettings(client: ClaudeClient, req: SuggestRequest): Promise<SettingsSuggestion> {
+  try {
+    const message = await client.createMessage({
+      model: MODEL,
+      max_tokens: SUGGEST_MAX_TOKENS,
+      system: SUGGEST_SYSTEM,
+      messages: [{ role: 'user', content: suggestFacts(req) }],
+    });
+    return suggestionFromReply(firstText(message), req, PROVIDER_NAME);
+  } catch (error) {
+    return fallbackSuggestion(req, reasonFrom(error));
+  }
+}
+
 export function createClaudeProvider(client: ClaudeClient): AiProvider {
   return {
     name: PROVIDER_NAME,
     scanShade: (image, segmentId, time) => scanShade(client, image, segmentId, time),
     explainPlan: (plan) => explainPlan(client, plan),
+    suggestSettings: (req) => suggestSettings(client, req),
   };
 }

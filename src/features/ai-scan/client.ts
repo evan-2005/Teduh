@@ -3,10 +3,13 @@ import type { ShadeScanResult, TimeSlot } from '../../types';
 import {
   aiStatusSchema,
   explainResponseSchema,
+  settingsSuggestionSchema,
   shadeScanResultSchema,
   type AiStatus,
   type ExplainRequest,
   type ExplainResponse,
+  type SettingsSuggestion,
+  type SuggestRequest,
 } from './schemas';
 
 export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>;
@@ -97,6 +100,15 @@ export function requestExplanation(
     '/api/explain',
     { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(plan) },
     explainResponseSchema,
+    fetchImpl,
+  );
+}
+
+export function requestSuggestion(req: SuggestRequest, fetchImpl: FetchLike = fetch): Promise<SettingsSuggestion> {
+  return send(
+    '/api/suggest-settings',
+    { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(req) },
+    settingsSuggestionSchema,
     fetchImpl,
   );
 }

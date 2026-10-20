@@ -40,6 +40,38 @@ export const aiStatusSchema = z.object({
   fix: z.string().max(MAX_NOTES_CHARS).optional(),
 });
 
+const MAX_PLACES = 16;
+const MAX_ID_CHARS = 64;
+const MAX_REASON_CHARS = 240;
+
+const placeSchema = z.object({
+  id: z.string().min(1).max(MAX_ID_CHARS),
+  name: z.string().max(MAX_LABEL_CHARS),
+  kind: z.string().max(MAX_LABEL_CHARS),
+  tripsPerDay: z.number().nonnegative(),
+});
+
+/** POST /api/suggest-settings: what the app knows about the area, plus the manager's description. */
+export const suggestRequestSchema = z.object({
+  area: z.string().max(MAX_LABEL_CHARS),
+  description: z.string().max(MAX_NOTES_CHARS),
+  currentDetourLimit: z.number().min(0).max(1),
+  destinations: z.array(placeSchema).min(1).max(MAX_PLACES),
+  startPoints: z.array(placeSchema).max(MAX_PLACES),
+});
+
+/** Suggested detour limit and destination weights, each with a reason, for a person to review. */
+export const settingsSuggestionSchema = z.object({
+  detourLimit: z.number().min(0).max(1),
+  detourReason: z.string().max(MAX_REASON_CHARS),
+  weights: z
+    .array(z.object({ id: z.string().max(MAX_ID_CHARS), weight: z.number(), reason: z.string().max(MAX_REASON_CHARS) }))
+    .max(MAX_PLACES),
+  summary: z.string().max(MAX_NOTES_CHARS),
+  isMock: z.boolean(),
+  source: sourceSchema,
+});
+
 const routeSchema = z.object({
   journeyId: z.string(),
   segmentIds: z.array(z.string()),
@@ -66,3 +98,5 @@ export type ShadeScanBody = z.infer<typeof shadeScanBodySchema>;
 export type ExplainRequest = z.infer<typeof explainRequestSchema>;
 export type ExplainResponse = z.infer<typeof explainResponseSchema>;
 export type AiStatus = z.infer<typeof aiStatusSchema>;
+export type SuggestRequest = z.infer<typeof suggestRequestSchema>;
+export type SettingsSuggestion = z.infer<typeof settingsSuggestionSchema>;

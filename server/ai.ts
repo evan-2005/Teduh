@@ -2,7 +2,10 @@ import {
   shadeScanBodySchema,
   type ExplainRequest,
   type ExplainResponse,
+  type SettingsSuggestion,
+  type SuggestRequest,
 } from '../src/features/ai-scan/schemas';
+import { ruleSuggestion } from '../src/lib/suggestSettings';
 import type { ShadeScanResult, TimeSlot } from '../src/types';
 import { planFacts, sunHours, templateSummary } from './prompts';
 
@@ -19,6 +22,8 @@ export interface AiProvider {
   name: string;
   scanShade(image: ScanImage, segmentId: string, time: TimeSlot): Promise<ShadeScanResult>;
   explainPlan(plan: ExplainRequest): Promise<ExplainResponse>;
+  /** Detour limit and destination weights from a description of who lives here. */
+  suggestSettings(req: SuggestRequest): Promise<SettingsSuggestion>;
 }
 
 const FALLBACK_SHADE = 0.5;
@@ -128,6 +133,10 @@ export function scanWith(
 ): Promise<ShadeScanResult> {
   if (!provider) return Promise.resolve(mockShadeResult(segmentId, NO_PROVIDER_REASON));
   return provider.scanShade(image, segmentId, time);
+}
+
+export function suggestWith(provider: AiProvider | null, req: SuggestRequest): Promise<SettingsSuggestion> {
+  return provider ? provider.suggestSettings(req) : Promise.resolve(ruleSuggestion(req));
 }
 
 export function explainWith(

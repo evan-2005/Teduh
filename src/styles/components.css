@@ -998,3 +998,81 @@
   outline: 2px solid var(--color-canopy);
   outline-offset: 1px;
 }
+
+/* ---- How the headline is worked out ---- */
+.formula {
+  margin-top: var(--space-2);
+  font-size: 0.82rem;
+}
+
+.formula summary {
+  cursor: pointer;
+  color: var(--color-canopy);
+  text-decoration: underline;
+}
+
+.formula__eq {
+  margin: var(--space-2) 0;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.formula__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.formula__table th,
+.formula__table td {
+  padding: 2px var(--space-1);
+  border-bottom: 1px solid var(--color-rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.formula__table .num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.formula__table tfoot td {
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+/* ---- Suggested settings (Plan builder → Who walks where) ---- */
+.suggest textarea {
+  width: 100%;
+  margin-bottom: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-rule);
+  background: var(--color-card);
+  font: inherit;
+  font-size: 0.88rem;
+  resize: vertical;
+}
+
+.suggest__result {
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-rule);
+  background: var(--color-card);
+}
+
+.suggest__summary {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: 0.85rem;
+}
+
+.suggest__changed td {
+  background: color-mix(in srgb, var(--color-sun) 18%, transparent);
+}
+
+.suggest__result .button {
+  margin-top: var(--space-2);
+}

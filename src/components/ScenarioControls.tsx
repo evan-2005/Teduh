@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DEMO_TIME, TIME_RANGE, TIME_SLOTS } from '../config';
+import { DEMO_TIME, DETOUR_STEP, MAX_DETOUR, TIME_RANGE, TIME_SLOTS } from '../config';
 import { dataset, meta } from '../data/dataset';
 import { demoWalkNames } from '../data/meta';
 import { useDemoPreset } from '../hooks/useDemoPreset';
@@ -8,8 +8,6 @@ import { demoLabel, formatClock, formatMyr } from '../lib/format';
 import { useScenarioStore } from '../store/scenario';
 import type { PlanResult } from '../types';
 
-const MAX_DETOUR = 0.5;
-const DETOUR_STEP = 0.05;
 const PERCENT = 100;
 
 const DEMO_LABEL = demoLabel(
