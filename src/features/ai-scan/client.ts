@@ -1,8 +1,10 @@
 import type { ZodType } from 'zod';
 import type { ShadeScanResult, TimeSlot } from '../../types';
 import {
+  aiStatusSchema,
   explainResponseSchema,
   shadeScanResultSchema,
+  type AiStatus,
   type ExplainRequest,
   type ExplainResponse,
 } from './schemas';
@@ -12,7 +14,8 @@ export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>
 export class AiClientError extends Error {}
 
 const MESSAGES = {
-  network: 'Could not reach the AI service. Is the API server running? You can still set the shade by hand.',
+  network:
+    'Could not reach the AI service. Is the API server running? Start it in a second terminal with npm run dev:server. You can still set the shade by hand.',
   server: 'The AI service had a problem. Try again, or set the shade by hand.',
   tooMany: 'Too many requests. Wait a minute and try again.',
   invalid: 'The AI service sent a reply the app could not read.',
@@ -21,8 +24,16 @@ const MESSAGES = {
 const HTTP_TOO_MANY = 429;
 const HTTP_SERVER_ERROR = 500;
 
+/**
+ * Our server always answers in JSON. A 5xx without JSON comes from the dev or preview proxy,
+ * which means the API server is not running.
+ */
+const isProxyFailure = (response: Response): boolean =>
+  response.status >= HTTP_SERVER_ERROR && !(response.headers.get('content-type') ?? '').includes('json');
+
 async function errorMessage(response: Response): Promise<string> {
   if (response.status === HTTP_TOO_MANY) return MESSAGES.tooMany;
+  if (isProxyFailure(response)) return MESSAGES.network;
   if (response.status >= HTTP_SERVER_ERROR) return MESSAGES.server;
   // 4xx replies carry a short, user-facing message from our own server.
   const body: unknown = await response.json().catch(() => null);
@@ -63,6 +74,19 @@ export function requestShadeScan(
   form.set('segmentId', segmentId);
   form.set('time', time);
   return send('/api/shade-scan', { method: 'POST', body: form }, shadeScanResultSchema, fetchImpl);
+}
+
+/** The server's AI status, or `unreachable` when the API server itself is not running. */
+export type StatusResult = AiStatus | { mode: 'unreachable' };
+
+export async function requestStatus(fetchImpl: FetchLike = fetch): Promise<StatusResult> {
+  try {
+    const response = await fetchImpl('/api/status');
+    const parsed = aiStatusSchema.safeParse(await response.json().catch(() => null));
+    return response.ok && parsed.success ? parsed.data : { mode: 'unreachable' };
+  } catch {
+    return { mode: 'unreachable' };
+  }
 }
 
 export function requestExplanation(

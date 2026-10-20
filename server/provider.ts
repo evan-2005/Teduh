@@ -9,7 +9,7 @@ export type AiEnv = Partial<
   Record<'AI_PROVIDER' | 'OLLAMA_URL' | 'OLLAMA_MODEL' | 'OLLAMA_TIMEOUT_MS' | 'ANTHROPIC_API_KEY', string>
 >;
 
-const ollamaUrl = (env: AiEnv): string =>
+export const ollamaUrl = (env: AiEnv): string =>
   (env.OLLAMA_URL?.trim() || DEFAULT_OLLAMA_URL).replace(/\/+$/, '');
 
 function timeoutFrom(value: string | undefined): number | undefined {

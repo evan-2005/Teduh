@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { AiClientError, requestExplanation, requestShadeScan, type FetchLike } from './client';
+import { AiClientError, requestExplanation, requestShadeScan, requestStatus, type FetchLike } from './client';
 import { explainRequestSchema, shadeScanResultSchema } from './schemas';
 
 const json = (body: unknown, status = 200): Response =>
@@ -30,6 +30,32 @@ const rejects = async (promise: Promise<unknown>): Promise<string> => {
   }
   throw new Error('expected the request to fail');
 };
+
+describe('requestStatus', () => {
+  test('returns the server status', async () => {
+    const status = { mode: 'ollama', ready: true, model: 'qwen2.5vl:7b' };
+    expect(await requestStatus(async () => json(status))).toEqual(status);
+  });
+
+  test('reports an unreachable server when fetch fails', async () => {
+    const result = await requestStatus(async () => {
+      throw new TypeError('fetch failed');
+    });
+    expect(result).toEqual({ mode: 'unreachable' });
+  });
+
+  test('reports an unreachable server when the dev proxy answers without our JSON', async () => {
+    expect(await requestStatus(async () => new Response('', { status: 500 }))).toEqual({ mode: 'unreachable' });
+    expect(await requestStatus(async () => new Response('Bad Gateway', { status: 502 }))).toEqual({ mode: 'unreachable' });
+  });
+});
+
+describe('a missing API server', () => {
+  test('says to start the server instead of a generic problem', async () => {
+    const message = await rejects(requestShadeScan(scanArgs, async () => new Response('', { status: 500 })));
+    expect(message).toMatch(/npm run dev:server/);
+  });
+});
 
 describe('schemas', () => {
   test('accept a good scan result', () => {

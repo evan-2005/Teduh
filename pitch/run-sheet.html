@@ -84,7 +84,7 @@ pre.cmd { display: block; padding: 10px 12px; margin: 6px 0 0; overflow-x: auto;
 .do b, .check b { font-weight: 700; }
 .check { color: var(--ink-soft); font-size: 15px; }
 .lbl { display: none; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); font-style: normal; }
-body.only-tg .cue[data-who="st"], body.only-st .cue[data-who="tg"] { opacity: 0.28; }
+body.only-tg .cue[data-who="tg"], body.only-st .cue[data-who="st"] { opacity: 0.28; }
 .note { border-left: 4px solid var(--sun); background: var(--sun-fill); padding: 12px 16px; border-radius: 0 10px 10px 0; max-width: 80ch; }
 table.plain { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .tablewrap { overflow-x: auto; border-radius: 12px; }
@@ -112,10 +112,10 @@ footer .wrap { padding-block: 20px; }
   <div class="wrap">
     <p class="eyebrow">SDP University Hackathon 2026 · Planet track</p>
     <h1>TEDUH run sheet</h1>
-    <p class="lede">The 5-minute demo script for two presenters, plus everything needed to set up and run the app for the first time. Numbers marked ◆ come from the current data; if the data changes, run the demo once and update them.</p>
+    <p class="lede">The 5-minute script (Steven presents, Thien Gen demos), plus everything needed to set up and run the app for the first time. Numbers marked ◆ come from the current data; if the data changes, run the demo once and update them.</p>
     <div class="roles">
-      <div class="role"><b>Thien Gen</b><span>Story and slides: opening, problem, user, impact, innovation, pilot</span></div>
-      <div class="role"><b>Steven</b><span>Drives the app: solution, live demo, how it works, feasibility</span></div>
+      <div class="role"><b>Steven (Chang Juan Jue)</b><span>Presenter: every slide, from the opening to the ask</span></div>
+      <div class="role"><b>Thien Gen</b><span>Demo: drives the app and talks through the whole live demo, 1:30–3:45</span></div>
     </div>
     <div class="deadlines">
       <span><strong>23 Oct, 11:59 pm</strong> deck + 5-min video + code link</span>
@@ -136,8 +136,8 @@ footer .wrap { padding-block: 20px; }
     <a href="#submit">Submit</a>
     <div class="filter" role="group" aria-label="Highlight lines for">
       <button type="button" id="f-all" data-f="all" aria-pressed="true">Both</button>
-      <button type="button" id="f-tg" data-f="tg" aria-pressed="false">Thien Gen</button>
-      <button type="button" id="f-st" data-f="st" aria-pressed="false">Steven</button>
+      <button type="button" id="f-tg" data-f="tg" aria-pressed="false">Steven</button>
+      <button type="button" id="f-st" data-f="st" aria-pressed="false">Thien Gen</button>
     </div>
   </div>
 </nav>
@@ -171,14 +171,14 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
   </div>
   <div class="cues" role="table" aria-label="Start-up steps">
     <div class="cue head" role="row"><span>When</span><span>Who</span><span>Do</span><span>You should see</span><span></span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-30</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Plug in the charger. Windows: Settings → System → Power → <b>Best performance</b>. Close games, OBS previews and video tabs.</span><span class="check"></span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-28</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Terminal 1: <code>npm run dev:server</code></span><span class="check">“Teduh API listening … local mode: a local model (qwen2.5vl:7b)”</span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-27</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Terminal 2: <code>npm run build</code>, then <code>npm run preview</code></span><span class="check">A line with <code>http://localhost:4173/</code></span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-26</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Open <b>http://localhost:4173</b> in Chrome or Edge. Zoom 100% (Ctrl+0). Maximise the window (at least 1280 px wide).</span><span class="check">The SS 15, Subang Jaya map with amber dashed paths</span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-25</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2"><b>Warm up the AI:</b> <b>4 AI scan</b> → <b>Choose File</b> → your photo → <b>Estimate shade</b>. The first call takes 30–60 s. If you confirmed it, click <b>Undo all</b>.</span><span class="check">“Estimated by a local model (qwen2.5vl:7b)”</span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-30</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Plug in the charger. Windows: Settings → System → Power → <b>Best performance</b>. Close games, OBS previews and video tabs.</span><span class="check"></span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-28</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Terminal 1: <code>npm run dev:server</code></span><span class="check">“Teduh API listening … local mode: a local model (qwen2.5vl:7b)”</span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-27</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Terminal 2: <code>npm run build</code>, then <code>npm run preview</code></span><span class="check">A line with <code>http://localhost:4173/</code></span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-26</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Open <b>http://localhost:4173</b> in Chrome or Edge. Zoom 100% (Ctrl+0). Maximise the window (at least 1280 px wide).</span><span class="check">The SS 15, Subang Jaya map with amber dashed paths</span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-25</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2"><b>Warm up the AI:</b> <b>4 AI scan</b> → <b>Choose File</b> → your photo → <b>Estimate shade</b>. The first call takes 30–60 s. If you confirmed it, click <b>Undo all</b>.</span><span class="check">“Estimated by a local model (qwen2.5vl:7b)”</span></div>
     <div class="cue" data-who="both" role="row"><span class="t">T-20</span><span class="who both">Both</span><span class="do" style="grid-column: span 2">One full dry run of the 5-minute script with a stopwatch.</span><span class="check">Finishes by 5:00</span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">T-5</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Reload (F5). Click <b>1 Map &amp; routes</b>. Leave it there.</span><span class="check">Fresh SS 15 map</span></div>
-    <div class="cue" data-who="tg" role="row"><span class="t">T-5</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Open the deck in <b>Present</b> mode on the cover. Check Alt+Tab switches between deck and app.</span><span class="check"></span></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">T-5</span><span class="who tg">Thien Gen</span><span class="do" style="grid-column: span 2">Reload (F5). Click <b>1 Map &amp; routes</b>. Leave it there.</span><span class="check">Fresh SS 15 map</span></div>
+    <div class="cue" data-who="st" role="row"><span class="t">T-5</span><span class="who st">Steven</span><span class="do" style="grid-column: span 2">Open the deck in <b>Present</b> mode on the cover. Check Alt+Tab switches between deck and app.</span><span class="check"></span></div>
     <div class="cue" data-who="both" role="row"><span class="t">T-2</span><span class="who both">Both</span><span class="do" style="grid-column: span 2">Phones silent. Windows notifications off (Do not disturb). Recording? Snipping Tool → Record (Win+Shift+R) or OBS, at 1280×800 or larger.</span><span class="check"></span></div>
   </div>
 </section>
@@ -187,47 +187,48 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
   <div class="sec-head">
     <p class="eyebrow">Part A · video for 23 Oct, and the core of the live pitch</p>
     <h2>The 5-minute script</h2>
+    <p class="note"><b>Handover.</b> One laptop. Steven sits at the keyboard and advances the slides (arrow keys or a clicker). At 1:30 Thien Gen takes the mouse and keyboard and Alt+Tabs to the app. At 3:40 Thien Gen Alt+Tabs back to the deck and hands back. Steven stays silent during the demo; Thien Gen stays silent during the slides.</p>
     <p><b>Say</b> is close to word for word. <b>Do</b> is the exact click. <b>Check</b> is what the screen should show; if it doesn't, see “If it breaks”. Use the buttons at the top to highlight one person’s lines.</p>
   </div>
   <div class="cues" role="table" aria-label="Five-minute script">
     <div class="cue head" role="row"><span>Time</span><span>Who</span><span>Say</span><span>Do</span><span>Check</span></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">0:00</span><span class="who tg">Thien Gen</span>
-      <p class="say"><span class="lbl">Say</span>“Hi, we are [team name]. I’m Thien Gen, this is Steven. Teduh is Malay for shaded or sheltered. Our track is Planet, focus climate resilience.”</p>
+    <div class="cue" data-who="st" role="row"><span class="t">0:00</span><span class="who st">Steven</span>
+      <p class="say"><span class="lbl">Say</span>“Hi, we are Team One. I’m Steven, this is Thien Gen. Teduh is Malay for shaded or sheltered. Our track is Planet, focus climate resilience.”</p>
       <p class="do"><span class="lbl">Do</span>Deck on the <b>cover</b>.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">0:15</span><span class="who tg">Thien Gen</span>
+    <div class="cue" data-who="st" role="row"><span class="t">0:15</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“Picture SS 15 in Subang Jaya at 2 pm. About 5,000 people leave the LRT station on a weekday; that is real Prasarana ticket-gate data. Our model sends about 590 of them a day to the mall next door, and on that walk there’s a 218-metre stretch with no shade at all. The township has trees and footpaths. The problem is the gaps between them, and a manager with a small budget can’t see which gap matters most.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Problem</b>.</p><p class="check"><span class="lbl">Check</span>◆592 and ◆218 m on the slide</p></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">0:50</span><span class="who tg">Thien Gen</span>
+    <div class="cue" data-who="st" role="row"><span class="t">0:50</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“Our user is the person who holds the budget: the township manager. The landscape team builds it, and residents on foot benefit.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Target user</b>.</p><p class="check"></p></div>
 
     <div class="cue" data-who="st" role="row"><span class="t">1:10</span><span class="who st">Steven</span>
-      <p class="say"><span class="lbl">Say</span>“Teduh answers one question: with this budget, which shade helps the most walks? It recommends trees and covered walkways, shows before and after, and hands off a build pack. Let me show you.”</p>
-      <p class="do"><span class="lbl">Do</span>Next: <b>Solution</b>, then the <b>Demo</b> slide. Alt+Tab to the app.</p><p class="check"><span class="lbl">Check</span>App on <b>1 Map &amp; routes</b></p></div>
+      <p class="say"><span class="lbl">Say</span>“Teduh answers one question: with this budget, which shade helps the most walks? It recommends trees and covered walkways, shows before and after, and hands off a build pack. Thien Gen will show you on a real township.”</p>
+      <p class="do"><span class="lbl">Do</span>Next: <b>Solution</b>, then the <b>Demo</b> slide. Move aside; Thien Gen takes the keyboard.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">1:30</span><span class="who st">Steven</span>
-      <p class="say"><span class="lbl">Say</span>“This is the real SS 15. Streets and buildings are from OpenStreetMap. Here is the 2 pm walk from the LRT station to the mall.”</p>
-      <p class="do"><span class="lbl">Do</span>Left panel: click <b>Demo: 2 pm walk from the LRT station to the shopping mall</b>.</p>
+    <div class="cue" data-who="tg" role="row"><span class="t">1:30</span><span class="who tg">Thien Gen</span>
+      <p class="say"><span class="lbl">Say</span>“Thanks, Steven. This is the real SS 15. Streets and buildings are from OpenStreetMap. Here is the 2 pm walk from the LRT station to the mall.”</p>
+      <p class="do"><span class="lbl">Do</span>Alt+Tab to the app. Left panel: click <b>Demo: 2 pm walk from the LRT station to the shopping mall</b>.</p>
       <p class="check"><span class="lbl">Check</span>Headline ◆12.7. Under <b>Journeys</b>: LRT station → Shopping mall, “sun 3.0 → 1.9 min · exposed 218 → 149 m”</p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">1:45</span><span class="who st">Steven</span>
+    <div class="cue" data-who="tg" role="row"><span class="t">1:45</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“With RM 100,000, Teduh tried every affordable combination and recommends one covered walkway and two tree rows, for RM 94,100. The walkway from the station on Jengka Avenue does most of the work.”</p>
       <p class="do"><span class="lbl">Do</span>Top bar: <b>2 Plan builder</b>. Point at the <b>Best</b> card, then scroll to <b>What each one adds</b>.</p>
       <p class="check"><span class="lbl">Check</span>Best: 1 covered walkway + 2 tree rows, RM ◆94,100 · ◆12.7. Walkway ◆539 min/day</p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">2:05</span><span class="who st">Steven</span>
+    <div class="cue" data-who="tg" role="row"><span class="t">2:05</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“Before on the left, after on the right.”</p>
       <p class="do"><span class="lbl">Do</span>On the map, drag the round <b>⇄</b> handle from the middle <b>to the left</b>, slowly, past the <b>LRT station</b> marker.</p>
       <p class="check"><span class="lbl">Check</span>Amber dashed paths by the station turn solid green</p></div>
 
     <div class="cue" data-who="tg" role="row"><span class="t">2:20</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“That’s the key idea: one walkway on a shared stretch helps the mall, the college and the clinic walks at once.”</p>
-      <p class="do"><span class="lbl">Do</span>Steven keeps the mouse still.</p><p class="check"></p></div>
+      <p class="do"><span class="lbl">Do</span>Keep the mouse still on the walkway.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">2:30</span><span class="who st">Steven</span>
+    <div class="cue" data-who="tg" role="row"><span class="t">2:30</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“Trees take years; a walkway works on day one. Let’s grow them ten years.”</p>
       <p class="do"><span class="lbl">Do</span>Top of map: <b>Future</b>, then <b>Grow</b>. Wait about 5 s for <b>Year 10</b>.</p>
       <p class="check"><span class="lbl">Check</span>Best plan flips to 5 tree rows, RM ◆51,700 · ◆26.5</p></div>
@@ -236,12 +237,12 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
       <p class="say"><span class="lbl">Say</span>“Twice the benefit for about half the money, if you can wait, and if the trees grow as modelled.”</p>
       <p class="do"></p><p class="check"></p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">2:55</span><span class="who st">Steven</span>
+    <div class="cue" data-who="tg" role="row"><span class="t">2:55</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“Every item comes with a spec pack a contractor can quote from.”</p>
       <p class="do"><span class="lbl">Do</span>Click <b>Now</b>. Left panel, under <b>Candidates</b>: <b>Details</b> next to <b>Covered walkway from the LRT station on Jengka Avenue (69 m)</b>.</p>
       <p class="check"><span class="lbl">Check</span><b>3 Spec pack</b>: ◆69 m, RM ◆79,000, drawing, bill of materials, Download CSV</p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">3:15</span><span class="who st">Steven</span>
+    <div class="cue" data-who="tg" role="row"><span class="t">3:15</span><span class="who tg">Thien Gen</span>
       <p class="say"><span class="lbl">Say</span>“OpenStreetMap has almost no trees mapped here, so our shade is a model. A survey photo fills that gap. A vision model running on this laptop estimates the shade, and nothing reaches the map until a person confirms it.”</p>
       <p class="do"><span class="lbl">Do</span><b>4 AI scan</b>. Path segment already reads <b>Jengka Avenue (Main road) · seg-116</b>. <b>Choose File</b> → photo → <b>Estimate shade</b>.</p>
       <p class="check"><span class="lbl">Check</span>“Estimating…” for about 10 s</p></div>
@@ -250,28 +251,28 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
       <p class="say"><span class="lbl">Say</span>Talk over the wait: “Photos stay on this laptop, and there’s no cloud cost per photo.”</p>
       <p class="do"></p><p class="check"><span class="lbl">Check</span>“AI estimate: N% shaded”, “Estimated by a local model (qwen2.5vl:7b)”</p></div>
 
-    <div class="cue" data-who="st" role="row"><span class="t">3:35</span><span class="who st">Steven</span>
-      <p class="say"><span class="lbl">Say</span>“I’ll check it against the photo, adjust, and confirm.”</p>
-      <p class="do"><span class="lbl">Do</span>Drag <b>Your value</b> if needed → <b>Confirm and apply to map</b>.</p>
+    <div class="cue" data-who="tg" role="row"><span class="t">3:35</span><span class="who tg">Thien Gen</span>
+      <p class="say"><span class="lbl">Say</span>“I’ll check it against the photo, adjust, and confirm. Back to Steven.”</p>
+      <p class="do"><span class="lbl">Do</span>Drag <b>Your value</b> if needed → <b>Confirm and apply to map</b>. Alt+Tab back to the deck and hand the keyboard back.</p>
       <p class="check"><span class="lbl">Check</span>“Applied … as AI-CONFIRMED”. The headline may drop; see the note below</p></div>
 
     <div class="cue" data-who="st" role="row"><span class="t">3:45</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“Under the hood: open map data, the real sun position, real station counts, and a score anyone can inspect: hours walked in direct sun, avoided.”</p>
-      <p class="do"><span class="lbl">Do</span>Alt+Tab to the deck: <b>How it works</b>.</p><p class="check"></p></div>
+      <p class="do"><span class="lbl">Do</span>Next slide: <b>How it works</b>.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">4:05</span><span class="who tg">Thien Gen</span>
+    <div class="cue" data-who="st" role="row"><span class="t">4:05</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“In this scenario, RM 94,000 takes 12.7 pedestrian-hours a day out of direct sun. These are model estimates; a pilot measures the real effect.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Impact</b>.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">4:20</span><span class="who tg">Thien Gen</span>
+    <div class="cue" data-who="st" role="row"><span class="t">4:20</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“Routing apps like Singapore’s Undercover help a walker. Teduh helps a township decide what to build.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Innovation</b>.</p><p class="check"></p></div>
 
     <div class="cue" data-who="st" role="row"><span class="t">4:30</span><span class="who st">Steven</span>
-      <p class="say"><span class="lbl">Say</span>“It already runs on 15 Klang Valley areas and any other place in about 40 seconds: this is SDP’s Ara Damansara.”</p>
+      <p class="say"><span class="lbl">Say</span>“It already runs on 15 Klang Valley areas and any other place in about 40 seconds: this is SDP’s own Ara Damansara.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Feasibility</b>.</p><p class="check"></p></div>
 
-    <div class="cue" data-who="tg" role="row"><span class="t">4:45</span><span class="who tg">Thien Gen</span>
+    <div class="cue" data-who="st" role="row"><span class="t">4:45</span><span class="who st">Steven</span>
       <p class="say"><span class="lbl">Say</span>“Our ask: one SDP township to pilot, a landscape contact and a small budget line. Survey, build, measure in six months. Thank you.”</p>
       <p class="do"><span class="lbl">Do</span>Next slide: <b>Implementation</b>. Stop at 5:00.</p><p class="check"></p></div>
   </div>
@@ -301,17 +302,17 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
   <div class="sec-head">
     <p class="eyebrow">Part C · 14 Nov, if Top 10</p>
     <h2>The 10-minute live pitch</h2>
-    <p>Same opening and close as the 5-minute script. Slow the demo down and add these after the AI scan step. Do the Ara Damansara lookup once the evening before in the same browser: it is saved there, so on the day you can pick it from the Area dropdown if the Wi-Fi is slow.</p>
+    <p>Same split: Steven presents, Thien Gen demos. Thien Gen’s demo runs longer: at 3:35 Thien Gen carries on instead of handing back, adds these steps, and Steven takes back at 7:30. Do the Ara Damansara lookup once the evening before in the same browser: it is saved there, so on the day you can pick it from the Area dropdown if the Wi-Fi is slow.</p>
   </div>
   <div class="cues" role="table" aria-label="Ten-minute additions">
     <div class="cue head" role="row"><span>Time</span><span>Who</span><span>Say</span><span>Do</span><span></span></div>
-    <div class="cue" data-who="st" role="row"><span class="t">3:45</span><span class="who st">Steven</span><p class="say"><span class="lbl">Say</span>“Time of day matters.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>1 Map &amp; routes</b>: drag <b>Time of day</b> from 2 pm to 5 pm and back. Exposed paths change.</p></div>
-    <div class="cue" data-who="st" role="row"><span class="t">4:15</span><span class="who st">Steven</span><p class="say"><span class="lbl">Say</span>“Managers know their site. They can place their own.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>2 Plan builder</b> → <b>Plant a tree row</b> → click 2–3 connected paths on the map → <b>Add</b>. It is priced and scored like the others.</p></div>
-    <div class="cue" data-who="tg" role="row"><span class="t">5:00</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“A written summary for the manager, built only from the numbers on screen.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span>Steven: <b>4 AI scan</b> → <b>Explain this plan</b> (about 20 s). A <b>TEMPLATE</b> badge means the model’s text was rejected for inventing a figure; say so, it is a safeguard.</p></div>
-    <div class="cue" data-who="st" role="row"><span class="t">5:30</span><span class="who st">Steven</span><p class="say"><span class="lbl">Say</span>“And it works on SDP’s own township.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>Look up a place</b> → <code>Ara Damansara</code> → <b>Search</b> → pick <b>Petaling Jaya, Petaling, Selangor</b>. About 40 s while Thien Gen covers <b>How it works</b>. Then click the <b>Demo</b> button for Ara Damansara.</p></div>
-    <div class="cue" data-who="both" role="row"><span class="t">6:30</span><span class="who both">Both</span><p class="say"><span class="lbl">Say</span>“Change the budget, untick a candidate, prioritise the college.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span>Hand the mouse to a judge. Everything recalculates instantly.</p></div>
-    <div class="cue" data-who="tg" role="row"><span class="t">7:30</span><span class="who tg">Thien Gen</span><p class="say plain"><span class="lbl">Say</span>Impact, Innovation, Feasibility, Implementation slides, about 40 s each.</p><p class="do" style="grid-column: span 2"></p></div>
-    <div class="cue" data-who="both" role="row"><span class="t">10:00</span><span class="who both">Both</span><p class="say plain"><span class="lbl">Say</span>End. Q&amp;A.</p><p class="do" style="grid-column: span 2"></p></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">3:45</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“Time of day matters.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>1 Map &amp; routes</b>: drag <b>Time of day</b> from 2 pm to 5 pm and back. Exposed paths change.</p></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">4:15</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“Managers know their site. They can place their own.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>2 Plan builder</b> → <b>Plant a tree row</b> → click 2–3 connected paths on the map → <b>Add</b>. It is priced and scored like the others.</p></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">5:00</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“A written summary for the manager, built only from the numbers on screen.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>4 AI scan</b> → <b>Explain this plan</b> (about 20 s). A <b>TEMPLATE</b> badge means the model’s text was rejected for inventing a figure; say so, it is a safeguard.</p></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">5:30</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“And it works on SDP’s own township.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span><b>Look up a place</b> → <code>Ara Damansara</code> → <b>Search</b> → pick <b>Petaling Jaya, Petaling, Selangor</b>. About 40 s: talk over it (“it is downloading streets, buildings and bus stops from OpenStreetMap and running the same model”). Then click the <b>Demo</b> button for Ara Damansara.</p></div>
+    <div class="cue" data-who="tg" role="row"><span class="t">6:30</span><span class="who tg">Thien Gen</span><p class="say"><span class="lbl">Say</span>“Change the budget, untick a candidate, prioritise the college.”</p><p class="do" style="grid-column: span 2"><span class="lbl">Do</span>Hand the mouse to a judge. Everything recalculates instantly. At 7:25 say “Back to Steven”, Alt+Tab to the deck and hand back.</p></div>
+    <div class="cue" data-who="st" role="row"><span class="t">7:30</span><span class="who st">Steven</span><p class="say plain"><span class="lbl">Say</span>How it works, Impact, Innovation, Feasibility and Implementation slides, about 30 s each.</p><p class="do" style="grid-column: span 2"></p></div>
+    <div class="cue" data-who="st" role="row"><span class="t">10:00</span><span class="who st">Steven</span><p class="say plain"><span class="lbl">Say</span>“Thank you. We’re happy to take questions.” Thien Gen takes the technical ones.</p><p class="do" style="grid-column: span 2"></p></div>
   </div>
 </section>
 
@@ -339,14 +340,14 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
   </div>
   <div class="tablewrap"><table class="plain">
     <tr><th>Question</th><th>Who</th><th>Short answer</th></tr>
-    <tr><td>How accurate is the shade?</td><td>Steven</td><td>Modelled from mapped buildings and the real sun at four times of day. OpenStreetMap has few trees here, so midday shade is understated. The pilot and the AI scan replace estimates with surveyed values, and every number shows its source.</td></tr>
-    <tr><td>Where do the walking numbers come from?</td><td>Thien Gen</td><td>Station exits are real Prasarana ticket-gate counts on data.gov.my. How they split between places, and bus stop trips, are estimates. A count at the station and the mall is the first thing the pilot adds.</td></tr>
-    <tr><td>Does shade make it cooler or safer?</td><td>Thien Gen</td><td>We don’t claim that. Shade is not comfort or safety. We measure time walked in direct sun.</td></tr>
-    <tr><td>What would it cost SDP?</td><td>Thien Gen</td><td>The tool runs on open data and a laptop, so it costs little. The money is the trees and walkways, and Teduh puts that money where most people walk. Costs are bottom-up estimates; the pilot swaps in real quotes.</td></tr>
-    <tr><td>Why not plant trees everywhere?</td><td>Steven</td><td>Budgets are limited. In SS 15 one 69 m walkway does more than several tree rows because it sits on the busiest shared stretch.</td></tr>
-    <tr><td>Will it work on Elmina or Bukit Raja?</td><td>Steven</td><td>Yes: Look up a place builds any area in about 40 seconds. We showed Ara Damansara.</td></tr>
-    <tr><td>What does the AI do?</td><td>Steven</td><td>It estimates shade from a survey photo, which a person must confirm, and writes a plain summary of the plan from the numbers on screen. A check rejects any summary that invents a number. It runs locally, or on Claude in the cloud.</td></tr>
-    <tr><td>What happens after the hackathon?</td><td>Thien Gen</td><td>A six-month pilot in one SDP township: survey, build one walkway and some tree rows, then compare predicted and observed shade and walker counts.</td></tr>
+    <tr><td>How accurate is the shade?</td><td>Thien Gen</td><td>Modelled from mapped buildings and the real sun at four times of day. OpenStreetMap has few trees here, so midday shade is understated. The pilot and the AI scan replace estimates with surveyed values, and every number shows its source.</td></tr>
+    <tr><td>Where do the walking numbers come from?</td><td>Steven</td><td>Station exits are real Prasarana ticket-gate counts on data.gov.my. How they split between places, and bus stop trips, are estimates. A count at the station and the mall is the first thing the pilot adds.</td></tr>
+    <tr><td>Does shade make it cooler or safer?</td><td>Steven</td><td>We don’t claim that. Shade is not comfort or safety. We measure time walked in direct sun.</td></tr>
+    <tr><td>What would it cost SDP?</td><td>Steven</td><td>The tool runs on open data and a laptop, so it costs little. The money is the trees and walkways, and Teduh puts that money where most people walk. Costs are bottom-up estimates; the pilot swaps in real quotes.</td></tr>
+    <tr><td>Why not plant trees everywhere?</td><td>Thien Gen</td><td>Budgets are limited. In SS 15 one 69 m walkway does more than several tree rows because it sits on the busiest shared stretch.</td></tr>
+    <tr><td>Will it work on Elmina or Bukit Raja?</td><td>Thien Gen</td><td>Yes: Look up a place builds any area in about 40 seconds. We showed Ara Damansara.</td></tr>
+    <tr><td>What does the AI do?</td><td>Thien Gen</td><td>It estimates shade from a survey photo, which a person must confirm, and writes a plain summary of the plan from the numbers on screen. A check rejects any summary that invents a number. It runs locally, or on Claude in the cloud.</td></tr>
+    <tr><td>What happens after the hackathon?</td><td>Steven</td><td>A six-month pilot in one SDP township: survey, build one walkway and some tree rows, then compare predicted and observed shade and walker counts.</td></tr>
   </table></div>
   <div class="avoid" aria-label="Words to avoid"><span>lowers temperature</span><span>safe route</span><span>healthy route</span><span>measured</span></div>
   <p>Say “modelled”, “estimated” and “direct sun avoided” instead.</p>
@@ -358,7 +359,7 @@ OLLAMA_MODEL=qwen2.5vl:7b</pre></li>
     <h2>Submission checklist</h2>
   </div>
   <ul class="checklist">
-    <li><label><input type="checkbox" id="c1">Fill [Team name] and [University] on the cover slide.</label></li>
+    <li><label><input type="checkbox" id="c1">Check the names on the cover slide and in the opening line.</label></li>
     <li><label><input type="checkbox" id="c2">Add 3–5 real resident quotes to pitch/resident-interviews.md. Never invent quotes; evidence is 10% of the score.</label></li>
     <li><label><input type="checkbox" id="c3">Export the deck as PDF or PPTX.</label></li>
     <li><label><input type="checkbox" id="c4">Record and upload the 5-minute video.</label></li>

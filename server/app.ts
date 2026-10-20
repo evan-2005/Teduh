@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { TIME_SLOTS } from '../src/config';
-import { explainRequestSchema } from '../src/features/ai-scan/schemas';
+import { explainRequestSchema, type AiStatus } from '../src/features/ai-scan/schemas';
 import type { TimeSlot } from '../src/types';
 import { explainWith, scanWith, type AiProvider, type ImageMediaType } from './ai';
 import { createRateLimiter } from './rateLimit';
@@ -14,8 +14,14 @@ const ALLOWED_TYPES: readonly ImageMediaType[] = ['image/jpeg', 'image/png', 'im
 export interface AppOptions {
   /** Called per request so tests can swap providers and the key is never held in the module. Null means mock. */
   getProvider: () => AiProvider | null;
+  /** Which AI the server will use and whether it can; defaults to describing a mock server. */
+  getStatus?: () => Promise<AiStatus>;
   allow?: (key: string) => boolean;
 }
+
+const MOCK_STATUS: AiStatus = { mode: 'mock', ready: false, problem: 'No AI is set up on the server.' };
+/** Cheap, read-only routes a page may call on every load. */
+const UNLIMITED = new Set(['/api/health', '/api/status']);
 
 /** Check the real file signature, not just the declared type. */
 export function sniffImageType(bytes: Uint8Array): ImageMediaType | null {
@@ -35,9 +41,10 @@ export function createApp(options: AppOptions): Hono {
   const app = new Hono();
 
   app.get('/api/health', (c) => c.json({ ok: true }));
+  app.get('/api/status', async (c) => c.json(options.getStatus ? await options.getStatus() : MOCK_STATUS));
 
   app.use('/api/*', async (c, next) => {
-    if (c.req.path === '/api/health') return next();
+    if (UNLIMITED.has(c.req.path)) return next();
     const key = c.req.header('x-forwarded-for') ?? 'local';
     if (!allow(key)) return c.json({ error: 'Too many requests. Try again in a minute.' }, 429);
     return next();

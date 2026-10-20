@@ -15,6 +15,7 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "screenshots": "node scripts/screenshots.mjs",
+    "check:ai": "tsx scripts/check-ai.ts",
     "data:areas": "tsx data/osm/areas.ts",
     "data:ridership": "tsx data/osm/fetch-ridership.ts"
   },

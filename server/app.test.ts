@@ -49,6 +49,23 @@ describe('GET /api/health', () => {
   });
 });
 
+describe('GET /api/status', () => {
+  test('returns the AI status from the server', async () => {
+    const app = createApp({
+      getProvider: () => null,
+      getStatus: async () => ({ mode: 'ollama', ready: false, model: 'm', problem: 'p', fix: 'f' }),
+    });
+    const res = await app.request('/api/status');
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ mode: 'ollama', ready: false, model: 'm', problem: 'p', fix: 'f' });
+  });
+
+  test('is not rate limited', async () => {
+    const app = createApp({ getProvider: () => null, allow: () => false });
+    expect((await app.request('/api/status')).status).toBe(200);
+  });
+});
+
 describe('POST /api/shade-scan validation', () => {
   test('rejects a missing image', async () => {
     const form = scanForm();

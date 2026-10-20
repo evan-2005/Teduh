@@ -228,6 +228,9 @@ await shot('03-fabrication-pack');
 // 7. AI shade scan (mock if the server has no key) + explainer
 if (await page.getByRole('navigation', { name: 'Pages' }).getByRole('button', { name: 'AI scan' }).count()) {
   await openPage('AI scan');
+  const status = page.getByRole('status', { name: 'AI status' });
+  await status.waitFor({ timeout: LOOKUP_TIMEOUT_MS });
+  check('AI status card says whether the AI is ready', /AI ready|not running|MOCK|not downloaded/.test(await status.innerText()), (await status.innerText()).split('\n')[0]);
 }
 const scan = page.getByRole('region', { name: 'AI shade scan' });
 if (await scan.count()) {
@@ -270,7 +273,9 @@ if (await scan.count()) {
   check('AI scan returns an estimate (MOCK is labelled when there is no key)', true);
   await scan.getByRole('button', { name: /Confirm and apply/ }).click();
   check('confirming applies an ai-confirmed edit', await scan.getByText(/confirmed edit/).isVisible());
-  await scrollToTop(scan);
+  // Frame from the AI status card (when shown) so the README shows it too.
+  const statusCard = page.getByRole('status', { name: 'AI status' });
+  await scrollToTop((await statusCard.count()) ? statusCard : scan);
   await shot('04-ai-shade-scan');
   await page.getByRole('button', { name: 'Explain this plan' }).click();
   await page.getByText(/from the numbers above\./).waitFor({ timeout: AI_TIMEOUT_MS });

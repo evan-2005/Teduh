@@ -1,6 +1,7 @@
 import { serve } from '@hono/node-server';
 import { createApp } from './app';
 import { describeMode, selectProvider } from './provider';
+import { aiStatus } from './status';
 
 const PORT = 8787;
 
@@ -11,7 +12,10 @@ try {
   // No .env file: the server runs in mock mode.
 }
 
-const app = createApp({ getProvider: () => selectProvider(process.env) });
+const app = createApp({
+  getProvider: () => selectProvider(process.env),
+  getStatus: () => aiStatus(process.env),
+});
 
 serve({ fetch: app.fetch, port: PORT }, () => {
   console.error(`Teduh API listening on http://localhost:${PORT} in ${describeMode(process.env)}`);

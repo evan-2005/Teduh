@@ -31,6 +31,15 @@ export const explainResponseSchema = z.object({
   source: sourceSchema,
 });
 
+/** GET /api/status: which AI the server will use, and if it cannot, what to do about it. */
+export const aiStatusSchema = z.object({
+  mode: z.enum(['claude', 'ollama', 'mock']),
+  ready: z.boolean(),
+  model: z.string().max(MAX_SOURCE_CHARS).optional(),
+  problem: z.string().max(MAX_NOTES_CHARS).optional(),
+  fix: z.string().max(MAX_NOTES_CHARS).optional(),
+});
+
 const routeSchema = z.object({
   journeyId: z.string(),
   segmentIds: z.array(z.string()),
@@ -56,3 +65,4 @@ export const explainRequestSchema = z.object({
 export type ShadeScanBody = z.infer<typeof shadeScanBodySchema>;
 export type ExplainRequest = z.infer<typeof explainRequestSchema>;
 export type ExplainResponse = z.infer<typeof explainResponseSchema>;
+export type AiStatus = z.infer<typeof aiStatusSchema>;

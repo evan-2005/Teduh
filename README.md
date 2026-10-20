@@ -16,7 +16,8 @@ It models walks from train stations and bus stops to the places people go, finds
 | File | What it is |
 |---|---|
 | [`TEDUH-pitch-deck.pptx`](pitch/TEDUH-pitch-deck.pptx) | 10 main slides + appendix. Speaker notes hold each presenter's lines and timestamps |
-| [`TEDUH-demo-script.docx`](pitch/TEDUH-demo-script.docx) | The timed two-presenter script (Thien Gen and Steven), first-time setup, recovery steps and Q&A |
+| [`TEDUH-demo-guide.pdf`](pitch/TEDUH-demo-guide.pdf) | Illustrated step-by-step guide: a screenshot of every demo click with the target highlighted, plus each slide and its lines |
+| [`TEDUH-demo-script.docx`](pitch/TEDUH-demo-script.docx) | The timed script (Steven presents, Thien Gen demos), first-time setup, recovery steps and Q&A |
 | [`demo-script.md`](pitch/demo-script.md) / [`run-sheet.html`](pitch/run-sheet.html) | The same script as Markdown and as a phone-friendly page |
 | [`resident-interviews.md`](pitch/resident-interviews.md) | Interview questions and the log for real resident quotes |
 
@@ -36,7 +37,7 @@ Real streets, buildings and places from OpenStreetMap (SS 15, Subang Jaya, the d
 
 ![Spec pack for a covered walkway](docs/screenshots/03-fabrication-pack.png)
 
-**AI shade scan.** A survey photo gets a shade estimate from a vision model (local or Claude). It reaches the map only after a person confirms it.
+**AI shade scan.** A survey photo gets a shade estimate from a vision model (local or Claude). It reaches the map only after a person confirms it. The line at the top says whether the AI is ready on this laptop, and if not, the exact step that fixes it.
 
 ![AI shade scan with a confirmed estimate](docs/screenshots/04-ai-shade-scan.png)
 
@@ -53,10 +54,12 @@ Real streets, buildings and places from OpenStreetMap (SS 15, Subang Jaya, the d
 Needs Node 20 or newer.
 
 ```bash
+git clone https://github.com/evan-2005/Teduh.git
+cd Teduh
 npm install
-cp .env.example .env
-npm run dev            # app on http://localhost:5173
-npm run dev:server     # AI scan + explainer API on :8787 (second terminal)
+copy .env.example .env      # Windows. Mac/Linux: cp .env.example .env
+npm run dev                 # app on http://localhost:5173
+npm run dev:server          # AI scan + explainer API on :8787 (second terminal)
 ```
 
 For a demo, use the production build. It proxies `/api` to the server the same way:
@@ -70,7 +73,19 @@ The app opens on **SS 15, Subang Jaya** with the best plan applied. Click **Demo
 
 ### Turning on the AI
 
-Set `VITE_ENABLE_AI=true` in `.env` to show the AI scan and plan explainer, then pick a model:
+The template `.env` already turns the AI on with a free local model. You still need three things the repo cannot ship:
+
+1. **A `.env` file.** It is never committed (it can hold an API key), so copy `.env.example` as above.
+2. **The model.** Install [Ollama](https://ollama.com), start it, then run `ollama pull qwen2.5vl:7b` (about 6 GB).
+3. **The AI server.** Run `npm run dev:server` in a second terminal and leave it running.
+
+Then run the checkup. It says what is missing and how to fix it:
+
+```bash
+npm run check:ai
+```
+
+`.env` settings, if you want something other than the default:
 
 | Option | `.env` | Notes |
 |---|---|---|
@@ -79,6 +94,19 @@ Set `VITE_ENABLE_AI=true` in `.env` to show the AI scan and plan explainer, then
 | **Neither** | (nothing) | The server returns clearly labelled `MOCK` results, so the demo never breaks |
 
 The UI says which model made each estimate.
+
+#### If the AI does not work on your laptop
+
+| What you see | Why | Fix |
+|---|---|---|
+| No **4 AI scan** tab | `.env` is missing, or `VITE_ENABLE_AI` is not `true` | Copy `.env.example` to `.env`. Restart `npm run dev` (or `npm run build` again before `npm run preview`): the setting is read at start-up |
+| "The AI server is not running" | `npm run dev:server` is not running | Start it in a second terminal, in the project folder |
+| "Ollama is not running" | Ollama is not installed or not started | Install it from ollama.com and open it (Windows: Start menu → Ollama) |
+| "The model … is not downloaded" | The model in `OLLAMA_MODEL` is not pulled | `ollama pull qwen2.5vl:7b`, or set `OLLAMA_MODEL` to a vision model you already have |
+| Results marked **MOCK** | No AI is configured, or the model call failed (the note says why) | Run `npm run check:ai` |
+| Very slow, then MOCK | The model is running on the CPU, or the first call is loading it | Plug in the charger and close other GPU apps. On a laptop with less than 6 GB of graphics memory use `gemma3:4b`. On a slow machine, raise `OLLAMA_TIMEOUT_MS` |
+
+After changing `.env`, restart `npm run dev:server`; it reads the file once at start-up.
 
 ## What the app does
 
@@ -117,6 +145,7 @@ data/
 server/                  Hono API: /api/health, /api/shade-scan, /api/explain
   provider.ts            picks Claude, Ollama or mock
   claude.ts, ollama.ts   the two model back ends; prompts.ts holds the prompts
+  status.ts              is the AI ready on this laptop? (GET /api/status, npm run check:ai)
 src/
   components/            map, layers, controls and the four page views
   features/ai-scan/      AI scan panel, plan explainer, API client
@@ -138,6 +167,7 @@ docs/                    local AI guide, screenshots, archive of build-phase not
 | `npm run build` / `npm run preview` | Type-check, build, and serve the build on :4173 |
 | `npm test` | All unit and integration tests (Vitest) |
 | `npm run coverage` | Coverage for `src/lib/` |
+| `npm run check:ai` | Checks this laptop's AI setup (`.env`, Ollama and the model, the AI server) and says how to fix what is missing |
 | `npm run screenshots` | Drives the running app in Edge, runs about 40 end-to-end checks and saves `docs/screenshots/` (needs both servers running) |
 | `npm run data:areas` | Rebuild the shipped areas from OpenStreetMap (see `data/README.md`) |
 | `npm run data:ridership` | Refresh station exits from data.gov.my |
@@ -146,11 +176,11 @@ docs/                    local AI guide, screenshots, archive of build-phase not
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `VITE_ENABLE_AI` | `false` | Show the AI scan and plan explainer |
+| `VITE_ENABLE_AI` | `true` in the template | Show the AI scan and plan explainer. Read at start-up and at build time |
 | `ANTHROPIC_API_KEY` | (unset) | Use Claude for the AI features. Server only |
-| `AI_PROVIDER` | (unset) | `ollama` for a local model |
+| `AI_PROVIDER` | `ollama` in the template | `ollama` for a local model; remove it to use Claude |
 | `OLLAMA_URL` | `http://localhost:11434` | Ollama server |
-| `OLLAMA_MODEL` | `gemma3:4b` | Must support images for the shade scan |
+| `OLLAMA_MODEL` | `qwen2.5vl:7b` in the template (`gemma3:4b` if unset) | Must support images for the shade scan |
 | `OLLAMA_TIMEOUT_MS` | `60000` | How long to wait for the local model |
 | `VITE_DATASET` | (unset) | `seed` forces the invented area (the tests use this) |
 
